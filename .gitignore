@@ -1,0 +1,17 @@
+*.cache
+*.xml
+*.html
+*.wdb
+*.sim
+*.hw
+*.runs
+*.xvlog
+.Xil
+*.sdf
+*.log
+*.jou
+*.pb
+*.swp
+
+xsim.dir
+*bitstream*
