@@ -2,7 +2,7 @@
 
 ## GCM-AES implementation in Verilog
 
-This is a "partially pipelined" version of hardware implementaion in system-verilog. Here I pipeline the key expansion process into 4 steps to address the SLACK problem.
+This is a "partially pipelined" version of hardware implementaion in system-verilog. Here I pipeline the key expansion process into 4 steps to address the SLACK problem. This implements encryption in 91.36MHz. Throughput is 128bits * 91.36M = 11.73 Gbps.
 
 ## Usage
 
