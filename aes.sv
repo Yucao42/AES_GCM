@@ -19,6 +19,7 @@ module aes(
 
     logic           clk_out;
     logic           locked;
+    logic           pt_delay;
    
     logic [0:95] iv_sw            = {sw[0:7], sw[0:7], sw[0:7], sw[0:7], sw[0:7], sw[0:7], sw[0:7], sw[0:7], sw[0:7], sw[0:7], sw[0:7], sw[0:7]};
 
@@ -48,8 +49,8 @@ module aes(
     gcm_aes gcm_aes_instance(
         .clk(clk_out),
         .i_iv(iv_sw),
-        .i_new_instance(1'b1),
-        .i_pt_instance(1'b1),
+        .i_new_instance(i_reset),
+        .i_pt_instance(pt_delay),
         .i_cipher_key(cipher_key_sw),
         .i_plain_text(plain_text_sw),
         .i_plain_text_size(64'd128),
@@ -66,13 +67,18 @@ module aes(
 		/* Calculation of tag will exceed the LUT limitation on Basys3 board.
         .i_x({tag[0+:8], tag[8+:8]}),
 		*/
-        //.i_x({tag[0+:8], cipher_text[0+:8]}),
-        .i_x({cipher_text[8+:8], cipher_text[0+:8]}),
+        .i_x({tag[0+:8], cipher_text[0+:8]}),
+        //.i_x({cipher_text[8+:8], cipher_text[0+:8]}),
         .clk(clk_out),
         .clr(1'b0),
         .a_to_g(seg),
         .an(an),
         .dp(dp)
     );
+
+	always_ff @(posedge clk_out)
+	begin
+		pt_delay <= i_reset;
+	end
 
 endmodule

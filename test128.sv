@@ -58,7 +58,7 @@ module testbench(
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
-		new_instance = 1;
+		new_instance = 0;
 		/*
         counter = counter + 1;
         aad_block = aad[counter*128+:128];
@@ -83,7 +83,7 @@ module testbench(
         pt_instance = 1;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
-        pt_instance = 1;
+        pt_instance = 0;
 		/*
         counter = counter + 1;
         plain_text_block = plain_text[counter*128+:128];

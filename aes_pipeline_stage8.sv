@@ -53,8 +53,9 @@ module aes_pipeline_stage8(
 		
 		if (w_counter == 0)
 	    	o_cipher_text <= i_cipher_text;
-		if (w_counter == total_blocks)
-      	    o_tag <= w_sblock ^ r_encrypted_j0;
+
+		if (w_counter == total_blocks + 1)
+      	    o_tag <= r_sblock ^ r_encrypted_j0;
 	
         r_sblock        <= w_sblock; // Cycle
         r_counter       <= w_counter; // Cycle
