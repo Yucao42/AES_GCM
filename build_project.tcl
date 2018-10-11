@@ -1,4 +1,5 @@
 # Synthesis and Implementation script
+set_param general.maxThreads 8
 
 #Set part number
 set_part xc7a35tcpg236-1
