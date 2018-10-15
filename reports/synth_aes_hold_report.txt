@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Thu Oct 11 19:43:05 2018
+| Date         : Mon Oct 15 15:46:12 2018
 | Host         : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_timing -hold -file ./reports/synth_aes_hold_report.txt
 | Design       : aes
@@ -11,16 +11,16 @@ Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 Timing Report
 
-Slack (MET) :             0.073ns  (arrival time - required time)
-  Source:                 gcm_aes_instance/stage1/r_plain_text_reg[0]__0/C
+Slack (MET) :             0.125ns  (arrival time - required time)
+  Source:                 u/clkdiv_reg[11]/C
                             (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@5.500ns period=11.000ns})
-  Destination:            gcm_aes_instance/stage6/r_plain_text_reg[0]_srl5/D
-                            (rising edge-triggered cell SRL16E clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@5.500ns period=11.000ns})
+  Destination:            u/clkdiv_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@5.500ns period=11.000ns})
   Path Group:             w_clk_out_clk_wiz_gen
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (w_clk_out_clk_wiz_gen rise@0.000ns - w_clk_out_clk_wiz_gen rise@0.000ns)
-  Data Path Delay:        0.282ns  (logic 0.141ns (50.038%)  route 0.141ns (49.962%))
-  Logic Levels:           0  
+  Data Path Delay:        0.375ns  (logic 0.249ns (66.469%)  route 0.126ns (33.531%))
+  Logic Levels:           2  (CARRY4=1 LUT1=1)
   Clock Path Skew:        0.145ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    -1.094ns
     Source Clock Delay      (SCD):    -0.959ns
@@ -38,12 +38,17 @@ Slack (MET) :             0.073ns  (arrival time - required time)
                                                      -1.776    -1.436 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, unplaced)         0.337    -1.099    clk_gen_instance/w_clk_out_clk_wiz_gen
                          BUFG (Prop_bufg_I_O)         0.026    -1.073 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=3506, unplaced)      0.114    -0.959    gcm_aes_instance/stage1/clk_out
-                         FDRE                                         r  gcm_aes_instance/stage1/r_plain_text_reg[0]__0/C
+                         net (fo=44, unplaced)        0.114    -0.959    u/clk_out
+                         FDRE                                         r  u/clkdiv_reg[11]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141    -0.818 r  gcm_aes_instance/stage1/r_plain_text_reg[0]__0/Q
-                         net (fo=1, unplaced)         0.141    -0.677    gcm_aes_instance/stage6/r_plain_text_reg[0]__0_0
-                         SRL16E                                       r  gcm_aes_instance/stage6/r_plain_text_reg[0]_srl5/D
+                         FDRE (Prop_fdre_C_Q)         0.141    -0.818 r  u/clkdiv_reg[11]/Q
+                         net (fo=1, unplaced)         0.126    -0.692    u/clkdiv_reg_n_0_[11]
+                         LUT1 (Prop_lut1_I0_O)        0.045    -0.647 r  u/clkdiv[8]_i_2/O
+                         net (fo=1, unplaced)         0.000    -0.647    u/clkdiv[8]_i_2_n_0
+                         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.063    -0.584 r  u/clkdiv_reg[8]_i_1/O[3]
+                         net (fo=1, unplaced)         0.000    -0.584    u/clkdiv_reg[8]_i_1_n_4
+                         FDRE                                         r  u/clkdiv_reg[11]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock w_clk_out_clk_wiz_gen rise edge)
@@ -56,16 +61,15 @@ Slack (MET) :             0.073ns  (arrival time - required time)
                                                      -2.410    -1.737 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, unplaced)         0.355    -1.382    clk_gen_instance/w_clk_out_clk_wiz_gen
                          BUFG (Prop_bufg_I_O)         0.029    -1.353 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=3506, unplaced)      0.259    -1.094    gcm_aes_instance/stage6/clk_out
-                         SRL16E                                       r  gcm_aes_instance/stage6/r_plain_text_reg[0]_srl5/CLK
+                         net (fo=44, unplaced)        0.259    -1.094    u/clk_out
+                         FDRE                                         r  u/clkdiv_reg[11]/C
                          clock pessimism              0.280    -0.814    
-                         SRL16E (Hold_srl16e_CLK_D)
-                                                      0.064    -0.750    gcm_aes_instance/stage6/r_plain_text_reg[0]_srl5
+                         FDRE (Hold_fdre_C_D)         0.105    -0.709    u/clkdiv_reg[11]
   -------------------------------------------------------------------
-                         required time                          0.750    
-                         arrival time                          -0.677    
+                         required time                          0.709    
+                         arrival time                          -0.584    
   -------------------------------------------------------------------
-                         slack                                  0.073    
+                         slack                                  0.125    
 
 
 

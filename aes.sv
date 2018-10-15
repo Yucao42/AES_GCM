@@ -34,6 +34,9 @@ module aes(
                                      sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15]};
 
     logic [0:127] cipher_text;
+	logic [0:127] A;
+	logic [0:127] B;
+
     logic [0:127] tag;
     reg tag_ready;
     
@@ -45,21 +48,7 @@ module aes(
         .o_clk_out(clk_out)
     );  
     
-    /* GCM AES module (comes from gcm_aes.sv) */
-    gcm_aes gcm_aes_instance(
-        .clk(clk_out),
-        .i_iv(iv_sw),
-        .i_new_instance(i_reset),
-        .i_pt_instance(pt_delay),
-        .i_cipher_key(cipher_key_sw),
-        .i_plain_text(plain_text_sw),
-        .i_plain_text_size(64'd128),
-        .i_aad_size(64'd128),
-        .i_aad(i_plain_text),
-        .o_cipher_text(cipher_text),
-        .o_tag(tag),
-        .o_tag_ready(tag_ready)
-    );
+
     
     /* Display module (comes from display.sv) */
     display u (
@@ -67,7 +56,7 @@ module aes(
 		/* Calculation of tag will exceed the LUT limitation on Basys3 board.
         .i_x({tag[0+:8], tag[8+:8]}),
 		*/
-        .i_x({tag[0+:8], cipher_text[0+:8]}),
+        .i_x({tag[0+:8], tag[8+:8]}),
         //.i_x({cipher_text[8+:8], cipher_text[0+:8]}),
         .clk(clk_out),
         .clr(1'b0),
@@ -78,7 +67,14 @@ module aes(
 
 	always_ff @(posedge clk_out)
 	begin
-		pt_delay <= i_reset;
+		A <= plain_text_sw;
+		B <= cipher_key_sw;
 	end
+
+	always_comb
+	begin
+		tag = fn_product(A, B);
+	end
+
 
 endmodule

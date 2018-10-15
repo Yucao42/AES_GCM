@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Thu Oct  4 03:51:53 2018
-| Host         : cy-Lenovo-ideapad-Y700-15ISK running 64-bit Ubuntu 16.04.1 LTS
+| Date         : Mon Oct 15 15:46:24 2018
+| Host         : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_timing -setup -file ./reports/impl_aes_setup_report.txt
 | Design       : aes
 | Device       : 7a35t-cpg236
@@ -11,23 +11,23 @@ Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 Timing Report
 
-Slack (MET) :             0.349ns  (required time - arrival time)
-  Source:                 gcm_aes_instance/stage5/sel__10/CLKBWRCLK
-                            (rising edge-triggered cell RAMB18E1 clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@5.473ns period=10.945ns})
-  Destination:            gcm_aes_instance/stage6/sel__2/ADDRARDADDR[8]
-                            (rising edge-triggered cell RAMB18E1 clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@5.473ns period=10.945ns})
+Slack (MET) :             4.948ns  (required time - arrival time)
+  Source:                 B_reg[64]/C
+                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@5.500ns period=11.000ns})
+  Destination:            u/x_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@5.500ns period=11.000ns})
   Path Group:             w_clk_out_clk_wiz_gen
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.945ns  (w_clk_out_clk_wiz_gen rise@10.945ns - w_clk_out_clk_wiz_gen rise@0.000ns)
-  Data Path Delay:        9.796ns  (logic 3.493ns (35.658%)  route 6.303ns (64.342%))
-  Logic Levels:           6  (LUT3=1 LUT6=4 MUXF7=1)
-  Clock Path Skew:        -0.109ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.509ns = ( 9.437 - 10.945 ) 
-    Source Clock Delay      (SCD):    -0.908ns
-    Clock Pessimism Removal (CPR):    0.492ns
-  Clock Uncertainty:      0.125ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Requirement:            11.000ns  (w_clk_out_clk_wiz_gen rise@11.000ns - w_clk_out_clk_wiz_gen rise@0.000ns)
+  Data Path Delay:        5.932ns  (logic 1.306ns (22.015%)  route 4.626ns (77.985%))
+  Logic Levels:           5  (LUT4=1 LUT5=4)
+  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.475ns = ( 9.525 - 11.000 ) 
+    Source Clock Delay      (SCD):    -0.875ns
+    Clock Pessimism Removal (CPR):    0.578ns
+  Clock Uncertainty:      0.126ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.240ns
+    Discrete Jitter          (DJ):    0.242ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -42,48 +42,44 @@ Slack (MET) :             0.349ns  (required time - arrival time)
                                                      -6.961    -4.269 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.608    clk_gen_instance/w_clk_out_clk_wiz_gen
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=1946, routed)        1.604    -0.908    gcm_aes_instance/stage5/clk_out
-    RAMB18_X0Y6          RAMB18E1                                     r  gcm_aes_instance/stage5/sel__10/CLKBWRCLK
+                         net (fo=44, routed)          1.637    -0.875    clk_out
+    SLICE_X65Y42         FDRE                                         r  B_reg[64]/C
   -------------------------------------------------------------------    -------------------
-    RAMB18_X0Y6          RAMB18E1 (Prop_ramb18e1_CLKBWRCLK_DOBDO[0])
-                                                      2.454     1.546 r  gcm_aes_instance/stage5/sel__10/DOBDO[0]
-                         net (fo=4, routed)           1.488     3.034    gcm_aes_instance/stage5/in_byte70_in[7]
-    SLICE_X8Y23          LUT3 (Prop_lut3_I1_O)        0.124     3.158 r  gcm_aes_instance/stage5/g0_b0__87_i_7/O
-                         net (fo=2, routed)           0.583     3.741    gcm_aes_instance/stage5/g0_b0__87_i_7_n_0
-    SLICE_X8Y23          LUT6 (Prop_lut6_I0_O)        0.124     3.865 r  gcm_aes_instance/stage5/g0_b0__88_i_2/O
-                         net (fo=32, routed)          0.992     4.857    gcm_aes_instance/stage5/SBOX14_out[49]
-    SLICE_X11Y25         LUT6 (Prop_lut6_I1_O)        0.124     4.981 r  gcm_aes_instance/stage5/g1_b4__88/O
-                         net (fo=1, routed)           0.000     4.981    gcm_aes_instance/stage5/g1_b4__88_n_0
-    SLICE_X11Y25         MUXF7 (Prop_muxf7_I1_O)      0.245     5.226 r  gcm_aes_instance/stage5/SBOX_inferred__40/sel__2_i_85/O
-                         net (fo=3, routed)           1.015     6.240    gcm_aes_instance/stage5/SBOX_inferred__40/sel__2_i_85_n_0
-    SLICE_X11Y29         LUT6 (Prop_lut6_I0_O)        0.298     6.538 r  gcm_aes_instance/stage5/sel__2_i_31__0/O
-                         net (fo=1, routed)           1.358     7.896    gcm_aes_instance/stage5/sel__2_i_31__0_n_0
-    SLICE_X40Y30         LUT6 (Prop_lut6_I2_O)        0.124     8.020 r  gcm_aes_instance/stage5/sel__2_i_4__1/O
-                         net (fo=1, routed)           0.867     8.888    gcm_aes_instance/stage6/w_s5_encrypted_cb[35]
-    RAMB18_X1Y12         RAMB18E1                                     r  gcm_aes_instance/stage6/sel__2/ADDRARDADDR[8]
+    SLICE_X65Y42         FDRE (Prop_fdre_C_Q)         0.456    -0.419 r  B_reg[64]/Q
+                         net (fo=106, routed)         1.708     1.290    u/Q[3]
+    SLICE_X63Y45         LUT4 (Prop_lut4_I3_O)        0.152     1.442 r  u/x[7]_i_7/O
+                         net (fo=12, routed)          1.204     2.646    u/p_0_in300_in[120]
+    SLICE_X62Y50         LUT5 (Prop_lut5_I3_O)        0.326     2.972 r  u/x[8]_i_9/O
+                         net (fo=1, routed)           0.495     3.467    u/x[8]_i_9_n_0
+    SLICE_X63Y50         LUT5 (Prop_lut5_I0_O)        0.124     3.591 r  u/x[8]_i_6/O
+                         net (fo=1, routed)           0.558     4.149    u/x[8]_i_6_n_0
+    SLICE_X62Y47         LUT5 (Prop_lut5_I1_O)        0.124     4.273 r  u/x[8]_i_2/O
+                         net (fo=1, routed)           0.661     4.934    u/x[8]_i_2_n_0
+    SLICE_X62Y47         LUT5 (Prop_lut5_I0_O)        0.124     5.058 r  u/x[8]_i_1/O
+                         net (fo=1, routed)           0.000     5.058    u/fn_product_return[119]
+    SLICE_X62Y47         FDRE                                         r  u/x_reg[8]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock w_clk_out_clk_wiz_gen rise edge)
-                                                     10.945    10.945 r  
-    W5                                                0.000    10.945 r  clk (IN)
-                         net (fo=0)                   0.000    10.945    clk_gen_instance/clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    12.333 r  clk_gen_instance/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162    13.495    clk_gen_instance/w_clk_in_clk_wiz_gen
+                                                     11.000    11.000 r  
+    W5                                                0.000    11.000 r  clk (IN)
+                         net (fo=0)                   0.000    11.000    clk_gen_instance/clk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    12.388 r  clk_gen_instance/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    13.550    clk_gen_instance/w_clk_in_clk_wiz_gen
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.217     6.278 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581     7.859    clk_gen_instance/w_clk_out_clk_wiz_gen
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     7.950 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=1946, routed)        1.487     9.437    gcm_aes_instance/stage6/clk_out
-    RAMB18_X1Y12         RAMB18E1                                     r  gcm_aes_instance/stage6/sel__2/CLKARDCLK
-                         clock pessimism              0.492     9.928    
-                         clock uncertainty           -0.125     9.803    
-    RAMB18_X1Y12         RAMB18E1 (Setup_ramb18e1_CLKARDCLK_ADDRARDADDR[8])
-                                                     -0.566     9.237    gcm_aes_instance/stage6/sel__2
+                                                     -7.217     6.332 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581     7.914    clk_gen_instance/w_clk_out_clk_wiz_gen
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     8.005 r  clk_gen_instance/clkout1_buf/O
+                         net (fo=44, routed)          1.520     9.525    u/clk_out
+    SLICE_X62Y47         FDRE                                         r  u/x_reg[8]/C
+                         clock pessimism              0.578    10.102    
+                         clock uncertainty           -0.126     9.976    
+    SLICE_X62Y47         FDRE (Setup_fdre_C_D)        0.029    10.005    u/x_reg[8]
   -------------------------------------------------------------------
-                         required time                          9.237    
-                         arrival time                          -8.888    
+                         required time                         10.005    
+                         arrival time                          -5.058    
   -------------------------------------------------------------------
-                         slack                                  0.349    
+                         slack                                  4.948    
 
 
 
