@@ -37,7 +37,7 @@ report_timing -setup  -file ./reports/synth_aes_setup_report.txt
 report_timing -hold   -file ./reports/synth_aes_hold_report.txt
 report_timing_summary -file ./reports/synth_timing_report_aes.txt -delay_type min_max -max_path 50
 report_utilization    -file ./reports/synth_utilization_report.txt
-report_utilization -hierarchical  -file ./reports/syn_utilization_submod.txt
+report_utilization -hierarchical  -file ./reports/synth_utilization_report_submodule.txt
 
 #Run implementation
 place_design

@@ -73,8 +73,13 @@ module aes_pipeline_stage8(
             w_counter = r_counter + 1;
         end
 
+		/*
         total_blocks = ((r_instance_size[0:63] + r_instance_size[64:127]) >> 7);
         aad_blocks = r_instance_size[64:127] >> 7;
+		*/
+
+        total_blocks = 3;
+        aad_blocks = 1;
 
         if (w_counter == total_blocks)
         begin
