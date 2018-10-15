@@ -1,0 +1,43 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
+| Date         : Mon Oct 15 22:18:15 2018
+| Host         : westeros running 64-bit Ubuntu 18.04.1 LTS
+| Command      : report_utilization -hierarchical -file ./reports/syn_utilization_submod.txt
+| Design       : aes
+| Device       : 7a35tcpg236-1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++------------------------+----------------------+------------+------------+---------+------+------+--------+--------+--------------+
+|        Instance        |        Module        | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
++------------------------+----------------------+------------+------------+---------+------+------+--------+--------+--------------+
+| aes                    |                (top) |       6478 |       6474 |       0 |    4 | 2142 |      0 |     12 |            0 |
+|   (aes)                |                (top) |          0 |          0 |       0 |    0 |    0 |      0 |      0 |            0 |
+|   clk_gen_instance     |              clk_gen |          0 |          0 |       0 |    0 |    0 |      0 |      0 |            0 |
+|   gcm_aes_instance     |              gcm_aes |       6448 |       6444 |       0 |    4 | 2106 |      0 |     12 |            0 |
+|     (gcm_aes_instance) |              gcm_aes |         16 |         16 |       0 |    0 |    0 |      0 |      0 |            0 |
+|     keyexpan2          | aes_pipeline_stage12 |        533 |        533 |       0 |    0 |  146 |      0 |      0 |            0 |
+|     keyexpan3          | aes_pipeline_stage13 |        706 |        706 |       0 |    0 |  364 |      0 |      0 |            0 |
+|     keyexpan4          | aes_pipeline_stage14 |        254 |        254 |       0 |    0 |  448 |      0 |      0 |            0 |
+|     stage1             |  aes_pipeline_stage1 |        310 |        310 |       0 |    0 |   16 |      0 |      0 |            0 |
+|     stage2             |  aes_pipeline_stage2 |          0 |          0 |       0 |    0 |    8 |      0 |      0 |            0 |
+|     stage3             |  aes_pipeline_stage3 |       1011 |       1011 |       0 |    0 |  100 |      0 |      0 |            0 |
+|     stage4             |  aes_pipeline_stage4 |       1376 |       1376 |       0 |    0 |  364 |      0 |      0 |            0 |
+|     stage5             |  aes_pipeline_stage5 |        859 |        859 |       0 |    0 |  256 |      0 |      8 |            0 |
+|     stage6             |  aes_pipeline_stage6 |       1281 |       1277 |       0 |    4 |  352 |      0 |      0 |            0 |
+|     stage7             |  aes_pipeline_stage7 |        102 |        102 |       0 |    0 |   36 |      0 |      4 |            0 |
+|     stage8             |  aes_pipeline_stage8 |          0 |          0 |       0 |    0 |   16 |      0 |      0 |            0 |
+|   u                    |              display |         30 |         30 |       0 |    0 |   36 |      0 |      0 |            0 |
++------------------------+----------------------+------------+------------+---------+------+------+--------+--------+--------------+
+
+
