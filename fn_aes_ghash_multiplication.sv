@@ -9,7 +9,7 @@ function logic[0:127] fn_product(
     Z = 128'd0;
     V = Y;
 
-    for(idx = 0; idx <= 127; idx++)
+    for(idx = 0; idx <= 64; idx++)
     begin
         if (X[idx] == 1'b1)
             Z = Z ^ V;
