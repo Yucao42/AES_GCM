@@ -13,7 +13,8 @@ module aes_pipeline_stage7(
     o_cipher_text,
     o_aad,
     o_instance_size,
-    o_new_instance
+    o_new_instance,
+	o_ghashed_s0
 );
 
     input logic           clk;
@@ -32,6 +33,7 @@ module aes_pipeline_stage7(
     output logic [0:127]    o_encrypted_j0;
     output logic [0:127]    o_instance_size;
     output logic            o_new_instance;
+    output logic [0:127]    o_ghashed_s0;
     
     logic [0:1407]  r_key_schedule;
     logic [0:127]   r_plain_text;
@@ -63,6 +65,8 @@ module aes_pipeline_stage7(
         o_cipher_text = r_plain_text ^ w_encrypted_cb;
 
         o_encrypted_j0 = fn_aes_encrypt_stage(r_encrypted_j0, r_key_schedule, 9);
+
+		o_ghashed_s0 = fn_product(r_aad, r_h);
 
         /* Carrying forward register values for subsequent stages */
         o_aad = r_aad;

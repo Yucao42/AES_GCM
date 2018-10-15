@@ -100,6 +100,7 @@ module gcm_aes(
     logic             w_s7_new_instance;
     logic [0:127]     w_s7_cipher_text;
     logic [0:127]     w_s7_encrypted_j0;
+    logic [0:127]     w_s7_ghased_s0;
     logic [0:127]     w_s7_h;
     logic [0:1407]    w_s7_key_schedule;
     logic [0:127]     w_s7_aad;
@@ -253,6 +254,7 @@ module gcm_aes(
         .i_key_schedule(w_s6_key_schedule),
         .o_h(w_s7_h),
         .o_encrypted_j0(w_s7_encrypted_j0),
+        .o_ghashed_s0(w_s7_ghashed_s0),
         .o_cipher_text(w_s7_cipher_text),
         .o_aad(w_s7_aad),
         .o_instance_size(w_s7_instance_size),
@@ -266,6 +268,7 @@ module gcm_aes(
         .i_new_instance(w_s7_new_instance),
         .i_h(w_s7_h),
         .i_encrypted_j0(w_s7_encrypted_j0),
+        .i_ghashed_s0(w_s7_ghashed_s0),
         .i_instance_size(w_s7_instance_size),
         .o_cipher_text(o_cipher_text),
         .o_tag_ready(o_tag_ready),
