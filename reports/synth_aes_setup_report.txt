@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Tue Oct 16 16:03:45 2018
+| Date         : Tue Oct 16 16:25:16 2018
 | Host         : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_timing -setup -file ./reports/synth_aes_setup_report.txt
 | Design       : aes
@@ -42,7 +42,7 @@ Slack (VIOLATED) :        -2.286ns  (required time - arrival time)
                                                      -5.108    -3.065 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, unplaced)         0.800    -2.266    clk_gen_instance/w_clk_out_clk_wiz_gen
                          BUFG (Prop_bufg_I_O)         0.096    -2.170 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=3506, unplaced)      0.584    -1.586    gcm_aes_instance/stage8/clk_out
+                         net (fo=1523, unplaced)      0.584    -1.586    gcm_aes_instance/stage8/clk_out
                          FDRE                                         r  gcm_aes_instance/stage8/r_counter_reg[125]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.456    -1.130 r  gcm_aes_instance/stage8/r_counter_reg[125]/Q
@@ -174,7 +174,7 @@ Slack (VIOLATED) :        -2.286ns  (required time - arrival time)
                                                      -5.378     7.449 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, unplaced)         0.760     8.209    clk_gen_instance/w_clk_out_clk_wiz_gen
                          BUFG (Prop_bufg_I_O)         0.091     8.300 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=3506, unplaced)      0.439     8.739    gcm_aes_instance/stage8/clk_out
+                         net (fo=1523, unplaced)      0.439     8.739    gcm_aes_instance/stage8/clk_out
                          FDRE                                         r  gcm_aes_instance/stage8/r_sblock_reg[17]/C
                          clock pessimism              0.530     9.269    
                          clock uncertainty           -0.126     9.143    

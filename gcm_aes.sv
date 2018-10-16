@@ -138,17 +138,10 @@ module gcm_aes(
         .o_cb(w_s2_cb),
         .o_plain_text(w_s2_plain_text),
         .o_aad(w_s2_aad),
+		.o_key_schedule(w_s3_key_schedule),
         .o_instance_size(w_s2_instance_size),
         .o_new_instance(w_s2_new_instance),
         .o_pt_instance(w_s2_pt_instance)
-    );
-    
-	/* Concurrent key expansion modules
-	*/
-    aes_pipeline_stage12 keyexpan2(
- 	   .clk(clk),
- 	   .i_key_schedule(w_s1_key_schedule),
-	   .o_key_schedule(w_s3_key_schedule)
     );
 
     aes_pipeline_stage3 stage3(
@@ -162,6 +155,7 @@ module gcm_aes(
         .i_instance_size(w_s2_instance_size),
         .i_pt_instance(w_s2_pt_instance),
         .i_key_schedule(w_s3_key_schedule),
+		.o_key_schedule(w_s4_key_schedule),
         .o_h(w_s3_h),
         .o_encrypted_j0(w_s3_encrypted_j0),
         .o_encrypted_cb(w_s3_encrypted_cb),
@@ -171,11 +165,13 @@ module gcm_aes(
         .o_new_instance(w_s3_new_instance)
     );
 
+	/*
     aes_pipeline_stage13 keyexpan3(
 	    .clk(clk),
 	    .i_key_schedule(w_s3_key_schedule),
 	    .o_key_schedule(w_s4_key_schedule)
     );
+	*/
 
     aes_pipeline_stage4 stage4(
         .clk(clk),
@@ -187,6 +183,7 @@ module gcm_aes(
         .i_encrypted_cb(w_s3_encrypted_cb),
         .i_instance_size(w_s3_instance_size),
         .i_key_schedule(w_s4_key_schedule),
+        .o_key_schedule(w_s5_key_schedule),
         .o_h(w_s4_h),
         .o_encrypted_j0(w_s4_encrypted_j0),
         .o_encrypted_cb(w_s4_encrypted_cb),
@@ -196,11 +193,13 @@ module gcm_aes(
         .o_new_instance(w_s4_new_instance)
     );
 
+	/*
     aes_pipeline_stage14 keyexpan4(
 	    .clk(clk),
 	    .i_key_schedule(w_s4_key_schedule),
 	    .o_key_schedule(w_s5_key_schedule)
     );
+	*/
 
     aes_pipeline_stage5 stage5(
         .clk(clk),
