@@ -105,6 +105,13 @@ module gcm_aes(
     logic [0:127]     w_s7_aad;
     logic [0:127]     w_s7_instance_size;
    
+    /* Wires joining Stage8 and Stage9 */
+    logic             w_s8_sblock_ready;
+    logic [0:127]     w_s8_cipher_text;
+    logic [0:127]     w_s8_encrypted_j0;
+    logic [0:127]     w_s8_sblock;
+    logic [0:127]     w_s8_h;
+    logic [0:127]     w_s8_instance_size;
 
     aes_pipeline_stage1 stage1(
         .clk(clk),
@@ -267,9 +274,25 @@ module gcm_aes(
         .i_h(w_s7_h),
         .i_encrypted_j0(w_s7_encrypted_j0),
         .i_instance_size(w_s7_instance_size),
-        .o_cipher_text(o_cipher_text),
-        .o_tag_ready(o_tag_ready),
-        .o_tag(o_tag)
+        .o_encrypted_j0(w_s8_encrypted_j0),
+		.o_instance_size(w_s8_instance_size),
+		.o_h(w_s8_h),
+        .o_cipher_text(w_s8_cipher_text),
+        .o_tag_ready(w_s8_sblock_ready),
+        .o_tag(w_s8_sblock)
     );
+	
+	aes_pipeline_stage9 stage9(
+		.clk(clk),
+		.i_cipher_text(w_s8_cipher_text),
+		.i_ready(w_s8_sblock_ready),
+		.i_h(w_s8_h),
+		.i_sblock(w_s8_sblock),
+		.i_instance_size(w_s8_instance_size),
+		.i_encrypted_j0(w_s8_encrypted_j0),
+		.o_cipher_text(o_cipher_text),
+		.o_tag(o_tag),
+		.o_tag_ready(o_tag_ready)
+	);
 
 endmodule
