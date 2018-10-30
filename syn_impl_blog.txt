@@ -33,12 +33,12 @@ Using part: xcku035-fbva900-3-e
 Attempting to get a license for feature 'Synthesis' and/or device 'xcku035'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku035'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 17173 
+INFO: Helper process launched with PID 17981 
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage12.sv:4]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage13.sv:4]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage14.sv:4]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1100.688 ; gain = 168.305 ; free physical = 45432 ; free virtual = 67856
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1100.691 ; gain = 168.305 ; free physical = 45377 ; free virtual = 67802
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'aes' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes.sv:4]
 INFO: [Synth 8-638] synthesizing module 'clk_gen' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/clk_gen.sv:1]
@@ -281,7 +281,7 @@ WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_sc
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[99]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1827.625 ; gain = 895.242 ; free physical = 44683 ; free virtual = 67125
+Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1845.629 ; gain = 913.242 ; free physical = 44610 ; free virtual = 67054
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -291,7 +291,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1827.625 ; gain = 895.242 ; free physical = 44683 ; free virtual = 67124
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1845.629 ; gain = 913.242 ; free physical = 44611 ; free virtual = 67054
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -313,25 +313,25 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IBUF => IBUF (INBUF, IBUFCTRL): 1 instances
   MMCME2_ADV => MMCME3_ADV: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2184.781 ; gain = 0.000 ; free physical = 44477 ; free virtual = 66918
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2214.785 ; gain = 0.000 ; free physical = 45294 ; free virtual = 67737
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2184.781 ; gain = 1252.398 ; free physical = 44473 ; free virtual = 66915
+Finished Constraint Validation : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 2214.785 ; gain = 1282.398 ; free physical = 45287 ; free virtual = 67730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xcku035-fbva900-3-e
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2184.781 ; gain = 1252.398 ; free physical = 44473 ; free virtual = 66915
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 2214.785 ; gain = 1282.398 ; free physical = 45287 ; free virtual = 67730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2184.781 ; gain = 1252.398 ; free physical = 44473 ; free virtual = 66915
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 2214.785 ; gain = 1282.398 ; free physical = 45287 ; free virtual = 67731
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:27 ; elapsed = 00:01:28 . Memory (MB): peak = 2235.867 ; gain = 1303.484 ; free physical = 44311 ; free virtual = 66753
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:31 ; elapsed = 00:01:32 . Memory (MB): peak = 2265.848 ; gain = 1333.461 ; free physical = 45125 ; free virtual = 67568
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -339,14 +339,15 @@ Report RTL Partitions:
 |      |RTL Partition            |Replication |Instances |
 +------+-------------------------+------------+----------+
 |1     |clk_gen__GC0             |           1|         3|
-|2     |aes_pipeline_stage8__GB0 |           1|     32859|
-|3     |aes_pipeline_stage8__GB1 |           1|      8878|
-|4     |aes_pipeline_stage8__GB2 |           1|     10808|
-|5     |gcm_aes__GCB0            |           1|     33163|
-|6     |gcm_aes__GCB1            |           1|     21575|
-|7     |gcm_aes__GCB2            |           1|     37930|
-|8     |aes_pipeline_stage7      |           1|      7841|
-|9     |aes__GC0                 |           1|       352|
+|2     |aes_pipeline_stage8__GB0 |           1|     37106|
+|3     |aes_pipeline_stage8__GB1 |           1|     13996|
+|4     |aes_pipeline_stage8__GB2 |           1|     19700|
+|5     |aes_pipeline_stage8__GB3 |           1|     15536|
+|6     |gcm_aes__GCB0            |           1|     33163|
+|7     |gcm_aes__GCB1            |           1|     21575|
+|8     |gcm_aes__GCB2            |           1|     37930|
+|9     |aes_pipeline_stage7      |           1|      7841|
+|10    |aes__GC0                 |           1|       352|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -361,12 +362,12 @@ INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_r
 INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage6.sv:58]
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input    128 Bit       Adders := 1     
+	   2 Input    128 Bit       Adders := 2     
 	   2 Input     64 Bit       Adders := 1     
 	   2 Input     32 Bit       Adders := 1     
 	   2 Input      9 Bit       Adders := 1     
 +---XORs : 
-	   2 Input    128 Bit         XORs := 287   
+	   2 Input    128 Bit         XORs := 415   
 	   3 Input    128 Bit         XORs := 1     
 	   2 Input     32 Bit         XORs := 30    
 	   3 Input     32 Bit         XORs := 10    
@@ -384,7 +385,7 @@ Detailed RTL Component Info :
 +---ROMs : 
 	                              ROMs := 208   
 +---Muxes : 
-	   2 Input    128 Bit        Muxes := 259   
+	   2 Input    128 Bit        Muxes := 388   
 	   4 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
@@ -422,15 +423,15 @@ Detailed RTL Component Info :
 Module aes_pipeline_stage8 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input    128 Bit       Adders := 1     
+	   2 Input    128 Bit       Adders := 2     
 	   2 Input     64 Bit       Adders := 1     
 +---XORs : 
-	   2 Input    128 Bit         XORs := 256   
+	   2 Input    128 Bit         XORs := 384   
 +---Registers : 
 	              128 Bit    Registers := 8     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input    128 Bit        Muxes := 258   
+	   2 Input    128 Bit        Muxes := 387   
 Module aes_pipeline_stage1 
 Detailed RTL Component Info : 
 +---XORs : 
@@ -553,37 +554,37 @@ INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[30]' (FD) to 'i_7/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[29]' (FD) to 'i_7/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[28]' (FD) to 'i_7/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[27]' (FD) to 'i_7/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[26]' (FD) to 'i_7/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[25]' (FD) to 'i_7/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[24]' (FD) to 'i_7/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[23]' (FD) to 'i_7/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[7]' (FD) to 'i_7/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[8]' (FD) to 'i_7/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[6]' (FD) to 'i_7/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[4]' (FD) to 'i_7/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[2]' (FD) to 'i_7/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[3]' (FD) to 'i_7/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[14]' (FD) to 'i_7/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[11]' (FD) to 'i_7/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[12]' (FD) to 'i_7/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[16]' (FD) to 'i_7/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[17]' (FD) to 'i_7/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[22]' (FD) to 'i_7/u/count_reg[21]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[21]' (FD) to 'i_7/u/count_reg[20]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[20]' (FD) to 'i_7/u/count_reg[19]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[0]' (FD) to 'i_7/u/count_reg[19]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[1]' (FD) to 'i_7/u/count_reg[19]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[5]' (FD) to 'i_7/u/count_reg[19]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[10]' (FD) to 'i_7/u/count_reg[19]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[9]' (FD) to 'i_7/u/count_reg[19]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[19]' (FD) to 'i_7/u/count_reg[18]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[18]' (FD) to 'i_7/u/count_reg[15]'
-INFO: [Synth 8-3886] merging instance 'i_7/u/count_reg[15]' (FD) to 'i_7/u/count_reg[13]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_7/\u/count_reg[13] )
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[30]' (FD) to 'i_8/u/count_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[29]' (FD) to 'i_8/u/count_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[28]' (FD) to 'i_8/u/count_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[27]' (FD) to 'i_8/u/count_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[26]' (FD) to 'i_8/u/count_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[25]' (FD) to 'i_8/u/count_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[24]' (FD) to 'i_8/u/count_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[23]' (FD) to 'i_8/u/count_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[7]' (FD) to 'i_8/u/count_reg[22]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[8]' (FD) to 'i_8/u/count_reg[22]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[6]' (FD) to 'i_8/u/count_reg[22]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[4]' (FD) to 'i_8/u/count_reg[22]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[2]' (FD) to 'i_8/u/count_reg[22]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[3]' (FD) to 'i_8/u/count_reg[22]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[14]' (FD) to 'i_8/u/count_reg[22]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[11]' (FD) to 'i_8/u/count_reg[22]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[12]' (FD) to 'i_8/u/count_reg[22]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[16]' (FD) to 'i_8/u/count_reg[22]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[17]' (FD) to 'i_8/u/count_reg[22]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[22]' (FD) to 'i_8/u/count_reg[21]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[21]' (FD) to 'i_8/u/count_reg[20]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[20]' (FD) to 'i_8/u/count_reg[19]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[0]' (FD) to 'i_8/u/count_reg[19]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[1]' (FD) to 'i_8/u/count_reg[19]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[5]' (FD) to 'i_8/u/count_reg[19]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[10]' (FD) to 'i_8/u/count_reg[19]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[9]' (FD) to 'i_8/u/count_reg[19]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[19]' (FD) to 'i_8/u/count_reg[18]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[18]' (FD) to 'i_8/u/count_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_8/u/count_reg[15]' (FD) to 'i_8/u/count_reg[13]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_8/\u/count_reg[13] )
 INFO: [Synth 8-4471] merging register 'stage1/r_cipher_key_reg[0:127]' into 'stage1/r_cipher_key_reg[0:127]' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage1.sv:46]
 INFO: [Synth 8-3886] merging instance 'stage2/r_key_schedule_reg[162]' (FD) to 'keyexpan2/r_key_schedule_reg[162]'
 INFO: [Synth 8-3886] merging instance 'stage2/r_key_schedule_reg[163]' (FD) to 'keyexpan2/r_key_schedule_reg[163]'
@@ -863,7 +864,7 @@ INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instan
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:18 ; elapsed = 00:02:37 . Memory (MB): peak = 2290.016 ; gain = 1357.633 ; free physical = 39867 ; free virtual = 62317
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:32 ; elapsed = 00:03:00 . Memory (MB): peak = 2420.449 ; gain = 1488.062 ; free physical = 38891 ; free virtual = 61343
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2299,12 +2300,10 @@ ROM:
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
 |aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
 |aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
 |aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
@@ -2335,19 +2334,11 @@ ROM:
 |aes_pipeline_stage7  | sel                         | 256x8         | Block RAM      | 
 |aes_pipeline_stage7  | sel                         | 256x8         | Block RAM      | 
 |aes_pipeline_stage7  | sel                         | 256x8         | Block RAM      | 
+|aes_pipeline_stage7  | sel                         | 256x8         | Block RAM      | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
@@ -2365,8 +2356,16 @@ ROM:
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
+|aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
+|aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
+|aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
+|aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
+|aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
+|aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
+|aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
+|aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
+|aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
 |aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
 |aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
@@ -2392,14 +2391,15 @@ Report RTL Partitions:
 |      |RTL Partition            |Replication |Instances |
 +------+-------------------------+------------+----------+
 |1     |clk_gen__GC0             |           1|         3|
-|2     |aes_pipeline_stage8__GB0 |           1|     22497|
-|3     |aes_pipeline_stage8__GB1 |           1|      6118|
-|4     |aes_pipeline_stage8__GB2 |           1|      7422|
-|5     |gcm_aes__GCB0            |           1|     18973|
-|6     |gcm_aes__GCB1            |           1|     11931|
-|7     |gcm_aes__GCB2            |           1|     21506|
-|8     |aes_pipeline_stage7      |           1|      5025|
-|9     |aes__GC0                 |           1|       206|
+|2     |aes_pipeline_stage8__GB0 |           1|     30140|
+|3     |aes_pipeline_stage8__GB1 |           1|     11509|
+|4     |aes_pipeline_stage8__GB2 |           1|     15508|
+|5     |aes_pipeline_stage8__GB3 |           1|     12675|
+|6     |gcm_aes__GCB0            |           1|     18973|
+|7     |gcm_aes__GCB1            |           1|     11931|
+|8     |gcm_aes__GCB2            |           1|     21506|
+|9     |aes_pipeline_stage7      |           1|      5025|
+|10    |aes__GC0                 |           1|       206|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -2408,10 +2408,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:25 ; elapsed = 00:02:45 . Memory (MB): peak = 2449.195 ; gain = 1516.812 ; free physical = 39703 ; free virtual = 62154
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:40 ; elapsed = 00:03:08 . Memory (MB): peak = 2715.887 ; gain = 1783.500 ; free physical = 38428 ; free virtual = 60881
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:43 ; elapsed = 00:05:04 . Memory (MB): peak = 3378.992 ; gain = 2446.609 ; free physical = 38777 ; free virtual = 61229
+Finished Timing Optimization : Time (s): cpu = 00:07:03 ; elapsed = 00:07:34 . Memory (MB): peak = 3651.355 ; gain = 2718.969 ; free physical = 37827 ; free virtual = 60281
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2423,7 +2423,7 @@ Report RTL Partitions:
 |3     |gcm_aes__GCB1       |           1|     10971|
 |4     |gcm_aes__GCB2       |           1|     19458|
 |5     |aes_pipeline_stage7 |           1|      4769|
-|6     |aes_GT0             |           1|     36002|
+|6     |aes_GT0             |           1|     69869|
 +------+--------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
@@ -2460,77 +2460,78 @@ INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage7/sel__11
 INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage7/sel__11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage7/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage7/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage2/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_4/gcm_aes_instance/stage3/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/r_encrypted_j0_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/r_encrypted_j0_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/r_encrypted_cb_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/r_encrypted_cb_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage4/sel__13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage2/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_5/gcm_aes_instance/stage3/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/r_encrypted_j0_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/r_encrypted_j0_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/r_encrypted_cb_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/r_encrypted_cb_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance i_6/gcm_aes_instance/stage4/sel__13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Common 17-14] Message 'Synth 8-4480' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:53 ; elapsed = 00:05:21 . Memory (MB): peak = 3390.918 ; gain = 2458.535 ; free physical = 37883 ; free virtual = 60343
+Finished Technology Mapping : Time (s): cpu = 00:07:17 ; elapsed = 00:07:54 . Memory (MB): peak = 3663.281 ; gain = 2730.895 ; free physical = 37782 ; free virtual = 60244
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2540,7 +2541,7 @@ Report RTL Partitions:
 |1     |gcm_aes__GCB0 |           1|     10962|
 |2     |gcm_aes__GCB1 |           1|      5809|
 |3     |gcm_aes__GCB2 |           1|      9630|
-|4     |aes_GT0       |           1|     10465|
+|4     |aes_GT0       |           1|     19970|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -2558,7 +2559,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:57 ; elapsed = 00:05:26 . Memory (MB): peak = 3390.918 ; gain = 2458.535 ; free physical = 37884 ; free virtual = 60344
+Finished IO Insertion : Time (s): cpu = 00:07:24 ; elapsed = 00:08:01 . Memory (MB): peak = 3663.281 ; gain = 2730.895 ; free physical = 37783 ; free virtual = 60244
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2571,7 +2572,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:58 ; elapsed = 00:05:26 . Memory (MB): peak = 3390.918 ; gain = 2458.535 ; free physical = 37884 ; free virtual = 60344
+Finished Renaming Generated Instances : Time (s): cpu = 00:07:24 ; elapsed = 00:08:02 . Memory (MB): peak = 3663.281 ; gain = 2730.895 ; free physical = 37783 ; free virtual = 60244
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2583,25 +2584,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:05:01 ; elapsed = 00:05:29 . Memory (MB): peak = 3390.918 ; gain = 2458.535 ; free physical = 37886 ; free virtual = 60346
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:07:28 ; elapsed = 00:08:05 . Memory (MB): peak = 3663.281 ; gain = 2730.895 ; free physical = 37783 ; free virtual = 60245
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:05:01 ; elapsed = 00:05:29 . Memory (MB): peak = 3390.918 ; gain = 2458.535 ; free physical = 37886 ; free virtual = 60346
+Finished Renaming Generated Ports : Time (s): cpu = 00:07:28 ; elapsed = 00:08:06 . Memory (MB): peak = 3663.281 ; gain = 2730.895 ; free physical = 37783 ; free virtual = 60245
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:05:02 ; elapsed = 00:05:30 . Memory (MB): peak = 3390.918 ; gain = 2458.535 ; free physical = 37886 ; free virtual = 60346
+Finished Handling Custom Attributes : Time (s): cpu = 00:07:30 ; elapsed = 00:08:08 . Memory (MB): peak = 3663.281 ; gain = 2730.895 ; free physical = 37783 ; free virtual = 60245
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:05:02 ; elapsed = 00:05:30 . Memory (MB): peak = 3390.918 ; gain = 2458.535 ; free physical = 37886 ; free virtual = 60346
+Finished Renaming Generated Nets : Time (s): cpu = 00:07:30 ; elapsed = 00:08:08 . Memory (MB): peak = 3663.281 ; gain = 2730.895 ; free physical = 37783 ; free virtual = 60245
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2633,20 +2634,20 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     2|
-|2     |CARRY8     |    34|
-|3     |LUT1       |   169|
-|4     |LUT2       |   778|
-|5     |LUT3       |   697|
-|6     |LUT4       |  3868|
-|7     |LUT5       |  3191|
-|8     |LUT6       | 18844|
+|2     |CARRY8     |    44|
+|3     |LUT1       |   163|
+|4     |LUT2       |   979|
+|5     |LUT3       |   717|
+|6     |LUT4       |  9422|
+|7     |LUT5       |  4301|
+|8     |LUT6       | 21423|
 |9     |MMCME2_ADV |     1|
-|10    |MUXF7      |  4203|
-|11    |MUXF8      |  1601|
+|10    |MUXF7      |  4249|
+|11    |MUXF8      |  1600|
 |12    |RAMB18E2   |    16|
 |13    |RAMB18E2_1 |    88|
 |14    |SRL16E     |   129|
-|15    |FDRE       |  4764|
+|15    |FDRE       |  4831|
 |16    |IBUF       |   354|
 |17    |OBUF       |    12|
 +------+-----------+------+
@@ -2655,9 +2656,9 @@ Report Instance Areas:
 +------+-------------------+---------------------+------+
 |      |Instance           |Module               |Cells |
 +------+-------------------+---------------------+------+
-|1     |top                |                     | 38751|
+|1     |top                |                     | 48331|
 |2     |  clk_gen_instance |clk_gen              |     4|
-|3     |  gcm_aes_instance |gcm_aes              | 38334|
+|3     |  gcm_aes_instance |gcm_aes              | 47910|
 |4     |    stage4         |aes_pipeline_stage4  |  2596|
 |5     |    stage5         |aes_pipeline_stage5  |  2596|
 |6     |    keyexpan2      |aes_pipeline_stage12 |   930|
@@ -2668,15 +2669,15 @@ Report Instance Areas:
 |11    |    stage3         |aes_pipeline_stage3  |  3833|
 |12    |    stage6         |aes_pipeline_stage6  |  2640|
 |13    |    stage7         |aes_pipeline_stage7  |  2545|
-|14    |    stage8         |aes_pipeline_stage8  | 10417|
-|15    |  u                |display              |    48|
+|14    |    stage8         |aes_pipeline_stage8  | 19993|
+|15    |  u                |display              |    52|
 +------+-------------------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:05:02 ; elapsed = 00:05:30 . Memory (MB): peak = 3390.918 ; gain = 2458.535 ; free physical = 37886 ; free virtual = 60346
+Finished Writing Synthesis Report : Time (s): cpu = 00:07:30 ; elapsed = 00:08:08 . Memory (MB): peak = 3663.281 ; gain = 2730.895 ; free physical = 37783 ; free virtual = 60245
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1334 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:04:51 ; elapsed = 00:05:24 . Memory (MB): peak = 3390.918 ; gain = 2014.293 ; free physical = 43113 ; free virtual = 65573
-Synthesis Optimization Complete : Time (s): cpu = 00:05:02 ; elapsed = 00:05:35 . Memory (MB): peak = 3390.918 ; gain = 2458.535 ; free physical = 43131 ; free virtual = 65574
+Synthesis Optimization Runtime : Time (s): cpu = 00:07:18 ; elapsed = 00:07:59 . Memory (MB): peak = 3663.281 ; gain = 2274.652 ; free physical = 43154 ; free virtual = 65616
+Synthesis Optimization Complete : Time (s): cpu = 00:07:31 ; elapsed = 00:08:10 . Memory (MB): peak = 3663.281 ; gain = 2730.895 ; free physical = 43171 ; free virtual = 65616
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 357 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -2743,9 +2744,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   MMCME2_ADV => MMCME3_ADV: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-439 Infos, 211 Warnings, 30 Critical Warnings and 0 Errors encountered.
+440 Infos, 211 Warnings, 30 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:05:06 ; elapsed = 00:05:39 . Memory (MB): peak = 3435.020 ; gain = 2432.133 ; free physical = 43131 ; free virtual = 65573
+synth_design: Time (s): cpu = 00:07:35 ; elapsed = 00:08:15 . Memory (MB): peak = 3707.383 ; gain = 2704.492 ; free physical = 43172 ; free virtual = 65617
 # exec mkdir -p -- ./reports
 # report_timing -setup  -file ./reports/synth_aes_setup_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: max.
@@ -2753,7 +2754,7 @@ INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum o
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-2] Deriving generated clocks
 INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
-report_timing: Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 3506.078 ; gain = 71.059 ; free physical = 43132 ; free virtual = 65574
+report_timing: Time (s): cpu = 00:00:41 ; elapsed = 00:00:31 . Memory (MB): peak = 3778.441 ; gain = 71.059 ; free physical = 42991 ; free virtual = 65436
 # report_timing -hold   -file ./reports/synth_aes_hold_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
@@ -2762,8 +2763,8 @@ INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type min 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 # report_utilization    -file ./reports/synth_utilization_report.txt
-report_utilization: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.29 . Memory (MB): peak = 3506.078 ; gain = 0.000 ; free physical = 43129 ; free virtual = 65572
+report_utilization: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.34 . Memory (MB): peak = 3778.441 ; gain = 0.000 ; free physical = 42987 ; free virtual = 65432
 # report_utilization -hierarchical  -file ./reports/synth_utilization_report_submodule.txt
-report_utilization: Time (s): cpu = 00:00:00.34 ; elapsed = 00:00:00.43 . Memory (MB): peak = 3506.078 ; gain = 0.000 ; free physical = 43129 ; free virtual = 65571
+report_utilization: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.51 . Memory (MB): peak = 3778.441 ; gain = 0.000 ; free physical = 42986 ; free virtual = 65431
 # write_schematic -format pdf -orientation portrait /home/yu/projects/AES_GCM/schematic_1.pdf
-INFO: [Common 17-206] Exiting Vivado at Tue Oct 30 20:08:42 2018...
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 30 20:29:11 2018...
