@@ -34,15 +34,15 @@ Using part: xcku035-fbva900-3-e
 Attempting to get a license for feature 'Synthesis' and/or device 'xcku035'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku035'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 21654 
-WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage12.sv:4]
-WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage13.sv:4]
-WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage14.sv:4]
+INFO: Helper process launched with PID 23254 
+WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage12.sv:4]
+WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage13.sv:4]
+WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage14.sv:4]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1100.691 ; gain = 168.305 ; free physical = 45317 ; free virtual = 67745
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1100.691 ; gain = 168.305 ; free physical = 45154 ; free virtual = 67588
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'aes' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes.sv:4]
-INFO: [Synth 8-638] synthesizing module 'clk_gen' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/clk_gen.sv:1]
+INFO: [Synth 8-638] synthesizing module 'aes' [/home/yu/projects/new_aes/tag/AES_GCM/aes.sv:4]
+INFO: [Synth 8-638] synthesizing module 'clk_gen' [/home/yu/projects/new_aes/tag/AES_GCM/clk_gen.sv:1]
 INFO: [Synth 8-638] synthesizing module 'IBUF' [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:14146]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
@@ -52,7 +52,7 @@ INFO: [Synth 8-638] synthesizing module 'IBUF' [/home/yu/Vivado/Vivado/2016.4/sc
 INFO: [Synth 8-256] done synthesizing module 'IBUF' (1#1) [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:14146]
 INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:20414]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
-	Parameter CLKFBOUT_MULT_F bound to: 20.000000 - type: float 
+	Parameter CLKFBOUT_MULT_F bound to: 23.500000 - type: float 
 	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: float 
@@ -102,86 +102,86 @@ INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [/home/yu/Vivado/Vivado/201
 INFO: [Synth 8-256] done synthesizing module 'MMCME2_ADV' (2#1) [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:20414]
 INFO: [Synth 8-638] synthesizing module 'BUFG' [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:607]
 INFO: [Synth 8-256] done synthesizing module 'BUFG' (3#1) [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:607]
-INFO: [Synth 8-256] done synthesizing module 'clk_gen' (4#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/clk_gen.sv:1]
-INFO: [Synth 8-638] synthesizing module 'gcm_aes' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/gcm_aes.sv:9]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage1' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage1.sv:1]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage1' (5#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage1.sv:1]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage2' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage2.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage2' (6#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage2.sv:1]
-WARNING: [Synth 8-350] instance 'stage2' of module 'aes_pipeline_stage2' requires 17 connections, but only 16 given [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/gcm_aes.sv:134]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage12' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage12.sv:1]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-WARNING: [Synth 8-308] ignoring empty port [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage12.sv:5]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage12' (7#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage12.sv:1]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage3' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage3.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage3' (8#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage3.sv:1]
-WARNING: [Synth 8-350] instance 'stage3' of module 'aes_pipeline_stage3' requires 18 connections, but only 17 given [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/gcm_aes.sv:161]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage13' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage13.sv:1]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-WARNING: [Synth 8-308] ignoring empty port [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage13.sv:5]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage13' (9#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage13.sv:1]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage4' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage4.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage4' (10#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage4.sv:1]
-WARNING: [Synth 8-350] instance 'stage4' of module 'aes_pipeline_stage4' requires 17 connections, but only 16 given [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/gcm_aes.sv:187]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage14' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage14.sv:1]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/fn_aes_key_expansion.sv:10]
-WARNING: [Synth 8-308] ignoring empty port [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage14.sv:5]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage14' (11#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage14.sv:1]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage5' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage5.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage5' (12#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage5.sv:1]
-WARNING: [Synth 8-350] instance 'stage5' of module 'aes_pipeline_stage5' requires 17 connections, but only 16 given [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/gcm_aes.sv:212]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage6' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage6.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage6' (13#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage6.sv:1]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage7' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage7.sv:1]
-WARNING: [Synth 8-3936] Found unconnected internal register 'r_key_schedule_reg' and it is trimmed from '1408' to '256' bits. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage7.sv:57]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage7' (14#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage7.sv:1]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage8' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage8.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage8' (15#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage8.sv:1]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage9' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage9.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage9' (16#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage9.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'gcm_aes' (17#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/gcm_aes.sv:9]
-INFO: [Synth 8-638] synthesizing module 'display' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/display.sv:3]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/display.sv:35]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/display.sv:48]
-INFO: [Synth 8-256] done synthesizing module 'display' (18#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/display.sv:3]
-INFO: [Synth 8-256] done synthesizing module 'aes' (19#1) [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes.sv:4]
+INFO: [Synth 8-256] done synthesizing module 'clk_gen' (4#1) [/home/yu/projects/new_aes/tag/AES_GCM/clk_gen.sv:1]
+INFO: [Synth 8-638] synthesizing module 'gcm_aes' [/home/yu/projects/new_aes/tag/AES_GCM/gcm_aes.sv:9]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage1' [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage1.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage1' (5#1) [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage1.sv:1]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage2' [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage2.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage2' (6#1) [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage2.sv:1]
+WARNING: [Synth 8-350] instance 'stage2' of module 'aes_pipeline_stage2' requires 17 connections, but only 16 given [/home/yu/projects/new_aes/tag/AES_GCM/gcm_aes.sv:134]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage12' [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage12.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+WARNING: [Synth 8-308] ignoring empty port [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage12.sv:5]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage12' (7#1) [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage12.sv:1]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage3' [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage3.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage3' (8#1) [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage3.sv:1]
+WARNING: [Synth 8-350] instance 'stage3' of module 'aes_pipeline_stage3' requires 18 connections, but only 17 given [/home/yu/projects/new_aes/tag/AES_GCM/gcm_aes.sv:161]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage13' [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage13.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+WARNING: [Synth 8-308] ignoring empty port [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage13.sv:5]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage13' (9#1) [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage13.sv:1]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage4' [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage4.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage4' (10#1) [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage4.sv:1]
+WARNING: [Synth 8-350] instance 'stage4' of module 'aes_pipeline_stage4' requires 17 connections, but only 16 given [/home/yu/projects/new_aes/tag/AES_GCM/gcm_aes.sv:187]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage14' [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage14.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/fn_aes_key_expansion.sv:10]
+WARNING: [Synth 8-308] ignoring empty port [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage14.sv:5]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage14' (11#1) [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage14.sv:1]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage5' [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage5.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage5' (12#1) [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage5.sv:1]
+WARNING: [Synth 8-350] instance 'stage5' of module 'aes_pipeline_stage5' requires 17 connections, but only 16 given [/home/yu/projects/new_aes/tag/AES_GCM/gcm_aes.sv:212]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage6' [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage6.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage6' (13#1) [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage6.sv:1]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage7' [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage7.sv:1]
+WARNING: [Synth 8-3936] Found unconnected internal register 'r_key_schedule_reg' and it is trimmed from '1408' to '256' bits. [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage7.sv:57]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage7' (14#1) [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage7.sv:1]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage8' [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage8.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage8' (15#1) [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage8.sv:1]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage9' [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage9.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage9' (16#1) [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage9.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'gcm_aes' (17#1) [/home/yu/projects/new_aes/tag/AES_GCM/gcm_aes.sv:9]
+INFO: [Synth 8-638] synthesizing module 'display' [/home/yu/projects/new_aes/tag/AES_GCM/display.sv:3]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/display.sv:35]
+INFO: [Synth 8-226] default block is never used [/home/yu/projects/new_aes/tag/AES_GCM/display.sv:48]
+INFO: [Synth 8-256] done synthesizing module 'display' (18#1) [/home/yu/projects/new_aes/tag/AES_GCM/display.sv:3]
+INFO: [Synth 8-256] done synthesizing module 'aes' (19#1) [/home/yu/projects/new_aes/tag/AES_GCM/aes.sv:4]
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[0]
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[1]
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[2]
@@ -284,7 +284,7 @@ WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_sc
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[99]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1855.199 ; gain = 922.812 ; free physical = 44540 ; free virtual = 66987
+Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1855.199 ; gain = 922.812 ; free physical = 44377 ; free virtual = 66831
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -294,7 +294,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1855.199 ; gain = 922.812 ; free physical = 44541 ; free virtual = 66988
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1855.199 ; gain = 922.812 ; free physical = 44377 ; free virtual = 66831
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -303,9 +303,9 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc]
-Finished Parsing XDC File [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/aes_propImpl.xdc].
+Parsing XDC File [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc]
+Finished Parsing XDC File [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/aes_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/aes_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
@@ -316,25 +316,25 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IBUF => IBUF (INBUF, IBUFCTRL): 1 instances
   MMCME2_ADV => MMCME3_ADV: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2249.355 ; gain = 0.000 ; free physical = 44293 ; free virtual = 66740
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2250.355 ; gain = 0.000 ; free physical = 44129 ; free virtual = 66582
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 2249.355 ; gain = 1316.969 ; free physical = 44290 ; free virtual = 66737
+Finished Constraint Validation : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 2250.355 ; gain = 1317.969 ; free physical = 44123 ; free virtual = 66577
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xcku035-fbva900-3-e
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 2249.355 ; gain = 1316.969 ; free physical = 44290 ; free virtual = 66737
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 2250.355 ; gain = 1317.969 ; free physical = 44123 ; free virtual = 66577
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 2249.355 ; gain = 1316.969 ; free physical = 44290 ; free virtual = 66737
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 2250.355 ; gain = 1317.969 ; free physical = 44123 ; free virtual = 66577
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:31 ; elapsed = 00:01:31 . Memory (MB): peak = 2274.355 ; gain = 1341.969 ; free physical = 44157 ; free virtual = 66604
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:31 ; elapsed = 00:01:32 . Memory (MB): peak = 2274.355 ; gain = 1341.969 ; free physical = 43993 ; free virtual = 66446
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -356,14 +356,14 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage2.sv:55]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage12.sv:16]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage3.sv:61]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage13.sv:16]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage4.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage14.sv:16]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage5.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage6.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage2.sv:55]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage12.sv:16]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage3.sv:61]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage13.sv:16]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage4.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage14.sv:16]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage5.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage6.sv:58]
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input    128 Bit       Adders := 2     
@@ -398,14 +398,14 @@ Finished RTL Component Statistics
 ---------------------------------------------------------------------------------
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage2.sv:55]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage12.sv:16]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage3.sv:61]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage13.sv:16]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage4.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage14.sv:16]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage5.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage6.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage2.sv:55]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage12.sv:16]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage3.sv:61]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage13.sv:16]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage4.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage14.sv:16]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage5.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage6.sv:58]
 Hierarchical RTL Component report 
 Module aes 
 Detailed RTL Component Info : 
@@ -598,7 +598,7 @@ INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[19]' (FD) to 'i_9/u/count
 INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[18]' (FD) to 'i_9/u/count_reg[15]'
 INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[15]' (FD) to 'i_9/u/count_reg[13]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_9/\u/count_reg[13] )
-INFO: [Synth 8-4471] merging register 'stage1/r_cipher_key_reg[0:127]' into 'stage1/r_cipher_key_reg[0:127]' [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/aes_pipeline_stage1.sv:46]
+INFO: [Synth 8-4471] merging register 'stage1/r_cipher_key_reg[0:127]' into 'stage1/r_cipher_key_reg[0:127]' [/home/yu/projects/new_aes/tag/AES_GCM/aes_pipeline_stage1.sv:46]
 INFO: [Synth 8-3886] merging instance 'stage2/r_key_schedule_reg[162]' (FD) to 'keyexpan2/r_key_schedule_reg[162]'
 INFO: [Synth 8-3886] merging instance 'stage2/r_key_schedule_reg[163]' (FD) to 'keyexpan2/r_key_schedule_reg[163]'
 INFO: [Synth 8-3886] merging instance 'stage2/r_key_schedule_reg[164]' (FD) to 'keyexpan2/r_key_schedule_reg[164]'
@@ -876,7 +876,7 @@ INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instan
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:26 ; elapsed = 00:02:55 . Memory (MB): peak = 2399.238 ; gain = 1466.852 ; free physical = 38589 ; free virtual = 61045
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:26 ; elapsed = 00:02:55 . Memory (MB): peak = 2399.238 ; gain = 1466.852 ; free physical = 38330 ; free virtual = 60792
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2323,6 +2323,7 @@ ROM:
 |aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
 |aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
 |aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
+|aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
 |aes_pipeline_stage7  | r_encrypted_cb_reg_rep_bsel | 256x8         | Block RAM      | 
 |aes_pipeline_stage7  | sel                         | 256x8         | Block RAM      | 
 |aes_pipeline_stage7  | sel                         | 256x8         | Block RAM      | 
@@ -2338,7 +2339,6 @@ ROM:
 |aes_pipeline_stage7  | sel                         | 256x8         | Block RAM      | 
 |aes_pipeline_stage7  | sel                         | 256x8         | Block RAM      | 
 |aes_pipeline_stage7  | sel                         | 256x8         | Block RAM      | 
-|aes_pipeline_stage7  | sel                         | 256x8         | Block RAM      | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
@@ -2363,14 +2363,14 @@ ROM:
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
+|aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
+|aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_3                  | 256x8         | LUT            | 
 |aes_pipeline_stage7  | gf_table_2                  | 256x8         | LUT            | 
-|aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
 |aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
 |aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
 |aes_pipeline_stage7  | SBOX                        | 256x8         | LUT            | 
@@ -2415,10 +2415,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:34 ; elapsed = 00:03:03 . Memory (MB): peak = 2692.676 ; gain = 1760.289 ; free physical = 38299 ; free virtual = 60755
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:33 ; elapsed = 00:03:02 . Memory (MB): peak = 2692.676 ; gain = 1760.289 ; free physical = 38039 ; free virtual = 60501
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:12 ; elapsed = 00:04:42 . Memory (MB): peak = 3649.184 ; gain = 2716.797 ; free physical = 38295 ; free virtual = 60753
+Finished Timing Optimization : Time (s): cpu = 00:04:12 ; elapsed = 00:04:41 . Memory (MB): peak = 3650.051 ; gain = 2717.664 ; free physical = 37086 ; free virtual = 59550
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2541,7 +2541,7 @@ INFO: [Common 17-14] Message 'Synth 8-4480' appears 100 times and further instan
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:21 ; elapsed = 00:04:59 . Memory (MB): peak = 3661.109 ; gain = 2728.723 ; free physical = 38537 ; free virtual = 61003
+Finished Technology Mapping : Time (s): cpu = 00:04:20 ; elapsed = 00:04:58 . Memory (MB): peak = 3661.977 ; gain = 2729.590 ; free physical = 37329 ; free virtual = 59801
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2568,7 +2568,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:27 ; elapsed = 00:05:04 . Memory (MB): peak = 3661.109 ; gain = 2728.723 ; free physical = 38538 ; free virtual = 61004
+Finished IO Insertion : Time (s): cpu = 00:04:25 ; elapsed = 00:05:03 . Memory (MB): peak = 3661.977 ; gain = 2729.590 ; free physical = 37330 ; free virtual = 59802
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2581,7 +2581,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:27 ; elapsed = 00:05:04 . Memory (MB): peak = 3661.109 ; gain = 2728.723 ; free physical = 38538 ; free virtual = 61004
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:25 ; elapsed = 00:05:03 . Memory (MB): peak = 3661.977 ; gain = 2729.590 ; free physical = 37330 ; free virtual = 59802
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2593,25 +2593,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:31 ; elapsed = 00:05:08 . Memory (MB): peak = 3661.109 ; gain = 2728.723 ; free physical = 38539 ; free virtual = 61004
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:29 ; elapsed = 00:05:07 . Memory (MB): peak = 3661.977 ; gain = 2729.590 ; free physical = 37330 ; free virtual = 59802
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:31 ; elapsed = 00:05:08 . Memory (MB): peak = 3661.109 ; gain = 2728.723 ; free physical = 38539 ; free virtual = 61004
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:29 ; elapsed = 00:05:07 . Memory (MB): peak = 3661.977 ; gain = 2729.590 ; free physical = 37330 ; free virtual = 59802
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:32 ; elapsed = 00:05:10 . Memory (MB): peak = 3661.109 ; gain = 2728.723 ; free physical = 38539 ; free virtual = 61004
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:31 ; elapsed = 00:05:09 . Memory (MB): peak = 3661.977 ; gain = 2729.590 ; free physical = 37330 ; free virtual = 59802
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:32 ; elapsed = 00:05:10 . Memory (MB): peak = 3661.109 ; gain = 2728.723 ; free physical = 38539 ; free virtual = 61004
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:31 ; elapsed = 00:05:09 . Memory (MB): peak = 3661.977 ; gain = 2729.590 ; free physical = 37330 ; free virtual = 59802
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2683,69 +2683,69 @@ Report Instance Areas:
 |16    |  u                |display              |    48|
 +------+-------------------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:32 ; elapsed = 00:05:10 . Memory (MB): peak = 3661.109 ; gain = 2728.723 ; free physical = 38539 ; free virtual = 61004
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:31 ; elapsed = 00:05:09 . Memory (MB): peak = 3661.977 ; gain = 2729.590 ; free physical = 37330 ; free virtual = 59802
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1234 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:04:19 ; elapsed = 00:05:03 . Memory (MB): peak = 3661.109 ; gain = 2247.480 ; free physical = 43820 ; free virtual = 66285
-Synthesis Optimization Complete : Time (s): cpu = 00:04:33 ; elapsed = 00:05:15 . Memory (MB): peak = 3661.109 ; gain = 2728.723 ; free physical = 43837 ; free virtual = 66285
+Synthesis Optimization Runtime : Time (s): cpu = 00:04:17 ; elapsed = 00:04:58 . Memory (MB): peak = 3661.977 ; gain = 2247.348 ; free physical = 42604 ; free virtual = 65076
+Synthesis Optimization Complete : Time (s): cpu = 00:04:31 ; elapsed = 00:05:10 . Memory (MB): peak = 3661.977 ; gain = 2729.590 ; free physical = 42621 ; free virtual = 65075
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 357 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc]
-CRITICAL WARNING: [Common 17-69] Command failed: 'W5' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:2]
-CRITICAL WARNING: [Common 17-69] Command failed: 'U18' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:7]
-CRITICAL WARNING: [Common 17-69] Command failed: 'V17' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:11]
-CRITICAL WARNING: [Common 17-69] Command failed: 'V16' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:13]
-CRITICAL WARNING: [Common 17-69] Command failed: 'W16' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:15]
-CRITICAL WARNING: [Common 17-69] Command failed: 'W17' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:17]
-CRITICAL WARNING: [Common 17-69] Command failed: 'W15' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:19]
-CRITICAL WARNING: [Common 17-69] Command failed: 'V15' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:21]
-CRITICAL WARNING: [Common 17-69] Command failed: 'W14' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:23]
-CRITICAL WARNING: [Common 17-69] Command failed: 'W13' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:25]
+Parsing XDC File [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W5' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:2]
+CRITICAL WARNING: [Common 17-69] Command failed: 'U18' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:7]
+CRITICAL WARNING: [Common 17-69] Command failed: 'V17' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:11]
+CRITICAL WARNING: [Common 17-69] Command failed: 'V16' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:13]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W16' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:15]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W17' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:17]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W15' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:19]
+CRITICAL WARNING: [Common 17-69] Command failed: 'V15' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:21]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W14' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:23]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W13' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:25]
 CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not find a valid bel for the shape with the following elements: 
 	sw_IBUF[8]_inst/INBUF_INST
 	sw[8]
 	sw_IBUF[8]_inst/IBUFCTRL_INST
- [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:27]
-CRITICAL WARNING: [Common 17-69] Command failed: 'T3' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:29]
+ [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:27]
+CRITICAL WARNING: [Common 17-69] Command failed: 'T3' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:29]
 CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not find a valid bel for the shape with the following elements: 
 	sw_IBUF[10]_inst/INBUF_INST
 	sw[10]
 	sw_IBUF[10]_inst/IBUFCTRL_INST
- [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:31]
+ [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:31]
 CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not find a valid bel for the shape with the following elements: 
 	sw_IBUF[11]_inst/INBUF_INST
 	sw[11]
 	sw_IBUF[11]_inst/IBUFCTRL_INST
- [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:33]
-CRITICAL WARNING: [Common 17-69] Command failed: 'W2' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:35]
-CRITICAL WARNING: [Common 17-69] Command failed: 'U1' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:37]
+ [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:33]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W2' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:35]
+CRITICAL WARNING: [Common 17-69] Command failed: 'U1' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:37]
 CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not find a valid bel for the shape with the following elements: 
 	sw_IBUF[14]_inst/INBUF_INST
 	sw[14]
 	sw_IBUF[14]_inst/IBUFCTRL_INST
- [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:39]
-CRITICAL WARNING: [Common 17-69] Command failed: 'R2' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:41]
-CRITICAL WARNING: [Common 17-69] Command failed: 'W7' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:45]
-CRITICAL WARNING: [Common 17-69] Command failed: 'W6' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:47]
-CRITICAL WARNING: [Common 17-69] Command failed: 'U8' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:49]
-CRITICAL WARNING: [Common 17-69] Command failed: 'V8' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:51]
-CRITICAL WARNING: [Common 17-69] Command failed: 'U5' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:53]
-CRITICAL WARNING: [Common 17-69] Command failed: 'V5' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:55]
-CRITICAL WARNING: [Common 17-69] Command failed: 'U7' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:57]
-CRITICAL WARNING: [Common 17-69] Command failed: 'V7' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:60]
-CRITICAL WARNING: [Common 17-69] Command failed: 'U2' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:63]
+ [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:39]
+CRITICAL WARNING: [Common 17-69] Command failed: 'R2' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:41]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W7' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:45]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W6' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:47]
+CRITICAL WARNING: [Common 17-69] Command failed: 'U8' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:49]
+CRITICAL WARNING: [Common 17-69] Command failed: 'V8' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:51]
+CRITICAL WARNING: [Common 17-69] Command failed: 'U5' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:53]
+CRITICAL WARNING: [Common 17-69] Command failed: 'V5' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:55]
+CRITICAL WARNING: [Common 17-69] Command failed: 'U7' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:57]
+CRITICAL WARNING: [Common 17-69] Command failed: 'V7' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:60]
+CRITICAL WARNING: [Common 17-69] Command failed: 'U2' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:63]
 CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Site location (GTHE3_CHANNEL_X0Y7) is not valid for the shape with the following elements: 
 	an_OBUF[1]_inst
 	an[1]
- [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:65]
-CRITICAL WARNING: [Common 17-69] Command failed: 'V4' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:67]
+ [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:65]
+CRITICAL WARNING: [Common 17-69] Command failed: 'V4' is not a valid site or package pin name. [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:67]
 CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Site location (GTHE3_CHANNEL_X0Y6) is not valid for the shape with the following elements: 
 	an_OBUF[3]_inst
 	an[3]
- [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc:69]
-Finished Parsing XDC File [/home/yu/projects/new_aes/tag/with_tag_running_out_of_LUTs/constraints_artix_7.xdc]
+ [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc:69]
+Finished Parsing XDC File [/home/yu/projects/new_aes/tag/AES_GCM/constraints_artix_7.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 357 instances were transformed.
@@ -2756,7 +2756,7 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 444 Infos, 211 Warnings, 30 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:38 ; elapsed = 00:05:20 . Memory (MB): peak = 3705.211 ; gain = 2702.320 ; free physical = 43838 ; free virtual = 66286
+synth_design: Time (s): cpu = 00:04:36 ; elapsed = 00:05:15 . Memory (MB): peak = 3706.078 ; gain = 2703.188 ; free physical = 42622 ; free virtual = 65076
 # exec mkdir -p -- ./reports
 # report_timing -setup  -file ./reports/synth_aes_setup_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: max.
@@ -2764,7 +2764,7 @@ INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum o
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-2] Deriving generated clocks
 INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
-report_timing: Time (s): cpu = 00:00:40 ; elapsed = 00:00:30 . Memory (MB): peak = 3776.270 ; gain = 71.059 ; free physical = 43837 ; free virtual = 66285
+report_timing: Time (s): cpu = 00:00:40 ; elapsed = 00:00:30 . Memory (MB): peak = 3777.137 ; gain = 71.059 ; free physical = 42624 ; free virtual = 65079
 # report_timing -hold   -file ./reports/synth_aes_hold_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
@@ -2773,8 +2773,8 @@ INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type min 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 # report_utilization    -file ./reports/synth_utilization_report.txt
-report_utilization: Time (s): cpu = 00:00:00.23 ; elapsed = 00:00:00.32 . Memory (MB): peak = 3776.270 ; gain = 0.000 ; free physical = 43834 ; free virtual = 66282
+report_utilization: Time (s): cpu = 00:00:00.20 ; elapsed = 00:00:00.32 . Memory (MB): peak = 3777.137 ; gain = 0.000 ; free physical = 42624 ; free virtual = 65078
 # report_utilization -hierarchical  -file ./reports/synth_utilization_report_submodule.txt
-report_utilization: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.50 . Memory (MB): peak = 3776.270 ; gain = 0.000 ; free physical = 43835 ; free virtual = 66282
+report_utilization: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.50 . Memory (MB): peak = 3777.137 ; gain = 0.000 ; free physical = 42623 ; free virtual = 65077
 # write_schematic -format pdf -orientation portrait /home/yu/projects/AES_GCM/schematic_1.pdf
-INFO: [Common 17-206] Exiting Vivado at Tue Oct 30 21:39:54 2018...
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 30 21:58:24 2018...
