@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date              : Tue Oct 30 18:18:54 2018
+| Date              : Tue Oct 30 20:08:40 2018
 | Host              : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command           : report_timing -setup -file ./reports/synth_aes_setup_report.txt
 | Design            : aes
@@ -12,23 +12,23 @@ Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 Timing Report
 
-Slack (MET) :             1.911ns  (required time - arrival time)
+Slack (MET) :             0.267ns  (required time - arrival time)
   Source:                 gcm_aes_instance/stage8/r_counter_reg[118]/C
-                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@3.333ns period=6.667ns})
-  Destination:            u/x_reg[9]/D
-                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@3.333ns period=6.667ns})
+                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            u/x_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             w_clk_out_clk_wiz_gen
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            6.667ns  (w_clk_out_clk_wiz_gen rise@6.667ns - w_clk_out_clk_wiz_gen rise@0.000ns)
-  Data Path Delay:        4.601ns  (logic 1.915ns (41.621%)  route 2.686ns (58.379%))
-  Logic Levels:           25  (CARRY8=14 LUT1=1 LUT3=1 LUT4=1 LUT5=1 LUT6=7)
+  Requirement:            5.000ns  (w_clk_out_clk_wiz_gen rise@5.000ns - w_clk_out_clk_wiz_gen rise@0.000ns)
+  Data Path Delay:        4.588ns  (logic 1.878ns (40.933%)  route 2.710ns (59.067%))
+  Logic Levels:           25  (CARRY8=14 LUT1=1 LUT3=1 LUT4=1 LUT5=2 LUT6=6)
   Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -0.285ns = ( 6.382 - 6.667 ) 
+    Destination Clock Delay (DCD):    -0.285ns = ( 4.715 - 5.000 ) 
     Source Clock Delay      (SCD):    0.048ns
     Clock Pessimism Removal (CPR):    0.188ns
-  Clock Uncertainty:      0.056ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:      0.047ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.088ns
+    Discrete Jitter          (DJ):    0.063ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -92,55 +92,55 @@ Slack (MET) :             1.911ns  (required time - arrival time)
                          CARRY8 (Prop_CARRY8_CI_O[7])
                                                       0.168     1.180 r  gcm_aes_instance/stage8/r_counter_reg[15]_i_2/O[7]
                          net (fo=4, unplaced)         0.212     1.392    gcm_aes_instance/stage8/r_counter_reg[15]_i_2_n_8
-                         LUT3 (Prop_LUT3_I0_O)        0.123     1.515 r  gcm_aes_instance/stage8/r_sblock[5]_i_45/O
-                         net (fo=1, unplaced)         0.257     1.772    gcm_aes_instance/stage8/r_sblock[5]_i_45_n_0
+                         LUT3 (Prop_LUT3_I0_O)        0.123     1.515 r  gcm_aes_instance/stage8/r_sblock[13]_i_45/O
+                         net (fo=1, unplaced)         0.257     1.772    gcm_aes_instance/stage8/r_sblock[13]_i_45_n_0
                          CARRY8 (Prop_CARRY8_DI[0]_CO[7])
-                                                      0.316     2.088 r  gcm_aes_instance/stage8/r_sblock_reg[5]_i_9/CO[7]
+                                                      0.316     2.088 r  gcm_aes_instance/stage8/r_sblock_reg[13]_i_14/CO[7]
                          net (fo=203, unplaced)       0.211     2.299    gcm_aes_instance/stage8/w_auth_input1
-                         LUT6 (Prop_LUT6_I2_O)        0.034     2.333 r  gcm_aes_instance/stage8/r_sblock[34]_i_58/O
-                         net (fo=128, unplaced)       0.315     2.648    gcm_aes_instance/stage8/p_0_in377_out[121]
-                         LUT4 (Prop_LUT4_I2_O)        0.085     2.733 r  gcm_aes_instance/stage8/r_sblock[57]_i_62/O
-                         net (fo=1, unplaced)         0.200     2.933    gcm_aes_instance/stage8/r_sblock[57]_i_62_n_0
-                         LUT6 (Prop_LUT6_I4_O)        0.034     2.967 r  gcm_aes_instance/stage8/r_sblock[57]_i_55/O
-                         net (fo=1, unplaced)         0.216     3.183    gcm_aes_instance/stage8/r_sblock[57]_i_55_n_0
-                         LUT5 (Prop_LUT5_I0_O)        0.153     3.336 r  gcm_aes_instance/stage8/r_sblock[57]_i_37/O
-                         net (fo=1, unplaced)         0.224     3.560    gcm_aes_instance/stage8/Z79_in[70]
-                         LUT6 (Prop_LUT6_I2_O)        0.034     3.594 r  gcm_aes_instance/stage8/r_sblock[57]_i_15/O
-                         net (fo=1, unplaced)         0.224     3.818    gcm_aes_instance/stage8/r_sblock[57]_i_15_n_0
-                         LUT6 (Prop_LUT6_I3_O)        0.034     3.852 r  gcm_aes_instance/stage8/r_sblock[57]_i_5/O
-                         net (fo=1, unplaced)         0.224     4.076    gcm_aes_instance/stage8/r_sblock[57]_i_5_n_0
-                         LUT6 (Prop_LUT6_I3_O)        0.034     4.110 r  gcm_aes_instance/stage8/r_sblock[57]_i_1/O
-                         net (fo=2, unplaced)         0.224     4.334    gcm_aes_instance/stage8/fn_product_return[57]
-                         LUT6 (Prop_LUT6_I5_O)        0.034     4.368 r  gcm_aes_instance/stage8/x[9]_i_2/O
-                         net (fo=1, unplaced)         0.225     4.593    gcm_aes_instance/stage8/x[9]_i_2_n_0
-                         LUT6 (Prop_LUT6_I0_O)        0.034     4.627 r  gcm_aes_instance/stage8/x[9]_i_1/O
-                         net (fo=1, unplaced)         0.022     4.649    u/D[6]
-                         FDRE                                         r  u/x_reg[9]/D
+                         LUT6 (Prop_LUT6_I2_O)        0.034     2.333 r  gcm_aes_instance/stage8/r_sblock[25]_i_62/O
+                         net (fo=129, unplaced)       0.315     2.648    gcm_aes_instance/stage8/p_0_in377_out[111]
+                         LUT4 (Prop_LUT4_I3_O)        0.034     2.682 r  gcm_aes_instance/stage8/r_sblock[11]_i_71/O
+                         net (fo=1, unplaced)         0.224     2.906    gcm_aes_instance/stage8/r_sblock[11]_i_71_n_0
+                         LUT5 (Prop_LUT5_I4_O)        0.034     2.940 r  gcm_aes_instance/stage8/r_sblock[11]_i_64/O
+                         net (fo=1, unplaced)         0.217     3.157    gcm_aes_instance/stage8/r_sblock[11]_i_64_n_0
+                         LUT6 (Prop_LUT6_I0_O)        0.167     3.324 r  gcm_aes_instance/stage8/r_sblock[11]_i_51/O
+                         net (fo=1, unplaced)         0.224     3.548    gcm_aes_instance/stage8/Z79_in[116]
+                         LUT6 (Prop_LUT6_I1_O)        0.034     3.582 r  gcm_aes_instance/stage8/r_sblock[11]_i_27/O
+                         net (fo=1, unplaced)         0.224     3.806    gcm_aes_instance/stage8/r_sblock[11]_i_27_n_0
+                         LUT6 (Prop_LUT6_I3_O)        0.034     3.840 r  gcm_aes_instance/stage8/r_sblock[11]_i_5/O
+                         net (fo=1, unplaced)         0.224     4.064    gcm_aes_instance/stage8/r_sblock[11]_i_5_n_0
+                         LUT6 (Prop_LUT6_I3_O)        0.034     4.098 r  gcm_aes_instance/stage8/r_sblock[11]_i_1/O
+                         net (fo=2, unplaced)         0.224     4.322    gcm_aes_instance/stage8/fn_product_return[11]
+                         LUT5 (Prop_LUT5_I4_O)        0.034     4.356 r  gcm_aes_instance/stage8/x[11]_i_5/O
+                         net (fo=1, unplaced)         0.224     4.580    gcm_aes_instance/stage8/x[11]_i_5_n_0
+                         LUT6 (Prop_LUT6_I5_O)        0.034     4.614 r  gcm_aes_instance/stage8/x[11]_i_1/O
+                         net (fo=1, unplaced)         0.022     4.636    u/D[4]
+                         FDRE                                         r  u/x_reg[11]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock w_clk_out_clk_wiz_gen rise edge)
-                                                      6.667     6.667 r  
-                                                      0.000     6.667 r  clk (IN)
-                         net (fo=0)                   0.000     6.667    clk_gen_instance/clkin1_ibufg/I
-                         INBUF (Prop_INBUF_PAD_O)     1.002     7.668 r  clk_gen_instance/clkin1_ibufg/INBUF_INST/O
-                         net (fo=1, unplaced)         0.045     7.713    clk_gen_instance/clkin1_ibufg/OUT
+                                                      5.000     5.000 r  
+                                                      0.000     5.000 r  clk (IN)
+                         net (fo=0)                   0.000     5.000    clk_gen_instance/clkin1_ibufg/I
+                         INBUF (Prop_INBUF_PAD_O)     1.002     6.002 r  clk_gen_instance/clkin1_ibufg/INBUF_INST/O
+                         net (fo=1, unplaced)         0.045     6.047    clk_gen_instance/clkin1_ibufg/OUT
                          IBUFCTRL (Prop_IBUFCTRL_I_O)
-                                                      0.000     7.713 r  clk_gen_instance/clkin1_ibufg/IBUFCTRL_INST/O
-                         net (fo=1, unplaced)         0.657     8.371    clk_gen_instance/w_clk_in_clk_wiz_gen
+                                                      0.000     6.047 r  clk_gen_instance/clkin1_ibufg/IBUFCTRL_INST/O
+                         net (fo=1, unplaced)         0.657     6.704    clk_gen_instance/w_clk_in_clk_wiz_gen
                          MMCME3_ADV (Prop_MMCME3_ADV_CLKIN1_CLKOUT0)
-                                                     -4.751     3.620 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, unplaced)         0.263     3.883    clk_gen_instance/w_clk_out_clk_wiz_gen
-                         BUFGCE (Prop_BUFGCE_I_O)     0.060     3.943 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=5101, unplaced)      2.439     6.382    u/clk_out
-                         FDRE                                         r  u/x_reg[9]/C
-                         clock pessimism              0.188     6.570    
-                         clock uncertainty           -0.056     6.514    
-                         FDRE (Setup_FDRE_C_D)        0.047     6.561    u/x_reg[9]
+                                                     -4.751     1.953 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.263     2.216    clk_gen_instance/w_clk_out_clk_wiz_gen
+                         BUFGCE (Prop_BUFGCE_I_O)     0.060     2.276 r  clk_gen_instance/clkout1_buf/O
+                         net (fo=5101, unplaced)      2.439     4.715    u/clk_out
+                         FDRE                                         r  u/x_reg[11]/C
+                         clock pessimism              0.188     4.903    
+                         clock uncertainty           -0.047     4.856    
+                         FDRE (Setup_FDRE_C_D)        0.047     4.903    u/x_reg[11]
   -------------------------------------------------------------------
-                         required time                          6.561    
-                         arrival time                          -4.649    
+                         required time                          4.903    
+                         arrival time                          -4.636    
   -------------------------------------------------------------------
-                         slack                                  1.911    
+                         slack                                  0.267    
 
 
 

@@ -22,7 +22,7 @@ module display(
     
     always_ff @(posedge clk)
     begin
-        x <= i_x[clkdiv[3:0] * 16 +:16];
+        x <= i_x[clkdiv[2:0] * 16 +:16];
         count <= in_count;
     end
     

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date              : Tue Oct 30 18:18:54 2018
+| Date              : Tue Oct 30 20:08:41 2018
 | Host              : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command           : report_timing -hold -file ./reports/synth_aes_hold_report.txt
 | Design            : aes
@@ -14,9 +14,9 @@ Timing Report
 
 Slack (VIOLATED) :        -0.107ns  (arrival time - required time)
   Source:                 gcm_aes_instance/stage1/r_plain_text_reg[0]__0/C
-                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@3.333ns period=6.667ns})
+                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@2.500ns period=5.000ns})
   Destination:            gcm_aes_instance/stage6/r_plain_text_reg[0]_srl5/D
-                            (rising edge-triggered cell SRL16E clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@3.333ns period=6.667ns})
+                            (rising edge-triggered cell SRL16E clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             w_clk_out_clk_wiz_gen
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (w_clk_out_clk_wiz_gen rise@0.000ns - w_clk_out_clk_wiz_gen rise@0.000ns)
