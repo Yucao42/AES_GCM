@@ -24,6 +24,7 @@ module aes_pipeline_stage8(
     output logic            o_tag_ready;
     
     logic [0:127]   r_cipher_text;
+    logic [0:127]   r_cipher_text_delay;
     logic [0:127]   r_aad;
     logic [0:127]   r_h;
     logic [0:127]   r_encrypted_j0;
@@ -44,6 +45,7 @@ module aes_pipeline_stage8(
     always_ff @(posedge clk)
     begin
         r_cipher_text    <= i_cipher_text;
+        r_cipher_text_delay    <= r_cipher_text;
         r_aad           <= i_aad;
         r_h             <= i_h;
         r_encrypted_j0  <= i_encrypted_j0;
@@ -51,11 +53,13 @@ module aes_pipeline_stage8(
         r_instance_size <= i_instance_size;
 
 		
+		/*
 		if (w_counter == 0)
 	    	o_cipher_text <= i_cipher_text;
 
 		if (w_counter == total_blocks + 1)
       	    o_tag <= r_sblock ^ r_encrypted_j0;
+		*/
 	
         r_sblock        <= w_sblock; // Cycle
         r_counter       <= w_counter; // Cycle
@@ -104,8 +108,8 @@ module aes_pipeline_stage8(
 		* This part deprecated as it doesn't meet the time requirement.
 		* Instead we assign the value to exact time on 128-bit case.
 		*/
-      	//o_tag = w_sblock ^ r_encrypted_j0;
-        //o_cipher_text = r_cipher_text;
+      	o_tag = w_sblock ^ r_encrypted_j0;
+        o_cipher_text = r_cipher_text_delay;
 
 		/*
 		* This scheme assigns value in a simular way as in always_ff.
