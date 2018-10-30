@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module display(  
-        input [0:15] i_x,
+        input [0:127] i_x,
         input [0:31] in_count,
         input clk,
         input clr,
@@ -13,7 +13,7 @@ module display(
     reg [1:0] s;     
     reg [3:0] digit;
     wire [3:0] aen;
-    reg [19:0] clkdiv = 0;
+    reg [8:0] clkdiv = 0;
     reg [0:15] x;
     reg [0:31] count;
     
@@ -22,7 +22,7 @@ module display(
     
     always_ff @(posedge clk)
     begin
-        x <= i_x;
+        x <= i_x[clkdiv[2:0] * 16 +:16];
         count <= in_count;
     end
     
@@ -69,7 +69,7 @@ module display(
     
     always_comb
     begin
-        s = clkdiv[19:18];
+        s = clkdiv[7:6];
         an=4'b1111;
         if(aen[s] == 1)
             an[s] = 0;

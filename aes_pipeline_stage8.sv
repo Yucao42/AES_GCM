@@ -6,6 +6,9 @@ module aes_pipeline_stage8(
     i_h,
     i_encrypted_j0,
     i_instance_size,
+    o_encrypted_j0,
+	o_instance_size,
+	o_h,
     o_cipher_text,
     o_tag_ready,
     o_tag
@@ -19,9 +22,12 @@ module aes_pipeline_stage8(
     input logic [0:127]   i_instance_size;
     input logic           i_new_instance;
     
+    output logic [0:127]    o_encrypted_j0;
     output logic [0:127]    o_cipher_text;
     output logic [0:127]    o_tag;
     output logic            o_tag_ready;
+    output logic [0:127]    o_h;
+    output logic [0:127]    o_instance_size;
     
     logic [0:127]   r_cipher_text;
     logic [0:127]   r_aad;
@@ -30,11 +36,11 @@ module aes_pipeline_stage8(
     logic [0:127]   r_instance_size;
     logic           r_new_instance;
     logic [0:127]   r_sblock;
-    logic [0:127]    r_counter;
+    logic [0:127]   r_counter;
 
     logic [0:127]   w_encrypted_cb;
     logic [0:127]   w_sblock;
-    logic [0:127]    w_counter;
+    logic [0:127]   w_counter;
     logic [0:127]   w_auth_input;
      
     /* Helper variables */
@@ -43,20 +49,13 @@ module aes_pipeline_stage8(
 
     always_ff @(posedge clk)
     begin
-        r_cipher_text    <= i_cipher_text;
+        r_cipher_text   <= i_cipher_text;
         r_aad           <= i_aad;
         r_h             <= i_h;
         r_encrypted_j0  <= i_encrypted_j0;
         r_new_instance  <= i_new_instance;
         r_instance_size <= i_instance_size;
 
-		
-		if (w_counter == 0)
-	    	o_cipher_text <= i_cipher_text;
-
-		if (w_counter == total_blocks + 1)
-      	    o_tag <= r_sblock ^ r_encrypted_j0;
-	
         r_sblock        <= w_sblock; // Cycle
         r_counter       <= w_counter; // Cycle
     end
@@ -82,13 +81,9 @@ module aes_pipeline_stage8(
         total_blocks = 3;
         aad_blocks = 1;
 
-        if (w_counter == total_blocks)
+        if (w_counter == total_blocks - 1)
         begin
-            /*
-            * This logic is to accomodate the last 128 bits of zeros in
-            * authentication input
-            */
-            w_auth_input = r_instance_size;
+            w_auth_input = r_cipher_text;
             o_tag_ready = 1'b1;
         end
         else if (w_counter >= aad_blocks)
@@ -109,21 +104,11 @@ module aes_pipeline_stage8(
 		* This part deprecated as it doesn't meet the time requirement.
 		* Instead we assign the value to exact time on 128-bit case.
 		*/
-      	//o_tag = w_sblock ^ r_encrypted_j0;
-        //o_cipher_text = r_cipher_text;
-
-		/*
-		* This scheme assigns value in a simular way as in always_ff.
-		if (w_counter == total_blocks)
-		begin
-        	o_tag = w_sblock ^ r_encrypted_j0;
-		end
-
-		if (w_counter < total_blocks)
-		begin
-            o_cipher_text = r_cipher_text;
-		end
-		*/
+      	o_tag = w_sblock;
+        o_cipher_text = r_cipher_text;
+		o_h = r_h;
+		o_instance_size = r_instance_size;
+		o_encrypted_j0 = r_encrypted_j0;
 
     end
 endmodule
