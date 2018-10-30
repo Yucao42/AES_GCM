@@ -2,8 +2,7 @@
 
 #Set part number
 #set_part xc7a35tcpg236-1
-#set_part xcku035-fbva900-3-e 
-set_part xqku040-rfa1156-2-e
+set_part xcku035-fbva900-3-e 
 
 # Read verilog source files
 read_verilog -sv  clk_gen.sv

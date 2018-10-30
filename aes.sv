@@ -11,7 +11,7 @@ module aes(
 );
 
     input           clk;
-    input  [0:352+128]   sw;
+    input  [0:352]   sw;
     input           i_reset;
     output [3:0]    an;
     output          dp;
@@ -26,8 +26,6 @@ module aes(
 	logic [0:127]   plain_text_sw = sw[96+:128];
 
 	logic [0:127]   cipher_key_sw = sw[224+:128];
-
-	logic [0:127]   i_aad = sw[352+:128];
    
     logic [0:127] cipher_text;
     logic [0:127] tag;
@@ -51,7 +49,7 @@ module aes(
         .i_plain_text(plain_text_sw),
         .i_plain_text_size(64'd128),
         .i_aad_size(64'd128),
-        .i_aad(i_aad),
+        .i_aad(plain_text_sw),
         .o_cipher_text(cipher_text),
         .o_tag(tag),
         .o_tag_ready(tag_ready)
