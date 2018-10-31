@@ -23,7 +23,7 @@ module aes(
 
 	logic [0:95]    iv_sw = sw[0+:96];
 
-	logic [0:127]   plain_text_sw = sw[96+:128];
+	(* dont_touch = "true" *) logic [0:127]   plain_text_sw = sw[96+:128];
 
 	logic [0:127]   cipher_key_sw = sw[224+:128];
    

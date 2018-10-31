@@ -1,0 +1,164 @@
+/*
+
+xsim v2016.4 (64-bit)
+SW Build 1756540 on Mon Jan 23 19:11:19 MST 2017
+Process ID: 44687
+
+Current time: 	10/31/18 7:20:31 PM UTC
+Time zone: 	Coordinated Universal Time (Etc/UTC)
+
+OS: NAME="Ubuntu"
+Version: 4.15.0-36-generic
+Architecture: amd64
+Available processors (cores): 56
+
+DISPLAY: localhost:10.0
+Screen size: 3600x1058
+Screen resolution (DPI): 96
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	/home/yu/Vivado/Vivado/2016.4/tps/lnx64/jre
+
+User name: 	yu
+User home directory: /home/yu
+User working directory: /home/yu/projects/new_aes/tag/new_synth/AES_GCM
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI base root directory: /home/yu/Vivado/Vivado
+RDI data directory: /home/yu/Vivado/Vivado/2016.4/data
+RDI bin directory: /home/yu/Vivado/Vivado/2016.4/bin
+
+Vivado preferences path: /home/yu/.Xilinx/xsim/2016.4/vivado.ini
+Vivado layouts directory: /home/yu/.Xilinx/xsim/2016.4/layouts
+
+GUI allocated memory:	177 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 1,059 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: START_PROGRESS_DIALOG
+// bt:g (cd:JFrame):  Sourcing Tcl script 'xsim.dir/work.testbench/xsim_script.tcl' : addNotify
+// Tcl Message: source xsim.dir/work.testbench/xsim_script.tcl 
+// Tcl Message: # load_feature core 
+// [GUI Memory]: 26 MB (+24937kb) [00:00:10]
+// [Engine Memory]: 943 MB (+837048kb) [00:00:10]
+// TclEventType: LOAD_FEATURE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: # current_fileset 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 50 MB (+24026kb) [00:00:18]
+// [Engine Memory]: 1,001 MB (+11897kb) [00:00:18]
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/yu/Vivado/Vivado/2016.4/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,064 MB. GUI used memory: 24 MB. Current time: 10/31/18 7:20:31 PM UTC
+// Tcl Message: current_fileset: Time (s): cpu = 00:00:05 ; elapsed = 00:00:23 . Memory (MB): peak = 6058.445 ; gain = 103.426 ; free physical = 44457 ; free virtual = 67117 
+// Tcl Message: # xsim {work.testbench} -autoloadwcfg 
+// Tcl Message: Vivado Simulator 2016.4 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// [Engine Memory]: 1,094 MB (+45235kb) [00:00:35]
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: STOP_PROGRESS_DIALOG
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// Tcl Message: xsim: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 6111.852 ; gain = 53.406 ; free physical = 44442 ; free virtual = 67102 
+// [GUI Memory]: 56 MB (+2929kb) [00:00:41]
+dismissDialog("Sourcing Tcl script 'xsim.dir/work.testbench/xsim_script.tcl'"); // bt:g (cd:JFrame)
+// TclEventType: STOP_PROGRESS_DIALOG
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking too long to process. Increasing delay to 3000 ms.
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, "gcm_aes_instance ; gcm_aes ; Verilog Module", 1, "gcm_aes_instance", 0, true); // d:ab (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATION_SCOPES_TREE_TABLE, "gcm_aes_instance ; gcm_aes ; Verilog Module", 1, "gcm_aes_instance", 0, true, false, false, false, true, false); // d:ab (JViewport:JComponent, cd:JFrame) - Popup Trigger - Node
+selectMenu((HResource) null, "Log to Wave Database"); // Y:JMenu (ah:JPopupMenu, cd:JFrame)
+selectMenuItem((HResource) null, "Add to Wave Window"); // ab:JMenuItem (ah:JPopupMenu, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Tcl Message: add_wave {{/testbench/gcm_aes_instance}}  
+// bt:g (cd:JFrame):  Add Wave : addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+dismissDialog("Add Wave"); // bt:g (cd:JFrame)
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN_ALL, "simulation_live_run_all"); // y:JideButton (g:CommandBar, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN_ALL
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// [Engine Memory]: 1,474 MB (+340105kb) [00:00:52]
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: run all 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,478 MB. GUI used memory: 29 MB. Current time: 10/31/18 7:20:51 PM UTC
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // y:JideButton (g:CommandBar, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,480 MB. GUI used memory: 28 MB. Current time: 10/31/18 7:20:53 PM UTC
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,480 MB. GUI used memory: 28 MB. Current time: 10/31/18 7:20:54 PM UTC
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,480 MB. GUI used memory: 28 MB. Current time: 10/31/18 7:20:54 PM UTC
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,480 MB. GUI used memory: 28 MB. Current time: 10/31/18 7:20:55 PM UTC
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,480 MB. GUI used memory: 28 MB. Current time: 10/31/18 7:20:55 PM UTC
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 125, 288); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,481 MB. GUI used memory: 28 MB. Current time: 10/31/18 7:20:57 PM UTC
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 124, 277); // l:a (JViewport:JComponent, cd:JFrame)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
