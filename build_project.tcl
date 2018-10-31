@@ -9,6 +9,7 @@ read_verilog -sv  clk_gen.sv
 read_verilog -sv  fn_aes_ghash_multiplication.sv
 read_verilog -sv  fn_aes_encrypt_stage.sv
 read_verilog -sv  fn_aes_key_expansion.sv
+read_verilog -sv  aes_signal_passing.sv
 read_verilog -sv  aes_pipeline_stage1.sv
 read_verilog -sv  aes_pipeline_stage12.sv
 read_verilog -sv  aes_pipeline_stage13.sv
@@ -37,7 +38,7 @@ exec mkdir -p -- ./reports
 # Reports after synthesis
 report_timing -setup  -file ./reports/synth_aes_setup_report.txt
 report_timing -hold   -file ./reports/synth_aes_hold_report.txt
-report_timing_summary -file ./reports/synth_timing_report_aes.txt -delay_type min_max -max_path 50
+report_timing_summary -file ./reports/synth_timing_report_aes.txt -delay_type min_max -max_path 4000
 report_utilization    -file ./reports/synth_utilization_report.txt
 report_utilization -hierarchical  -file ./reports/synth_utilization_report_submodule.txt
 

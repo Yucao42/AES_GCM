@@ -39,61 +39,61 @@ module gcm_aes(
     /* Wires joining Stage1 and Stage2 */
     logic             w_s1_new_instance;
     logic             w_s1_pt_instance;
-    logic [0:127]     w_s1_plain_text;
+    (* dont_touch = "true" *) logic [0:127]     w_s1_plain_text;
     logic [0:95]      w_s1_iv;
     logic [0:1407]    w_s1_key_schedule;
-    logic [0:127]     w_s1_aad;
+    (* dont_touch = "true" *) logic [0:127]     w_s1_aad;
     logic [0:127]     w_s1_instance_size;
 
     /* Wires joining Stage2 and Stage3 */
     logic             w_s2_new_instance;
     logic             w_s2_pt_instance;
-    logic [0:127]     w_s2_plain_text;
+    (* dont_touch = "true" *) logic [0:127]     w_s2_plain_text;
     logic [0:127]     w_s2_j0;
     logic [0:127]     w_s2_cb;
     logic [0:127]     w_s2_h;
     logic [0:1407]    w_s2_key_schedule;
-    logic [0:127]     w_s2_aad;
+    (* dont_touch = "true" *) logic [0:127]     w_s2_aad;
     logic [0:127]     w_s2_instance_size;
    
     /* Wires joining Stage3 and Stage4 */
     logic             w_s3_new_instance;
-    logic [0:127]     w_s3_plain_text;
+    (* dont_touch = "true" *) logic [0:127]     w_s3_plain_text;
     logic [0:127]     w_s3_encrypted_j0;
     logic [0:127]     w_s3_encrypted_cb;
     logic [0:127]     w_s3_h;
     logic [0:1407]    w_s3_key_schedule;
-    logic [0:127]     w_s3_aad;
+    (* dont_touch = "true" *) logic [0:127]     w_s3_aad;
     logic [0:127]     w_s3_instance_size;
 
     /* Wires joining Stage4 and Stage5 */
     logic             w_s4_new_instance;
-    logic [0:127]     w_s4_plain_text;
+    (* dont_touch = "true" *) logic [0:127]     w_s4_plain_text;
     logic [0:127]     w_s4_encrypted_j0;
     logic [0:127]     w_s4_encrypted_cb;
     logic [0:127]     w_s4_h;
     logic [0:1407]    w_s4_key_schedule;
-    logic [0:127]     w_s4_aad;
+    (* dont_touch = "true" *) logic [0:127]     w_s4_aad;
     logic [0:127]     w_s4_instance_size;
 
     /* Wires joining Stage4 and Stage5 */
     logic             w_s5_new_instance;
-    logic [0:127]     w_s5_plain_text;
+    (* dont_touch = "true" *) logic [0:127]     w_s5_plain_text;
     logic [0:127]     w_s5_encrypted_j0;
     logic [0:127]     w_s5_encrypted_cb;
     logic [0:127]     w_s5_h;
     logic [0:1407]    w_s5_key_schedule;
-    logic [0:127]     w_s5_aad;
+    (* dont_touch = "true" *) logic [0:127]     w_s5_aad;
     logic [0:127]     w_s5_instance_size;
    
     /* Wires joining Stage5 and Stage6 */
     logic             w_s6_new_instance;
-    logic [0:127]     w_s6_plain_text;
+    (* dont_touch = "true" *) logic [0:127]     w_s6_plain_text;
     logic [0:127]     w_s6_encrypted_j0;
     logic [0:127]     w_s6_encrypted_cb;
     logic [0:127]     w_s6_h;
     logic [0:1407]    w_s6_key_schedule;
-    logic [0:127]     w_s6_aad;
+    (* dont_touch = "true" *) logic [0:127]     w_s6_aad;
     logic [0:127]     w_s6_instance_size;
 
     /* Wires joining Stage6 and Stage7 */
@@ -102,7 +102,7 @@ module gcm_aes(
     logic [0:127]     w_s7_encrypted_j0;
     logic [0:127]     w_s7_h;
     logic [0:1407]    w_s7_key_schedule;
-    logic [0:127]     w_s7_aad;
+    (* dont_touch = "true" *) logic [0:127]     w_s7_aad;
     logic [0:127]     w_s7_instance_size;
    
     /* Wires joining Stage8 and Stage9 */
@@ -227,23 +227,28 @@ module gcm_aes(
         .o_new_instance(w_s5_new_instance)
     );
 
-    aes_pipeline_stage6 stage6(
-        .clk(clk),
+
+	aes_signal_passing pass6(
+		.clk(clk),
         .i_plain_text(w_s5_plain_text),
         .i_aad(w_s5_aad),
+        .i_instance_size(w_s5_instance_size),
+        .o_plain_text(w_s6_plain_text),
+        .o_aad(w_s6_aad),
+        .o_instance_size(w_s6_instance_size)
+	);
+
+    aes_pipeline_stage6 stage6(
+        .clk(clk),
         .i_new_instance(w_s5_new_instance),
         .i_h(w_s5_h),
         .i_encrypted_j0(w_s5_encrypted_j0),
         .i_encrypted_cb(w_s5_encrypted_cb),
-        .i_instance_size(w_s5_instance_size),
         .i_key_schedule(w_s5_key_schedule),
         .o_h(w_s6_h),
         .o_encrypted_j0(w_s6_encrypted_j0),
         .o_encrypted_cb(w_s6_encrypted_cb),
         .o_key_schedule(w_s6_key_schedule),
-        .o_plain_text(w_s6_plain_text),
-        .o_aad(w_s6_aad),
-        .o_instance_size(w_s6_instance_size),
         .o_new_instance(w_s6_new_instance)
     );
 
