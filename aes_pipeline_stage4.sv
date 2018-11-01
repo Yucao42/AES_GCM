@@ -61,7 +61,6 @@ module aes_pipeline_stage4(
 
     always_comb
     begin
-        o_key_schedule = fn_key_expansion(128'b0, r_key_schedule, 4);
         o_h = fn_aes_encrypt_stage(r_h, r_key_schedule, 5);
         o_encrypted_cb = fn_aes_encrypt_stage(r_encrypted_cb, r_key_schedule, 3);
         o_encrypted_j0 = fn_aes_encrypt_stage(r_encrypted_j0, r_key_schedule, 3);

@@ -70,7 +70,6 @@ module aes_pipeline_stage2(
 
     always_comb
     begin
-        o_key_schedule = fn_key_expansion(128'b0, r_key_schedule, 2);
         o_j0 = {r_iv, 32'd1};
 
 		/* Calculate the seed of ciphered cb */
