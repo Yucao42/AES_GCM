@@ -1,9 +1,12 @@
 *.cache
+*.bak
+*.bk
 *.xml
 *.html
 *.wdb
 *.sim
 *.hw
+vivado*
 *.runs
 *.xvlog
 .Xil
