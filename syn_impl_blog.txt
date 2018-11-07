@@ -34,15 +34,17 @@ Using part: xcku035-fbva900-3-e
 Attempting to get a license for feature 'Synthesis' and/or device 'xcku035'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku035'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 21996 
+INFO: Helper process launched with PID 23802 
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/single_module/AES_GCM/aes_pipeline_stage12.sv:4]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/single_module/AES_GCM/aes_pipeline_stage13.sv:4]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/single_module/AES_GCM/aes_pipeline_stage14.sv:4]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1100.688 ; gain = 168.305 ; free physical = 61395 ; free virtual = 70441
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1100.688 ; gain = 168.305 ; free physical = 61292 ; free virtual = 70343
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'aes' [/home/yu/projects/single_module/AES_GCM/aes.sv:4]
 INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/yu/projects/single_module/AES_GCM/aes.sv:22]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/yu/projects/single_module/AES_GCM/aes.sv:24]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/yu/projects/single_module/AES_GCM/aes.sv:25]
 INFO: [Synth 8-638] synthesizing module 'clk_gen' [/home/yu/projects/single_module/AES_GCM/clk_gen.sv:1]
 INFO: [Synth 8-638] synthesizing module 'IBUF' [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:14146]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
@@ -104,112 +106,119 @@ INFO: [Synth 8-256] done synthesizing module 'MMCME2_ADV' (2#1) [/home/yu/Vivado
 INFO: [Synth 8-638] synthesizing module 'BUFG' [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:607]
 INFO: [Synth 8-256] done synthesizing module 'BUFG' (3#1) [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:607]
 INFO: [Synth 8-256] done synthesizing module 'clk_gen' (4#1) [/home/yu/projects/single_module/AES_GCM/clk_gen.sv:1]
-INFO: [Synth 8-638] synthesizing module 'md_multiply' [/home/yu/projects/single_module/AES_GCM/md_multiply.sv:23]
-INFO: [Synth 8-256] done synthesizing module 'md_multiply' (5#1) [/home/yu/projects/single_module/AES_GCM/md_multiply.sv:23]
-INFO: [Synth 8-256] done synthesizing module 'aes' (6#1) [/home/yu/projects/single_module/AES_GCM/aes.sv:4]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[384]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[385]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[386]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[387]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[388]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[389]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[390]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[391]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[392]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[393]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[394]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[395]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[396]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[397]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[398]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[399]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[400]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[401]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[402]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[403]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[404]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[405]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[406]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[407]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[408]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[409]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[410]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[411]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[412]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[413]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[414]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[415]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[416]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[417]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[418]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[419]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[420]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[421]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[422]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[423]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[424]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[425]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[426]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[427]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[428]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[429]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[430]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[431]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[432]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[433]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[434]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[435]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[436]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[437]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[438]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[439]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[440]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[441]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[442]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[443]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[444]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[445]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[446]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[447]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[448]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[449]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[450]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[451]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[452]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[453]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[454]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[455]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[456]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[457]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[458]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[459]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[460]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[461]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[462]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[463]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[464]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[465]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[466]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[467]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[468]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[469]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[470]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[471]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[472]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[473]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[474]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[475]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[476]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[477]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[478]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[479]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[480]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[481]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[482]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[483]
+INFO: [Synth 8-638] synthesizing module 'md_multiply_2' [/home/yu/projects/single_module/AES_GCM/md_multiply.sv:22]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/yu/projects/single_module/AES_GCM/md_multiply.sv:41]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/yu/projects/single_module/AES_GCM/md_multiply.sv:42]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/yu/projects/single_module/AES_GCM/md_multiply.sv:43]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/yu/projects/single_module/AES_GCM/md_multiply.sv:44]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/yu/projects/single_module/AES_GCM/md_multiply.sv:34]
+INFO: [Synth 8-256] done synthesizing module 'md_multiply_2' (5#1) [/home/yu/projects/single_module/AES_GCM/md_multiply.sv:22]
+INFO: [Synth 8-638] synthesizing module 'md_multiply' [/home/yu/projects/single_module/AES_GCM/md_multiply.sv:64]
+INFO: [Synth 8-256] done synthesizing module 'md_multiply' (6#1) [/home/yu/projects/single_module/AES_GCM/md_multiply.sv:64]
+INFO: [Synth 8-256] done synthesizing module 'aes' (7#1) [/home/yu/projects/single_module/AES_GCM/aes.sv:4]
+WARNING: [Synth 8-3331] design aes has unconnected port key[0]
+WARNING: [Synth 8-3331] design aes has unconnected port key[1]
+WARNING: [Synth 8-3331] design aes has unconnected port key[2]
+WARNING: [Synth 8-3331] design aes has unconnected port key[3]
+WARNING: [Synth 8-3331] design aes has unconnected port key[4]
+WARNING: [Synth 8-3331] design aes has unconnected port key[5]
+WARNING: [Synth 8-3331] design aes has unconnected port key[6]
+WARNING: [Synth 8-3331] design aes has unconnected port key[7]
+WARNING: [Synth 8-3331] design aes has unconnected port key[8]
+WARNING: [Synth 8-3331] design aes has unconnected port key[9]
+WARNING: [Synth 8-3331] design aes has unconnected port key[10]
+WARNING: [Synth 8-3331] design aes has unconnected port key[11]
+WARNING: [Synth 8-3331] design aes has unconnected port key[12]
+WARNING: [Synth 8-3331] design aes has unconnected port key[13]
+WARNING: [Synth 8-3331] design aes has unconnected port key[14]
+WARNING: [Synth 8-3331] design aes has unconnected port key[15]
+WARNING: [Synth 8-3331] design aes has unconnected port key[16]
+WARNING: [Synth 8-3331] design aes has unconnected port key[17]
+WARNING: [Synth 8-3331] design aes has unconnected port key[18]
+WARNING: [Synth 8-3331] design aes has unconnected port key[19]
+WARNING: [Synth 8-3331] design aes has unconnected port key[20]
+WARNING: [Synth 8-3331] design aes has unconnected port key[21]
+WARNING: [Synth 8-3331] design aes has unconnected port key[22]
+WARNING: [Synth 8-3331] design aes has unconnected port key[23]
+WARNING: [Synth 8-3331] design aes has unconnected port key[24]
+WARNING: [Synth 8-3331] design aes has unconnected port key[25]
+WARNING: [Synth 8-3331] design aes has unconnected port key[26]
+WARNING: [Synth 8-3331] design aes has unconnected port key[27]
+WARNING: [Synth 8-3331] design aes has unconnected port key[28]
+WARNING: [Synth 8-3331] design aes has unconnected port key[29]
+WARNING: [Synth 8-3331] design aes has unconnected port key[30]
+WARNING: [Synth 8-3331] design aes has unconnected port key[31]
+WARNING: [Synth 8-3331] design aes has unconnected port key[32]
+WARNING: [Synth 8-3331] design aes has unconnected port key[33]
+WARNING: [Synth 8-3331] design aes has unconnected port key[34]
+WARNING: [Synth 8-3331] design aes has unconnected port key[35]
+WARNING: [Synth 8-3331] design aes has unconnected port key[36]
+WARNING: [Synth 8-3331] design aes has unconnected port key[37]
+WARNING: [Synth 8-3331] design aes has unconnected port key[38]
+WARNING: [Synth 8-3331] design aes has unconnected port key[39]
+WARNING: [Synth 8-3331] design aes has unconnected port key[40]
+WARNING: [Synth 8-3331] design aes has unconnected port key[41]
+WARNING: [Synth 8-3331] design aes has unconnected port key[42]
+WARNING: [Synth 8-3331] design aes has unconnected port key[43]
+WARNING: [Synth 8-3331] design aes has unconnected port key[44]
+WARNING: [Synth 8-3331] design aes has unconnected port key[45]
+WARNING: [Synth 8-3331] design aes has unconnected port key[46]
+WARNING: [Synth 8-3331] design aes has unconnected port key[47]
+WARNING: [Synth 8-3331] design aes has unconnected port key[48]
+WARNING: [Synth 8-3331] design aes has unconnected port key[49]
+WARNING: [Synth 8-3331] design aes has unconnected port key[50]
+WARNING: [Synth 8-3331] design aes has unconnected port key[51]
+WARNING: [Synth 8-3331] design aes has unconnected port key[52]
+WARNING: [Synth 8-3331] design aes has unconnected port key[53]
+WARNING: [Synth 8-3331] design aes has unconnected port key[54]
+WARNING: [Synth 8-3331] design aes has unconnected port key[55]
+WARNING: [Synth 8-3331] design aes has unconnected port key[56]
+WARNING: [Synth 8-3331] design aes has unconnected port key[57]
+WARNING: [Synth 8-3331] design aes has unconnected port key[58]
+WARNING: [Synth 8-3331] design aes has unconnected port key[59]
+WARNING: [Synth 8-3331] design aes has unconnected port key[60]
+WARNING: [Synth 8-3331] design aes has unconnected port key[61]
+WARNING: [Synth 8-3331] design aes has unconnected port key[62]
+WARNING: [Synth 8-3331] design aes has unconnected port key[63]
+WARNING: [Synth 8-3331] design aes has unconnected port key[64]
+WARNING: [Synth 8-3331] design aes has unconnected port key[65]
+WARNING: [Synth 8-3331] design aes has unconnected port key[66]
+WARNING: [Synth 8-3331] design aes has unconnected port key[67]
+WARNING: [Synth 8-3331] design aes has unconnected port key[68]
+WARNING: [Synth 8-3331] design aes has unconnected port key[69]
+WARNING: [Synth 8-3331] design aes has unconnected port key[70]
+WARNING: [Synth 8-3331] design aes has unconnected port key[71]
+WARNING: [Synth 8-3331] design aes has unconnected port key[72]
+WARNING: [Synth 8-3331] design aes has unconnected port key[73]
+WARNING: [Synth 8-3331] design aes has unconnected port key[74]
+WARNING: [Synth 8-3331] design aes has unconnected port key[75]
+WARNING: [Synth 8-3331] design aes has unconnected port key[76]
+WARNING: [Synth 8-3331] design aes has unconnected port key[77]
+WARNING: [Synth 8-3331] design aes has unconnected port key[78]
+WARNING: [Synth 8-3331] design aes has unconnected port key[79]
+WARNING: [Synth 8-3331] design aes has unconnected port key[80]
+WARNING: [Synth 8-3331] design aes has unconnected port key[81]
+WARNING: [Synth 8-3331] design aes has unconnected port key[82]
+WARNING: [Synth 8-3331] design aes has unconnected port key[83]
+WARNING: [Synth 8-3331] design aes has unconnected port key[84]
+WARNING: [Synth 8-3331] design aes has unconnected port key[85]
+WARNING: [Synth 8-3331] design aes has unconnected port key[86]
+WARNING: [Synth 8-3331] design aes has unconnected port key[87]
+WARNING: [Synth 8-3331] design aes has unconnected port key[88]
+WARNING: [Synth 8-3331] design aes has unconnected port key[89]
+WARNING: [Synth 8-3331] design aes has unconnected port key[90]
+WARNING: [Synth 8-3331] design aes has unconnected port key[91]
+WARNING: [Synth 8-3331] design aes has unconnected port key[92]
+WARNING: [Synth 8-3331] design aes has unconnected port key[93]
+WARNING: [Synth 8-3331] design aes has unconnected port key[94]
+WARNING: [Synth 8-3331] design aes has unconnected port key[95]
+WARNING: [Synth 8-3331] design aes has unconnected port key[96]
+WARNING: [Synth 8-3331] design aes has unconnected port key[97]
+WARNING: [Synth 8-3331] design aes has unconnected port key[98]
+WARNING: [Synth 8-3331] design aes has unconnected port key[99]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1165.938 ; gain = 233.555 ; free physical = 61328 ; free virtual = 70375
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1218.938 ; gain = 286.555 ; free physical = 61170 ; free virtual = 70224
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -219,7 +228,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1165.938 ; gain = 233.555 ; free physical = 61328 ; free virtual = 70375
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1218.938 ; gain = 286.555 ; free physical = 61170 ; free virtual = 70224
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -319,46 +328,50 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IBUF => IBUF (INBUF, IBUFCTRL): 1 instances
   MMCME2_ADV => MMCME3_ADV: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1754.148 ; gain = 0.000 ; free physical = 60887 ; free virtual = 69933
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1851.281 ; gain = 0.000 ; free physical = 60682 ; free virtual = 69735
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1754.148 ; gain = 821.766 ; free physical = 60886 ; free virtual = 69932
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:20 . Memory (MB): peak = 1851.281 ; gain = 918.898 ; free physical = 60674 ; free virtual = 69727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xcku035-fbva900-3-e
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1754.148 ; gain = 821.766 ; free physical = 60886 ; free virtual = 69932
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:20 . Memory (MB): peak = 1851.281 ; gain = 918.898 ; free physical = 60674 ; free virtual = 69727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1754.148 ; gain = 821.766 ; free physical = 60886 ; free virtual = 69932
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:21 . Memory (MB): peak = 1851.281 ; gain = 918.898 ; free physical = 60674 ; free virtual = 69727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:18 . Memory (MB): peak = 1754.148 ; gain = 821.766 ; free physical = 60881 ; free virtual = 69927
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 1851.281 ; gain = 918.898 ; free physical = 60672 ; free virtual = 69725
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+------------------+------------+----------+
-|      |RTL Partition     |Replication |Instances |
-+------+------------------+------------+----------+
-|1     |clk_gen__GC0      |           1|         3|
-|2     |md_multiply__GBM0 |           1|     38856|
-|3     |md_multiply__GBM1 |           1|     10678|
-|4     |aes__GC0          |           1|       384|
-+------+------------------+------------+----------+
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |clk_gen__GC0       |           1|         3|
+|2     |md_multiply_2__GB0 |           1|     38728|
+|3     |md_multiply_2__GB1 |           1|     10806|
+|4     |md_multiply_2__GB2 |           1|     39242|
+|5     |md_multiply_2__GB3 |           1|     10036|
+|6     |md_multiply__GBM0  |           1|     38856|
+|7     |md_multiply__GBM1  |           1|     10678|
+|8     |aes__GC0           |           1|       640|
++------+-------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---XORs : 
-	   2 Input    128 Bit         XORs := 765   
+	   2 Input    128 Bit         XORs := 1019  
 +---Registers : 
-	              128 Bit    Registers := 6     
+	              128 Bit    Registers := 10    
 +---Muxes : 
-	   2 Input    128 Bit        Muxes := 762   
+	   2 Input    128 Bit        Muxes := 1016  
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -368,8 +381,18 @@ Start RTL Hierarchical Component Statistics
 Hierarchical RTL Component report 
 Module aes 
 Detailed RTL Component Info : 
++---XORs : 
+	   2 Input    128 Bit         XORs := 1     
 +---Registers : 
-	              128 Bit    Registers := 3     
+	              128 Bit    Registers := 4     
+Module md_multiply_2 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input    128 Bit         XORs := 508   
++---Registers : 
+	              128 Bit    Registers := 4     
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 508   
 Module md_multiply 
 Detailed RTL Component Info : 
 +---XORs : 
@@ -390,22 +413,27 @@ BRAMs: 1080 (col length: RAMB18 120 RAMB36 60)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 4 processes.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:23 ; elapsed = 00:01:22 . Memory (MB): peak = 2610.758 ; gain = 1678.375 ; free physical = 59976 ; free virtual = 69023
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:12 ; elapsed = 00:01:44 . Memory (MB): peak = 2542.977 ; gain = 1610.594 ; free physical = 53952 ; free virtual = 63006
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+------------------+------------+----------+
-|      |RTL Partition     |Replication |Instances |
-+------+------------------+------------+----------+
-|1     |clk_gen__GC0      |           1|         3|
-|2     |md_multiply__GBM0 |           3|     26437|
-|3     |md_multiply__GBM1 |           3|      7294|
-|4     |aes__GC0          |           1|       384|
-+------+------------------+------------+----------+
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |clk_gen__GC0       |           1|         3|
+|2     |md_multiply_2__GB0 |           1|     26309|
+|3     |md_multiply_2__GB1 |           1|      7422|
+|4     |md_multiply_2__GB2 |           1|     26575|
+|5     |md_multiply_2__GB3 |           1|      6902|
+|6     |md_multiply__GBM0  |           2|     26437|
+|7     |md_multiply__GBM1  |           2|      7294|
+|8     |aes__GC0           |           1|       640|
++------+-------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
@@ -413,36 +441,41 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:29 ; elapsed = 00:01:28 . Memory (MB): peak = 2610.758 ; gain = 1678.375 ; free physical = 59976 ; free virtual = 69023
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:18 ; elapsed = 00:01:50 . Memory (MB): peak = 2853.414 ; gain = 1921.031 ; free physical = 53653 ; free virtual = 62707
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:47 ; elapsed = 00:02:47 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59324 ; free virtual = 68376
+Finished Timing Optimization : Time (s): cpu = 00:02:15 ; elapsed = 00:02:48 . Memory (MB): peak = 3962.836 ; gain = 3030.453 ; free physical = 52532 ; free virtual = 61592
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+------------------+------------+----------+
-|      |RTL Partition     |Replication |Instances |
-+------+------------------+------------+----------+
-|1     |clk_gen__GC0      |           1|         3|
-|2     |md_multiply__GBM0 |           1|     26437|
-|3     |aes__GC0          |           1|       384|
-|4     |aes_GT0           |           1|       128|
-|5     |aes_GT1           |           1|       252|
-|6     |aes_GT129         |           1|     40769|
-|7     |aes_GT130         |           1|     33480|
-+------+------------------+------------+----------+
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |clk_gen__GC0       |           1|         3|
+|2     |md_multiply_2__GB0 |           1|     26309|
+|3     |md_multiply_2__GB1 |           1|      7422|
+|4     |md_multiply_2__GB2 |           1|     26575|
+|5     |md_multiply_2__GB3 |           1|      6902|
+|6     |md_multiply__GBM0  |           1|     26437|
+|7     |aes__GC0           |           1|       640|
+|8     |aes_GT0            |           1|     41025|
++------+-------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:58 ; elapsed = 00:02:58 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
+Finished Technology Mapping : Time (s): cpu = 00:02:48 ; elapsed = 00:03:12 . Memory (MB): peak = 3974.762 ; gain = 3042.379 ; free physical = 52602 ; free virtual = 61658
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |md_multiply_2__GB0 |           1|      6920|
+|2     |md_multiply_2__GB2 |           1|      6997|
+|3     |md_multiply__GBM0  |           1|      7048|
+|4     |aes_GT0            |           1|     11031|
++------+-------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -459,20 +492,121 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:59 ; elapsed = 00:02:59 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
+Finished IO Insertion : Time (s): cpu = 00:02:53 ; elapsed = 00:03:17 . Memory (MB): peak = 3974.762 ; gain = 3042.379 ; free physical = 52604 ; free virtual = 61660
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[127] with 1st driver pin 'tag0_inferredi_24340/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[127] with 2nd driver pin 'i_26386/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[126] with 1st driver pin 'tag0_inferredi_24341/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[126] with 2nd driver pin 'i_26374/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[125] with 1st driver pin 'tag0_inferredi_24342/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[125] with 2nd driver pin 'i_26359/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[124] with 1st driver pin 'tag0_inferredi_24343/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[124] with 2nd driver pin 'i_26345/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[123] with 1st driver pin 'tag0_inferredi_24344/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[123] with 2nd driver pin 'i_26333/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[122] with 1st driver pin 'tag0_inferredi_24345/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[122] with 2nd driver pin 'i_26320/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[121] with 1st driver pin 'tag0_inferredi_24346/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[121] with 2nd driver pin 'i_26306/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[120] with 1st driver pin 'tag0_inferredi_24347/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[120] with 2nd driver pin 'i_26291/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[119] with 1st driver pin 'tag0_inferredi_24348/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[119] with 2nd driver pin 'i_26277/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[118] with 1st driver pin 'tag0_inferredi_24349/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[118] with 2nd driver pin 'i_26263/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[117] with 1st driver pin 'tag0_inferredi_24350/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[117] with 2nd driver pin 'i_26249/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[116] with 1st driver pin 'tag0_inferredi_24351/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[116] with 2nd driver pin 'i_26236/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[115] with 1st driver pin 'tag0_inferredi_24352/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[115] with 2nd driver pin 'i_26221/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[114] with 1st driver pin 'tag0_inferredi_24353/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[114] with 2nd driver pin 'i_26206/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[113] with 1st driver pin 'tag0_inferredi_24354/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[113] with 2nd driver pin 'i_26192/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[112] with 1st driver pin 'tag0_inferredi_24355/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[112] with 2nd driver pin 'i_26178/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[111] with 1st driver pin 'tag0_inferredi_24356/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[111] with 2nd driver pin 'i_26164/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[110] with 1st driver pin 'tag0_inferredi_24357/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[110] with 2nd driver pin 'i_26150/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[109] with 1st driver pin 'tag0_inferredi_24358/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[109] with 2nd driver pin 'i_26136/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[108] with 1st driver pin 'tag0_inferredi_24359/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[108] with 2nd driver pin 'i_26122/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[107] with 1st driver pin 'tag0_inferredi_24360/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[107] with 2nd driver pin 'i_26108/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[106] with 1st driver pin 'tag0_inferredi_24361/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[106] with 2nd driver pin 'i_26095/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[105] with 1st driver pin 'tag0_inferredi_24362/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[105] with 2nd driver pin 'i_26081/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[104] with 1st driver pin 'tag0_inferredi_24363/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[104] with 2nd driver pin 'i_26067/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[103] with 1st driver pin 'tag0_inferredi_24364/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[103] with 2nd driver pin 'i_26053/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[102] with 1st driver pin 'tag0_inferredi_24365/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[102] with 2nd driver pin 'i_26038/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[101] with 1st driver pin 'tag0_inferredi_24366/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[101] with 2nd driver pin 'i_26023/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[100] with 1st driver pin 'tag0_inferredi_24367/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[100] with 2nd driver pin 'i_26009/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[99] with 1st driver pin 'tag0_inferredi_24368/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[99] with 2nd driver pin 'i_25995/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[98] with 1st driver pin 'tag0_inferredi_24369/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[98] with 2nd driver pin 'i_25981/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[97] with 1st driver pin 'tag0_inferredi_24370/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[97] with 2nd driver pin 'i_25968/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[96] with 1st driver pin 'tag0_inferredi_24371/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[96] with 2nd driver pin 'i_25955/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[95] with 1st driver pin 'tag0_inferredi_24372/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[95] with 2nd driver pin 'i_25941/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[94] with 1st driver pin 'tag0_inferredi_24373/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[94] with 2nd driver pin 'i_25927/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[93] with 1st driver pin 'tag0_inferredi_24374/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[93] with 2nd driver pin 'i_25913/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[92] with 1st driver pin 'tag0_inferredi_24375/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[92] with 2nd driver pin 'i_25898/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[91] with 1st driver pin 'tag0_inferredi_24376/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[91] with 2nd driver pin 'i_25884/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[90] with 1st driver pin 'tag0_inferredi_24377/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[90] with 2nd driver pin 'i_25871/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[89] with 1st driver pin 'tag0_inferredi_24378/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[89] with 2nd driver pin 'i_25857/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[88] with 1st driver pin 'tag0_inferredi_24379/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[88] with 2nd driver pin 'i_25844/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[87] with 1st driver pin 'tag0_inferredi_24380/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[87] with 2nd driver pin 'i_25830/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[86] with 1st driver pin 'tag0_inferredi_24381/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[86] with 2nd driver pin 'i_25816/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[85] with 1st driver pin 'tag0_inferredi_24382/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[85] with 2nd driver pin 'i_25802/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[84] with 1st driver pin 'tag0_inferredi_24383/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[84] with 2nd driver pin 'i_25788/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[83] with 1st driver pin 'tag0_inferredi_24384/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[83] with 2nd driver pin 'i_25774/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[82] with 1st driver pin 'tag0_inferredi_24385/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[82] with 2nd driver pin 'i_25760/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[81] with 1st driver pin 'tag0_inferredi_24386/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[81] with 2nd driver pin 'i_25746/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[80] with 1st driver pin 'tag0_inferredi_24387/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[80] with 2nd driver pin 'i_25732/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[79] with 1st driver pin 'tag0_inferredi_24388/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[79] with 2nd driver pin 'i_25718/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[78] with 1st driver pin 'tag0_inferredi_24389/O' [/home/yu/projects/single_module/AES_GCM/aes.sv:48]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net tag_OBUF[78] with 2nd driver pin 'i_25704/O' [/home/yu/projects/single_module/AES_GCM/fn_aes_ghash_multiplication.sv:14]
+INFO: [Common 17-14] Message 'Synth 8-3352' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 
 Report Check Netlist: 
 +------+------------------+-------+---------+-------+------------------+
 |      |Item              |Errors |Warnings |Status |Description       |
 +------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
+|1     |multi_driven_nets |      0|      128|Failed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:59 ; elapsed = 00:02:59 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:53 ; elapsed = 00:03:17 . Memory (MB): peak = 3974.762 ; gain = 3042.379 ; free physical = 52604 ; free virtual = 61660
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -484,25 +618,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:00 ; elapsed = 00:03:00 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:56 ; elapsed = 00:03:20 . Memory (MB): peak = 3974.762 ; gain = 3042.379 ; free physical = 52604 ; free virtual = 61660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:00 ; elapsed = 00:03:00 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:56 ; elapsed = 00:03:20 . Memory (MB): peak = 3974.762 ; gain = 3042.379 ; free physical = 52604 ; free virtual = 61660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:02 ; elapsed = 00:03:02 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:57 ; elapsed = 00:03:21 . Memory (MB): peak = 3974.762 ; gain = 3042.379 ; free physical = 52605 ; free virtual = 61661
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:02 ; elapsed = 00:03:02 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:57 ; elapsed = 00:03:21 . Memory (MB): peak = 3974.762 ; gain = 3042.379 ; free physical = 52605 ; free virtual = 61661
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -519,14 +653,14 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     2|
-|2     |LUT2       |   303|
-|3     |LUT3       |   400|
-|4     |LUT4       |  8538|
-|5     |LUT5       |  5156|
-|6     |LUT6       | 11796|
+|2     |LUT2       |   464|
+|3     |LUT3       |   580|
+|4     |LUT4       | 12021|
+|5     |LUT5       |  6804|
+|6     |LUT6       | 15298|
 |7     |MMCME2_ADV |     1|
-|8     |FDRE       |  1152|
-|9     |IBUF       |   385|
+|8     |FDRE       |  1536|
+|9     |IBUF       |   513|
 |10    |OBUF       |   128|
 +------+-----------+------+
 
@@ -534,20 +668,20 @@ Report Instance Areas:
 +------+-------------------+--------------+------+
 |      |Instance           |Module        |Cells |
 +------+-------------------+--------------+------+
-|1     |top                |              | 27861|
+|1     |top                |              | 37347|
 |2     |  clk_gen_instance |clk_gen       |     4|
-|3     |  m1               |md_multiply   |  8882|
-|4     |  m2               |md_multiply_0 |  8949|
-|5     |  m3               |md_multiply_1 |  9130|
+|3     |  m1               |md_multiply_2 | 17984|
+|4     |  m2               |md_multiply   |  8949|
+|5     |  m3               |md_multiply_0 |  9130|
 +------+-------------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:02 ; elapsed = 00:03:02 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:57 ; elapsed = 00:03:21 . Memory (MB): peak = 3974.762 ; gain = 3042.379 ; free physical = 52605 ; free virtual = 61661
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1536 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:50 ; elapsed = 00:02:52 . Memory (MB): peak = 3262.359 ; gain = 1654.680 ; free physical = 59329 ; free virtual = 68376
-Synthesis Optimization Complete : Time (s): cpu = 00:03:02 ; elapsed = 00:03:02 . Memory (MB): peak = 3262.367 ; gain = 2329.984 ; free physical = 59329 ; free virtual = 68376
+Synthesis finished with 0 errors, 256 critical warnings and 1408 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:42 ; elapsed = 00:03:14 . Memory (MB): peak = 3974.762 ; gain = 2322.949 ; free physical = 58454 ; free virtual = 67510
+Synthesis Optimization Complete : Time (s): cpu = 00:02:57 ; elapsed = 00:03:26 . Memory (MB): peak = 3974.762 ; gain = 3042.379 ; free physical = 58456 ; free virtual = 67510
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 388 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 516 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 Parsing XDC File [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc]
@@ -665,15 +799,15 @@ Resolution: If [get_<value>] was used to populate the object, check to make sure
 Finished Parsing XDC File [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 388 instances were transformed.
+  A total of 516 instances were transformed.
   BUFG => BUFGCE: 2 instances
-  IBUF => IBUF (IBUFCTRL, INBUF): 385 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 513 instances
   MMCME2_ADV => MMCME3_ADV: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-48 Infos, 155 Warnings, 69 Critical Warnings and 0 Errors encountered.
+59 Infos, 155 Warnings, 169 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:04 ; elapsed = 00:03:04 . Memory (MB): peak = 3294.375 ; gain = 2291.488 ; free physical = 59332 ; free virtual = 68378
+synth_design: Time (s): cpu = 00:03:00 ; elapsed = 00:03:28 . Memory (MB): peak = 4018.863 ; gain = 3015.977 ; free physical = 58456 ; free virtual = 67510
 # exec mkdir -p -- ./reports
 # report_timing -setup  -file ./reports/synth_aes_setup_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: max.
@@ -681,7 +815,7 @@ INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum o
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-2] Deriving generated clocks
 INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
-report_timing: Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 3365.434 ; gain = 71.059 ; free physical = 59330 ; free virtual = 68377
+report_timing: Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 4089.922 ; gain = 71.059 ; free physical = 58478 ; free virtual = 67532
 # report_timing -hold   -file ./reports/synth_aes_hold_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
@@ -690,8 +824,8 @@ INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type min 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 # report_utilization    -file ./reports/synth_utilization_report.txt
-report_utilization: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.26 . Memory (MB): peak = 3365.434 ; gain = 0.000 ; free physical = 59326 ; free virtual = 68373
+report_utilization: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.27 . Memory (MB): peak = 4089.922 ; gain = 0.000 ; free physical = 58470 ; free virtual = 67523
 # report_utilization -hierarchical  -file ./reports/synth_utilization_report_submodule.txt
-report_utilization: Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.32 . Memory (MB): peak = 3365.434 ; gain = 0.000 ; free physical = 59325 ; free virtual = 68372
+report_utilization: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.37 . Memory (MB): peak = 4089.922 ; gain = 0.000 ; free physical = 58470 ; free virtual = 67524
 # write_schematic -format pdf -orientation portrait /home/yu/projects/AES_GCM/schematic_1.pdf
-INFO: [Common 17-206] Exiting Vivado at Wed Nov  7 19:17:26 2018...
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  7 20:03:59 2018...

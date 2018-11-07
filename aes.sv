@@ -21,7 +21,8 @@ module aes(
     logic [0:127] D;
     (* keep = "true" *) logic [0:127] E;
 //    (* keep = "true" *) 
-    logic [0:127] F;
+    (* keep = "true" *) logic [0:127] F;
+    (* keep = "true" *) logic [0:127] G;
     
     logic locked;
     logic clk_out;
@@ -39,14 +40,22 @@ module aes(
  		A <= sw[0+:128];
         B <= sw[128+:128];
         C <= sw[256+:128];	
+        D <= sw[384+:128];	
 	end
 
-	md_multiply m1(
+	always_comb
+	begin
+		tag = F ^ G;
+	end
+
+	md_multiply_2 m1(
 	   .clk(clk_out),
 	   .i1(A),
 	   .i2(B),
 	   .i3(C),
-	   .o(D)
+	   .i4(D),
+	   .o1(G),
+	   .o2(F)
 	);
 
 	md_multiply m2(
