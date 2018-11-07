@@ -5,13 +5,13 @@
     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 source build_project.tcl
-# set_param general.maxThreads 8
-# set_part xc7a35tcpg236-1
-INFO: [Coretcl 2-1500] The part has been set to 'xc7a35tcpg236-1' for the current project only. Run set_part -help for more details. To evaluate different speed grades in the current design, use the set_speed_grade command, or use the open_checkpoint -part command to change the part used by an existing checkpoint design.
+# set_part xcku035-fbva900-3-e 
+INFO: [Coretcl 2-1500] The part has been set to 'xcku035-fbva900-3-e' for the current project only. Run set_part -help for more details. To evaluate different speed grades in the current design, use the set_speed_grade command, or use the open_checkpoint -part command to change the part used by an existing checkpoint design.
 # read_verilog -sv  clk_gen.sv
 # read_verilog -sv  fn_aes_ghash_multiplication.sv
 # read_verilog -sv  fn_aes_encrypt_stage.sv
 # read_verilog -sv  fn_aes_key_expansion.sv
+# read_verilog -sv  md_multiply.sv
 # read_verilog -sv  aes_pipeline_stage1.sv
 # read_verilog -sv  aes_pipeline_stage12.sv
 # read_verilog -sv  aes_pipeline_stage13.sv
@@ -30,19 +30,20 @@ INFO: [Coretcl 2-1500] The part has been set to 'xc7a35tcpg236-1' for the curren
 # synth_design -top aes
 Command: synth_design -top aes
 Starting synth_design
-Using part: xc7a35tcpg236-1
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+Using part: xcku035-fbva900-3-e
+Attempting to get a license for feature 'Synthesis' and/or device 'xcku035'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku035'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 35129 
-WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/AES_GCM/aes_pipeline_stage12.sv:4]
-WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/AES_GCM/aes_pipeline_stage13.sv:4]
-WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/AES_GCM/aes_pipeline_stage14.sv:4]
+INFO: Helper process launched with PID 21996 
+WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/single_module/AES_GCM/aes_pipeline_stage12.sv:4]
+WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/single_module/AES_GCM/aes_pipeline_stage13.sv:4]
+WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/single_module/AES_GCM/aes_pipeline_stage14.sv:4]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1098.688 ; gain = 166.305 ; free physical = 27410 ; free virtual = 67665
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1100.688 ; gain = 168.305 ; free physical = 61395 ; free virtual = 70441
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'aes' [/home/yu/projects/AES_GCM/aes.sv:4]
-INFO: [Synth 8-638] synthesizing module 'clk_gen' [/home/yu/projects/AES_GCM/clk_gen.sv:1]
+INFO: [Synth 8-638] synthesizing module 'aes' [/home/yu/projects/single_module/AES_GCM/aes.sv:4]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [/home/yu/projects/single_module/AES_GCM/aes.sv:22]
+INFO: [Synth 8-638] synthesizing module 'clk_gen' [/home/yu/projects/single_module/AES_GCM/clk_gen.sv:1]
 INFO: [Synth 8-638] synthesizing module 'IBUF' [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:14146]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
@@ -52,12 +53,12 @@ INFO: [Synth 8-638] synthesizing module 'IBUF' [/home/yu/Vivado/Vivado/2016.4/sc
 INFO: [Synth 8-256] done synthesizing module 'IBUF' (1#1) [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:14146]
 INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:20414]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
-	Parameter CLKFBOUT_MULT_F bound to: 50.000000 - type: float 
+	Parameter CLKFBOUT_MULT_F bound to: 30.000000 - type: float 
 	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: float 
 	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: float 
-	Parameter CLKOUT0_DIVIDE_F bound to: 11.000000 - type: float 
+	Parameter CLKOUT0_DIVIDE_F bound to: 10.000000 - type: float 
 	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
 	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
@@ -87,7 +88,7 @@ INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [/home/yu/Vivado/Vivado/201
 	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT6_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter COMPENSATION bound to: ZHOLD - type: string 
-	Parameter DIVCLK_DIVIDE bound to: 5 - type: integer 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
 	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
 	Parameter IS_PSEN_INVERTED bound to: 1'b0 
 	Parameter IS_PSINCDEC_INVERTED bound to: 1'b0 
@@ -102,23 +103,113 @@ INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [/home/yu/Vivado/Vivado/201
 INFO: [Synth 8-256] done synthesizing module 'MMCME2_ADV' (2#1) [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:20414]
 INFO: [Synth 8-638] synthesizing module 'BUFG' [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:607]
 INFO: [Synth 8-256] done synthesizing module 'BUFG' (3#1) [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:607]
-INFO: [Synth 8-256] done synthesizing module 'clk_gen' (4#1) [/home/yu/projects/AES_GCM/clk_gen.sv:1]
-INFO: [Synth 8-638] synthesizing module 'display' [/home/yu/projects/AES_GCM/display.sv:3]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/AES_GCM/display.sv:35]
-INFO: [Synth 8-226] default block is never used [/home/yu/projects/AES_GCM/display.sv:48]
-INFO: [Synth 8-256] done synthesizing module 'display' (5#1) [/home/yu/projects/AES_GCM/display.sv:3]
-INFO: [Synth 8-256] done synthesizing module 'aes' (6#1) [/home/yu/projects/AES_GCM/aes.sv:4]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[0]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[1]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[2]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[3]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[4]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[5]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[6]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[7]
-WARNING: [Synth 8-3331] design aes has unconnected port i_reset
+INFO: [Synth 8-256] done synthesizing module 'clk_gen' (4#1) [/home/yu/projects/single_module/AES_GCM/clk_gen.sv:1]
+INFO: [Synth 8-638] synthesizing module 'md_multiply' [/home/yu/projects/single_module/AES_GCM/md_multiply.sv:23]
+INFO: [Synth 8-256] done synthesizing module 'md_multiply' (5#1) [/home/yu/projects/single_module/AES_GCM/md_multiply.sv:23]
+INFO: [Synth 8-256] done synthesizing module 'aes' (6#1) [/home/yu/projects/single_module/AES_GCM/aes.sv:4]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[384]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[385]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[386]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[387]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[388]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[389]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[390]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[391]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[392]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[393]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[394]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[395]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[396]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[397]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[398]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[399]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[400]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[401]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[402]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[403]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[404]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[405]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[406]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[407]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[408]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[409]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[410]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[411]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[412]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[413]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[414]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[415]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[416]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[417]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[418]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[419]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[420]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[421]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[422]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[423]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[424]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[425]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[426]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[427]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[428]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[429]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[430]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[431]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[432]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[433]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[434]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[435]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[436]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[437]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[438]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[439]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[440]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[441]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[442]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[443]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[444]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[445]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[446]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[447]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[448]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[449]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[450]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[451]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[452]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[453]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[454]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[455]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[456]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[457]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[458]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[459]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[460]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[461]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[462]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[463]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[464]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[465]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[466]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[467]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[468]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[469]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[470]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[471]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[472]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[473]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[474]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[475]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[476]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[477]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[478]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[479]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[480]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[481]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[482]
+WARNING: [Synth 8-3331] design aes has unconnected port sw[483]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1143.938 ; gain = 211.555 ; free physical = 27362 ; free virtual = 67618
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1165.938 ; gain = 233.555 ; free physical = 61328 ; free virtual = 70375
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -128,67 +219,146 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1143.938 ; gain = 211.555 ; free physical = 27363 ; free virtual = 67618
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1165.938 ; gain = 233.555 ; free physical = 61328 ; free virtual = 70375
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Device 21-403] Loading part xcku035-fbva900-3-e
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/yu/projects/AES_GCM/constraints_artix_7.xdc]
-Finished Parsing XDC File [/home/yu/projects/AES_GCM/constraints_artix_7.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/yu/projects/AES_GCM/constraints_artix_7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/aes_propImpl.xdc].
+Parsing XDC File [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc]
+WARNING: [Vivado 12-584] No ports matched 'i_reset'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'i_reset'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/aes_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/aes_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 4 instances were transformed.
+  BUFG => BUFGCE: 2 instances
+  IBUF => IBUF (INBUF, IBUFCTRL): 1 instances
+  MMCME2_ADV => MMCME3_ADV: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1481.359 ; gain = 0.000 ; free physical = 27183 ; free virtual = 67439
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1754.148 ; gain = 0.000 ; free physical = 60887 ; free virtual = 69933
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27183 ; free virtual = 67439
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1754.148 ; gain = 821.766 ; free physical = 60886 ; free virtual = 69932
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xc7a35tcpg236-1
+Loading part: xcku035-fbva900-3-e
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27183 ; free virtual = 67439
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1754.148 ; gain = 821.766 ; free physical = 60886 ; free virtual = 69932
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27183 ; free virtual = 67439
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1754.148 ; gain = 821.766 ; free physical = 60886 ; free virtual = 69932
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27176 ; free virtual = 67432
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:18 . Memory (MB): peak = 1754.148 ; gain = 821.766 ; free physical = 60881 ; free virtual = 69927
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+--------------+------------+----------+
-|      |RTL Partition |Replication |Instances |
-+------+--------------+------------+----------+
-|1     |clk_gen__GC0  |           1|         3|
-|2     |aes__GC0      |           1|     58022|
-+------+--------------+------------+----------+
++------+------------------+------------+----------+
+|      |RTL Partition     |Replication |Instances |
++------+------------------+------------+----------+
+|1     |clk_gen__GC0      |           1|         3|
+|2     |md_multiply__GBM0 |           1|     38856|
+|3     |md_multiply__GBM1 |           1|     10678|
+|4     |aes__GC0          |           1|       384|
++------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---XORs : 
-	   2 Input    128 Bit         XORs := 128   
+	   2 Input    128 Bit         XORs := 765   
 +---Registers : 
-	              128 Bit    Registers := 2     
-	               32 Bit    Registers := 1     
-	               16 Bit    Registers := 1     
+	              128 Bit    Registers := 6     
 +---Muxes : 
-	   2 Input    128 Bit        Muxes := 128   
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   2 Input    128 Bit        Muxes := 762   
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -198,20 +368,16 @@ Start RTL Hierarchical Component Statistics
 Hierarchical RTL Component report 
 Module aes 
 Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input    128 Bit         XORs := 128   
 +---Registers : 
-	              128 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input    128 Bit        Muxes := 128   
-Module display 
+	              128 Bit    Registers := 3     
+Module md_multiply 
 Detailed RTL Component Info : 
++---XORs : 
+	   2 Input    128 Bit         XORs := 255   
 +---Registers : 
-	               32 Bit    Registers := 1     
-	               16 Bit    Registers := 1     
+	              128 Bit    Registers := 1     
 +---Muxes : 
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
+	   2 Input    128 Bit        Muxes := 254   
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -219,146 +385,27 @@ Finished RTL Hierarchical Component Statistics
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
 Part Resources:
-DSPs: 90 (col length:60)
-BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+DSPs: 1700 (col length:120)
+BRAMs: 1080 (col length: RAMB18 120 RAMB36 60)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3331] design aes has unconnected port sw[0]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[1]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[2]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[3]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[4]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[5]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[6]
-WARNING: [Synth 8-3331] design aes has unconnected port sw[7]
-WARNING: [Synth 8-3331] design aes has unconnected port i_reset
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[15]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[19]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[23]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[27]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[31]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[35]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[39]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[43]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[47]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[51]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[55]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[59]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[63]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[14]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[18]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[22]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[26]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[30]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[34]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[38]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[42]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[46]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[50]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[54]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[58]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[62]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[13]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[17]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[21]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[25]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[29]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[33]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[37]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[41]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[45]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[49]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[53]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[57]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[61]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[5]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[6]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[7]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[8]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[16]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[20]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[24]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[28]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[32]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[36]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[40]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[44]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[48]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[52]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[56]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[60]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[9]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[10]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[11]' (FD) to 'i_1/B_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[12]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[64]' (FD) to 'i_1/B_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[64]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[68]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[72]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[76]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[80]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[84]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[88]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[92]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[96]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[100]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[104]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[108]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[112]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[116]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[120]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[124]' (FD) to 'i_1/A_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[65]' (FD) to 'i_1/B_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[63]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[67]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[71]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[75]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[79]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[83]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[87]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[91]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[95]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[99]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[103]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[107]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[111]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[115]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[119]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[123]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[127]' (FD) to 'i_1/A_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_1/B_reg[66]' (FD) to 'i_1/B_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[62]' (FD) to 'i_1/A_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[66]' (FD) to 'i_1/A_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[70]' (FD) to 'i_1/A_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[74]' (FD) to 'i_1/A_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_1/A_reg[78]' (FD) to 'i_1/A_reg[2]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/u/\count_reg[13] )
-WARNING: [Synth 8-3332] Sequential element (count_reg[13]) is unused and will be removed from module display.
-WARNING: [Synth 8-3332] Sequential element (count_reg[23]) is unused and will be removed from module display.
-WARNING: [Synth 8-3332] Sequential element (count_reg[24]) is unused and will be removed from module display.
-WARNING: [Synth 8-3332] Sequential element (count_reg[25]) is unused and will be removed from module display.
-WARNING: [Synth 8-3332] Sequential element (count_reg[26]) is unused and will be removed from module display.
-WARNING: [Synth 8-3332] Sequential element (count_reg[27]) is unused and will be removed from module display.
-WARNING: [Synth 8-3332] Sequential element (count_reg[28]) is unused and will be removed from module display.
-WARNING: [Synth 8-3332] Sequential element (count_reg[29]) is unused and will be removed from module display.
-WARNING: [Synth 8-3332] Sequential element (count_reg[30]) is unused and will be removed from module display.
-WARNING: [Synth 8-3332] Sequential element (count_reg[31]) is unused and will be removed from module display.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27145 ; free virtual = 67401
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:23 ; elapsed = 00:01:22 . Memory (MB): peak = 2610.758 ; gain = 1678.375 ; free physical = 59976 ; free virtual = 69023
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+--------------+------------+----------+
-|      |RTL Partition |Replication |Instances |
-+------+--------------+------------+----------+
-|1     |clk_gen__GC0  |           1|         3|
-|2     |aes__GC0      |           1|       257|
-+------+--------------+------------+----------+
++------+------------------+------------+----------+
+|      |RTL Partition     |Replication |Instances |
++------+------------------+------------+----------+
+|1     |clk_gen__GC0      |           1|         3|
+|2     |md_multiply__GBM0 |           3|     26437|
+|3     |md_multiply__GBM1 |           3|      7294|
+|4     |aes__GC0          |           1|       384|
++------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
@@ -366,24 +413,29 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27093 ; free virtual = 67348
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:29 ; elapsed = 00:01:28 . Memory (MB): peak = 2610.758 ; gain = 1678.375 ; free physical = 59976 ; free virtual = 69023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27081 ; free virtual = 67336
+Finished Timing Optimization : Time (s): cpu = 00:02:47 ; elapsed = 00:02:47 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59324 ; free virtual = 68376
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+--------------+------------+----------+
-|      |RTL Partition |Replication |Instances |
-+------+--------------+------------+----------+
-|1     |clk_gen__GC0  |           1|         3|
-|2     |aes__GC0      |           1|       257|
-+------+--------------+------------+----------+
++------+------------------+------------+----------+
+|      |RTL Partition     |Replication |Instances |
++------+------------------+------------+----------+
+|1     |clk_gen__GC0      |           1|         3|
+|2     |md_multiply__GBM0 |           1|     26437|
+|3     |aes__GC0          |           1|       384|
+|4     |aes_GT0           |           1|       128|
+|5     |aes_GT1           |           1|       252|
+|6     |aes_GT129         |           1|     40769|
+|7     |aes_GT130         |           1|     33480|
++------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27073 ; free virtual = 67329
+Finished Technology Mapping : Time (s): cpu = 00:02:58 ; elapsed = 00:02:58 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -407,7 +459,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27073 ; free virtual = 67329
+Finished IO Insertion : Time (s): cpu = 00:02:59 ; elapsed = 00:02:59 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -420,7 +472,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27073 ; free virtual = 67329
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:59 ; elapsed = 00:02:59 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -432,25 +484,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27073 ; free virtual = 67329
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:00 ; elapsed = 00:03:00 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27073 ; free virtual = 67329
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:00 ; elapsed = 00:03:00 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27073 ; free virtual = 67329
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:02 ; elapsed = 00:03:02 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27073 ; free virtual = 67329
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:02 ; elapsed = 00:03:02 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -467,389 +519,179 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     2|
-|2     |CARRY4     |     5|
-|3     |LUT1       |    20|
-|4     |LUT2       |     6|
-|5     |LUT4       |    11|
-|6     |LUT5       |     8|
-|7     |LUT6       |    25|
-|8     |MMCME2_ADV |     1|
-|9     |MUXF7      |     5|
-|10    |MUXF8      |     2|
-|11    |FDRE       |    43|
-|12    |IBUF       |     9|
-|13    |OBUF       |    12|
+|2     |LUT2       |   303|
+|3     |LUT3       |   400|
+|4     |LUT4       |  8538|
+|5     |LUT5       |  5156|
+|6     |LUT6       | 11796|
+|7     |MMCME2_ADV |     1|
+|8     |FDRE       |  1152|
+|9     |IBUF       |   385|
+|10    |OBUF       |   128|
 +------+-----------+------+
 
 Report Instance Areas: 
-+------+-------------------+--------+------+
-|      |Instance           |Module  |Cells |
-+------+-------------------+--------+------+
-|1     |top                |        |   149|
-|2     |  clk_gen_instance |clk_gen |     4|
-|3     |  u                |display |   117|
-+------+-------------------+--------+------+
++------+-------------------+--------------+------+
+|      |Instance           |Module        |Cells |
++------+-------------------+--------------+------+
+|1     |top                |              | 27861|
+|2     |  clk_gen_instance |clk_gen       |     4|
+|3     |  m1               |md_multiply   |  8882|
+|4     |  m2               |md_multiply_0 |  8949|
+|5     |  m3               |md_multiply_1 |  9130|
++------+-------------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27073 ; free virtual = 67329
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:02 ; elapsed = 00:03:02 . Memory (MB): peak = 3262.359 ; gain = 2329.977 ; free physical = 59329 ; free virtual = 68376
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1481.359 ; gain = 125.469 ; free physical = 27073 ; free virtual = 67329
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1481.359 ; gain = 548.977 ; free physical = 27073 ; free virtual = 67329
+Synthesis finished with 0 errors, 0 critical warnings and 1536 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:50 ; elapsed = 00:02:52 . Memory (MB): peak = 3262.359 ; gain = 1654.680 ; free physical = 59329 ; free virtual = 68376
+Synthesis Optimization Complete : Time (s): cpu = 00:03:02 ; elapsed = 00:03:02 . Memory (MB): peak = 3262.367 ; gain = 2329.984 ; free physical = 59329 ; free virtual = 68376
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 388 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [/home/yu/projects/AES_GCM/constraints_artix_7.xdc]
-Finished Parsing XDC File [/home/yu/projects/AES_GCM/constraints_artix_7.xdc]
+Parsing XDC File [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W5' is not a valid site or package pin name. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:2]
+WARNING: [Vivado 12-584] No ports matched 'i_reset'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'i_reset'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-69] Command failed: 'V17' is not a valid site or package pin name. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:11]
+CRITICAL WARNING: [Common 17-69] Command failed: 'V16' is not a valid site or package pin name. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:13]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W16' is not a valid site or package pin name. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:15]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W17' is not a valid site or package pin name. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:17]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W15' is not a valid site or package pin name. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:19]
+CRITICAL WARNING: [Common 17-69] Command failed: 'V15' is not a valid site or package pin name. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:21]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W14' is not a valid site or package pin name. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:23]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W13' is not a valid site or package pin name. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:25]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not find a valid bel for the shape with the following elements: 
+	sw_IBUF[8]_inst/INBUF_INST
+	sw[8]
+	sw_IBUF[8]_inst/IBUFCTRL_INST
+ [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:27]
+CRITICAL WARNING: [Common 17-69] Command failed: 'T3' is not a valid site or package pin name. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:29]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not find a valid bel for the shape with the following elements: 
+	sw_IBUF[10]_inst/INBUF_INST
+	sw[10]
+	sw_IBUF[10]_inst/IBUFCTRL_INST
+ [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:31]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not find a valid bel for the shape with the following elements: 
+	sw_IBUF[11]_inst/INBUF_INST
+	sw[11]
+	sw_IBUF[11]_inst/IBUFCTRL_INST
+ [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:33]
+CRITICAL WARNING: [Common 17-69] Command failed: 'W2' is not a valid site or package pin name. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:35]
+CRITICAL WARNING: [Common 17-69] Command failed: 'U1' is not a valid site or package pin name. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:37]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not find a valid bel for the shape with the following elements: 
+	sw_IBUF[14]_inst/INBUF_INST
+	sw[14]
+	sw_IBUF[14]_inst/IBUFCTRL_INST
+ [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:39]
+CRITICAL WARNING: [Common 17-69] Command failed: 'R2' is not a valid site or package pin name. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:41]
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dp'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[0]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[1]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[2]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'an[3]'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 388 instances were transformed.
+  BUFG => BUFGCE: 2 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 385 instances
+  MMCME2_ADV => MMCME3_ADV: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-149 Infos, 31 Warnings, 0 Critical Warnings and 0 Errors encountered.
+48 Infos, 155 Warnings, 69 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1502.383 ; gain = 501.496 ; free physical = 27074 ; free virtual = 67330
+synth_design: Time (s): cpu = 00:03:04 ; elapsed = 00:03:04 . Memory (MB): peak = 3294.375 ; gain = 2291.488 ; free physical = 59332 ; free virtual = 68378
 # exec mkdir -p -- ./reports
 # report_timing -setup  -file ./reports/synth_aes_setup_report.txt
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-2] Deriving generated clocks
 INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+report_timing: Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 3365.434 ; gain = 71.059 ; free physical = 59330 ; free virtual = 68377
 # report_timing -hold   -file ./reports/synth_aes_hold_report.txt
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type min -sort_by slack.
 # report_timing_summary -file ./reports/synth_timing_report_aes.txt -delay_type min_max -max_path 50
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 # report_utilization    -file ./reports/synth_utilization_report.txt
-report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.13 . Memory (MB): peak = 1868.555 ; gain = 0.000 ; free physical = 26837 ; free virtual = 67092
-# place_design
-Command: place_design
-Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
-INFO: [DRC 23-27] Running DRC with 8 threads
-INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
-INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
-Running DRC as a precondition to command place_design
-INFO: [DRC 23-27] Running DRC with 8 threads
-INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
-INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
-
-Starting Placer Task
-INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
-
-Phase 1 Placer Initialization
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1966.586 ; gain = 0.000 ; free physical = 26808 ; free virtual = 67064
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1966.586 ; gain = 0.000 ; free physical = 26808 ; free virtual = 67064
-
-Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: dc6c1324
-
-Time (s): cpu = 00:00:00.73 ; elapsed = 00:00:00.40 . Memory (MB): peak = 1966.586 ; gain = 0.000 ; free physical = 26808 ; free virtual = 67064
-
-Phase 1.2 Build Placer Netlist Model
-Phase 1.2 Build Placer Netlist Model | Checksum: 1cbf19818
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.46 . Memory (MB): peak = 1966.586 ; gain = 0.000 ; free physical = 26801 ; free virtual = 67056
-
-Phase 1.3 Constrain Clocks/Macros
-Phase 1.3 Constrain Clocks/Macros | Checksum: 1cbf19818
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.46 . Memory (MB): peak = 1966.586 ; gain = 0.000 ; free physical = 26801 ; free virtual = 67056
-Phase 1 Placer Initialization | Checksum: 1cbf19818
-
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.46 . Memory (MB): peak = 1966.586 ; gain = 0.000 ; free physical = 26801 ; free virtual = 67056
-
-Phase 2 Global Placement
-Phase 2 Global Placement | Checksum: 178447d6b
-
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.61 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26787 ; free virtual = 67042
-
-Phase 3 Detail Placement
-
-Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 178447d6b
-
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.61 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26787 ; free virtual = 67042
-
-Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 24ec7ba65
-
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.65 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26788 ; free virtual = 67043
-
-Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 251f89ad7
-
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.66 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26787 ; free virtual = 67043
-
-Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 251f89ad7
-
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.66 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26787 ; free virtual = 67043
-
-Phase 3.5 Timing Path Optimizer
-Phase 3.5 Timing Path Optimizer | Checksum: 26e4fb616
-
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.67 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26788 ; free virtual = 67044
-
-Phase 3.6 Small Shape Detail Placement
-Phase 3.6 Small Shape Detail Placement | Checksum: 28f10714d
-
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.75 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26788 ; free virtual = 67044
-
-Phase 3.7 Re-assign LUT pins
-Phase 3.7 Re-assign LUT pins | Checksum: 1fa2338f7
-
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.76 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26788 ; free virtual = 67044
-
-Phase 3.8 Pipeline Register Optimization
-Phase 3.8 Pipeline Register Optimization | Checksum: 1fa2338f7
-
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.76 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26788 ; free virtual = 67044
-Phase 3 Detail Placement | Checksum: 1fa2338f7
-
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.76 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26788 ; free virtual = 67044
-
-Phase 4 Post Placement Optimization and Clean-Up
-
-Phase 4.1 Post Commit Optimization
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-
-Phase 4.1.1 Post Placement Optimization
-INFO: [Place 30-746] Post Placement Timing Summary WNS=7.817. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: bd8c42de
-
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.81 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26788 ; free virtual = 67044
-Phase 4.1 Post Commit Optimization | Checksum: bd8c42de
-
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.82 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26788 ; free virtual = 67044
-
-Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: bd8c42de
-
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.82 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26788 ; free virtual = 67044
-
-Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: bd8c42de
-
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.82 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26788 ; free virtual = 67044
-
-Phase 4.4 Final Placement Cleanup
-Phase 4.4 Final Placement Cleanup | Checksum: 14710e35d
-
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.82 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26788 ; free virtual = 67044
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 14710e35d
-
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.82 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26788 ; free virtual = 67044
-Ending Placer Task | Checksum: d6b964e1
-
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.83 . Memory (MB): peak = 2022.613 ; gain = 56.027 ; free physical = 26788 ; free virtual = 67044
-INFO: [Common 17-83] Releasing license: Implementation
-13 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
-place_design completed successfully
-# route_design
-Command: route_design
-Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
-Running DRC as a precondition to command route_design
-INFO: [DRC 23-27] Running DRC with 8 threads
-INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
-INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
-
-
-Starting Routing Task
-INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
-Checksum: PlaceDB: 47e34fd0 ConstDB: 0 ShapeSum: 8ed61511 RouteDB: 0
-
-Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: fa788ecd
-
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26708 ; free virtual = 66964
-
-Phase 2 Router Initialization
-
-Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: fa788ecd
-
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26708 ; free virtual = 66964
-
-Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: fa788ecd
-
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26682 ; free virtual = 66937
-
-Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: fa788ecd
-
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26682 ; free virtual = 66937
- Number of Nodes with overlaps = 0
-
-Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 1beb0f479
-
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26675 ; free virtual = 66930
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=7.788  | TNS=0.000  | WHS=-0.034 | THS=-0.188 |
-
-Phase 2 Router Initialization | Checksum: 14d48bcf1
-
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26675 ; free virtual = 66930
-
-Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: 12ec08df8
-
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26674 ; free virtual = 66930
-
-Phase 4 Rip-up And Reroute
-
-Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 3
- Number of Nodes with overlaps = 0
-
-Phase 4.1.1 Update Timing
-Phase 4.1.1 Update Timing | Checksum: 16b204044
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26674 ; free virtual = 66930
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=7.551  | TNS=0.000  | WHS=N/A    | THS=N/A    |
-
-Phase 4.1 Global Iteration 0 | Checksum: 1d78f8eeb
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26674 ; free virtual = 66930
-Phase 4 Rip-up And Reroute | Checksum: 1d78f8eeb
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26674 ; free virtual = 66930
-
-Phase 5 Delay and Skew Optimization
-
-Phase 5.1 Delay CleanUp
-Phase 5.1 Delay CleanUp | Checksum: 1d78f8eeb
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26674 ; free virtual = 66930
-
-Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 1d78f8eeb
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26674 ; free virtual = 66930
-Phase 5 Delay and Skew Optimization | Checksum: 1d78f8eeb
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26674 ; free virtual = 66930
-
-Phase 6 Post Hold Fix
-
-Phase 6.1 Hold Fix Iter
-
-Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 13f604d7a
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26675 ; free virtual = 66930
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=7.644  | TNS=0.000  | WHS=0.281  | THS=0.000  |
-
-Phase 6.1 Hold Fix Iter | Checksum: 13f604d7a
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26675 ; free virtual = 66930
-Phase 6 Post Hold Fix | Checksum: 13f604d7a
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26675 ; free virtual = 66930
-
-Phase 7 Route finalize
-
-Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.0199314 %
-  Global Horizontal Routing Utilization  = 0.0113222 %
-  Routable Net Status*
-  *Does not include unroutable nets such as driverless and loadless.
-  Run report_route_status for detailed report.
-  Number of Failed Nets               = 0
-  Number of Unrouted Nets             = 0
-  Number of Partially Routed Nets     = 0
-  Number of Node Overlaps             = 0
-
-Phase 7 Route finalize | Checksum: 1342c5c2b
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26675 ; free virtual = 66930
-
-Phase 8 Verifying routed nets
-
- Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 1342c5c2b
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26672 ; free virtual = 66928
-
-Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: a96beb25
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26672 ; free virtual = 66928
-
-Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=7.644  | TNS=0.000  | WHS=0.281  | THS=0.000  |
-
-INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: a96beb25
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26672 ; free virtual = 66928
-INFO: [Route 35-16] Router Completed Successfully
-
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 2022.613 ; gain = 0.000 ; free physical = 26672 ; free virtual = 66928
-
-Routing Is Done.
-INFO: [Common 17-83] Releasing license: Implementation
-12 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
-route_design completed successfully
-route_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 2025.312 ; gain = 2.699 ; free physical = 26673 ; free virtual = 66928
-# report_timing -setup  -file ./reports/impl_aes_setup_report.txt
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
-INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
-INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
-# report_timing -hold   -file ./reports/impl_aes_hold_report.txt
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min.
-INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
-INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type min -sort_by slack.
-# report_timing_summary -file ./reports/impl_timing_report_aes.txt -delay_type min_max -max_path 50
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
-INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
-# report_utilization    -file ./reports/impl_utilization_report.txt
-report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2025.312 ; gain = 0.000 ; free physical = 26669 ; free virtual = 66925
-# report_power -file ./reports/impl_power_report.txt
-Command: report_power -file ./reports/impl_power_report.txt
-Running Vector-less Activity Propagation...
-
-Finished Running Vector-less Activity Propagation
-0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
-report_power completed successfully
-# exec mkdir -p -- ./bitstreams
-# write_bitstream -force ./bitstreams/aes.bit
-Command: write_bitstream -force ./bitstreams/aes.bit
-Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
-Running DRC as a precondition to command write_bitstream
-INFO: [DRC 23-27] Running DRC with 8 threads
-WARNING: [DRC 23-20] Rule violation (CFGBVS-1) Missing CFGBVS and CONFIG_VOLTAGE Design Properties - Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
-
- set_property CFGBVS value1 [current_design]
- #where value1 is either VCCO or GND
-
- set_property CONFIG_VOLTAGE value2 [current_design]
- #where value2 is the voltage provided to configuration bank 0
-
-Refer to the device configuration user guide for more information.
-WARNING: [DRC 23-20] Rule violation (RTSTAT-10) No routable loads - 16 net(s) have no routable loads. The problem bus(es) and/or net(s) are u/clkdiv_reg[0]_i_1_n_1, u/clkdiv_reg[0]_i_1_n_2, u/clkdiv_reg[0]_i_1_n_3, u/clkdiv_reg[4]_i_1_n_1, u/clkdiv_reg[4]_i_1_n_2, u/clkdiv_reg[4]_i_1_n_3, u/clkdiv_reg[8]_i_1_n_1, u/clkdiv_reg[8]_i_1_n_2, u/clkdiv_reg[8]_i_1_n_3, u/clkdiv_reg[12]_i_1_n_1, u/clkdiv_reg[12]_i_1_n_2, u/clkdiv_reg[12]_i_1_n_3, u/clkdiv_reg[16]_i_1_n_1, u/clkdiv_reg[16]_i_1_n_2, u/clkdiv_reg[16]_i_1_n_3 (the first 15 of 16 listed).
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 2 Warnings
-INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
-Loading data files...
-Loading site data...
-Loading route data...
-Processing options...
-Creating bitmap...
-Creating bitstream...
-Writing bitstream ./bitstreams/aes.bit...
-INFO: [Vivado 12-1842] Bitgen Completed Successfully.
-INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
-INFO: [Common 17-186] '/home/yu/projects/AES_GCM/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Mon Oct 15 19:31:00 2018. For additional details about this file, please refer to the WebTalk help file at /home/yu/Vivado/Vivado/2016.4/doc/webtalk_introduction.html.
-INFO: [Common 17-83] Releasing license: Implementation
-8 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
-write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2417.141 ; gain = 201.625 ; free physical = 26362 ; free virtual = 66617
-INFO: [Common 17-206] Exiting Vivado at Mon Oct 15 19:31:00 2018...
+report_utilization: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.26 . Memory (MB): peak = 3365.434 ; gain = 0.000 ; free physical = 59326 ; free virtual = 68373
+# report_utilization -hierarchical  -file ./reports/synth_utilization_report_submodule.txt
+report_utilization: Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.32 . Memory (MB): peak = 3365.434 ; gain = 0.000 ; free physical = 59325 ; free virtual = 68372
+# write_schematic -format pdf -orientation portrait /home/yu/projects/AES_GCM/schematic_1.pdf
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  7 19:17:26 2018...

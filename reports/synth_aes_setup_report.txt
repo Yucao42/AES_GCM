@@ -1,79 +1,98 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Mon Oct 15 19:30:41 2018
-| Host         : westeros running 64-bit Ubuntu 18.04.1 LTS
-| Command      : report_timing -setup -file ./reports/synth_aes_setup_report.txt
-| Design       : aes
-| Device       : 7a35t-cpg236
-| Speed File   : -1  PRODUCTION 1.16 2016-11-09
-------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
+| Date              : Wed Nov  7 19:17:24 2018
+| Host              : westeros running 64-bit Ubuntu 18.04.1 LTS
+| Command           : report_timing -setup -file ./reports/synth_aes_setup_report.txt
+| Design            : aes
+| Device            : xcku035-fbva900
+| Speed File        : -3  PRODUCTION 1.23 12-12-2016
+| Temperature Grade : E
+-----------------------------------------------------------------------------------------
 
 Timing Report
 
-Slack (MET) :             7.950ns  (required time - arrival time)
-  Source:                 A_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@5.500ns period=11.000ns})
-  Destination:            u/x_reg[13]/D
-                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@5.500ns period=11.000ns})
+Slack (MET) :             0.632ns  (required time - arrival time)
+  Source:                 m2/r_i2_reg[82]/C
+                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.667ns period=3.333ns})
+  Destination:            m3/r_i1_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.667ns period=3.333ns})
   Path Group:             w_clk_out_clk_wiz_gen
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            11.000ns  (w_clk_out_clk_wiz_gen rise@11.000ns - w_clk_out_clk_wiz_gen rise@0.000ns)
-  Data Path Delay:        2.808ns  (logic 0.875ns (31.161%)  route 1.933ns (68.839%))
-  Logic Levels:           2  (LUT6=2)
+  Requirement:            3.333ns  (w_clk_out_clk_wiz_gen rise@3.333ns - w_clk_out_clk_wiz_gen rise@0.000ns)
+  Data Path Delay:        2.564ns  (logic 0.626ns (24.415%)  route 1.938ns (75.585%))
+  Logic Levels:           8  (LUT2=1 LUT4=2 LUT6=5)
   Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -2.261ns = ( 8.739 - 11.000 ) 
-    Source Clock Delay      (SCD):    -1.586ns
-    Clock Pessimism Removal (CPR):    0.530ns
-  Clock Uncertainty:      0.126ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Destination Clock Delay (DCD):    -0.285ns = ( 3.049 - 3.333 ) 
+    Source Clock Delay      (SCD):    0.048ns
+    Clock Pessimism Removal (CPR):    0.188ns
+  Clock Uncertainty:      0.040ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.242ns
+    Discrete Jitter          (DJ):    0.036ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
                          (clock w_clk_out_clk_wiz_gen rise edge)
                                                       0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk_gen_instance/clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clk_gen_instance/clkin1_ibufg/O
-                         net (fo=1, unplaced)         0.584     2.042    clk_gen_instance/w_clk_in_clk_wiz_gen
-                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -5.108    -3.065 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, unplaced)         0.800    -2.266    clk_gen_instance/w_clk_out_clk_wiz_gen
-                         BUFG (Prop_bufg_I_O)         0.096    -2.170 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=43, unplaced)        0.584    -1.586    clk_out
-                         FDRE                                         r  A_reg[2]/C
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_gen_instance/clkin1_ibufg/I
+                         INBUF (Prop_INBUF_PAD_O)     1.183     1.183 r  clk_gen_instance/clkin1_ibufg/INBUF_INST/O
+                         net (fo=1, unplaced)         0.079     1.262    clk_gen_instance/clkin1_ibufg/OUT
+                         IBUFCTRL (Prop_IBUFCTRL_I_O)
+                                                      0.000     1.262 r  clk_gen_instance/clkin1_ibufg/IBUFCTRL_INST/O
+                         net (fo=1, unplaced)         0.692     1.954    clk_gen_instance/w_clk_in_clk_wiz_gen
+                         MMCME3_ADV (Prop_MMCME3_ADV_CLKIN1_CLKOUT0)
+                                                     -4.833    -2.880 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.277    -2.603    clk_gen_instance/w_clk_out_clk_wiz_gen
+                         BUFGCE (Prop_BUFGCE_I_O)     0.067    -2.536 r  clk_gen_instance/clkout1_buf/O
+                         net (fo=1152, unplaced)      2.584     0.048    m2/CLK
+                         FDRE                                         r  m2/r_i2_reg[82]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.456    -1.130 r  A_reg[2]/Q
-                         net (fo=26, unplaced)        1.031    -0.099    u/A_reg[0][1]
-                         LUT6 (Prop_lut6_I0_O)        0.295     0.196 r  u/x[13]_i_3/O
-                         net (fo=1, unplaced)         0.902     1.098    u/x[13]_i_3_n_0
-                         LUT6 (Prop_lut6_I1_O)        0.124     1.222 r  u/x[13]_i_1/O
-                         net (fo=1, unplaced)         0.000     1.222    u/fn_product_return[114]
-                         FDRE                                         r  u/x_reg[13]/D
+                         FDRE (Prop_FDRE_C_Q)         0.103     0.151 r  m2/r_i2_reg[82]/Q
+                         net (fo=74, unplaced)        0.300     0.451    m2/r_i2[82]
+                         LUT4 (Prop_LUT4_I0_O)        0.115     0.566 r  m2/E_inferred_i_1541/O
+                         net (fo=79, unplaced)        0.304     0.870    m2/E_inferred_i_1541_n_0
+                         LUT4 (Prop_LUT4_I2_O)        0.085     0.955 r  m2/E_inferred_i_6104/O
+                         net (fo=1, unplaced)         0.216     1.171    m2/E_inferred_i_6104_n_0
+                         LUT6 (Prop_LUT6_I1_O)        0.153     1.324 r  m2/E_inferred_i_3948/O
+                         net (fo=1, unplaced)         0.224     1.548    m2/E_inferred_i_3948_n_0
+                         LUT6 (Prop_LUT6_I4_O)        0.034     1.582 r  m2/E_inferred_i_2264/O
+                         net (fo=1, unplaced)         0.224     1.806    m2/E_inferred_i_2264_n_0
+                         LUT6 (Prop_LUT6_I4_O)        0.034     1.840 r  m2/E_inferred_i_1035/O
+                         net (fo=1, unplaced)         0.200     2.040    m2/E_inferred_i_1035_n_0
+                         LUT6 (Prop_LUT6_I2_O)        0.034     2.074 r  m2/E_inferred_i_214/O
+                         net (fo=1, unplaced)         0.224     2.298    m2/E_inferred_i_214_n_0
+                         LUT6 (Prop_LUT6_I2_O)        0.034     2.332 r  m2/E_inferred_i_15/O
+                         net (fo=1, unplaced)         0.224     2.556    m3/out[113]
+                         LUT2 (Prop_LUT2_I0_O)        0.034     2.590 r  m3/r_i1[14]_i_1/O
+                         net (fo=1, unplaced)         0.022     2.612    m3/r_i10[113]
+                         FDRE                                         r  m3/r_i1_reg[14]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock w_clk_out_clk_wiz_gen rise edge)
-                                                     11.000    11.000 r  
-    W5                                                0.000    11.000 r  clk (IN)
-                         net (fo=0)                   0.000    11.000    clk_gen_instance/clk
-    W5                   IBUF (Prop_ibuf_I_O)         1.388    12.388 r  clk_gen_instance/clkin1_ibufg/O
-                         net (fo=1, unplaced)         0.439    12.827    clk_gen_instance/w_clk_in_clk_wiz_gen
-                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -5.378     7.449 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, unplaced)         0.760     8.209    clk_gen_instance/w_clk_out_clk_wiz_gen
-                         BUFG (Prop_bufg_I_O)         0.091     8.300 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=43, unplaced)        0.439     8.739    u/clk_out
-                         FDRE                                         r  u/x_reg[13]/C
-                         clock pessimism              0.530     9.269    
-                         clock uncertainty           -0.126     9.143    
-                         FDRE (Setup_fdre_C_D)        0.029     9.172    u/x_reg[13]
+                                                      3.333     3.333 r  
+                                                      0.000     3.333 r  clk (IN)
+                         net (fo=0)                   0.000     3.333    clk_gen_instance/clkin1_ibufg/I
+                         INBUF (Prop_INBUF_PAD_O)     1.002     4.335 r  clk_gen_instance/clkin1_ibufg/INBUF_INST/O
+                         net (fo=1, unplaced)         0.045     4.380    clk_gen_instance/clkin1_ibufg/OUT
+                         IBUFCTRL (Prop_IBUFCTRL_I_O)
+                                                      0.000     4.380 r  clk_gen_instance/clkin1_ibufg/IBUFCTRL_INST/O
+                         net (fo=1, unplaced)         0.657     5.037    clk_gen_instance/w_clk_in_clk_wiz_gen
+                         MMCME3_ADV (Prop_MMCME3_ADV_CLKIN1_CLKOUT0)
+                                                     -4.751     0.286 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.263     0.550    clk_gen_instance/w_clk_out_clk_wiz_gen
+                         BUFGCE (Prop_BUFGCE_I_O)     0.060     0.610 r  clk_gen_instance/clkout1_buf/O
+                         net (fo=1152, unplaced)      2.439     3.049    m3/clk_out
+                         FDRE                                         r  m3/r_i1_reg[14]/C
+                         clock pessimism              0.188     3.237    
+                         clock uncertainty           -0.040     3.197    
+                         FDRE (Setup_FDRE_C_D)        0.047     3.244    m3/r_i1_reg[14]
   -------------------------------------------------------------------
-                         required time                          9.172    
-                         arrival time                          -1.222    
+                         required time                          3.244    
+                         arrival time                          -2.612    
   -------------------------------------------------------------------
-                         slack                                  7.950    
+                         slack                                  0.632    
 
 
 

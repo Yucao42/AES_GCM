@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module display(  
-        input [0:15] i_x,
+        input [0:128] i_x,
         input [0:31] in_count,
         input clk,
         input clr,
@@ -15,15 +15,16 @@ module display(
     wire [3:0] aen;
     reg [19:0] clkdiv = 0;
     reg [0:15] x;
-    reg [0:31] count;
+    reg [0:2] count;
     
+    logic [0:127] r_x;
     assign dp = 1; 
     assign aen = 4'b1111; // all turned off initially
     
     always_ff @(posedge clk)
     begin
-        x <= i_x;
-        count <= in_count;
+        r_x <= i_x;
+        count <= count + 1;
     end
     
     always_comb
@@ -32,6 +33,7 @@ module display(
             digit = 0;
         else
         begin
+            x = r_x[count*16+:16];
             case(s)
                 1:digit = x[0:3]; // s is 00 -->0 ;  digit gets assigned 4 bit value assigned to x[3:0]
                 0:digit = x[4:7]; // s is 01 -->1 ;  digit gets assigned 4 bit value assigned to x[7:4]

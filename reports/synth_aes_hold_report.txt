@@ -1,75 +1,79 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
-------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Mon Oct 15 19:30:41 2018
-| Host         : westeros running 64-bit Ubuntu 18.04.1 LTS
-| Command      : report_timing -hold -file ./reports/synth_aes_hold_report.txt
-| Design       : aes
-| Device       : 7a35t-cpg236
-| Speed File   : -1  PRODUCTION 1.16 2016-11-09
-------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
+| Date              : Wed Nov  7 19:17:24 2018
+| Host              : westeros running 64-bit Ubuntu 18.04.1 LTS
+| Command           : report_timing -hold -file ./reports/synth_aes_hold_report.txt
+| Design            : aes
+| Device            : xcku035-fbva900
+| Speed File        : -3  PRODUCTION 1.23 12-12-2016
+| Temperature Grade : E
+-----------------------------------------------------------------------------------------
 
 Timing Report
 
-Slack (MET) :             0.125ns  (arrival time - required time)
-  Source:                 u/clkdiv_reg[11]/C
-                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@5.500ns period=11.000ns})
-  Destination:            u/clkdiv_reg[11]/D
-                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@5.500ns period=11.000ns})
+Slack (VIOLATED) :        -0.044ns  (arrival time - required time)
+  Source:                 B_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.667ns period=3.333ns})
+  Destination:            m1/r_i1_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.667ns period=3.333ns})
   Path Group:             w_clk_out_clk_wiz_gen
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (w_clk_out_clk_wiz_gen rise@0.000ns - w_clk_out_clk_wiz_gen rise@0.000ns)
-  Data Path Delay:        0.375ns  (logic 0.249ns (66.469%)  route 0.126ns (33.531%))
-  Logic Levels:           2  (CARRY4=1 LUT1=1)
+  Data Path Delay:        0.157ns  (logic 0.064ns (40.891%)  route 0.093ns (59.109%))
+  Logic Levels:           1  (LUT2=1)
   Clock Path Skew:        0.145ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -1.094ns
-    Source Clock Delay      (SCD):    -0.959ns
-    Clock Pessimism Removal (CPR):    -0.280ns
+    Destination Clock Delay (DCD):    0.232ns
+    Source Clock Delay      (SCD):    0.165ns
+    Clock Pessimism Removal (CPR):    -0.078ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
                          (clock w_clk_out_clk_wiz_gen rise edge)
                                                       0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk_gen_instance/clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  clk_gen_instance/clkin1_ibufg/O
-                         net (fo=1, unplaced)         0.114     0.340    clk_gen_instance/w_clk_in_clk_wiz_gen
-                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -1.776    -1.436 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, unplaced)         0.337    -1.099    clk_gen_instance/w_clk_out_clk_wiz_gen
-                         BUFG (Prop_bufg_I_O)         0.026    -1.073 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=43, unplaced)        0.114    -0.959    u/clk_out
-                         FDRE                                         r  u/clkdiv_reg[11]/C
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_gen_instance/clkin1_ibufg/I
+                         INBUF (Prop_INBUF_PAD_O)     1.002     1.002 r  clk_gen_instance/clkin1_ibufg/INBUF_INST/O
+                         net (fo=1, unplaced)         0.027     1.029    clk_gen_instance/clkin1_ibufg/OUT
+                         IBUFCTRL (Prop_IBUFCTRL_I_O)
+                                                      0.000     1.029 r  clk_gen_instance/clkin1_ibufg/IBUFCTRL_INST/O
+                         net (fo=1, unplaced)         0.404     1.432    clk_gen_instance/w_clk_in_clk_wiz_gen
+                         MMCME3_ADV (Prop_MMCME3_ADV_CLKIN1_CLKOUT0)
+                                                     -2.570    -1.138 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.162    -0.976    clk_gen_instance/w_clk_out_clk_wiz_gen
+                         BUFGCE (Prop_BUFGCE_I_O)     0.027    -0.949 r  clk_gen_instance/clkout1_buf/O
+                         net (fo=1152, unplaced)      1.114     0.165    clk_out
+                         FDRE                                         r  B_reg[0]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141    -0.818 r  u/clkdiv_reg[11]/Q
-                         net (fo=1, unplaced)         0.126    -0.692    u/clkdiv_reg_n_0_[11]
-                         LUT1 (Prop_lut1_I0_O)        0.045    -0.647 r  u/clkdiv[8]_i_2/O
-                         net (fo=1, unplaced)         0.000    -0.647    u/clkdiv[8]_i_2_n_0
-                         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.063    -0.584 r  u/clkdiv_reg[8]_i_1/O[3]
-                         net (fo=1, unplaced)         0.000    -0.584    u/clkdiv_reg[8]_i_1_n_4
-                         FDRE                                         r  u/clkdiv_reg[11]/D
+                         FDRE (Prop_FDRE_C_Q)         0.049     0.214 r  B_reg[0]/Q
+                         net (fo=3, unplaced)         0.081     0.294    m1/B_reg[0][127]
+                         LUT2 (Prop_LUT2_I1_O)        0.015     0.309 r  m1/r_i1[0]_i_1/O
+                         net (fo=1, unplaced)         0.012     0.321    m1/r_i10__0[127]
+                         FDRE                                         r  m1/r_i1_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock w_clk_out_clk_wiz_gen rise edge)
                                                       0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk_gen_instance/clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  clk_gen_instance/clkin1_ibufg/O
-                         net (fo=1, unplaced)         0.259     0.673    clk_gen_instance/w_clk_in_clk_wiz_gen
-                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -2.410    -1.737 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, unplaced)         0.355    -1.382    clk_gen_instance/w_clk_out_clk_wiz_gen
-                         BUFG (Prop_bufg_I_O)         0.029    -1.353 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=43, unplaced)        0.259    -1.094    u/clk_out
-                         FDRE                                         r  u/clkdiv_reg[11]/C
-                         clock pessimism              0.280    -0.814    
-                         FDRE (Hold_fdre_C_D)         0.105    -0.709    u/clkdiv_reg[11]
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_gen_instance/clkin1_ibufg/I
+                         INBUF (Prop_INBUF_PAD_O)     1.183     1.183 r  clk_gen_instance/clkin1_ibufg/INBUF_INST/O
+                         net (fo=1, unplaced)         0.047     1.230    clk_gen_instance/clkin1_ibufg/OUT
+                         IBUFCTRL (Prop_IBUFCTRL_I_O)
+                                                      0.000     1.230 r  clk_gen_instance/clkin1_ibufg/IBUFCTRL_INST/O
+                         net (fo=1, unplaced)         0.425     1.655    clk_gen_instance/w_clk_in_clk_wiz_gen
+                         MMCME3_ADV (Prop_MMCME3_ADV_CLKIN1_CLKOUT0)
+                                                     -2.883    -1.228 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.170    -1.058    clk_gen_instance/w_clk_out_clk_wiz_gen
+                         BUFGCE (Prop_BUFGCE_I_O)     0.031    -1.027 r  clk_gen_instance/clkout1_buf/O
+                         net (fo=1152, unplaced)      1.259     0.232    m1/clk_out
+                         FDRE                                         r  m1/r_i1_reg[0]/C
+                         clock pessimism              0.078     0.310    
+                         FDRE (Hold_FDRE_C_D)         0.056     0.366    m1/r_i1_reg[0]
   -------------------------------------------------------------------
-                         required time                          0.709    
-                         arrival time                          -0.584    
+                         required time                         -0.366    
+                         arrival time                           0.321    
   -------------------------------------------------------------------
-                         slack                                  0.125    
+                         slack                                 -0.044    
 
 
 
