@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date              : Wed Nov  7 20:03:57 2018
+| Date              : Wed Nov  7 22:14:44 2018
 | Host              : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command           : report_timing -setup -file ./reports/synth_aes_setup_report.txt
 | Design            : aes
@@ -12,23 +12,23 @@ Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 Timing Report
 
-Slack (MET) :             0.632ns  (required time - arrival time)
-  Source:                 m2/r_i2_reg[82]/C
-                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.667ns period=3.333ns})
-  Destination:            m3/r_i1_reg[14]/D
-                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.667ns period=3.333ns})
+Slack (MET) :             0.041ns  (required time - arrival time)
+  Source:                 m2/r_i1_reg_rep_bsel__0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.818ns period=3.636ns})
+  Destination:            m3/r_i1_reg_rep_bsel__2/ADDRARDADDR[7]
+                            (rising edge-triggered cell RAMB18E2 clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.818ns period=3.636ns})
   Path Group:             w_clk_out_clk_wiz_gen
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            3.333ns  (w_clk_out_clk_wiz_gen rise@3.333ns - w_clk_out_clk_wiz_gen rise@0.000ns)
-  Data Path Delay:        2.564ns  (logic 0.626ns (24.415%)  route 1.938ns (75.585%))
-  Logic Levels:           8  (LUT2=1 LUT4=2 LUT6=5)
+  Requirement:            3.636ns  (w_clk_out_clk_wiz_gen rise@3.636ns - w_clk_out_clk_wiz_gen rise@0.000ns)
+  Data Path Delay:        3.031ns  (logic 1.492ns (49.225%)  route 1.472ns (48.565%))
+  Logic Levels:           7  (LUT4=4 LUT6=1 MUXF7=1 MUXF8=1)
   Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -0.285ns = ( 3.049 - 3.333 ) 
+    Destination Clock Delay (DCD):    -0.285ns = ( 3.352 - 3.636 ) 
     Source Clock Delay      (SCD):    0.048ns
     Clock Pessimism Removal (CPR):    0.188ns
-  Clock Uncertainty:      0.040ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:      0.041ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.036ns
+    Discrete Jitter          (DJ):    0.041ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -46,53 +46,53 @@ Slack (MET) :             0.632ns  (required time - arrival time)
                                                      -4.833    -2.880 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, unplaced)         0.277    -2.603    clk_gen_instance/w_clk_out_clk_wiz_gen
                          BUFGCE (Prop_BUFGCE_I_O)     0.067    -2.536 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=1536, unplaced)      2.584     0.048    m2/CLK
-                         FDRE                                         r  m2/r_i2_reg[82]/C
+                         net (fo=432, unplaced)       2.584     0.048    m2/o_clk_out
+                         RAMB18E2                                     r  m2/r_i1_reg_rep_bsel__0/CLKBWRCLK
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_FDRE_C_Q)         0.103     0.151 r  m2/r_i2_reg[82]/Q
-                         net (fo=74, unplaced)        0.300     0.451    m2/r_i2[82]
-                         LUT4 (Prop_LUT4_I0_O)        0.115     0.566 r  m2/E_inferred_i_1541/O
-                         net (fo=79, unplaced)        0.304     0.870    m2/E_inferred_i_1541_n_0
-                         LUT4 (Prop_LUT4_I2_O)        0.085     0.955 r  m2/E_inferred_i_6104/O
-                         net (fo=1, unplaced)         0.216     1.171    m2/E_inferred_i_6104_n_0
-                         LUT6 (Prop_LUT6_I1_O)        0.153     1.324 r  m2/E_inferred_i_3948/O
-                         net (fo=1, unplaced)         0.224     1.548    m2/E_inferred_i_3948_n_0
-                         LUT6 (Prop_LUT6_I4_O)        0.034     1.582 r  m2/E_inferred_i_2264/O
-                         net (fo=1, unplaced)         0.224     1.806    m2/E_inferred_i_2264_n_0
-                         LUT6 (Prop_LUT6_I4_O)        0.034     1.840 r  m2/E_inferred_i_1035/O
-                         net (fo=1, unplaced)         0.200     2.040    m2/E_inferred_i_1035_n_0
-                         LUT6 (Prop_LUT6_I2_O)        0.034     2.074 r  m2/E_inferred_i_214/O
-                         net (fo=1, unplaced)         0.224     2.298    m2/E_inferred_i_214_n_0
-                         LUT6 (Prop_LUT6_I2_O)        0.034     2.332 r  m2/E_inferred_i_15/O
-                         net (fo=1, unplaced)         0.224     2.556    m3/out[113]
-                         LUT2 (Prop_LUT2_I0_O)        0.034     2.590 r  m3/r_i1[14]_i_1/O
-                         net (fo=1, unplaced)         0.022     2.612    m3/r_i10[113]
-                         FDRE                                         r  m3/r_i1_reg[14]/D
+                         RAMB18E2 (Prop_RAMB18E2_CLKBWRCLK_DOUTBDOUT[3])
+                                                      1.055     1.103 r  m2/r_i1_reg_rep_bsel__0/DOUTBDOUT[3]
+                         net (fo=5, unplaced)         0.360     1.463    m2/p_42_in[3]
+                         LUT4 (Prop_LUT4_I1_O)        0.100     1.563 r  m2/g0_b0__26_i_8/O
+                         net (fo=1, unplaced)         0.224     1.787    m2/g0_b0__26_i_8_n_0
+                         LUT4 (Prop_LUT4_I0_O)        0.034     1.821 r  m2/g0_b0__26_i_4/O
+                         net (fo=32, unplaced)        0.260     2.081    m2/SBOX1[91]
+                         LUT6 (Prop_LUT6_I3_O)        0.037     2.118 r  m2/g0_b3__26/O
+                         net (fo=1, unplaced)         0.000     2.118    m2/g0_b3__26_n_0
+                         MUXF7 (Prop_MUXF7_I0_O)      0.061     2.179 r  m2/SBOX_inferred__10/r_i1_reg_rep_bsel__1_i_117/O
+                         net (fo=1, unplaced)         0.025     2.204    m2/SBOX_inferred__10/r_i1_reg_rep_bsel__1_i_117_n_0
+                         MUXF8 (Prop_MUXF8_I0_O)      0.056     2.260 r  m2/SBOX_inferred__10/r_i1_reg_rep_bsel__1_i_85/O
+                         net (fo=5, unplaced)         0.246     2.506    m2/p_19_in84_in[3]
+                         LUT4 (Prop_LUT4_I0_O)        0.115     2.621 r  m2/r_i1_reg_rep_bsel__2_i_19/O
+                         net (fo=1, unplaced)         0.224     2.845    m2/r_i1_reg_rep_bsel__2_i_19_n_0
+                         LUT4 (Prop_LUT4_I3_O)        0.034     2.879 r  m2/r_i1_reg_rep_bsel__2_i_5/O
+                         net (fo=2, unplaced)         0.133     3.012    m3/Q[75]
+                         RAMB18E2                                     r  m3/r_i1_reg_rep_bsel__2/ADDRARDADDR[7]
   -------------------------------------------------------------------    -------------------
 
                          (clock w_clk_out_clk_wiz_gen rise edge)
-                                                      3.333     3.333 r  
-                                                      0.000     3.333 r  clk (IN)
-                         net (fo=0)                   0.000     3.333    clk_gen_instance/clkin1_ibufg/I
-                         INBUF (Prop_INBUF_PAD_O)     1.002     4.335 r  clk_gen_instance/clkin1_ibufg/INBUF_INST/O
-                         net (fo=1, unplaced)         0.045     4.380    clk_gen_instance/clkin1_ibufg/OUT
+                                                      3.636     3.636 r  
+                                                      0.000     3.636 r  clk (IN)
+                         net (fo=0)                   0.000     3.636    clk_gen_instance/clkin1_ibufg/I
+                         INBUF (Prop_INBUF_PAD_O)     1.002     4.638 r  clk_gen_instance/clkin1_ibufg/INBUF_INST/O
+                         net (fo=1, unplaced)         0.045     4.683    clk_gen_instance/clkin1_ibufg/OUT
                          IBUFCTRL (Prop_IBUFCTRL_I_O)
-                                                      0.000     4.380 r  clk_gen_instance/clkin1_ibufg/IBUFCTRL_INST/O
-                         net (fo=1, unplaced)         0.657     5.037    clk_gen_instance/w_clk_in_clk_wiz_gen
+                                                      0.000     4.683 r  clk_gen_instance/clkin1_ibufg/IBUFCTRL_INST/O
+                         net (fo=1, unplaced)         0.657     5.340    clk_gen_instance/w_clk_in_clk_wiz_gen
                          MMCME3_ADV (Prop_MMCME3_ADV_CLKIN1_CLKOUT0)
-                                                     -4.751     0.286 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, unplaced)         0.263     0.550    clk_gen_instance/w_clk_out_clk_wiz_gen
-                         BUFGCE (Prop_BUFGCE_I_O)     0.060     0.610 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=1536, unplaced)      2.439     3.049    m3/CLK
-                         FDRE                                         r  m3/r_i1_reg[14]/C
-                         clock pessimism              0.188     3.237    
-                         clock uncertainty           -0.040     3.197    
-                         FDRE (Setup_FDRE_C_D)        0.047     3.244    m3/r_i1_reg[14]
+                                                     -4.751     0.589 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.263     0.853    clk_gen_instance/w_clk_out_clk_wiz_gen
+                         BUFGCE (Prop_BUFGCE_I_O)     0.060     0.913 r  clk_gen_instance/clkout1_buf/O
+                         net (fo=432, unplaced)       2.439     3.352    m3/o_clk_out
+                         RAMB18E2                                     r  m3/r_i1_reg_rep_bsel__2/CLKARDCLK
+                         clock pessimism              0.188     3.540    
+                         clock uncertainty           -0.041     3.499    
+                         RAMB18E2 (Setup_RAMB18E2_CLKARDCLK_ADDRARDADDR[7])
+                                                     -0.378     3.121    m3/r_i1_reg_rep_bsel__2
   -------------------------------------------------------------------
-                         required time                          3.244    
-                         arrival time                          -2.612    
+                         required time                          3.121    
+                         arrival time                          -3.079    
   -------------------------------------------------------------------
-                         slack                                  0.632    
+                         slack                                  0.041    
 
 
 

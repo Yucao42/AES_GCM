@@ -23,7 +23,7 @@ read_verilog -sv  aes_pipeline_stage7.sv
 read_verilog -sv  aes_pipeline_stage8.sv
 read_verilog -sv  gcm_aes.sv
 read_verilog -sv  display.sv
-read_verilog -sv  aes.sv
+read_verilog -sv  aes_encrypt.sv
 
 #Read constraints file
 read_xdc constraints_artix_7.xdc

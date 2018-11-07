@@ -39,29 +39,33 @@ module aes(
  		A <= sw[0+:128];
         B <= sw[128+:128];
         C <= sw[256+:128];	
+
+		E <= D;
+		F <= E;
 	end
 
-	md_multiply m1(
+	
+	md_encrypt m1(
 	   .clk(clk_out),
 	   .i1(A),
-	   .i2(B),
-	   .i3(C),
+	   .i2(3'd1),
+	   .key(key),
 	   .o(D)
 	);
 
-	md_multiply m2(
+	md_encrypt m2(
 	   .clk(clk_out),
-	   .i1(D),
-	   .i2(A),
-	   .i3(B),
-	   .o(E)
+	   .i1(E),
+	   .i2(3'd3),
+	   .key(key),
+	   .o(F)
 	);	
   
-	md_multiply m3(
+	md_encrypt m3(
        .clk(clk_out),
-       .i1(E),
-       .i2(B),
-       .i3(A),
+       .i1(F),
+       .i2(3'd5),
+	   .key(key),
        .o(tag)
     );    
     //970
