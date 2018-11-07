@@ -44,7 +44,7 @@ module gcm_aes(
     logic [0:1407]    w_s1_key_schedule;
     (* dont_touch = "true" *) logic [0:127]     w_s1_aad;
     logic [0:127]     w_s1_instance_size;
-	logic [0:1]       w_s1_phase;
+	logic [0:2]       w_s1_phase;
 
     /* Wires joining Stage2 and Stage3 */
     logic             w_s2_new_instance;
@@ -56,7 +56,7 @@ module gcm_aes(
     logic [0:1407]    w_s2_key_schedule;
     (* dont_touch = "true" *) logic [0:127]     w_s2_aad;
     logic [0:127]     w_s2_instance_size;
-	logic [0:1]       w_s2_phase;
+	logic [0:2]       w_s2_phase;
    
     /* Wires joining Stage3 and Stage4 */
     logic             w_s3_new_instance;
@@ -67,7 +67,7 @@ module gcm_aes(
     logic [0:1407]    w_s3_key_schedule;
     (* dont_touch = "true" *) logic [0:127]     w_s3_aad;
     logic [0:127]     w_s3_instance_size;
-	logic [0:1]       w_s3_phase;
+	logic [0:2]       w_s3_phase;
 
     /* Wires joining Stage4 and Stage5 */
     logic             w_s4_new_instance;
@@ -78,7 +78,7 @@ module gcm_aes(
     logic [0:1407]    w_s4_key_schedule;
     (* dont_touch = "true" *) logic [0:127]     w_s4_aad;
     logic [0:127]     w_s4_instance_size;
-	logic [0:1]       w_s4_phase;
+	logic [0:2]       w_s4_phase;
 
     /* Wires joining Stage4 and Stage5 */
     logic             w_s5_new_instance;
@@ -89,7 +89,7 @@ module gcm_aes(
     logic [0:1407]    w_s5_key_schedule;
     (* dont_touch = "true" *) logic [0:127]     w_s5_aad;
     logic [0:127]     w_s5_instance_size;
-	logic [0:1]       w_s5_phase;
+	logic [0:2]       w_s5_phase;
    
     /* Wires joining Stage5 and Stage6 */
     logic             w_s6_new_instance;
@@ -100,7 +100,7 @@ module gcm_aes(
     logic [0:1407]    w_s6_key_schedule;
     (* dont_touch = "true" *) logic [0:127]     w_s6_aad;
     logic [0:127]     w_s6_instance_size;
-	logic [0:1]       w_s6_phase;
+	logic [0:2]       w_s6_phase;
 
     /* Wires joining Stage6 and Stage7 */
     logic             w_s7_new_instance;
@@ -110,7 +110,7 @@ module gcm_aes(
     logic [0:1407]    w_s7_key_schedule;
     (* dont_touch = "true" *) logic [0:127]     w_s7_aad;
     logic [0:127]     w_s7_instance_size;
-	logic [0:1]       w_s7_phase;
+	logic [0:2]       w_s7_phase;
    
     /* Wires joining Stage8 and Stage9 */
     logic             w_s8_sblock_ready;

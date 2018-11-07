@@ -4,14 +4,16 @@
 module aes(
     clk,
     sw,
-    i_reset,
+    i_reset,  // Signal that says it is a new instance
     an,
     dp,
     seg
 );
 
     input           clk;
-    input  [0:352]   sw;
+	// Input including 96 bits iv, 128 bits aad block, 128 bits plaintext
+	// block and 128 bits input key block.
+    input  [0:352+ 128]   sw;
     input           i_reset;
     output [3:0]    an;
     output          dp;
@@ -22,13 +24,12 @@ module aes(
     logic           pt_delay;
 
 	logic [0:95]    iv_sw = sw[0+:96];
-
-	(* dont_touch = "true" *) logic [0:127]   plain_text_sw = sw[96+:128];
-
+	logic [0:127]   plain_text_sw = sw[96+:128];
 	logic [0:127]   cipher_key_sw = sw[224+:128];
-   
-    logic [0:127] cipher_text;
-    logic [0:127] tag;
+	logic [0:127]   aad = sw[352+:128];
+
+    logic [0:127]   cipher_text;
+    logic [0:127]   tag;
     reg tag_ready;
     
     /* Clock module (Comes from clk_gen.sv) */    
@@ -44,12 +45,11 @@ module aes(
         .clk(clk_out),
         .i_iv(iv_sw),
         .i_new_instance(i_reset),
-        .i_pt_instance(pt_delay),
         .i_cipher_key(cipher_key_sw),
         .i_plain_text(plain_text_sw),
         .i_plain_text_size(64'd128),
         .i_aad_size(64'd128),
-        .i_aad(plain_text_sw),
+        .i_aad(aad),
         .o_cipher_text(cipher_text),
         .o_tag(tag),
         .o_tag_ready(tag_ready)
@@ -58,21 +58,12 @@ module aes(
     /* Display module (comes from display.sv) */
     display u (
         .in_count(1),
-		/* Calculation of tag will exceed the LUT limitation on Basys3 board.
-        .i_x({tag[0+:8], tag[8+:8]}),
-		*/
         .i_x(tag),
-        //.i_x({cipher_text[8+:8], cipher_text[0+:8]}),
         .clk(clk_out),
         .clr(1'b0),
         .a_to_g(seg),
         .an(an),
         .dp(dp)
     );
-
-	always_ff @(posedge clk_out)
-	begin
-		pt_delay <= i_reset;
-	end
 
 endmodule

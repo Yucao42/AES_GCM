@@ -31,9 +31,9 @@ module aes_pipeline_stage3 (
     input logic [0:1407]  i_key_schedule;
     input logic           i_new_instance;
     input logic           i_pt_instance;
-    input logic [0:1]     i_phase;
+    input logic [0:2]     i_phase;
     
-    output logic [0:1]      o_phase;
+    output logic [0:2]      o_phase;
     output logic [0:1407]   o_key_schedule;
     output logic [0:127]    o_plain_text;
     output logic [0:127]    o_aad;
@@ -54,7 +54,7 @@ module aes_pipeline_stage3 (
     logic           r_new_instance;
     logic           r_pt_instance;
 
-    logic [0:1]     r_phase;
+    logic [0:2]     r_phase;
     always_ff @(posedge clk)
     begin
 		r_phase         <= i_phase;

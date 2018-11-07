@@ -22,7 +22,7 @@ module aes_pipeline_stage8(
     input logic [0:127]   i_encrypted_j0;
     input logic [0:127]   i_instance_size;
     input logic           i_new_instance;
-    input logic [0:1]     i_phase;
+    input logic [0:2]     i_phase;
     
     output logic [0:127]    o_encrypted_j0;
     output logic [0:127]    o_cipher_text;
@@ -45,7 +45,7 @@ module aes_pipeline_stage8(
     logic [0:127]   w_counter;
     logic [0:127]   w_auth_input;
      
-    logic [0:1]     r_phase;
+    logic [0:2]     r_phase;
     /* Helper variables */
     integer aad_blocks;
     integer total_blocks;
@@ -74,12 +74,13 @@ module aes_pipeline_stage8(
     begin
         w_sblock = r_sblock;
 		case(r_phase)
-			2'b11:   o_tag_ready = 1;
+			3'b111:   o_tag_ready = 1;
+			3'b011:   o_tag_ready = 1;
 		    default: o_tag_ready = 0;
 		endcase
 			
 		case(r_phase)
-			2'b10:   w_auth_input = r_aad;
+			3'b010:   w_auth_input = r_aad;
 		    default: w_auth_input = r_cipher_text;
 		endcase
 

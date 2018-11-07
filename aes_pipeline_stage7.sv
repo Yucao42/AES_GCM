@@ -27,9 +27,9 @@ module aes_pipeline_stage7(
     input logic [0:127]   i_instance_size;
     input logic [0:1407]  i_key_schedule;
     input logic           i_new_instance;
-    input logic [0:1]     i_phase;
+    input logic [0:2]     i_phase;
     
-    output logic [0:1]      o_phase; 
+    output logic [0:2]      o_phase; 
     output logic [0:127]    o_cipher_text;
     output logic [0:127]    o_aad;
     output logic [0:127]    o_h;
@@ -48,7 +48,7 @@ module aes_pipeline_stage7(
     logic           r_pt_instance;
     
     logic [0:127]   w_encrypted_cb;
-    logic [0:1]     r_phase;
+    logic [0:2]     r_phase;
 
     always_ff @(posedge clk)
     begin

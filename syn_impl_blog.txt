@@ -35,15 +35,14 @@ Using part: xcku035-fbva900-3-e
 Attempting to get a license for feature 'Synthesis' and/or device 'xcku035'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku035'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 30036 
+INFO: Helper process launched with PID 35625 
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/AES_GCM/aes_pipeline_stage12.sv:4]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/AES_GCM/aes_pipeline_stage13.sv:4]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/AES_GCM/aes_pipeline_stage14.sv:4]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1100.688 ; gain = 168.305 ; free physical = 60144 ; free virtual = 69416
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1100.691 ; gain = 168.305 ; free physical = 61027 ; free virtual = 70303
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'aes' [/home/yu/projects/AES_GCM/aes.sv:4]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/projects/AES_GCM/aes.sv:26]
 INFO: [Synth 8-638] synthesizing module 'clk_gen' [/home/yu/projects/AES_GCM/clk_gen.sv:1]
 INFO: [Synth 8-638] synthesizing module 'IBUF' [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:14146]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
@@ -195,6 +194,7 @@ INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage8' (16#1) [/home
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage9' [/home/yu/projects/AES_GCM/aes_pipeline_stage9.sv:1]
 INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage9' (17#1) [/home/yu/projects/AES_GCM/aes_pipeline_stage9.sv:1]
 INFO: [Synth 8-256] done synthesizing module 'gcm_aes' (18#1) [/home/yu/projects/AES_GCM/gcm_aes.sv:9]
+WARNING: [Synth 8-350] instance 'gcm_aes_instance' of module 'gcm_aes' requires 12 connections, but only 11 given [/home/yu/projects/AES_GCM/aes.sv:44]
 INFO: [Synth 8-638] synthesizing module 'display' [/home/yu/projects/AES_GCM/display.sv:3]
 INFO: [Synth 8-226] default block is never used [/home/yu/projects/AES_GCM/display.sv:35]
 INFO: [Synth 8-226] default block is never used [/home/yu/projects/AES_GCM/display.sv:48]
@@ -302,7 +302,7 @@ WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_sc
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[99]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1855.195 ; gain = 922.812 ; free physical = 59196 ; free virtual = 68487
+Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1856.199 ; gain = 923.812 ; free physical = 59746 ; free virtual = 69041
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -413,7 +413,7 @@ WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[98] to constant 0
 WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[99] to constant 0 [/home/yu/projects/AES_GCM/gcm_aes.sv:258]
 INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1855.195 ; gain = 922.812 ; free physical = 59152 ; free virtual = 68443
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1856.199 ; gain = 923.812 ; free physical = 59655 ; free virtual = 68950
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -435,26 +435,26 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IBUF => IBUF (INBUF, IBUFCTRL): 1 instances
   MMCME2_ADV => MMCME3_ADV: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2249.352 ; gain = 0.000 ; free physical = 58839 ; free virtual = 68130
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2251.355 ; gain = 0.000 ; free physical = 59352 ; free virtual = 68647
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 2249.352 ; gain = 1316.969 ; free physical = 58835 ; free virtual = 68127
+Finished Constraint Validation : Time (s): cpu = 00:00:39 ; elapsed = 00:00:38 . Memory (MB): peak = 2251.355 ; gain = 1318.969 ; free physical = 59335 ; free virtual = 68629
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xcku035-fbva900-3-e
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 2249.352 ; gain = 1316.969 ; free physical = 58835 ; free virtual = 68127
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:39 ; elapsed = 00:00:38 . Memory (MB): peak = 2251.355 ; gain = 1318.969 ; free physical = 59335 ; free virtual = 68629
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 2249.352 ; gain = 1316.969 ; free physical = 58835 ; free virtual = 68126
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:38 . Memory (MB): peak = 2251.355 ; gain = 1318.969 ; free physical = 59335 ; free virtual = 68629
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5544] ROM "o_tag_ready" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "o_tag_ready" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:30 ; elapsed = 00:01:30 . Memory (MB): peak = 2275.352 ; gain = 1342.969 ; free physical = 58117 ; free virtual = 67408
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:33 ; elapsed = 00:01:33 . Memory (MB): peak = 2274.355 ; gain = 1341.969 ; free physical = 58983 ; free virtual = 68278
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -462,15 +462,15 @@ Report RTL Partitions:
 |      |RTL Partition            |Replication |Instances |
 +------+-------------------------+------------+----------+
 |1     |clk_gen__GC0             |           1|         3|
-|2     |aes_pipeline_stage8__GB0 |           1|     40013|
+|2     |aes_pipeline_stage8__GB0 |           1|     40141|
 |3     |aes_pipeline_stage8__GB1 |           1|     10422|
 |4     |aes_pipeline_stage9__GB0 |           1|     40267|
 |5     |aes_pipeline_stage9__GB1 |           1|     10036|
-|6     |gcm_aes__GCB0            |           1|     35378|
-|7     |gcm_aes__GCB1            |           1|     21577|
-|8     |gcm_aes__GCB2            |           1|     21755|
-|9     |gcm_aes__GCB3            |           1|     24406|
-|10    |aes__GC0                 |           1|       352|
+|6     |gcm_aes__GCB0            |           1|     36343|
+|7     |gcm_aes__GCB1            |           1|     21578|
+|8     |gcm_aes__GCB2            |           1|     21756|
+|9     |gcm_aes__GCB3            |           1|     24408|
+|10    |display                  |           1|       351|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -487,7 +487,7 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input    128 Bit       Adders := 2     
 	   2 Input     64 Bit       Adders := 1     
-	   2 Input     32 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 2     
 	   2 Input      9 Bit       Adders := 1     
 +---XORs : 
 	   2 Input    128 Bit         XORs := 542   
@@ -504,16 +504,18 @@ Detailed RTL Component Info :
 	               16 Bit    Registers := 1     
 	                9 Bit    Registers := 1     
 	                8 Bit    Registers := 208   
-	                2 Bit    Registers := 7     
-	                1 Bit    Registers := 12    
+	                3 Bit    Registers := 7     
+	                1 Bit    Registers := 11    
 +---ROMs : 
 	                              ROMs := 208   
 +---Muxes : 
-	   2 Input    128 Bit        Muxes := 513   
+	   2 Input    128 Bit        Muxes := 512   
+	   3 Input    128 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -529,21 +531,17 @@ INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_r
 INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/AES_GCM/aes_pipeline_stage14.sv:16]
 INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/projects/AES_GCM/aes_pipeline_stage6.sv:64]
 Hierarchical RTL Component report 
-Module aes 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 1     
 Module aes_pipeline_stage8 
 Detailed RTL Component Info : 
 +---XORs : 
 	   2 Input    128 Bit         XORs := 255   
 +---Registers : 
 	              128 Bit    Registers := 6     
-	                2 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input    128 Bit        Muxes := 256   
-	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
 Module aes_pipeline_stage9 
 Detailed RTL Component Info : 
 +---XORs : 
@@ -558,6 +556,7 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input    128 Bit       Adders := 2     
 	   2 Input     64 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 1     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 7     
 	   3 Input     32 Bit         XORs := 3     
@@ -566,6 +565,7 @@ Detailed RTL Component Info :
 	               96 Bit    Registers := 1     
 	                1 Bit    Registers := 2     
 +---Muxes : 
+	   3 Input      3 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 1     
 Module aes_pipeline_stage2 
 Detailed RTL Component Info : 
@@ -579,12 +579,12 @@ Detailed RTL Component Info :
 	              128 Bit    Registers := 4     
 	               96 Bit    Registers := 1     
 	                8 Bit    Registers := 16    
-	                2 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 2     
 +---ROMs : 
 	                              ROMs := 16    
 +---Muxes : 
-	   2 Input    128 Bit        Muxes := 1     
+	   3 Input    128 Bit        Muxes := 1     
 Module aes_pipeline_stage12 
 Detailed RTL Component Info : 
 +---XORs : 
@@ -601,7 +601,7 @@ Detailed RTL Component Info :
 	             1408 Bit    Registers := 1     
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 16    
-	                2 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 16    
@@ -614,7 +614,7 @@ Detailed RTL Component Info :
 	             1408 Bit    Registers := 1     
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 48    
-	                2 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 48    
@@ -638,7 +638,7 @@ Detailed RTL Component Info :
 	             1408 Bit    Registers := 1     
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 48    
-	                2 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 48    
@@ -659,7 +659,7 @@ Detailed RTL Component Info :
 	              256 Bit    Registers := 1     
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 32    
-	                2 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 32    
@@ -672,7 +672,7 @@ Detailed RTL Component Info :
 	             1408 Bit    Registers := 1     
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 48    
-	                2 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 48    
@@ -703,37 +703,40 @@ INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[30]' (FD) to 'i_9/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[29]' (FD) to 'i_9/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[28]' (FD) to 'i_9/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[27]' (FD) to 'i_9/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[26]' (FD) to 'i_9/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[25]' (FD) to 'i_9/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[24]' (FD) to 'i_9/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[23]' (FD) to 'i_9/u/count_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[7]' (FD) to 'i_9/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[8]' (FD) to 'i_9/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[6]' (FD) to 'i_9/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[4]' (FD) to 'i_9/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[2]' (FD) to 'i_9/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[3]' (FD) to 'i_9/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[14]' (FD) to 'i_9/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[11]' (FD) to 'i_9/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[12]' (FD) to 'i_9/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[16]' (FD) to 'i_9/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[17]' (FD) to 'i_9/u/count_reg[22]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[22]' (FD) to 'i_9/u/count_reg[21]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[21]' (FD) to 'i_9/u/count_reg[20]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[20]' (FD) to 'i_9/u/count_reg[19]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[0]' (FD) to 'i_9/u/count_reg[19]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[1]' (FD) to 'i_9/u/count_reg[19]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[5]' (FD) to 'i_9/u/count_reg[19]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[10]' (FD) to 'i_9/u/count_reg[19]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[9]' (FD) to 'i_9/u/count_reg[19]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[19]' (FD) to 'i_9/u/count_reg[18]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[18]' (FD) to 'i_9/u/count_reg[15]'
-INFO: [Synth 8-3886] merging instance 'i_9/u/count_reg[15]' (FD) to 'i_9/u/count_reg[13]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_9/\u/count_reg[13] )
+WARNING: [Synth 8-3332] Sequential element (count_reg[23]) is unused and will be removed from module display.
+WARNING: [Synth 8-3332] Sequential element (count_reg[24]) is unused and will be removed from module display.
+WARNING: [Synth 8-3332] Sequential element (count_reg[25]) is unused and will be removed from module display.
+WARNING: [Synth 8-3332] Sequential element (count_reg[26]) is unused and will be removed from module display.
+WARNING: [Synth 8-3332] Sequential element (count_reg[27]) is unused and will be removed from module display.
+WARNING: [Synth 8-3332] Sequential element (count_reg[28]) is unused and will be removed from module display.
+WARNING: [Synth 8-3332] Sequential element (count_reg[29]) is unused and will be removed from module display.
+WARNING: [Synth 8-3332] Sequential element (count_reg[30]) is unused and will be removed from module display.
+WARNING: [Synth 8-3332] Sequential element (count_reg[31]) is unused and will be removed from module display.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[8]) is unused and will be removed from module display.
+INFO: [Synth 8-3886] merging instance 'u/count_reg[7]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[8]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[6]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[4]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[2]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[3]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[14]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[11]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[12]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[16]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[17]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[22]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[21]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[20]' (FD) to 'u/count_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[0]' (FD) to 'u/count_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[1]' (FD) to 'u/count_reg[5]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[5]' (FD) to 'u/count_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[10]' (FD) to 'u/count_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[9]' (FD) to 'u/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[19]' (FD) to 'u/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[18]' (FD) to 'u/count_reg[13]'
+INFO: [Synth 8-3886] merging instance 'u/count_reg[15]' (FD) to 'u/count_reg[13]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u/\count_reg[13] )
+WARNING: [Synth 8-3332] Sequential element (count_reg[13]) is unused and will be removed from module display.
 INFO: [Synth 8-4471] merging register 'r_cipher_key_reg[0:127]' into 'r_cipher_key_reg[0:127]' [/home/yu/projects/AES_GCM/aes_pipeline_stage1.sv:55]
 INFO: [Synth 8-3886] merging instance 'stage1/B[1]__2' (FD) to 'stage1/r_cipher_key_reg[98]'
 INFO: [Synth 8-3886] merging instance 'stage1/B[0]' (FD) to 'stage1/r_cipher_key_reg[99]'
@@ -795,75 +798,76 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (stage3/\r
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (stage3/\r_j0_reg[104] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (stage3/\r_j0_reg[113] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (stage3/\r_j0_reg[112] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1407] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1406] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1405] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1404] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1403] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1402] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1401] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1400] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1399] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1398] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1397] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1396] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1395] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1394] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1393] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1392] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1391] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1390] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1389] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1388] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1387] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1386] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1385] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1384] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1383] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1382] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1381] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1380] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1379] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1378] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1377] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1376] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1375] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1374] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1373] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1372] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1371] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1370] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1369] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1368] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1367] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1366] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1365] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1364] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1363] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1362] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1361] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1360] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1359] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1358] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1357] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1356] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1355] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1354] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1353] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1352] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1351] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1350] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1349] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1348] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1347] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1346] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1345] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1344] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1343] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1342] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (keyexpan2/\r_key_schedule_reg[1341] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1407] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1406] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1405] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1404] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1403] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1402] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1401] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1400] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1399] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1398] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1397] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1396] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1395] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1394] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1393] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1392] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1391] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1390] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1389] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1388] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1387] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1386] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1385] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1384] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1383] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1382] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1381] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1380] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1379] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1378] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1377] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1376] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1375] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1374] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1373] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1372] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1371] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1370] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1369] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1368] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1367] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1366] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1365] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1364] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1363] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1362] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1361] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1360] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1359] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1358] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1357] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1356] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1355] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1354] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1353] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1352] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1351] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1350] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1349] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1348] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1347] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1346] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1345] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1344] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1343] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1342] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\keyexpan2/r_key_schedule_reg[1341] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (r_pt_instance_reg) is unused and will be removed from module aes_pipeline_stage1.
 WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[0]) is unused and will be removed from module aes_pipeline_stage2.
 WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[1]) is unused and will be removed from module aes_pipeline_stage2.
 WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[2]) is unused and will be removed from module aes_pipeline_stage2.
@@ -952,18 +956,6 @@ WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[84]) is unused an
 WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[85]) is unused and will be removed from module aes_pipeline_stage2.
 WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[86]) is unused and will be removed from module aes_pipeline_stage2.
 WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[87]) is unused and will be removed from module aes_pipeline_stage2.
-WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[88]) is unused and will be removed from module aes_pipeline_stage2.
-WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[89]) is unused and will be removed from module aes_pipeline_stage2.
-WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[90]) is unused and will be removed from module aes_pipeline_stage2.
-WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[91]) is unused and will be removed from module aes_pipeline_stage2.
-WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[92]) is unused and will be removed from module aes_pipeline_stage2.
-WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[93]) is unused and will be removed from module aes_pipeline_stage2.
-WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[94]) is unused and will be removed from module aes_pipeline_stage2.
-WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[95]) is unused and will be removed from module aes_pipeline_stage2.
-WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[96]) is unused and will be removed from module aes_pipeline_stage2.
-WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[97]) is unused and will be removed from module aes_pipeline_stage2.
-WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[98]) is unused and will be removed from module aes_pipeline_stage2.
-WARNING: [Synth 8-3332] Sequential element (r_key_schedule_reg[99]) is unused and will be removed from module aes_pipeline_stage2.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3886] merging instance 'B[1]__2' (FD) to 'keyexpan3/r_key_schedule_reg[738]'
@@ -1001,7 +993,7 @@ INFO: [Synth 8-3886] merging instance 'B[3]__2' (FD) to 'keyexpan3/r_key_schedul
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:23 ; elapsed = 00:03:04 . Memory (MB): peak = 2393.367 ; gain = 1460.984 ; free physical = 54115 ; free virtual = 63413
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:22 ; elapsed = 00:03:01 . Memory (MB): peak = 2395.371 ; gain = 1462.984 ; free physical = 53209 ; free virtual = 62512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2406,15 +2398,15 @@ Report RTL Partitions:
 |      |RTL Partition            |Replication |Instances |
 +------+-------------------------+------------+----------+
 |1     |clk_gen__GC0             |           1|         3|
-|2     |aes_pipeline_stage8__GB0 |           1|     27292|
+|2     |aes_pipeline_stage8__GB0 |           1|     27296|
 |3     |aes_pipeline_stage8__GB1 |           1|      7162|
 |4     |aes_pipeline_stage9__GB0 |           1|     27587|
 |5     |aes_pipeline_stage9__GB1 |           1|      6902|
-|6     |gcm_aes__GCB0            |           1|     20311|
-|7     |gcm_aes__GCB1            |           1|     11933|
-|8     |gcm_aes__GCB2            |           1|     12115|
-|9     |gcm_aes__GCB3            |           1|     13526|
-|10    |aes__GC0                 |           1|       206|
+|6     |gcm_aes__GCB0            |           1|     20533|
+|7     |gcm_aes__GCB1            |           1|     11934|
+|8     |gcm_aes__GCB2            |           1|     12116|
+|9     |gcm_aes__GCB3            |           1|     13528|
+|10    |display                  |           1|       205|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -2423,21 +2415,29 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:30 ; elapsed = 00:03:11 . Memory (MB): peak = 2688.805 ; gain = 1756.422 ; free physical = 53823 ; free virtual = 63122
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:29 ; elapsed = 00:03:08 . Memory (MB): peak = 2690.809 ; gain = 1758.422 ; free physical = 52916 ; free virtual = 62221
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_plain_text_reg[127]' (FD) to 'gcm_aes_instancei_5/stage1/r_aad_reg[127]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_plain_text_reg[126]' (FD) to 'gcm_aes_instancei_5/stage1/r_aad_reg[126]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_plain_text_reg[125]' (FD) to 'gcm_aes_instancei_5/stage1/r_aad_reg[125]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_plain_text_reg[124]' (FD) to 'gcm_aes_instancei_5/stage1/r_aad_reg[124]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_plain_text_reg[123]' (FD) to 'gcm_aes_instancei_5/stage1/r_aad_reg[123]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_plain_text_reg[122]' (FD) to 'gcm_aes_instancei_5/stage1/r_aad_reg[122]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_plain_text_reg[121]' (FD) to 'gcm_aes_instancei_5/stage1/r_aad_reg[121]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_plain_text_reg[120]' (FD) to 'gcm_aes_instancei_5/stage1/r_aad_reg[120]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_plain_text_reg[119]' (FD) to 'gcm_aes_instancei_5/stage1/r_aad_reg[119]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_plain_text_reg[118]' (FD) to 'gcm_aes_instancei_5/stage1/r_aad_reg[118]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[127]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[126]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[125]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[124]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[123]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[122]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[121]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[120]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[56]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[119]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[118]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[117]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[116]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[115]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[114]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[113]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[112]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[111]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[110]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:54 ; elapsed = 00:03:36 . Memory (MB): peak = 2838.555 ; gain = 1906.172 ; free physical = 53678 ; free virtual = 62981
+Finished Timing Optimization : Time (s): cpu = 00:02:53 ; elapsed = 00:03:33 . Memory (MB): peak = 2839.566 ; gain = 1907.180 ; free physical = 52772 ; free virtual = 62080
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2445,14 +2445,14 @@ Report RTL Partitions:
 |      |RTL Partition            |Replication |Instances |
 +------+-------------------------+------------+----------+
 |1     |clk_gen__GC0             |           1|         3|
-|2     |aes_pipeline_stage8__GB0 |           1|     27164|
+|2     |aes_pipeline_stage8__GB0 |           1|     27168|
 |3     |aes_pipeline_stage8__GB1 |           1|      7162|
 |4     |aes_pipeline_stage9__GB0 |           1|     27200|
 |5     |aes_pipeline_stage9__GB1 |           1|      6902|
-|6     |gcm_aes__GCB2            |           1|     11219|
-|7     |gcm_aes__GCB3            |           1|     13398|
-|8     |aes__GC0                 |           1|       206|
-|9     |aes_GT0                  |           1|     31603|
+|6     |gcm_aes__GCB2            |           1|     11220|
+|7     |gcm_aes__GCB3            |           1|     13400|
+|8     |display                  |           1|       205|
+|9     |aes_GT0                  |           1|     32029|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
@@ -2491,7 +2491,20 @@ INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_ins
 INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/r_encrypted_cb_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/r_encrypted_cb_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Common 17-14] Message 'Synth 8-4480' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__14 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__14 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__15 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__15 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__16 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__16 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__17 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__17 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__18 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__18 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__19 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel__19 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage7/r_encrypted_j0_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage7/r_encrypted_j0_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage7/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
@@ -2544,35 +2557,21 @@ INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_ins
 INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/r_encrypted_j0_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/r_encrypted_cb_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_8/gcm_aes_instance/stage6/r_encrypted_cb_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Common 17-14] Message 'Synth 8-4480' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:11 ; elapsed = 00:03:55 . Memory (MB): peak = 2850.480 ; gain = 1918.098 ; free physical = 53244 ; free virtual = 62552
+Finished Technology Mapping : Time (s): cpu = 00:03:09 ; elapsed = 00:03:52 . Memory (MB): peak = 2851.492 ; gain = 1919.105 ; free physical = 52337 ; free virtual = 61651
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+-------------------------+------------+----------+
 |      |RTL Partition            |Replication |Instances |
 +------+-------------------------+------------+----------+
-|1     |aes_pipeline_stage8__GB0 |           1|      7315|
+|1     |aes_pipeline_stage8__GB0 |           1|      7531|
 |2     |aes_pipeline_stage9__GB0 |           1|      7029|
-|3     |gcm_aes__GCB2            |           1|      6095|
-|4     |gcm_aes__GCB3            |           1|      6726|
-|5     |aes_GT0                  |           1|     18350|
+|3     |gcm_aes__GCB2            |           1|      6096|
+|4     |gcm_aes__GCB3            |           1|      6728|
+|5     |aes_GT0                  |           1|     18481|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -2590,7 +2589,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:17 ; elapsed = 00:04:01 . Memory (MB): peak = 2850.480 ; gain = 1918.098 ; free physical = 53245 ; free virtual = 62553
+Finished IO Insertion : Time (s): cpu = 00:03:15 ; elapsed = 00:03:58 . Memory (MB): peak = 2851.492 ; gain = 1919.105 ; free physical = 52338 ; free virtual = 61651
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2603,7 +2602,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:17 ; elapsed = 00:04:01 . Memory (MB): peak = 2850.480 ; gain = 1918.098 ; free physical = 53245 ; free virtual = 62553
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:16 ; elapsed = 00:03:59 . Memory (MB): peak = 2851.492 ; gain = 1919.105 ; free physical = 52338 ; free virtual = 61651
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2615,25 +2614,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:21 ; elapsed = 00:04:05 . Memory (MB): peak = 2850.480 ; gain = 1918.098 ; free physical = 53245 ; free virtual = 62553
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:19 ; elapsed = 00:04:02 . Memory (MB): peak = 2851.492 ; gain = 1919.105 ; free physical = 52338 ; free virtual = 61651
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:21 ; elapsed = 00:04:05 . Memory (MB): peak = 2850.480 ; gain = 1918.098 ; free physical = 53245 ; free virtual = 62553
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:19 ; elapsed = 00:04:02 . Memory (MB): peak = 2851.492 ; gain = 1919.105 ; free physical = 52338 ; free virtual = 61651
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:23 ; elapsed = 00:04:07 . Memory (MB): peak = 2850.480 ; gain = 1918.098 ; free physical = 53246 ; free virtual = 62554
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:21 ; elapsed = 00:04:04 . Memory (MB): peak = 2851.492 ; gain = 1919.105 ; free physical = 52338 ; free virtual = 61651
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:23 ; elapsed = 00:04:07 . Memory (MB): peak = 2850.480 ; gain = 1918.098 ; free physical = 53246 ; free virtual = 62554
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:21 ; elapsed = 00:04:04 . Memory (MB): peak = 2851.492 ; gain = 1919.105 ; free physical = 52338 ; free virtual = 61651
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2643,8 +2642,8 @@ Static Shift Register Report:
 +------------+--------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 |Module Name | RTL Name                                   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
 +------------+--------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|aes         | gcm_aes_instance/stage8/r_phase_reg[0]     | 7      | 2     | NO           | YES                | YES               | 2      | 0       | 
-|aes         | gcm_aes_instance/stage8/r_new_instance_reg | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|aes         | gcm_aes_instance/stage8/r_phase_reg[0]     | 6      | 3     | NO           | NO                 | YES               | 3      | 0       | 
+|aes         | gcm_aes_instance/stage8/r_new_instance_reg | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 +------------+--------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
@@ -2665,20 +2664,20 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     2|
-|2     |CARRY8     |    38|
-|3     |LUT1       |   292|
-|4     |LUT2       |   648|
-|5     |LUT3       |   870|
-|6     |LUT4       |  6073|
-|7     |LUT5       |  4661|
-|8     |LUT6       | 23465|
+|2     |CARRY8     |    46|
+|3     |LUT1       |   163|
+|4     |LUT2       |   726|
+|5     |LUT3       |   767|
+|6     |LUT4       |  6642|
+|7     |LUT5       |  4630|
+|8     |LUT6       | 23257|
 |9     |MMCME2_ADV |     1|
 |10    |MUXF7      |  4418|
 |11    |MUXF8      |  1712|
 |12    |RAMB18E2_1 |    97|
-|13    |SRL16E     |     3|
-|14    |FDRE       |  6673|
-|15    |IBUF       |   354|
+|13    |SRL16E     |     4|
+|14    |FDRE       |  6707|
+|15    |IBUF       |   482|
 |16    |OBUF       |    12|
 +------+-----------+------+
 
@@ -2686,32 +2685,32 @@ Report Instance Areas:
 +------+-------------------+---------------------+------+
 |      |Instance           |Module               |Cells |
 +------+-------------------+---------------------+------+
-|1     |top                |                     | 49319|
+|1     |top                |                     | 49666|
 |2     |  clk_gen_instance |clk_gen              |     4|
-|3     |  gcm_aes_instance |gcm_aes              | 48902|
+|3     |  gcm_aes_instance |gcm_aes              | 49121|
 |4     |    stage5         |aes_pipeline_stage5  |  2852|
 |5     |    keyexpan2      |aes_pipeline_stage12 |  1186|
 |6     |    keyexpan3      |aes_pipeline_stage13 |  1292|
 |7     |    keyexpan4      |aes_pipeline_stage14 |   936|
 |8     |    pass6          |aes_signal_passing   |   256|
-|9     |    stage1         |aes_pipeline_stage1  |  1804|
-|10    |    stage2         |aes_pipeline_stage2  |  1843|
-|11    |    stage3         |aes_pipeline_stage3  |  6654|
+|9     |    stage1         |aes_pipeline_stage1  |  2028|
+|10    |    stage2         |aes_pipeline_stage2  |  1752|
+|11    |    stage3         |aes_pipeline_stage3  |  6652|
 |12    |    stage4         |aes_pipeline_stage4  |  5277|
 |13    |    stage6         |aes_pipeline_stage6  |  2512|
-|14    |    stage7         |aes_pipeline_stage7  |  1651|
-|15    |    stage8         |aes_pipeline_stage8  |  9239|
+|14    |    stage7         |aes_pipeline_stage7  |  1652|
+|15    |    stage8         |aes_pipeline_stage8  |  9454|
 |16    |    stage9         |aes_pipeline_stage9  |  8920|
 |17    |  u                |display              |    48|
 +------+-------------------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:23 ; elapsed = 00:04:07 . Memory (MB): peak = 2850.480 ; gain = 1918.098 ; free physical = 53246 ; free virtual = 62554
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:21 ; elapsed = 00:04:04 . Memory (MB): peak = 2851.492 ; gain = 1919.105 ; free physical = 52338 ; free virtual = 61651
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 438 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:10 ; elapsed = 00:03:57 . Memory (MB): peak = 2850.480 ; gain = 1436.855 ; free physical = 59329 ; free virtual = 68637
-Synthesis Optimization Complete : Time (s): cpu = 00:03:23 ; elapsed = 00:04:08 . Memory (MB): peak = 2850.480 ; gain = 1918.098 ; free physical = 59347 ; free virtual = 68637
+Synthesis finished with 0 errors, 0 critical warnings and 449 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:08 ; elapsed = 00:03:54 . Memory (MB): peak = 2851.492 ; gain = 1436.863 ; free physical = 58403 ; free virtual = 67716
+Synthesis Optimization Complete : Time (s): cpu = 00:03:21 ; elapsed = 00:04:06 . Memory (MB): peak = 2851.492 ; gain = 1919.105 ; free physical = 58420 ; free virtual = 67716
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 357 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 485 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 Parsing XDC File [/home/yu/projects/AES_GCM/constraints_artix_7.xdc]
@@ -2770,15 +2769,15 @@ CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Site locati
 Finished Parsing XDC File [/home/yu/projects/AES_GCM/constraints_artix_7.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 357 instances were transformed.
+  A total of 485 instances were transformed.
   BUFG => BUFGCE: 2 instances
-  IBUF => IBUF (IBUFCTRL, INBUF): 354 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 482 instances
   MMCME2_ADV => MMCME3_ADV: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-462 Infos, 312 Warnings, 30 Critical Warnings and 0 Errors encountered.
+460 Infos, 313 Warnings, 30 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:28 ; elapsed = 00:04:12 . Memory (MB): peak = 2894.582 ; gain = 1891.695 ; free physical = 59347 ; free virtual = 68638
+synth_design: Time (s): cpu = 00:03:26 ; elapsed = 00:04:10 . Memory (MB): peak = 2895.594 ; gain = 1892.703 ; free physical = 58421 ; free virtual = 67717
 # exec mkdir -p -- ./reports
 # report_timing -setup  -file ./reports/synth_aes_setup_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: max.
@@ -2786,7 +2785,7 @@ INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum o
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-2] Deriving generated clocks
 INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
-report_timing: Time (s): cpu = 00:00:41 ; elapsed = 00:00:30 . Memory (MB): peak = 3218.531 ; gain = 323.949 ; free physical = 59123 ; free virtual = 68413
+report_timing: Time (s): cpu = 00:00:42 ; elapsed = 00:00:30 . Memory (MB): peak = 3219.543 ; gain = 323.949 ; free physical = 58193 ; free virtual = 67489
 # report_timing -hold   -file ./reports/synth_aes_hold_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
@@ -2795,8 +2794,8 @@ INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type min 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 # report_utilization    -file ./reports/synth_utilization_report.txt
-report_utilization: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.31 . Memory (MB): peak = 3218.531 ; gain = 0.000 ; free physical = 59160 ; free virtual = 68450
+report_utilization: Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.30 . Memory (MB): peak = 3219.543 ; gain = 0.000 ; free physical = 58190 ; free virtual = 67485
 # report_utilization -hierarchical  -file ./reports/synth_utilization_report_submodule.txt
-report_utilization: Time (s): cpu = 00:00:00.41 ; elapsed = 00:00:00.50 . Memory (MB): peak = 3218.531 ; gain = 0.000 ; free physical = 59161 ; free virtual = 68451
+report_utilization: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.47 . Memory (MB): peak = 3219.543 ; gain = 0.000 ; free physical = 58190 ; free virtual = 67485
 # write_schematic -format pdf -orientation portrait /home/yu/projects/AES_GCM/schematic_1.pdf
-INFO: [Common 17-206] Exiting Vivado at Wed Nov  7 22:23:28 2018...
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  7 23:12:22 2018...

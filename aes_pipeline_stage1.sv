@@ -33,7 +33,7 @@ module aes_pipeline_stage1 (
     output logic           o_new_instance;
     output logic           o_pt_instance;
     output logic [0:1407]  o_key_schedule;
-    output logic [0:1]     o_phase;
+    output logic [0:2]     o_phase;
 
     logic [0:127]   r_cipher_key;
     logic [0:127]   r_plain_text;
@@ -94,17 +94,30 @@ module aes_pipeline_stage1 (
         if (w_counter == total_blocks - 1)
         begin
 			// Last text block delivering
-			o_phase = 2'b11;
+			if (total_blocks == aad_blocks + 1)
+			begin
+				// The first is exactly the last
+				o_phase = 3'b111;
+			end
+			else
+			begin
+				o_phase = 3'b011;
+			end
         end
-        else if (w_counter >= aad_blocks)
+        else if (w_counter > aad_blocks)
         begin
 			// Text block (not the last one) delivering
-			o_phase = 2'b01;
+			o_phase = 3'b001;
+        end
+        else if (w_counter == aad_blocks)
+        begin
+			// Text block (the first one) delivering
+			o_phase = 3'b000;
         end
         else
         begin
 			// AAD delivering
-			o_phase = 2'b10;
+			o_phase = 3'b010;
         end
 	end
 
