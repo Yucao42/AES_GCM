@@ -13,6 +13,7 @@ module aes_pipeline_stage1 (
     o_iv,
     o_instance_size,
     o_new_instance,
+	o_phase,
     o_pt_instance
 );
 
@@ -32,6 +33,7 @@ module aes_pipeline_stage1 (
     output logic           o_new_instance;
     output logic           o_pt_instance;
     output logic [0:1407]  o_key_schedule;
+    output logic [0:1]     o_phase;
 
     logic [0:127]   r_cipher_key;
     logic [0:127]   r_plain_text;
@@ -40,6 +42,13 @@ module aes_pipeline_stage1 (
     logic [0:127]   r_instance_size;
     logic           r_new_instance;
     logic           r_pt_instance;
+
+    logic [0:127]   r_counter;
+    logic [0:127]   w_counter;
+
+    /* Helper variables */
+    integer aad_blocks;
+    integer total_blocks;
 
     always_ff @(posedge clk)
     begin
@@ -50,6 +59,8 @@ module aes_pipeline_stage1 (
         r_instance_size <= i_instance_size;
         r_new_instance  <= i_new_instance;
         r_pt_instance   <= i_pt_instance;
+
+        r_counter       <= w_counter; // Cycle
     end
     
     always_comb
@@ -64,4 +75,37 @@ module aes_pipeline_stage1 (
         o_new_instance  = r_new_instance;
         o_pt_instance   = r_pt_instance;
     end
+	
+	// Time control logic of state machine
+	always_comb
+	begin
+        if (r_new_instance == 1)
+        begin
+            w_counter = 0;
+        end
+        else
+        begin
+            w_counter = r_counter + 1;
+        end
+
+        total_blocks = ((r_instance_size[0:63] + r_instance_size[64:127]) >> 7);
+        aad_blocks = r_instance_size[64:127] >> 7;
+
+        if (w_counter == total_blocks - 1)
+        begin
+			// Last text block delivering
+			o_phase = 2'b11;
+        end
+        else if (w_counter >= aad_blocks)
+        begin
+			// Text block (not the last one) delivering
+			o_phase = 2'b01;
+        end
+        else
+        begin
+			// AAD delivering
+			o_phase = 2'b10;
+        end
+	end
+
 endmodule

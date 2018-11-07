@@ -6,6 +6,7 @@ module aes_pipeline_stage8(
     i_h,
     i_encrypted_j0,
     i_instance_size,
+    i_phase,
     o_encrypted_j0,
 	o_instance_size,
 	o_h,
@@ -21,6 +22,7 @@ module aes_pipeline_stage8(
     input logic [0:127]   i_encrypted_j0;
     input logic [0:127]   i_instance_size;
     input logic           i_new_instance;
+    input logic [0:1]     i_phase;
     
     output logic [0:127]    o_encrypted_j0;
     output logic [0:127]    o_cipher_text;
@@ -43,6 +45,7 @@ module aes_pipeline_stage8(
     logic [0:127]   w_counter;
     logic [0:127]   w_auth_input;
      
+    logic [0:1]     r_phase;
     /* Helper variables */
     integer aad_blocks;
     integer total_blocks;
@@ -55,42 +58,30 @@ module aes_pipeline_stage8(
         r_encrypted_j0  <= i_encrypted_j0;
         r_new_instance  <= i_new_instance;
         r_instance_size <= i_instance_size;
+		r_phase         <= i_phase;
 
-        r_sblock        <= w_sblock; // Cycle
-        r_counter       <= w_counter; // Cycle
+        if (r_new_instance == 1)
+        begin
+            r_sblock <= 128'd0;
+        end
+        else
+        begin
+            r_sblock <= w_sblock;
+        end
     end
 
     always_comb
     begin
-        if (r_new_instance == 1)
-        begin
-            w_sblock = 128'd0;
-            w_counter = 0;
-        end
-        else
-        begin
-            w_sblock = r_sblock;
-            w_counter = r_counter + 1;
-        end
-
-        total_blocks = ((r_instance_size[0:63] + r_instance_size[64:127]) >> 7);
-        aad_blocks = r_instance_size[64:127] >> 7;
-
-        if (w_counter == total_blocks - 1)
-        begin
-            w_auth_input = r_cipher_text;
-            o_tag_ready = 1'b1;
-        end
-        else if (w_counter >= aad_blocks)
-        begin
-            w_auth_input = r_cipher_text;
-            o_tag_ready = 1'b0;
-        end
-        else
-        begin
-            w_auth_input = r_aad;
-            o_tag_ready = 1'b0;
-        end
+        w_sblock = r_sblock;
+		case(r_phase)
+			2'b11:   o_tag_ready = 1;
+		    default: o_tag_ready = 0;
+		endcase
+			
+		case(r_phase)
+			2'b10:   w_auth_input = r_aad;
+		    default: w_auth_input = r_cipher_text;
+		endcase
 
         w_sblock = (w_sblock ^ w_auth_input);
         w_sblock = fn_product(w_sblock, r_h);
@@ -104,6 +95,5 @@ module aes_pipeline_stage8(
 		o_h = r_h;
 		o_instance_size = r_instance_size;
 		o_encrypted_j0 = r_encrypted_j0;
-
     end
 endmodule

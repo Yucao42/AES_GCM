@@ -8,6 +8,8 @@ module aes_pipeline_stage7(
     i_encrypted_cb,
     i_instance_size,
     i_key_schedule,
+    i_phase,
+    o_phase,
     o_h,
     o_encrypted_j0,
     o_cipher_text,
@@ -25,7 +27,9 @@ module aes_pipeline_stage7(
     input logic [0:127]   i_instance_size;
     input logic [0:1407]  i_key_schedule;
     input logic           i_new_instance;
+    input logic [0:1]     i_phase;
     
+    output logic [0:1]      o_phase; 
     output logic [0:127]    o_cipher_text;
     output logic [0:127]    o_aad;
     output logic [0:127]    o_h;
@@ -44,6 +48,7 @@ module aes_pipeline_stage7(
     logic           r_pt_instance;
     
     logic [0:127]   w_encrypted_cb;
+    logic [0:1]     r_phase;
 
     always_ff @(posedge clk)
     begin
@@ -54,6 +59,7 @@ module aes_pipeline_stage7(
         r_encrypted_cb  <= i_encrypted_cb;
         r_new_instance  <= i_new_instance;
         r_instance_size <= i_instance_size;
+		r_phase         <= i_phase;
         r_key_schedule  <= i_key_schedule;
     end
 
@@ -65,6 +71,7 @@ module aes_pipeline_stage7(
         o_encrypted_j0 = fn_aes_encrypt_stage(r_encrypted_j0, r_key_schedule, 9);
 
         /* Carrying forward register values for subsequent stages */
+		o_phase = r_phase;
         o_aad = r_aad;
         o_new_instance = r_new_instance;
         o_instance_size = r_instance_size;

@@ -7,6 +7,7 @@ module aes_pipeline_stage2(
     i_instance_size,
     i_pt_instance,
     i_key_schedule,
+    i_phase,
     o_h,
     o_j0,
     o_cb,
@@ -15,6 +16,7 @@ module aes_pipeline_stage2(
     o_aad,
     o_instance_size,
     o_new_instance,
+    o_phase,
     o_pt_instance
 );
     
@@ -26,6 +28,7 @@ module aes_pipeline_stage2(
     input logic [0:1407]  i_key_schedule;
     input logic           i_new_instance;
     input logic           i_pt_instance;
+    input logic [0:1]     i_phase;
     
     output logic [0:1407]   o_key_schedule;
     output logic [0:127]    o_plain_text;
@@ -36,6 +39,7 @@ module aes_pipeline_stage2(
     output logic [0:127]    o_instance_size;
     output logic            o_new_instance;
     output logic            o_pt_instance;
+    output logic [0:1]      o_phase;
     
     logic [0:95]    r_iv;
     logic [0:1407]  r_key_schedule;
@@ -50,6 +54,8 @@ module aes_pipeline_stage2(
  
     logic [0:127]   w_cb;
 
+    logic [0:1]     r_phase;
+
     always_ff@ (posedge clk)
     begin
         r_key_schedule  <= i_key_schedule;
@@ -61,6 +67,7 @@ module aes_pipeline_stage2(
         r_instance_size <= i_instance_size;
         r_pt_instance   <= i_pt_instance;
         r_cb            <= w_cb; // Cycle
+		r_phase         <= i_phase;
     end
     
 	always_comb
@@ -71,6 +78,7 @@ module aes_pipeline_stage2(
     always_comb
     begin
         o_j0 = {r_iv, 32'd1};
+		o_phase = r_phase;
 
 		/* Calculate the seed of ciphered cb */
         if (r_pt_instance == 1)
