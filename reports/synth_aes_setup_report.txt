@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date              : Wed Nov  7 22:10:24 2018
+| Date              : Wed Nov  7 22:23:26 2018
 | Host              : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command           : report_timing -setup -file ./reports/synth_aes_setup_report.txt
 | Design            : aes
@@ -12,23 +12,23 @@ Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 Timing Report
 
-Slack (MET) :             0.556ns  (required time - arrival time)
+Slack (MET) :             0.007ns  (required time - arrival time)
   Source:                 gcm_aes_instance/stage9/r_sblock_reg[23]/C
-                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@2.128ns period=4.255ns})
+                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.852ns period=3.704ns})
   Destination:            u/x_reg[11]/D
-                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@2.128ns period=4.255ns})
+                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.852ns period=3.704ns})
   Path Group:             w_clk_out_clk_wiz_gen
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            4.255ns  (w_clk_out_clk_wiz_gen rise@4.255ns - w_clk_out_clk_wiz_gen rise@0.000ns)
+  Requirement:            3.704ns  (w_clk_out_clk_wiz_gen rise@3.704ns - w_clk_out_clk_wiz_gen rise@0.000ns)
   Data Path Delay:        3.557ns  (logic 0.709ns (19.933%)  route 2.848ns (80.067%))
   Logic Levels:           13  (LUT5=6 LUT6=6 MUXF7=1)
   Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -0.285ns = ( 3.971 - 4.255 ) 
+    Destination Clock Delay (DCD):    -0.285ns = ( 3.419 - 3.704 ) 
     Source Clock Delay      (SCD):    0.048ns
     Clock Pessimism Removal (CPR):    0.188ns
-  Clock Uncertainty:      0.044ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:      0.041ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.051ns
+    Discrete Jitter          (DJ):    0.042ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -81,28 +81,28 @@ Slack (MET) :             0.556ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
 
                          (clock w_clk_out_clk_wiz_gen rise edge)
-                                                      4.255     4.255 r  
-                                                      0.000     4.255 r  clk (IN)
-                         net (fo=0)                   0.000     4.255    clk_gen_instance/clkin1_ibufg/I
-                         INBUF (Prop_INBUF_PAD_O)     1.002     5.257 r  clk_gen_instance/clkin1_ibufg/INBUF_INST/O
-                         net (fo=1, unplaced)         0.045     5.302    clk_gen_instance/clkin1_ibufg/OUT
+                                                      3.704     3.704 r  
+                                                      0.000     3.704 r  clk (IN)
+                         net (fo=0)                   0.000     3.704    clk_gen_instance/clkin1_ibufg/I
+                         INBUF (Prop_INBUF_PAD_O)     1.002     4.705 r  clk_gen_instance/clkin1_ibufg/INBUF_INST/O
+                         net (fo=1, unplaced)         0.045     4.750    clk_gen_instance/clkin1_ibufg/OUT
                          IBUFCTRL (Prop_IBUFCTRL_I_O)
-                                                      0.000     5.302 r  clk_gen_instance/clkin1_ibufg/IBUFCTRL_INST/O
-                         net (fo=1, unplaced)         0.657     5.959    clk_gen_instance/w_clk_in_clk_wiz_gen
+                                                      0.000     4.750 r  clk_gen_instance/clkin1_ibufg/IBUFCTRL_INST/O
+                         net (fo=1, unplaced)         0.657     5.408    clk_gen_instance/w_clk_in_clk_wiz_gen
                          MMCME3_ADV (Prop_MMCME3_ADV_CLKIN1_CLKOUT0)
-                                                     -4.751     1.208 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, unplaced)         0.263     1.472    clk_gen_instance/w_clk_out_clk_wiz_gen
-                         BUFGCE (Prop_BUFGCE_I_O)     0.060     1.532 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=6870, unplaced)      2.439     3.971    u/clk_out
+                                                     -4.751     0.657 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.263     0.920    clk_gen_instance/w_clk_out_clk_wiz_gen
+                         BUFGCE (Prop_BUFGCE_I_O)     0.060     0.980 r  clk_gen_instance/clkout1_buf/O
+                         net (fo=6870, unplaced)      2.439     3.419    u/clk_out
                          FDRE                                         r  u/x_reg[11]/C
-                         clock pessimism              0.188     4.159    
-                         clock uncertainty           -0.044     4.115    
-                         FDRE (Setup_FDRE_C_D)        0.046     4.161    u/x_reg[11]
+                         clock pessimism              0.188     3.607    
+                         clock uncertainty           -0.041     3.566    
+                         FDRE (Setup_FDRE_C_D)        0.046     3.612    u/x_reg[11]
   -------------------------------------------------------------------
-                         required time                          4.161    
+                         required time                          3.612    
                          arrival time                          -3.605    
   -------------------------------------------------------------------
-                         slack                                  0.556    
+                         slack                                  0.007    
 
 
 
