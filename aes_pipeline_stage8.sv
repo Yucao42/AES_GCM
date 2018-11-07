@@ -7,6 +7,7 @@ module aes_pipeline_stage8(
     i_encrypted_j0,
     i_instance_size,
     i_phase,
+    o_phase,
     o_encrypted_j0,
 	o_instance_size,
 	o_h,
@@ -24,6 +25,7 @@ module aes_pipeline_stage8(
     input logic           i_new_instance;
     input logic [0:2]     i_phase;
     
+    output logic [0:2]      o_phase;
     output logic [0:127]    o_encrypted_j0;
     output logic [0:127]    o_cipher_text;
     output logic [0:127]    o_tag;
@@ -91,10 +93,12 @@ module aes_pipeline_stage8(
 		* This part deprecated as it doesn't meet the time requirement.
 		* Instead we assign the value to exact time on 128-bit case.
 		*/
-      	o_tag = w_sblock;
-        o_cipher_text = r_cipher_text;
-		o_h = r_h;
+	    o_phase = r_phase;
+      	o_tag   = w_sblock;
+		o_h     = r_h;
+
+        o_cipher_text   = r_cipher_text;
 		o_instance_size = r_instance_size;
-		o_encrypted_j0 = r_encrypted_j0;
+		o_encrypted_j0  = r_encrypted_j0;
     end
 endmodule

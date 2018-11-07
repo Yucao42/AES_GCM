@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Wed Nov  7 23:12:21 2018
+| Date         : Wed Nov  7 23:48:03 2018
 | Host         : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_utilization -hierarchical -file ./reports/synth_utilization_report_submodule.txt
 | Design       : aes
@@ -21,25 +21,24 @@ Table of Contents
 +------------------------+----------------------+------------+------------+---------+------+------+--------+--------+--------------+
 |        Instance        |        Module        | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
 +------------------------+----------------------+------------+------------+---------+------+------+--------+--------+--------------+
-| aes                    |                (top) |      34880 |      34876 |       0 |    4 | 6707 |      0 |     97 |            0 |
+| aes                    |                (top) |      34884 |      34880 |       0 |    4 | 6844 |      0 |     97 |            0 |
 |   (aes)                |                (top) |          0 |          0 |       0 |    0 |    0 |      0 |      0 |            0 |
 |   clk_gen_instance     |              clk_gen |          0 |          0 |       0 |    0 |    0 |      0 |      0 |            0 |
-|   gcm_aes_instance     |              gcm_aes |      34864 |      34860 |       0 |    4 | 6683 |      0 |     97 |            0 |
+|   gcm_aes_instance     |              gcm_aes |      34884 |      34880 |       0 |    4 | 6844 |      0 |     97 |            0 |
 |     (gcm_aes_instance) |              gcm_aes |       4352 |       4352 |       0 |    0 |    0 |      0 |      0 |            0 |
-|     keyexpan2          | aes_pipeline_stage12 |        578 |        578 |       0 |    0 |  448 |      0 |      0 |            0 |
+|     keyexpan2          | aes_pipeline_stage12 |        317 |        317 |       0 |    0 |  288 |      0 |      0 |            0 |
 |     keyexpan3          | aes_pipeline_stage13 |        707 |        707 |       0 |    0 |  384 |      0 |      0 |            0 |
 |     keyexpan4          | aes_pipeline_stage14 |        328 |        328 |       0 |    0 |  448 |      0 |      0 |            0 |
 |     pass6              |   aes_signal_passing |          0 |          0 |       0 |    0 |  256 |      0 |      0 |            0 |
-|     stage1             |  aes_pipeline_stage1 |       1064 |       1064 |       0 |    0 |  611 |      0 |      0 |            0 |
-|     stage2             |  aes_pipeline_stage2 |        998 |        998 |       0 |    0 |  355 |      0 |      8 |            0 |
-|     stage3             |  aes_pipeline_stage3 |       4624 |       4624 |       0 |    0 |  864 |      0 |      8 |            0 |
+|     stage1             |  aes_pipeline_stage1 |       1123 |       1123 |       0 |    0 |  612 |      0 |      0 |            0 |
+|     stage2             |  aes_pipeline_stage2 |       1306 |       1306 |       0 |    0 |  546 |      0 |      8 |            0 |
+|     stage3             |  aes_pipeline_stage3 |       4593 |       4593 |       0 |    0 |  864 |      0 |      8 |            0 |
 |     stage4             |  aes_pipeline_stage4 |       3148 |       3148 |       0 |    0 |  624 |      0 |     17 |            0 |
 |     stage5             |  aes_pipeline_stage5 |       1164 |       1164 |       0 |    0 |  512 |      0 |     24 |            0 |
 |     stage6             |  aes_pipeline_stage6 |       1080 |       1080 |       0 |    0 |  512 |      0 |     24 |            0 |
 |     stage7             |  aes_pipeline_stage7 |        612 |        608 |       0 |    4 |  640 |      0 |     16 |            0 |
-|     stage8             |  aes_pipeline_stage8 |       8189 |       8189 |       0 |    0 |  644 |      0 |      0 |            0 |
-|     stage9             |  aes_pipeline_stage9 |       8020 |       8020 |       0 |    0 |  385 |      0 |      0 |            0 |
-|   u                    |              display |         16 |         16 |       0 |    0 |   24 |      0 |      0 |            0 |
+|     stage8             |  aes_pipeline_stage8 |       8191 |       8191 |       0 |    0 |  644 |      0 |      0 |            0 |
+|     stage9             |  aes_pipeline_stage9 |       7963 |       7963 |       0 |    0 |  514 |      0 |      0 |            0 |
 +------------------------+----------------------+------------+------------+---------+------+------+--------+--------+--------------+
 
 

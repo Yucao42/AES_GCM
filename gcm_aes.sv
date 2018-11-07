@@ -16,6 +16,7 @@ module gcm_aes(
         i_aad,
         i_plain_text_size,
         i_aad_size,
+		o_cp_ready,
         o_cipher_text,
         o_tag,
         o_tag_ready
@@ -35,6 +36,7 @@ module gcm_aes(
     output logic [0:127]   o_cipher_text;
     output logic [0:127]   o_tag;
     output logic           o_tag_ready;
+    output logic           o_cp_ready;
     
     /* Wires joining Stage1 and Stage2 */
     logic             w_s1_new_instance;
@@ -119,6 +121,7 @@ module gcm_aes(
     logic [0:127]     w_s8_sblock;
     logic [0:127]     w_s8_h;
     logic [0:127]     w_s8_instance_size;
+	logic [0:2]       w_s8_phase;
 
     aes_pipeline_stage1 stage1(
         .clk(clk),
@@ -300,6 +303,7 @@ module gcm_aes(
         .i_encrypted_j0(w_s7_encrypted_j0),
         .i_instance_size(w_s7_instance_size),
 		.i_phase(w_s7_phase),
+		.o_phase(w_s8_phase),
         .o_encrypted_j0(w_s8_encrypted_j0),
 		.o_instance_size(w_s8_instance_size),
 		.o_h(w_s8_h),
@@ -316,6 +320,8 @@ module gcm_aes(
 		.i_sblock(w_s8_sblock),
 		.i_instance_size(w_s8_instance_size),
 		.i_encrypted_j0(w_s8_encrypted_j0),
+		.i_phase(w_s8_phase),
+		.o_cp_ready(o_cp_ready),
 		.o_cipher_text(o_cipher_text),
 		.o_tag(o_tag),
 		.o_tag_ready(o_tag_ready)

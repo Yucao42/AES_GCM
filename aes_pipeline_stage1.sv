@@ -44,7 +44,7 @@ module aes_pipeline_stage1 (
     logic           r_pt_instance;
 
     logic [0:127]   r_counter;
-    logic [0:127]   w_counter;
+    logic [0:127]   w_counter = 128'd1000;
 
     /* Helper variables */
     integer aad_blocks;
@@ -91,7 +91,12 @@ module aes_pipeline_stage1 (
         total_blocks = ((r_instance_size[0:63] + r_instance_size[64:127]) >> 7);
         aad_blocks = r_instance_size[64:127] >> 7;
 
-        if (w_counter == total_blocks - 1)
+        if (w_counter > total_blocks - 1)
+		begin
+			// Invalid status
+			o_phase = 3'b100;
+		end
+        else if (w_counter == total_blocks - 1)
         begin
 			// Last text block delivering
 			if (total_blocks == aad_blocks + 1)
