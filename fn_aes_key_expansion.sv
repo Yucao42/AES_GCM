@@ -323,7 +323,7 @@ function logic[0:1407] fn_key_expansion(
     logic [0:31] temp_rot_word;
     logic [0:31] temp_sub_word;
     logic [0:31] temp;
-    logic [0:1407] key_schedule;
+    (* keep="true" *) logic [0:1407] key_schedule;
 
 	if(round == 1)
     	key_schedule[0:127] = cipher_key; // The first key is the original key.

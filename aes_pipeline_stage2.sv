@@ -2,12 +2,11 @@ module aes_pipeline_stage2(
     clk,
     i_plain_text,
     i_aad,
-    i_new_instance,
     i_iv,
     i_instance_size,
-    i_pt_instance,
     i_key_schedule,
     i_phase,
+	i_h,
     o_h,
     o_j0,
     o_cb,
@@ -15,9 +14,7 @@ module aes_pipeline_stage2(
     o_plain_text,
     o_aad,
     o_instance_size,
-    o_new_instance,
-    o_phase,
-    o_pt_instance
+    o_phase
 );
     
     input logic           clk;
@@ -25,9 +22,8 @@ module aes_pipeline_stage2(
     input logic [0:127]   i_aad;
     input logic [0:95]    i_iv;
     input logic [0:127]   i_instance_size;
+    input logic [0:127]   i_h;
     input logic [0:1407]  i_key_schedule;
-    input logic           i_new_instance;
-    input logic           i_pt_instance;
     input logic [0:2]     i_phase;
     
     output logic [0:1407]   o_key_schedule;
@@ -37,8 +33,6 @@ module aes_pipeline_stage2(
     output logic [0:127]    o_j0;
     output logic [0:127]    o_cb;
     output logic [0:127]    o_instance_size;
-    output logic            o_new_instance;
-    output logic            o_pt_instance;
     output logic [0:2]      o_phase;
     
     logic [0:95]    r_iv;
@@ -49,8 +43,6 @@ module aes_pipeline_stage2(
     logic [0:127]   r_h;
     logic [0:127]   r_j0;
     logic [0:127]   r_instance_size;
-    logic           r_new_instance;
-    logic           r_pt_instance;
  
     logic [0:127]   w_cb;
 
@@ -62,17 +54,16 @@ module aes_pipeline_stage2(
         r_iv            <= i_iv;
         r_plain_text    <= i_plain_text;
         r_aad           <= i_aad;
-        r_new_instance  <= i_new_instance;
         r_key_schedule  <= i_key_schedule;
         r_instance_size <= i_instance_size;
-        r_pt_instance   <= i_pt_instance;
         r_cb            <= w_cb; // Cycle
+        r_h             <= i_h; // Cycle
 		r_phase         <= i_phase;
     end
     
 	always_comb
 	begin
-        o_h = fn_aes_encrypt_stage(128'd0, r_key_schedule, 1);
+        o_h = fn_aes_encrypt_stage(r_h, r_key_schedule, 2);
 	end
 
     always_comb
@@ -91,9 +82,7 @@ module aes_pipeline_stage2(
 		o_cb = w_cb;
         o_plain_text    = r_plain_text;
         o_aad           = r_aad;
-        o_new_instance  = r_new_instance;
         o_key_schedule  = r_key_schedule;
         o_instance_size = r_instance_size;
-        o_pt_instance   = r_pt_instance;
     end
 endmodule

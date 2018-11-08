@@ -1,4 +1,4 @@
-module aes_pipeline_stage4(
+module aes_pipeline_stage5_pre(
     clk,
     i_plain_text,
     i_aad,
@@ -15,7 +15,7 @@ module aes_pipeline_stage4(
     o_key_schedule,
     o_plain_text,
     o_aad,
-    o_instance_size
+    o_instance_size,
 );
 
     input logic           clk;
@@ -28,7 +28,7 @@ module aes_pipeline_stage4(
     input logic [0:1407]  i_key_schedule;
     input logic [0:2]     i_phase;
     
-    output logic [0:2]      o_phase;
+    output logic [0:2]      o_phase; 
     output logic [0:1407]   o_key_schedule;
     output logic [0:127]    o_plain_text;
     output logic [0:127]    o_aad;
@@ -49,8 +49,8 @@ module aes_pipeline_stage4(
     
     always_ff @(posedge clk)
     begin
-		r_phase         <= i_phase;
         r_plain_text    <= i_plain_text;
+		r_phase         <= i_phase;
         r_aad           <= i_aad;
         r_h             <= i_h;
         r_encrypted_j0  <= i_encrypted_j0;
@@ -61,9 +61,9 @@ module aes_pipeline_stage4(
 
     always_comb
     begin
-        o_h = fn_aes_encrypt_stage(r_h, r_key_schedule, 6);
-        o_encrypted_cb = fn_aes_encrypt_stage(r_encrypted_cb, r_key_schedule, 4);
-        o_encrypted_j0 = fn_aes_encrypt_stage(r_encrypted_j0, r_key_schedule, 4);
+        o_h = fn_aes_encrypt_stage(r_h, r_key_schedule, 7);
+        o_encrypted_cb = fn_aes_encrypt_stage(r_encrypted_cb, r_key_schedule, 5);
+        o_encrypted_j0 = fn_aes_encrypt_stage(r_encrypted_j0, r_key_schedule, 5);
 
         /* Carrying forward register values for subsequent stages */
 		o_phase = r_phase;

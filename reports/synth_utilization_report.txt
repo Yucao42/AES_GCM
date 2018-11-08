@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Wed Nov  7 23:48:03 2018
+| Date         : Thu Nov  8 21:48:11 2018
 | Host         : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_utilization -file ./reports/synth_utilization_report.txt
 | Design       : aes
@@ -31,17 +31,17 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| CLB LUTs*                  | 34884 |     0 |    203128 | 17.17 |
-|   LUT as Logic             | 34880 |     0 |    203128 | 17.17 |
-|   LUT as Memory            |     4 |     0 |    112800 | <0.01 |
+| CLB LUTs*                  | 25777 |     0 |    203128 | 12.69 |
+|   LUT as Logic             | 25390 |     0 |    203128 | 12.50 |
+|   LUT as Memory            |   387 |     0 |    112800 |  0.34 |
 |     LUT as Distributed RAM |     0 |     0 |           |       |
-|     LUT as Shift Register  |     4 |     0 |           |       |
-| CLB Registers              |  6844 |     0 |    406256 |  1.68 |
-|   Register as Flip Flop    |  6844 |     0 |    406256 |  1.68 |
+|     LUT as Shift Register  |   387 |     0 |           |       |
+| CLB Registers              |  9954 |     0 |    406256 |  2.45 |
+|   Register as Flip Flop    |  9954 |     0 |    406256 |  2.45 |
 |   Register as Latch        |     0 |     0 |    406256 |  0.00 |
 | CARRY8                     |    54 |     0 |     30300 |  0.18 |
-| F7 Muxes                   |  4425 |     0 |    121200 |  3.65 |
-| F8 Muxes                   |  1712 |     0 |     60600 |  2.83 |
+| F7 Muxes                   |   857 |     0 |    121200 |  0.71 |
+| F8 Muxes                   |   176 |     0 |     60600 |  0.29 |
 | F9 Muxes                   |     0 |     0 |     30300 |  0.00 |
 +----------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -62,7 +62,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 6844  |          Yes |       Reset |            - |
+| 9954  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -72,10 +72,10 @@ Table of Contents
 +-------------------+------+-------+-----------+-------+
 |     Site Type     | Used | Fixed | Available | Util% |
 +-------------------+------+-------+-----------+-------+
-| Block RAM Tile    | 48.5 |     0 |       540 |  8.98 |
+| Block RAM Tile    |  120 |     0 |       540 | 22.22 |
 |   RAMB36/FIFO*    |    0 |     0 |       540 |  0.00 |
-|   RAMB18          |   97 |     0 |      1080 |  8.98 |
-|     RAMB18E2 only |   97 |       |           |       |
+|   RAMB18          |  240 |     0 |      1080 | 22.22 |
+|     RAMB18E2 only |  240 |       |           |       |
 +-------------------+------+-------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E2 or one FIFO18E2. However, if a FIFO18E2 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E2
 
@@ -154,21 +154,21 @@ Table of Contents
 +------------+-------+---------------------+
 |  Ref Name  |  Used | Functional Category |
 +------------+-------+---------------------+
-| LUT6       | 23396 |                 CLB |
-| FDRE       |  6844 |            Register |
-| LUT4       |  6594 |                 CLB |
-| LUT5       |  4676 |                 CLB |
-| MUXF7      |  4425 |                 CLB |
-| MUXF8      |  1712 |                 CLB |
-| LUT3       |   769 |                 CLB |
-| LUT2       |   673 |                 CLB |
+| LUT6       | 12693 |                 CLB |
+| FDRE       |  9954 |            Register |
+| LUT4       |  7702 |                 CLB |
+| LUT5       |  4284 |                 CLB |
+| LUT3       |   994 |                 CLB |
+| LUT2       |   916 |                 CLB |
+| MUXF7      |   857 |                 CLB |
 | INBUF      |   482 |                 I/O |
 | IBUFCTRL   |   482 |              Others |
+| SRL16E     |   387 |                 CLB |
 | OBUF       |   258 |                 I/O |
+| RAMB18E2   |   240 |           Block Ram |
+| MUXF8      |   176 |                 CLB |
 | LUT1       |   159 |                 CLB |
-| RAMB18E2   |    97 |           Block Ram |
 | CARRY8     |    54 |                 CLB |
-| SRL16E     |     4 |                 CLB |
 | BUFGCE     |     2 |               Clock |
 | MMCME3_ADV |     1 |               Clock |
 +------------+-------+---------------------+

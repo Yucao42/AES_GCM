@@ -19,7 +19,7 @@ module aes(
     output          tag_ready;
 	// Cipher_text is ready
     output          cp_ready;
-    output [0:127]   cipher_text;
+    output [0:127]  cipher_text;
     output [0:127]  tag;
 
     logic           clk_out;

@@ -2,7 +2,6 @@ module aes_pipeline_stage6(
     clk,
     i_plain_text,
     i_aad,
-    i_new_instance,
     i_h,
     i_encrypted_j0,
     i_encrypted_cb,
@@ -16,8 +15,7 @@ module aes_pipeline_stage6(
     o_key_schedule,
     o_plain_text,
     o_aad,
-    o_instance_size,
-    o_new_instance
+    o_instance_size
 );
 
     input logic           clk;
@@ -28,7 +26,6 @@ module aes_pipeline_stage6(
     input logic [0:127]   i_encrypted_cb;
     input logic [0:127]   i_instance_size;
     input logic [0:1407]  i_key_schedule;
-    input logic           i_new_instance;
     input logic [0:2]     i_phase;
     
     output logic [0:2]      o_phase; 
@@ -39,7 +36,6 @@ module aes_pipeline_stage6(
     output logic [0:127]    o_encrypted_j0;
     output logic [0:127]    o_encrypted_cb;
     output logic [0:127]    o_instance_size;
-    output logic            o_new_instance;
     
     logic [0:1407]  r_key_schedule;
     logic [0:127]   r_plain_text;
@@ -48,7 +44,6 @@ module aes_pipeline_stage6(
     logic [0:127]   r_encrypted_j0;
     logic [0:127]   r_encrypted_cb;
     logic [0:127]   r_instance_size;
-    logic           r_new_instance;
     logic           r_pt_instance;
     logic [0:2]     r_phase;
     
@@ -60,22 +55,20 @@ module aes_pipeline_stage6(
         r_h             <= i_h;
         r_encrypted_j0  <= i_encrypted_j0;
         r_encrypted_cb  <= i_encrypted_cb;
-        r_new_instance  <= i_new_instance;
         r_key_schedule  <= i_key_schedule;
         r_instance_size <= i_instance_size;
     end
 
     always_comb
     begin
-        o_h = fn_aes_encrypt_stage(r_h, r_key_schedule, 9);
-        o_encrypted_cb = fn_aes_encrypt_stage(r_encrypted_cb, r_key_schedule, 7);
-        o_encrypted_j0 = fn_aes_encrypt_stage(r_encrypted_j0, r_key_schedule, 7);
+        o_h = fn_aes_encrypt_stage(r_h, r_key_schedule, 10);
+        o_encrypted_cb = fn_aes_encrypt_stage(r_encrypted_cb, r_key_schedule, 8);
+        o_encrypted_j0 = fn_aes_encrypt_stage(r_encrypted_j0, r_key_schedule, 8);
 
         /* Carrying forward register values for subsequent stages */
 		o_phase = r_phase;
         o_plain_text = r_plain_text;
         o_aad = r_aad;
-        o_new_instance = r_new_instance;
         o_key_schedule = r_key_schedule;
         o_instance_size = r_instance_size;
     end

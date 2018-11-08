@@ -14,6 +14,12 @@ read_verilog -sv  aes_pipeline_stage1.sv
 read_verilog -sv  aes_pipeline_stage12.sv
 read_verilog -sv  aes_pipeline_stage13.sv
 read_verilog -sv  aes_pipeline_stage14.sv
+read_verilog -sv  aes_pipeline_stage2_pre.sv
+read_verilog -sv  aes_pipeline_stage3_pre.sv
+read_verilog -sv  aes_pipeline_stage4_pre.sv
+read_verilog -sv  aes_pipeline_stage5_pre.sv
+read_verilog -sv  aes_pipeline_stage6_pre.sv
+read_verilog -sv  aes_pipeline_stage7_pre.sv
 read_verilog -sv  aes_pipeline_stage2.sv
 read_verilog -sv  aes_pipeline_stage3.sv
 read_verilog -sv  aes_pipeline_stage4.sv

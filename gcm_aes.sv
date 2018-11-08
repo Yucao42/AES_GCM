@@ -39,8 +39,6 @@ module gcm_aes(
     output logic           o_cp_ready;
     
     /* Wires joining Stage1 and Stage2 */
-    logic             w_s1_new_instance;
-    logic             w_s1_pt_instance;
     (* dont_touch = "true" *) logic [0:127]     w_s1_plain_text;
     logic [0:95]      w_s1_iv;
     logic [0:1407]    w_s1_key_schedule;
@@ -48,20 +46,36 @@ module gcm_aes(
     logic [0:127]     w_s1_instance_size;
 	logic [0:2]       w_s1_phase;
 
+	/* s1p are signals previous to stage 2 postior to stage 1 */
+    (* dont_touch = "true" *) logic [0:127]     w_s1p_plain_text;
+    logic [0:95]      w_s1p_iv;
+    logic [0:1407]    w_s1p_key_schedule;
+    (* dont_touch = "true" *) logic [0:127]     w_s1p_aad;
+    logic [0:127]     w_s1p_instance_size;
+    logic [0:127]     w_s1p_h;
+	logic [0:2]       w_s1p_phase;
+
     /* Wires joining Stage2 and Stage3 */
-    logic             w_s2_new_instance;
-    logic             w_s2_pt_instance;
     (* dont_touch = "true" *) logic [0:127]     w_s2_plain_text;
+    (* dont_touch = "true" *) logic [0:127]     w_s2_aad;
     logic [0:127]     w_s2_j0;
     logic [0:127]     w_s2_cb;
     logic [0:127]     w_s2_h;
     logic [0:1407]    w_s2_key_schedule;
-    (* dont_touch = "true" *) logic [0:127]     w_s2_aad;
     logic [0:127]     w_s2_instance_size;
 	logic [0:2]       w_s2_phase;
    
+	/* s2p are signals postior to stage 2 */
+    (* dont_touch = "true" *) logic [0:127]     w_s2p_plain_text;
+    (* dont_touch = "true" *) logic [0:127]     w_s2p_aad;
+    logic [0:1407]    w_s2p_key_schedule;
+    logic [0:127]     w_s2p_instance_size;
+    logic [0:127]     w_s2p_h;
+	logic [0:2]       w_s2p_phase;
+    logic [0:127]     w_s2p_encrypted_j0;
+    logic [0:127]     w_s2p_encrypted_cb;
+	
     /* Wires joining Stage3 and Stage4 */
-    logic             w_s3_new_instance;
     (* dont_touch = "true" *) logic [0:127]     w_s3_plain_text;
     logic [0:127]     w_s3_encrypted_j0;
     logic [0:127]     w_s3_encrypted_cb;
@@ -71,8 +85,17 @@ module gcm_aes(
     logic [0:127]     w_s3_instance_size;
 	logic [0:2]       w_s3_phase;
 
+	/* s3p are signals postior to stage 3 */
+    (* dont_touch = "true" *) logic [0:127]     w_s3p_plain_text;
+    (* dont_touch = "true" *) logic [0:127]     w_s3p_aad;
+    logic [0:1407]    w_s3p_key_schedule;
+    logic [0:127]     w_s3p_instance_size;
+    logic [0:127]     w_s3p_h;
+	logic [0:2]       w_s3p_phase;
+    logic [0:127]     w_s3p_encrypted_j0;
+    logic [0:127]     w_s3p_encrypted_cb;
+
     /* Wires joining Stage4 and Stage5 */
-    logic             w_s4_new_instance;
     (* dont_touch = "true" *) logic [0:127]     w_s4_plain_text;
     logic [0:127]     w_s4_encrypted_j0;
     logic [0:127]     w_s4_encrypted_cb;
@@ -82,8 +105,17 @@ module gcm_aes(
     logic [0:127]     w_s4_instance_size;
 	logic [0:2]       w_s4_phase;
 
+	/* s4p are signals postior to stage 4 */
+    (* dont_touch = "true" *) logic [0:127]     w_s4p_plain_text;
+    (* dont_touch = "true" *) logic [0:127]     w_s4p_aad;
+    logic [0:1407]    w_s4p_key_schedule;
+    logic [0:127]     w_s4p_instance_size;
+    logic [0:127]     w_s4p_h;
+	logic [0:2]       w_s4p_phase;
+    logic [0:127]     w_s4p_encrypted_j0;
+    logic [0:127]     w_s4p_encrypted_cb;
+
     /* Wires joining Stage4 and Stage5 */
-    logic             w_s5_new_instance;
     (* dont_touch = "true" *) logic [0:127]     w_s5_plain_text;
     logic [0:127]     w_s5_encrypted_j0;
     logic [0:127]     w_s5_encrypted_cb;
@@ -93,8 +125,17 @@ module gcm_aes(
     logic [0:127]     w_s5_instance_size;
 	logic [0:2]       w_s5_phase;
    
+	/* s5p are signals postior to stage 5 */
+    (* dont_touch = "true" *) logic [0:127]     w_s5p_plain_text;
+    (* dont_touch = "true" *) logic [0:127]     w_s5p_aad;
+    logic [0:1407]    w_s5p_key_schedule;
+    logic [0:127]     w_s5p_instance_size;
+    logic [0:127]     w_s5p_h;
+	logic [0:2]       w_s5p_phase;
+    logic [0:127]     w_s5p_encrypted_j0;
+    logic [0:127]     w_s5p_encrypted_cb;
+
     /* Wires joining Stage5 and Stage6 */
-    logic             w_s6_new_instance;
     (* dont_touch = "true" *) logic [0:127]     w_s6_plain_text;
     logic [0:127]     w_s6_encrypted_j0;
     logic [0:127]     w_s6_encrypted_cb;
@@ -104,8 +145,17 @@ module gcm_aes(
     logic [0:127]     w_s6_instance_size;
 	logic [0:2]       w_s6_phase;
 
+	/* s6p are signals postior to stage 6 */
+    (* dont_touch = "true" *) logic [0:127]     w_s6p_plain_text;
+    (* dont_touch = "true" *) logic [0:127]     w_s6p_aad;
+    logic [0:1407]    w_s6p_key_schedule;
+    logic [0:127]     w_s6p_instance_size;
+    logic [0:127]     w_s6p_h;
+	logic [0:2]       w_s6p_phase;
+    logic [0:127]     w_s6p_encrypted_j0;
+    logic [0:127]     w_s6p_encrypted_cb;
+
     /* Wires joining Stage6 and Stage7 */
-    logic             w_s7_new_instance;
     logic [0:127]     w_s7_cipher_text;
     logic [0:127]     w_s7_encrypted_j0;
     logic [0:127]     w_s7_h;
@@ -116,6 +166,7 @@ module gcm_aes(
    
     /* Wires joining Stage8 and Stage9 */
     logic             w_s8_sblock_ready;
+    logic [0:1407]    w_s8_key_schedule;
     logic [0:127]     w_s8_cipher_text;
     logic [0:127]     w_s8_encrypted_j0;
     logic [0:127]     w_s8_sblock;
@@ -137,30 +188,42 @@ module gcm_aes(
         .o_plain_text(w_s1_plain_text),
         .o_aad(w_s1_aad),
         .o_iv(w_s1_iv),
-        .o_instance_size(w_s1_instance_size),
-        .o_new_instance(w_s1_new_instance),
-        .o_pt_instance(w_s1_pt_instance)
+        .o_instance_size(w_s1_instance_size)
+    );
+	
+    aes_pipeline_stage2_pre stage2p(
+        .clk(clk),
+        .i_plain_text(w_s1_plain_text),
+        .i_aad(w_s1_aad),
+        .i_iv(w_s1_iv),
+        .i_instance_size(w_s1_instance_size),
+        .i_key_schedule(w_s1_key_schedule),
+		.i_phase(w_s1_phase),
+        .o_key_schedule(w_s1p_key_schedule),
+		.o_phase(w_s1p_phase),
+        .o_h(w_s1p_h),
+        .o_plain_text(w_s1p_plain_text),
+        .o_aad(w_s1p_aad),
+        .o_iv(w_s1p_iv),
+        .o_instance_size(w_s1p_instance_size)
     );
 
     aes_pipeline_stage2 stage2(
         .clk(clk),
-        .i_plain_text(w_s1_plain_text),
-        .i_aad(w_s1_aad),
-        .i_new_instance(w_s1_new_instance),
-        .i_iv(w_s1_iv),
-        .i_instance_size(w_s1_instance_size),
-        .i_pt_instance(w_s1_pt_instance),
-        .i_key_schedule(w_s1_key_schedule),
-		.i_phase(w_s1_phase),
+        .i_plain_text(w_s1p_plain_text),
+        .i_aad(w_s1p_aad),
+        .i_iv(w_s1p_iv),
+        .i_instance_size(w_s1p_instance_size),
+        .i_key_schedule(w_s1p_key_schedule),
+		.i_phase(w_s1p_phase),
+        .i_h(w_s1p_h),
 		.o_phase(w_s2_phase),
         .o_h(w_s2_h),
         .o_j0(w_s2_j0),
         .o_cb(w_s2_cb),
         .o_plain_text(w_s2_plain_text),
         .o_aad(w_s2_aad),
-        .o_instance_size(w_s2_instance_size),
-        .o_new_instance(w_s2_new_instance),
-        .o_pt_instance(w_s2_pt_instance)
+        .o_instance_size(w_s2_instance_size)
     );
     
 	/* Concurrent key expansion modules
@@ -171,26 +234,43 @@ module gcm_aes(
 	   .o_key_schedule(w_s3_key_schedule)
     );
 
-    aes_pipeline_stage3 stage3(
+    aes_pipeline_stage3_pre stage3p(
         .clk(clk),
-        .i_plain_text(w_s2_plain_text),
-        .i_aad(w_s2_aad),
-        .i_new_instance(w_s2_new_instance),
+		.i_phase(w_s2_phase),
         .i_h(w_s2_h),
         .i_j0(w_s2_j0),
         .i_cb(w_s2_cb),
+        .i_plain_text(w_s2_plain_text),
+        .i_aad(w_s2_aad),
         .i_instance_size(w_s2_instance_size),
-        .i_pt_instance(w_s2_pt_instance),
         .i_key_schedule(w_s3_key_schedule),
-		.i_phase(w_s2_phase),
+		.o_phase(w_s2p_phase),
+        .o_h(w_s2p_h),
+        .o_encrypted_j0(w_s2p_encrypted_j0),
+        .o_encrypted_cb(w_s2p_encrypted_cb),
+        .o_plain_text(w_s2p_plain_text),
+        .o_aad(w_s2p_aad),
+        .o_instance_size(w_s2p_instance_size),
+        .o_key_schedule(w_s2p_key_schedule)
+    );
+
+    aes_pipeline_stage3 stage3(
+        .clk(clk),
+        .i_plain_text(w_s2p_plain_text),
+        .i_aad(w_s2p_aad),
+        .i_h(w_s2p_h),
+        .i_j0(w_s2p_encrypted_j0),
+        .i_cb(w_s2p_encrypted_cb),
+        .i_instance_size(w_s2p_instance_size),
+        .i_key_schedule(w_s2p_key_schedule),
+		.i_phase(w_s2p_phase),
 		.o_phase(w_s3_phase),
         .o_h(w_s3_h),
         .o_encrypted_j0(w_s3_encrypted_j0),
         .o_encrypted_cb(w_s3_encrypted_cb),
         .o_plain_text(w_s3_plain_text),
         .o_aad(w_s3_aad),
-        .o_instance_size(w_s3_instance_size),
-        .o_new_instance(w_s3_new_instance)
+        .o_instance_size(w_s3_instance_size)
     );
 
     aes_pipeline_stage13 keyexpan3(
@@ -199,25 +279,43 @@ module gcm_aes(
 	    .o_key_schedule(w_s4_key_schedule)
     );
 
-    aes_pipeline_stage4 stage4(
+    aes_pipeline_stage4_pre stage4p(
         .clk(clk),
         .i_plain_text(w_s3_plain_text),
         .i_aad(w_s3_aad),
-        .i_new_instance(w_s3_new_instance),
         .i_h(w_s3_h),
         .i_encrypted_j0(w_s3_encrypted_j0),
         .i_encrypted_cb(w_s3_encrypted_cb),
         .i_instance_size(w_s3_instance_size),
         .i_key_schedule(w_s4_key_schedule),
 		.i_phase(w_s3_phase),
+		.o_phase(w_s3p_phase),
+        .o_h(w_s3p_h),
+        .o_encrypted_j0(w_s3p_encrypted_j0),
+        .o_encrypted_cb(w_s3p_encrypted_cb),
+        .o_plain_text(w_s3p_plain_text),
+        .o_aad(w_s3p_aad),
+        .o_instance_size(w_s3p_instance_size)
+    );
+
+    aes_pipeline_stage4 stage4(
+        .clk(clk),
+        .i_plain_text(w_s3p_plain_text),
+        .i_aad(w_s3p_aad),
+        .i_h(w_s3p_h),
+        .i_encrypted_j0(w_s3p_encrypted_j0),
+        .i_encrypted_cb(w_s3p_encrypted_cb),
+        .i_instance_size(w_s3p_instance_size),
+        .i_key_schedule(w_s5_key_schedule),
+		.i_phase(w_s3p_phase),
 		.o_phase(w_s4_phase),
         .o_h(w_s4_h),
         .o_encrypted_j0(w_s4_encrypted_j0),
         .o_encrypted_cb(w_s4_encrypted_cb),
         .o_plain_text(w_s4_plain_text),
+        .o_key_schedule(w_s6_key_schedule),
         .o_aad(w_s4_aad),
-        .o_instance_size(w_s4_instance_size),
-        .o_new_instance(w_s4_new_instance)
+        .o_instance_size(w_s4_instance_size)
     );
 
     aes_pipeline_stage14 keyexpan4(
@@ -226,33 +324,72 @@ module gcm_aes(
 	    .o_key_schedule(w_s5_key_schedule)
     );
 
-    aes_pipeline_stage5 stage5(
+    aes_pipeline_stage5_pre stage5p(
         .clk(clk),
         .i_plain_text(w_s4_plain_text),
         .i_aad(w_s4_aad),
-        .i_new_instance(w_s4_new_instance),
         .i_h(w_s4_h),
         .i_encrypted_j0(w_s4_encrypted_j0),
         .i_encrypted_cb(w_s4_encrypted_cb),
         .i_instance_size(w_s4_instance_size),
-        .i_key_schedule(w_s5_key_schedule),
+        .i_key_schedule(w_s6_key_schedule),
 		.i_phase(w_s4_phase),
+        .o_key_schedule(w_s4p_key_schedule),
+		.o_phase(w_s4p_phase),
+        .o_h(w_s4p_h),
+        .o_encrypted_j0(w_s4p_encrypted_j0),
+        .o_encrypted_cb(w_s4p_encrypted_cb),
+        .o_plain_text(w_s4p_plain_text),
+        .o_aad(w_s4p_aad),
+        .o_instance_size(w_s4p_instance_size)
+    );
+
+    aes_pipeline_stage5 stage5(
+        .clk(clk),
+        .i_plain_text(w_s4p_plain_text),
+        .i_aad(w_s4p_aad),
+        .i_h(w_s4p_h),
+        .i_encrypted_j0(w_s4p_encrypted_j0),
+        .i_encrypted_cb(w_s4p_encrypted_cb),
+        .i_instance_size(w_s4p_instance_size),
+        .i_key_schedule(w_s4p_key_schedule),
+		.i_phase(w_s4p_phase),
 		.o_phase(w_s5_phase),
+        .o_key_schedule(w_s7_key_schedule),
         .o_h(w_s5_h),
         .o_encrypted_j0(w_s5_encrypted_j0),
         .o_encrypted_cb(w_s5_encrypted_cb),
         .o_plain_text(w_s5_plain_text),
         .o_aad(w_s5_aad),
-        .o_instance_size(w_s5_instance_size),
-        .o_new_instance(w_s5_new_instance)
+        .o_instance_size(w_s5_instance_size)
+    );
+
+    aes_pipeline_stage6_pre stage6p(
+        .clk(clk),
+        .i_plain_text(w_s5_plain_text),
+        .i_aad(w_s5_aad),
+        .i_h(w_s5_h),
+        .i_encrypted_j0(w_s5_encrypted_j0),
+        .i_encrypted_cb(w_s5_encrypted_cb),
+        .i_instance_size(w_s5_instance_size),
+        .i_key_schedule(w_s7_key_schedule),
+		.i_phase(w_s5_phase),
+		.o_phase(w_s5p_phase),
+        .o_key_schedule(w_s5p_key_schedule),
+        .o_h(w_s5p_h),
+        .o_encrypted_j0(w_s5p_encrypted_j0),
+        .o_encrypted_cb(w_s5p_encrypted_cb),
+        .o_plain_text(w_s5p_plain_text),
+        .o_aad(w_s5p_aad),
+        .o_instance_size(w_s5p_instance_size)
     );
 
 
 	aes_signal_passing pass6(
 		.clk(clk),
-        .i_plain_text(w_s5_plain_text),
-        .i_aad(w_s5_aad),
-        .i_instance_size(w_s5_instance_size),
+        .i_plain_text(w_s5p_plain_text),
+        .i_aad(w_s5p_aad),
+        .i_instance_size(w_s5p_instance_size),
         .o_plain_text(w_s6_plain_text),
         .o_aad(w_s6_aad),
         .o_instance_size(w_s6_instance_size)
@@ -260,45 +397,60 @@ module gcm_aes(
 
     aes_pipeline_stage6 stage6(
         .clk(clk),
-        .i_new_instance(w_s5_new_instance),
-        .i_h(w_s5_h),
-        .i_encrypted_j0(w_s5_encrypted_j0),
-        .i_encrypted_cb(w_s5_encrypted_cb),
-        .i_key_schedule(w_s5_key_schedule),
-		.i_phase(w_s5_phase),
+        .i_h(w_s5p_h),
+        .i_encrypted_j0(w_s5p_encrypted_j0),
+        .i_encrypted_cb(w_s5p_encrypted_cb),
+        .i_key_schedule(w_s5p_key_schedule),
+		.i_phase(w_s5p_phase),
+        .o_key_schedule(w_s8_key_schedule),
 		.o_phase(w_s6_phase),
         .o_h(w_s6_h),
         .o_encrypted_j0(w_s6_encrypted_j0),
-        .o_encrypted_cb(w_s6_encrypted_cb),
-        .o_key_schedule(w_s6_key_schedule),
-        .o_new_instance(w_s6_new_instance)
+        .o_encrypted_cb(w_s6_encrypted_cb)
     );
 
-    aes_pipeline_stage7 stage7(
+    aes_pipeline_stage7_pre stage7p(
         .clk(clk),
         .i_plain_text(w_s6_plain_text),
         .i_aad(w_s6_aad),
-        .i_new_instance(w_s6_new_instance),
         .i_h(w_s6_h),
         .i_encrypted_j0(w_s6_encrypted_j0),
         .i_encrypted_cb(w_s6_encrypted_cb),
         .i_instance_size(w_s6_instance_size),
-        .i_key_schedule(w_s6_key_schedule),
+        .i_key_schedule(w_s8_key_schedule),
 		.i_phase(w_s6_phase),
+        .o_key_schedule(w_s6p_key_schedule),
+		.o_phase(w_s6p_phase),
+        .o_h(w_s6p_h),
+        .o_encrypted_j0(w_s6p_encrypted_j0),
+        .o_encrypted_cb(w_s6p_encrypted_cb),
+        .o_plain_text(w_s6p_plain_text),
+        .o_aad(w_s6p_aad),
+        .o_instance_size(w_s6p_instance_size)
+    );
+
+    aes_pipeline_stage7 stage7(
+        .clk(clk),
+        .i_plain_text(w_s6p_plain_text),
+        .i_aad(w_s6p_aad),
+        .i_h(w_s6p_h),
+        .i_encrypted_j0(w_s6p_encrypted_j0),
+        .i_encrypted_cb(w_s6p_encrypted_cb),
+        .i_instance_size(w_s6p_instance_size),
+        .i_key_schedule(w_s6p_key_schedule),
+		.i_phase(w_s6p_phase),
 		.o_phase(w_s7_phase),
         .o_h(w_s7_h),
         .o_encrypted_j0(w_s7_encrypted_j0),
         .o_cipher_text(w_s7_cipher_text),
         .o_aad(w_s7_aad),
-        .o_instance_size(w_s7_instance_size),
-        .o_new_instance(w_s7_new_instance)
+        .o_instance_size(w_s7_instance_size)
     );
 
     aes_pipeline_stage8 stage8(
         .clk(clk),
         .i_cipher_text(w_s7_cipher_text),
         .i_aad(w_s7_aad),
-        .i_new_instance(w_s7_new_instance),
         .i_h(w_s7_h),
         .i_encrypted_j0(w_s7_encrypted_j0),
         .i_instance_size(w_s7_instance_size),
