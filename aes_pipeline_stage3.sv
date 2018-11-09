@@ -1,4 +1,4 @@
-module aes_pipeline_stage3_pre (
+module aes_pipeline_stage3 (
     clk,
     i_plain_text,
     i_aad,
@@ -61,14 +61,14 @@ module aes_pipeline_stage3_pre (
 
     always_comb
     begin
-        o_h = fn_aes_encrypt_stage(r_h, r_key_schedule, 3);
+        o_h = fn_aes_encrypt_stage(r_h, r_key_schedule, 4);
 
-        o_encrypted_cb = fn_aes_encrypt_stage(r_cb, r_key_schedule, 3);
+        o_encrypted_cb = fn_aes_encrypt_stage(r_cb, r_key_schedule, 2);
 
         /* Compute encrypted value of J0 that will be used later in
         * stage 7
         */
-        o_encrypted_j0 = fn_aes_encrypt_stage(r_j0, r_key_schedule, 1);
+        o_encrypted_j0 = fn_aes_encrypt_stage(r_j0, r_key_schedule, 2);
 
         /* Carrying forward register values for subsequent stages */
 		o_phase = r_phase;
