@@ -234,6 +234,7 @@ module gcm_aes(
 	   .o_key_schedule(w_s3_key_schedule)
     );
 
+	// TODO rearrange the clks
     aes_pipeline_stage3_pre stage3p(
         .clk(clk),
 		.i_phase(w_s2_phase),
