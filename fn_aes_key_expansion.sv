@@ -275,7 +275,7 @@ endfunction
 function logic[0:1407] fn_key_expansion(
     input [0:127]    cipher_key,
 	input [0:1407]  i_key_schedule,
-    input [0:2]      round	
+    input [0:4]      round	
 );
 /*
     logic [0:7] SBOX [256] = {
@@ -323,14 +323,14 @@ function logic[0:1407] fn_key_expansion(
     logic [0:31] temp_rot_word;
     logic [0:31] temp_sub_word;
     logic [0:31] temp;
-    (* keep="true" *) logic [0:1407] key_schedule;
+    (* keep="true" *) logic [0:1407] key_schedule=1408'b0;
 
 	if(round == 1)
     	key_schedule[0:127] = cipher_key; // The first key is the original key.
 	else
 		key_schedule[0:1407] = i_key_schedule;
 
-    for( i = (round -1) * 10 + 4; i < round * 10 + 4; i++)
+    for( i = (round -1) * 5 + 4; i < round * 5 + 4; i++)
     begin
         temp = key_schedule[(i-1)*32+:32];
         if (i % 4 == 0)

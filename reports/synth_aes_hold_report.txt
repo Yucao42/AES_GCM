@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date              : Fri Nov  9 15:12:01 2018
+| Date              : Sat Nov 10 17:14:09 2018
 | Host              : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command           : report_timing -hold -file ./reports/synth_aes_hold_report.txt
 | Design            : aes
@@ -12,15 +12,15 @@ Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 Timing Report
 
-Slack (VIOLATED) :        -0.107ns  (arrival time - required time)
-  Source:                 gcm_aes_instance/stage4/r_key_schedule_reg[1152]__0/C
+Slack (VIOLATED) :        -0.099ns  (arrival time - required time)
+  Source:                 gcm_aes_instance/stage1/r_cipher_key_reg[64]/C
                             (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            gcm_aes_instance/stage5/r_key_schedule_reg[1152]_srl2/D
+  Destination:            gcm_aes_instance/keygen2/r_key_schedule_reg[64]_srl2/D
                             (rising edge-triggered cell SRL16E clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             w_clk_out_clk_wiz_gen
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (w_clk_out_clk_wiz_gen rise@0.000ns - w_clk_out_clk_wiz_gen rise@0.000ns)
-  Data Path Delay:        0.158ns  (logic 0.049ns (30.993%)  route 0.109ns (69.007%))
+  Data Path Delay:        0.166ns  (logic 0.049ns (29.574%)  route 0.117ns (70.426%))
   Logic Levels:           0  
   Clock Path Skew:        0.145ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    0.232ns
@@ -42,12 +42,12 @@ Slack (VIOLATED) :        -0.107ns  (arrival time - required time)
                                                      -2.570    -1.138 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, unplaced)         0.162    -0.976    clk_gen_instance/w_clk_out_clk_wiz_gen
                          BUFGCE (Prop_BUFGCE_I_O)     0.027    -0.949 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=10961, unplaced)     1.114     0.165    gcm_aes_instance/stage4/clk_out
-                         FDRE                                         r  gcm_aes_instance/stage4/r_key_schedule_reg[1152]__0/C
+                         net (fo=11231, unplaced)     1.114     0.165    gcm_aes_instance/stage1/clk_out
+                         FDRE                                         r  gcm_aes_instance/stage1/r_cipher_key_reg[64]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_FDRE_C_Q)         0.049     0.214 r  gcm_aes_instance/stage4/r_key_schedule_reg[1152]__0/Q
-                         net (fo=1, unplaced)         0.109     0.323    gcm_aes_instance/stage5/r_key_schedule_reg[1152]__0_0
-                         SRL16E                                       r  gcm_aes_instance/stage5/r_key_schedule_reg[1152]_srl2/D
+                         FDRE (Prop_FDRE_C_Q)         0.049     0.214 r  gcm_aes_instance/stage1/r_cipher_key_reg[64]/Q
+                         net (fo=4, unplaced)         0.117     0.331    gcm_aes_instance/keygen2/o_key_schedule[63]
+                         SRL16E                                       r  gcm_aes_instance/keygen2/r_key_schedule_reg[64]_srl2/D
   -------------------------------------------------------------------    -------------------
 
                          (clock w_clk_out_clk_wiz_gen rise edge)
@@ -63,16 +63,16 @@ Slack (VIOLATED) :        -0.107ns  (arrival time - required time)
                                                      -2.883    -1.228 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, unplaced)         0.170    -1.058    clk_gen_instance/w_clk_out_clk_wiz_gen
                          BUFGCE (Prop_BUFGCE_I_O)     0.031    -1.027 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=10961, unplaced)     1.259     0.232    gcm_aes_instance/stage5/clk_out
-                         SRL16E                                       r  gcm_aes_instance/stage5/r_key_schedule_reg[1152]_srl2/CLK
+                         net (fo=11231, unplaced)     1.259     0.232    gcm_aes_instance/keygen2/clk_out
+                         SRL16E                                       r  gcm_aes_instance/keygen2/r_key_schedule_reg[64]_srl2/CLK
                          clock pessimism              0.078     0.310    
                          SRL16E (Hold_SRL16E_CLK_D)
-                                                      0.120     0.430    gcm_aes_instance/stage5/r_key_schedule_reg[1152]_srl2
+                                                      0.120     0.430    gcm_aes_instance/keygen2/r_key_schedule_reg[64]_srl2
   -------------------------------------------------------------------
                          required time                         -0.430    
-                         arrival time                           0.323    
+                         arrival time                           0.331    
   -------------------------------------------------------------------
-                         slack                                 -0.107    
+                         slack                                 -0.099    
 
 
 

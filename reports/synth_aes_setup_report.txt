@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date              : Fri Nov  9 15:12:00 2018
+| Date              : Sat Nov 10 17:14:09 2018
 | Host              : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command           : report_timing -setup -file ./reports/synth_aes_setup_report.txt
 | Design            : aes
@@ -12,16 +12,16 @@ Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 Timing Report
 
-Slack (MET) :             0.082ns  (required time - arrival time)
-  Source:                 gcm_aes_instance/stage1/r_cipher_key_reg[127]/C
-                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            gcm_aes_instance/keyexpan2/r_key_schedule_reg[384]/D
-                            (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.500ns period=3.000ns})
+Slack (MET) :             0.444ns  (required time - arrival time)
+  Source:                 gcm_aes_instance/stage2p/sel__6/CLKBWRCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            gcm_aes_instance/stage2/r_h_reg_rep_bsel/ADDRARDADDR[7]
+                            (rising edge-triggered cell RAMB18E2 clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             w_clk_out_clk_wiz_gen
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (w_clk_out_clk_wiz_gen rise@3.000ns - w_clk_out_clk_wiz_gen rise@0.000ns)
-  Data Path Delay:        2.782ns  (logic 0.760ns (27.318%)  route 2.022ns (72.682%))
-  Logic Levels:           9  (LUT5=2 LUT6=5 MUXF7=2)
+  Data Path Delay:        1.995ns  (logic 1.242ns (62.256%)  route 0.753ns (37.744%))
+  Logic Levels:           2  (LUT3=1 LUT6=1)
   Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    -0.285ns = ( 2.715 - 3.000 ) 
     Source Clock Delay      (SCD):    0.048ns
@@ -46,30 +46,17 @@ Slack (MET) :             0.082ns  (required time - arrival time)
                                                      -4.833    -2.880 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, unplaced)         0.277    -2.603    clk_gen_instance/w_clk_out_clk_wiz_gen
                          BUFGCE (Prop_BUFGCE_I_O)     0.067    -2.536 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=10961, unplaced)     2.584     0.048    gcm_aes_instance/stage1/clk_out
-                         FDRE                                         r  gcm_aes_instance/stage1/r_cipher_key_reg[127]/C
+                         net (fo=11231, unplaced)     2.584     0.048    gcm_aes_instance/stage2p/clk_out
+                         RAMB18E2                                     r  gcm_aes_instance/stage2p/sel__6/CLKBWRCLK
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_FDRE_C_Q)         0.103     0.151 r  gcm_aes_instance/stage1/r_cipher_key_reg[127]/Q
-                         net (fo=36, unplaced)        0.319     0.470    gcm_aes_instance/w_s1_key_schedule[127]
-                         LUT6 (Prop_LUT6_I0_O)        0.167     0.637 r  gcm_aes_instance/g3_b6__40/O
-                         net (fo=3, unplaced)         0.231     0.868    gcm_aes_instance/stage1/r_cipher_key_reg[127]_24
-                         LUT6 (Prop_LUT6_I0_O)        0.034     0.902 r  gcm_aes_instance/stage1/sbox_inferred__0/r_key_schedule[241]_i_2/O
-                         net (fo=3, unplaced)         0.230     1.132    gcm_aes_instance/stage1/sbox_inferred__0/r_key_schedule[241]_i_2_n_0
-                         LUT5 (Prop_LUT5_I2_O)        0.034     1.166 r  gcm_aes_instance/stage1/r_key_schedule[241]_i_1/O
-                         net (fo=18, unplaced)        0.304     1.470    gcm_aes_instance/stage1/w_s1_key_schedule[199]
-                         MUXF7 (Prop_MUXF7_S_O)       0.091     1.561 r  gcm_aes_instance/stage1/sbox_inferred__5/r_key_schedule_reg[271]_i_2/O
-                         net (fo=1, unplaced)         0.198     1.759    gcm_aes_instance/stage1/sbox_inferred__5/r_key_schedule_reg[271]_i_2_n_0
-                         LUT6 (Prop_LUT6_I1_O)        0.034     1.793 r  gcm_aes_instance/stage1/r_key_schedule[271]_i_1/O
-                         net (fo=5, unplaced)         0.242     2.035    gcm_aes_instance/stage1/w_s1_key_schedule[170]
-                         LUT5 (Prop_LUT5_I1_O)        0.034     2.069 r  gcm_aes_instance/stage1/g0_b0__50_i_1/O
-                         net (fo=33, unplaced)        0.278     2.347    gcm_aes_instance/w_s1_key_schedule[367]
-                         LUT6 (Prop_LUT6_I0_O)        0.167     2.514 r  gcm_aes_instance/g1_b7__50/O
-                         net (fo=1, unplaced)         0.000     2.514    gcm_aes_instance/stage1/r_cipher_key_reg[111]_83
-                         MUXF7 (Prop_MUXF7_I1_O)      0.062     2.576 r  gcm_aes_instance/stage1/sbox_inferred__10/r_key_schedule_reg[384]_i_2/O
-                         net (fo=2, unplaced)         0.198     2.774    gcm_aes_instance/stage1/sbox_inferred__10/r_key_schedule_reg[384]_i_2_n_0
-                         LUT6 (Prop_LUT6_I1_O)        0.034     2.808 r  gcm_aes_instance/stage1/r_key_schedule[384]_i_1/O
-                         net (fo=1, unplaced)         0.022     2.830    gcm_aes_instance/keyexpan2/w_s1_key_schedule[60]
-                         FDRE                                         r  gcm_aes_instance/keyexpan2/r_key_schedule_reg[384]/D
+                         RAMB18E2 (Prop_RAMB18E2_CLKBWRCLK_DOUTBDOUT[3])
+                                                      1.055     1.103 r  gcm_aes_instance/stage2p/sel__6/DOUTBDOUT[3]
+                         net (fo=5, unplaced)         0.329     1.432    gcm_aes_instance/stage2p/p_45_in[3]
+                         LUT6 (Prop_LUT6_I1_O)        0.153     1.585 r  gcm_aes_instance/stage2p/r_h_reg_rep_bsel_i_18/O
+                         net (fo=1, unplaced)         0.224     1.809    gcm_aes_instance/stage2p/r_h_reg_rep_bsel_i_18_n_0
+                         LUT3 (Prop_LUT3_I2_O)        0.034     1.843 r  gcm_aes_instance/stage2p/r_h_reg_rep_bsel_i_5/O
+                         net (fo=1, unplaced)         0.200     2.043    gcm_aes_instance/stage2/w_s1p_h[4]
+                         RAMB18E2                                     r  gcm_aes_instance/stage2/r_h_reg_rep_bsel/ADDRARDADDR[7]
   -------------------------------------------------------------------    -------------------
 
                          (clock w_clk_out_clk_wiz_gen rise edge)
@@ -85,16 +72,17 @@ Slack (MET) :             0.082ns  (required time - arrival time)
                                                      -4.751    -0.047 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, unplaced)         0.263     0.216    clk_gen_instance/w_clk_out_clk_wiz_gen
                          BUFGCE (Prop_BUFGCE_I_O)     0.060     0.276 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=10961, unplaced)     2.439     2.715    gcm_aes_instance/keyexpan2/clk_out
-                         FDRE                                         r  gcm_aes_instance/keyexpan2/r_key_schedule_reg[384]/C
+                         net (fo=11231, unplaced)     2.439     2.715    gcm_aes_instance/stage2/clk_out
+                         RAMB18E2                                     r  gcm_aes_instance/stage2/r_h_reg_rep_bsel/CLKARDCLK
                          clock pessimism              0.188     2.904    
                          clock uncertainty           -0.038     2.865    
-                         FDRE (Setup_FDRE_C_D)        0.047     2.912    gcm_aes_instance/keyexpan2/r_key_schedule_reg[384]
+                         RAMB18E2 (Setup_RAMB18E2_CLKARDCLK_ADDRARDADDR[7])
+                                                     -0.378     2.487    gcm_aes_instance/stage2/r_h_reg_rep_bsel
   -------------------------------------------------------------------
-                         required time                          2.912    
-                         arrival time                          -2.830    
+                         required time                          2.487    
+                         arrival time                          -2.043    
   -------------------------------------------------------------------
-                         slack                                  0.082    
+                         slack                                  0.444    
 
 
 

@@ -28,6 +28,7 @@ read_verilog -sv  aes_pipeline_stage6.sv
 read_verilog -sv  aes_pipeline_stage7.sv
 read_verilog -sv  aes_pipeline_stage8.sv
 read_verilog -sv  aes_pipeline_stage9.sv
+read_verilog -sv  aes_key_gen.sv
 read_verilog -sv  gcm_aes.sv
 read_verilog -sv  display.sv
 read_verilog -sv  aes.sv
