@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Sat Nov 10 17:14:10 2018
+| Date         : Sun Nov 11 19:54:25 2018
 | Host         : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_utilization -file ./reports/synth_utilization_report.txt
 | Design       : aes
@@ -31,8 +31,8 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| CLB LUTs*                  | 26227 |     0 |    203128 | 12.91 |
-|   LUT as Logic             | 26096 |     0 |    203128 | 12.85 |
+| CLB LUTs*                  | 26289 |     0 |    203128 | 12.94 |
+|   LUT as Logic             | 26158 |     0 |    203128 | 12.88 |
 |   LUT as Memory            |   131 |     0 |    112800 |  0.12 |
 |     LUT as Distributed RAM |     0 |     0 |           |       |
 |     LUT as Shift Register  |   131 |     0 |           |       |
