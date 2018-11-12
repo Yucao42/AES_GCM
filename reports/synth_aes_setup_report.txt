@@ -1,34 +1,34 @@
-Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
-| Tool Version      : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date              : Sun Nov 11 19:54:23 2018
+| Tool Version      : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date              : Mon Nov 12 19:38:32 2018
 | Host              : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command           : report_timing -setup -file ./reports/synth_aes_setup_report.txt
 | Design            : aes
 | Device            : xcku035-fbva900
-| Speed File        : -3  PRODUCTION 1.23 12-12-2016
+| Speed File        : -3  PRODUCTION 1.24.01 01-12-2017
 | Temperature Grade : E
 -----------------------------------------------------------------------------------------
 
 Timing Report
 
-Slack (MET) :             0.054ns  (required time - arrival time)
-  Source:                 gcm_aes_instance/stage2p/sel__6/CLKBWRCLK
-                            (rising edge-triggered cell RAMB18E2 clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.304ns period=2.609ns})
-  Destination:            gcm_aes_instance/stage2/r_h_reg_rep_bsel/ADDRARDADDR[7]
-                            (rising edge-triggered cell RAMB18E2 clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.304ns period=2.609ns})
+Slack (MET) :             0.035ns  (required time - arrival time)
+  Source:                 gcm_aes_instance/stage6p/sel__6/CLKARDCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.279ns period=2.558ns})
+  Destination:            gcm_aes_instance/stage6/sel/ADDRARDADDR[7]
+                            (rising edge-triggered cell RAMB18E2 clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.279ns period=2.558ns})
   Path Group:             w_clk_out_clk_wiz_gen
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            2.609ns  (w_clk_out_clk_wiz_gen rise@2.609ns - w_clk_out_clk_wiz_gen rise@0.000ns)
-  Data Path Delay:        1.995ns  (logic 1.242ns (62.256%)  route 0.753ns (37.744%))
-  Logic Levels:           2  (LUT3=1 LUT6=1)
+  Requirement:            2.558ns  (w_clk_out_clk_wiz_gen rise@2.558ns - w_clk_out_clk_wiz_gen rise@0.000ns)
+  Data Path Delay:        1.962ns  (logic 1.188ns (60.550%)  route 0.774ns (39.450%))
+  Logic Levels:           2  (LUT4=1 LUT5=1)
   Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -0.285ns = ( 2.324 - 2.609 ) 
-    Source Clock Delay      (SCD):    0.048ns
-    Clock Pessimism Removal (CPR):    0.188ns
+    Destination Clock Delay (DCD):    -0.340ns = ( 2.217 - 2.558 ) 
+    Source Clock Delay      (SCD):    0.072ns
+    Clock Pessimism Removal (CPR):    0.267ns
   Clock Uncertainty:      0.037ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.024ns
+    Discrete Jitter          (DJ):    0.023ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -43,46 +43,46 @@ Slack (MET) :             0.054ns  (required time - arrival time)
                                                       0.000     1.262 r  clk_gen_instance/clkin1_ibufg/IBUFCTRL_INST/O
                          net (fo=1, unplaced)         0.692     1.954    clk_gen_instance/w_clk_in_clk_wiz_gen
                          MMCME3_ADV (Prop_MMCME3_ADV_CLKIN1_CLKOUT0)
-                                                     -4.833    -2.880 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, unplaced)         0.277    -2.603    clk_gen_instance/w_clk_out_clk_wiz_gen
-                         BUFGCE (Prop_BUFGCE_I_O)     0.067    -2.536 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=11231, unplaced)     2.584     0.048    gcm_aes_instance/stage2p/clk_out
-                         RAMB18E2                                     r  gcm_aes_instance/stage2p/sel__6/CLKBWRCLK
+                                                     -4.810    -2.856 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.277    -2.579    clk_gen_instance/w_clk_out_clk_wiz_gen
+                         BUFGCE (Prop_BUFGCE_I_O)     0.067    -2.512 r  clk_gen_instance/clkout1_buf/O
+                         net (fo=10961, unplaced)     2.584     0.072    gcm_aes_instance/stage6p/clk_out
+                         RAMB18E2                                     r  gcm_aes_instance/stage6p/sel__6/CLKARDCLK
   -------------------------------------------------------------------    -------------------
-                         RAMB18E2 (Prop_RAMB18E2_CLKBWRCLK_DOUTBDOUT[3])
-                                                      1.055     1.103 r  gcm_aes_instance/stage2p/sel__6/DOUTBDOUT[3]
-                         net (fo=5, unplaced)         0.329     1.432    gcm_aes_instance/stage2p/p_45_in[3]
-                         LUT6 (Prop_LUT6_I1_O)        0.153     1.585 r  gcm_aes_instance/stage2p/r_h_reg_rep_bsel_i_18/O
-                         net (fo=1, unplaced)         0.224     1.809    gcm_aes_instance/stage2p/r_h_reg_rep_bsel_i_18_n_0
-                         LUT3 (Prop_LUT3_I2_O)        0.034     1.843 r  gcm_aes_instance/stage2p/r_h_reg_rep_bsel_i_5/O
-                         net (fo=1, unplaced)         0.200     2.043    gcm_aes_instance/stage2/w_s1p_h[4]
-                         RAMB18E2                                     r  gcm_aes_instance/stage2/r_h_reg_rep_bsel/ADDRARDADDR[7]
+                         RAMB18E2 (Prop_RAMB18E2_CLKARDCLK_DOUTADOUT[3])
+                                                      1.054     1.126 r  gcm_aes_instance/stage6p/sel__6/DOUTADOUT[3]
+                         net (fo=5, unplaced)         0.360     1.486    gcm_aes_instance/stage6p/p_10_in131_in[3]
+                         LUT5 (Prop_LUT5_I2_O)        0.100     1.586 r  gcm_aes_instance/stage6p/sel_i_18/O
+                         net (fo=1, unplaced)         0.214     1.800    gcm_aes_instance/stage6p/sel_i_18_n_0
+                         LUT4 (Prop_LUT4_I1_O)        0.034     1.834 r  gcm_aes_instance/stage6p/sel_i_5/O
+                         net (fo=1, unplaced)         0.200     2.034    gcm_aes_instance/stage6/w_s5p_h[92]
+                         RAMB18E2                                     r  gcm_aes_instance/stage6/sel/ADDRARDADDR[7]
   -------------------------------------------------------------------    -------------------
 
                          (clock w_clk_out_clk_wiz_gen rise edge)
-                                                      2.609     2.609 r  
-                                                      0.000     2.609 r  clk (IN)
-                         net (fo=0)                   0.000     2.609    clk_gen_instance/clkin1_ibufg/I
-                         INBUF (Prop_INBUF_PAD_O)     1.002     3.611 r  clk_gen_instance/clkin1_ibufg/INBUF_INST/O
-                         net (fo=1, unplaced)         0.045     3.656    clk_gen_instance/clkin1_ibufg/OUT
+                                                      2.558     2.558 r  
+                                                      0.000     2.558 r  clk (IN)
+                         net (fo=0)                   0.000     2.558    clk_gen_instance/clkin1_ibufg/I
+                         INBUF (Prop_INBUF_PAD_O)     1.002     3.559 r  clk_gen_instance/clkin1_ibufg/INBUF_INST/O
+                         net (fo=1, unplaced)         0.045     3.604    clk_gen_instance/clkin1_ibufg/OUT
                          IBUFCTRL (Prop_IBUFCTRL_I_O)
-                                                      0.000     3.656 r  clk_gen_instance/clkin1_ibufg/IBUFCTRL_INST/O
-                         net (fo=1, unplaced)         0.657     4.313    clk_gen_instance/w_clk_in_clk_wiz_gen
+                                                      0.000     3.604 r  clk_gen_instance/clkin1_ibufg/IBUFCTRL_INST/O
+                         net (fo=1, unplaced)         0.625     4.229    clk_gen_instance/w_clk_in_clk_wiz_gen
                          MMCME3_ADV (Prop_MMCME3_ADV_CLKIN1_CLKOUT0)
-                                                     -4.751    -0.438 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, unplaced)         0.263    -0.175    clk_gen_instance/w_clk_out_clk_wiz_gen
-                         BUFGCE (Prop_BUFGCE_I_O)     0.060    -0.115 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=11231, unplaced)     2.439     2.324    gcm_aes_instance/stage2/clk_out
-                         RAMB18E2                                     r  gcm_aes_instance/stage2/r_h_reg_rep_bsel/CLKARDCLK
-                         clock pessimism              0.188     2.512    
-                         clock uncertainty           -0.037     2.475    
+                                                     -4.751    -0.522 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.240    -0.282    clk_gen_instance/w_clk_out_clk_wiz_gen
+                         BUFGCE (Prop_BUFGCE_I_O)     0.060    -0.222 r  clk_gen_instance/clkout1_buf/O
+                         net (fo=10961, unplaced)     2.439     2.217    gcm_aes_instance/stage6/clk_out
+                         RAMB18E2                                     r  gcm_aes_instance/stage6/sel/CLKARDCLK
+                         clock pessimism              0.267     2.484    
+                         clock uncertainty           -0.037     2.447    
                          RAMB18E2 (Setup_RAMB18E2_CLKARDCLK_ADDRARDADDR[7])
-                                                     -0.378     2.097    gcm_aes_instance/stage2/r_h_reg_rep_bsel
+                                                     -0.378     2.069    gcm_aes_instance/stage6/sel
   -------------------------------------------------------------------
-                         required time                          2.097    
-                         arrival time                          -2.043    
+                         required time                          2.069    
+                         arrival time                          -2.034    
   -------------------------------------------------------------------
-                         slack                                  0.054    
+                         slack                                  0.035    
 
 
 
