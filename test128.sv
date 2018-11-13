@@ -24,6 +24,7 @@ module testbench(
     logic new_instance = 0;
     logic pt_instance = 0;
     logic tag_ready;
+    logic ct_ready;
     
     gcm_aes gcm_aes_instance(
         .clk(clk),
@@ -37,7 +38,8 @@ module testbench(
         .i_aad_size(64'd128),
         .o_cipher_text(cipher_text_block),
         .o_tag(tag),
-        .o_tag_ready(tag_ready)
+        .o_tag_ready(tag_ready),
+        .o_cp_ready(ct_ready)
     );
 
     

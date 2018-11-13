@@ -4,6 +4,7 @@
 #set_part xc7a35tcpg236-1
 set_part xcku035-fbva900-3-e 
 
+
 # Read verilog source files
 read_verilog -sv  clk_gen.sv
 read_verilog -sv  fn_aes_ghash_multiplication.sv
