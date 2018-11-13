@@ -12,7 +12,7 @@ module aes_pipeline_stage2_pre(
     o_instance_size,
     o_key_schedule,
     o_phase,
-	o_h
+    o_h
 );
     
     input logic           clk;
@@ -45,13 +45,13 @@ module aes_pipeline_stage2_pre(
         r_aad           <= i_aad;
         r_key_schedule  <= i_key_schedule;
         r_instance_size <= i_instance_size;
-		r_phase         <= i_phase;
+        r_phase         <= i_phase;
     end
     
-	always_comb
-	begin
+    always_comb
+    begin
         o_h = fn_aes_encrypt_stage(128'd0, r_key_schedule, 1);
-	end
+    end
 
     always_comb
     begin
@@ -60,6 +60,6 @@ module aes_pipeline_stage2_pre(
         o_iv            = r_iv;
         o_key_schedule  = r_key_schedule;
         o_instance_size = r_instance_size;
-		o_phase         = r_phase;
+        o_phase         = r_phase;
     end
 endmodule

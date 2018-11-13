@@ -1,6 +1,6 @@
 module aes_key_gen2 (
     clk,
-	i_key_schedule,
+    i_key_schedule,
     o_key_schedule,
 );
 
@@ -24,7 +24,7 @@ endmodule
 
 module aes_key_gen3 (
     clk,
-	i_key_schedule,
+    i_key_schedule,
     o_key_schedule,
 );
 
@@ -48,7 +48,7 @@ endmodule
 
 module aes_key_gen4 (
     clk,
-	i_key_schedule,
+    i_key_schedule,
     o_key_schedule,
 );
 
@@ -72,7 +72,7 @@ endmodule
 
 module aes_key_gen5 (
     clk,
-	i_key_schedule,
+    i_key_schedule,
     o_key_schedule,
 );
 
@@ -96,7 +96,7 @@ endmodule
 
 module aes_key_gen6 (
     clk,
-	i_key_schedule,
+    i_key_schedule,
     o_key_schedule,
 );
 
@@ -120,7 +120,7 @@ endmodule
 
 module aes_key_gen7 (
     clk,
-	i_key_schedule,
+    i_key_schedule,
     o_key_schedule,
 );
 
@@ -144,7 +144,7 @@ endmodule
 
 module aes_key_gen8 (
     clk,
-	i_key_schedule,
+    i_key_schedule,
     o_key_schedule,
 );
 
@@ -168,7 +168,7 @@ endmodule
 
 module aes_key_gen9 (
     clk,
-	i_key_schedule,
+    i_key_schedule,
     o_key_schedule,
 );
 
@@ -192,7 +192,7 @@ endmodule
 
 module aes_key_gen10 (
     clk,
-	i_key_schedule,
+    i_key_schedule,
     o_key_schedule,
 );
 

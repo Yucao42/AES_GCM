@@ -6,18 +6,18 @@ module aes(
     sw,
     i_reset,  // Signal that says it is a new instance
     tag,
-	cipher_text,
-	cp_ready,
-	tag_ready,
+    cipher_text,
+    cp_ready,
+    tag_ready,
 );
 
     input           clk;
-	// Input including 96 bits iv, 128 bits aad block, 128 bits plaintext
-	// block and 128 bits input key block.
+    // Input including 96 bits iv, 128 bits aad block, 128 bits plaintext
+    // block and 128 bits input key block.
     input  [0:479]  sw;
     input           i_reset;
     output          tag_ready;
-	// Cipher_text is ready
+    // Cipher_text is ready
     output          cp_ready;
     output [0:127]  cipher_text;
     output [0:127]  tag;
@@ -25,10 +25,10 @@ module aes(
     logic           clk_out;
     logic           locked;
 
-	logic [0:95]    iv_sw = sw[0+:96];
-	logic [0:127]   plain_text_sw = sw[96+:128];
-	logic [0:127]   cipher_key_sw = sw[224+:128];
-	logic [0:127]   aad = sw[352+:128];
+    logic [0:95]    iv_sw = sw[0+:96];
+    logic [0:127]   plain_text_sw = sw[96+:128];
+    logic [0:127]   cipher_key_sw = sw[224+:128];
+    logic [0:127]   aad = sw[352+:128];
 
 
     logic [0:127]   tag;
@@ -51,7 +51,7 @@ module aes(
         .i_plain_text_size(64'd128),
         .i_aad_size(64'd128),
         .i_aad(aad),
-		.o_cp_ready(cp_ready),
+        .o_cp_ready(cp_ready),
         .o_cipher_text(cipher_text),
         .o_tag(tag),
         .o_tag_ready(tag_ready)

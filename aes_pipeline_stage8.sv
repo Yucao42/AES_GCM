@@ -9,8 +9,8 @@ module aes_pipeline_stage8(
     i_phase,
     o_phase,
     o_encrypted_j0,
-	o_instance_size,
-	o_h,
+    o_instance_size,
+    o_h,
     o_cipher_text,
     o_tag_ready,
     o_tag
@@ -60,7 +60,7 @@ module aes_pipeline_stage8(
         r_encrypted_j0  <= i_encrypted_j0;
         r_new_instance  <= i_new_instance;
         r_instance_size <= i_instance_size;
-		r_phase         <= i_phase;
+        r_phase         <= i_phase;
 
         if (r_new_instance == 1)
         begin
@@ -75,30 +75,30 @@ module aes_pipeline_stage8(
     always_comb
     begin
         w_sblock = r_sblock;
-		case(r_phase)
-			3'b111:   o_tag_ready = 1;
-			3'b011:   o_tag_ready = 1;
-		    default: o_tag_ready = 0;
-		endcase
-			
-		case(r_phase)
-			3'b010:   w_auth_input = r_aad;
-		    default: w_auth_input = r_cipher_text;
-		endcase
+        case(r_phase)
+            3'b111:   o_tag_ready = 1;
+            3'b011:   o_tag_ready = 1;
+            default: o_tag_ready = 0;
+        endcase
+            
+        case(r_phase)
+            3'b010:   w_auth_input = r_aad;
+            default: w_auth_input = r_cipher_text;
+        endcase
 
         w_sblock = (w_sblock ^ w_auth_input);
         w_sblock = fn_product(w_sblock, r_h);
 
-		/*
-		* This part deprecated as it doesn't meet the time requirement.
-		* Instead we assign the value to exact time on 128-bit case.
-		*/
-	    o_phase = r_phase;
-      	o_tag   = w_sblock;
-		o_h     = r_h;
+        /*
+        * This part deprecated as it doesn't meet the time requirement.
+        * Instead we assign the value to exact time on 128-bit case.
+        */
+        o_phase = r_phase;
+        o_tag   = w_sblock;
+        o_h     = r_h;
 
         o_cipher_text   = r_cipher_text;
-		o_instance_size = r_instance_size;
-		o_encrypted_j0  = r_encrypted_j0;
+        o_instance_size = r_instance_size;
+        o_encrypted_j0  = r_encrypted_j0;
     end
 endmodule

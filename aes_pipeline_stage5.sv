@@ -50,7 +50,7 @@ module aes_pipeline_stage5(
     always_ff @(posedge clk)
     begin
         r_plain_text    <= i_plain_text;
-		r_phase         <= i_phase;
+        r_phase         <= i_phase;
         r_aad           <= i_aad;
         r_h             <= i_h;
         r_encrypted_j0  <= i_encrypted_j0;
@@ -66,7 +66,7 @@ module aes_pipeline_stage5(
         o_encrypted_j0 = fn_aes_encrypt_stage(r_encrypted_j0, r_key_schedule, 6);
 
         /* Carrying forward register values for subsequent stages */
-		o_phase = r_phase;
+        o_phase = r_phase;
         o_plain_text = r_plain_text;
         o_aad = r_aad;
         o_key_schedule = r_key_schedule;

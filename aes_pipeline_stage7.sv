@@ -52,7 +52,7 @@ module aes_pipeline_stage7(
         r_encrypted_j0  <= i_encrypted_j0;
         r_encrypted_cb  <= i_encrypted_cb;
         r_instance_size <= i_instance_size;
-		r_phase         <= i_phase;
+        r_phase         <= i_phase;
         r_key_schedule  <= i_key_schedule;
     end
 
@@ -64,7 +64,7 @@ module aes_pipeline_stage7(
         o_encrypted_j0 = fn_aes_encrypt_stage(r_encrypted_j0, r_key_schedule, 10);
 
         /* Carrying forward register values for subsequent stages */
-		o_phase = r_phase;
+        o_phase = r_phase;
         o_aad = r_aad;
         o_instance_size = r_instance_size;
         o_h = r_h;

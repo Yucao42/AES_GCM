@@ -49,7 +49,7 @@ module aes_pipeline_stage3 (
     logic [0:2]     r_phase;
     always_ff @(posedge clk)
     begin
-		r_phase         <= i_phase;
+        r_phase         <= i_phase;
         r_plain_text    <= i_plain_text;
         r_aad           <= i_aad;
         r_h             <= i_h;
@@ -71,7 +71,7 @@ module aes_pipeline_stage3 (
         o_encrypted_j0 = fn_aes_encrypt_stage(r_j0, r_key_schedule, 2);
 
         /* Carrying forward register values for subsequent stages */
-		o_phase = r_phase;
+        o_phase = r_phase;
         o_plain_text = r_plain_text;
         o_aad = r_aad;
         o_key_schedule = r_key_schedule;

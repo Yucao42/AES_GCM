@@ -6,7 +6,7 @@ module aes_pipeline_stage2(
     i_instance_size,
     i_key_schedule,
     i_phase,
-	i_h,
+    i_h,
     o_h,
     o_j0,
     o_cb,
@@ -58,28 +58,28 @@ module aes_pipeline_stage2(
         r_instance_size <= i_instance_size;
         r_cb            <= w_cb; // Cycle
         r_h             <= i_h; // Cycle
-		r_phase         <= i_phase;
+        r_phase         <= i_phase;
     end
     
-	always_comb
-	begin
+    always_comb
+    begin
         o_h = fn_aes_encrypt_stage(r_h, r_key_schedule, 2);
-	end
+    end
 
     always_comb
     begin
         o_j0 = {r_iv, 32'd1};
-		o_phase = r_phase;
+        o_phase = r_phase;
 
-		/* Calculate the seed of ciphered cb */
-		case(r_phase)
-			3'b000:   w_cb = {r_iv, 32'd2};
-			3'b111:   w_cb = {r_iv, 32'd2};
-			default: w_cb = {r_cb[0:95], r_cb[96:127] + 1'b1};
-		endcase
+        /* Calculate the seed of ciphered cb */
+        case(r_phase)
+            3'b000:   w_cb = {r_iv, 32'd2};
+            3'b111:   w_cb = {r_iv, 32'd2};
+            default: w_cb = {r_cb[0:95], r_cb[96:127] + 1'b1};
+        endcase
 
         /* Carrying forward register values for subsequent stages */
-		o_cb = w_cb;
+        o_cb = w_cb;
         o_plain_text    = r_plain_text;
         o_aad           = r_aad;
         o_key_schedule  = r_key_schedule;

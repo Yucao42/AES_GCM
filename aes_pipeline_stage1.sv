@@ -13,7 +13,7 @@ module aes_pipeline_stage1 (
     o_iv,
     o_instance_size,
     o_new_instance,
-	o_phase,
+    o_phase,
     o_pt_instance
 );
 
@@ -75,10 +75,10 @@ module aes_pipeline_stage1 (
         o_new_instance  = r_new_instance;
         o_pt_instance   = r_pt_instance;
     end
-	
-	// Time control logic of state machine
-	always_comb
-	begin
+    
+    // Time control logic of state machine
+    always_comb
+    begin
         if (r_new_instance == 1)
         begin
             w_counter = 0;
@@ -92,38 +92,38 @@ module aes_pipeline_stage1 (
         aad_blocks = r_instance_size[64:127] >> 7;
 
         if (w_counter > total_blocks - 1)
-		begin
-			// Invalid status
-			o_phase = 3'b100;
-		end
+        begin
+            // Invalid status
+            o_phase = 3'b100;
+        end
         else if (w_counter == total_blocks - 1)
         begin
-			// Last text block delivering
-			if (total_blocks == aad_blocks + 1)
-			begin
-				// The first is exactly the last
-				o_phase = 3'b111;
-			end
-			else
-			begin
-				o_phase = 3'b011;
-			end
+            // Last text block delivering
+            if (total_blocks == aad_blocks + 1)
+            begin
+                // The first is exactly the last
+                o_phase = 3'b111;
+            end
+            else
+            begin
+                o_phase = 3'b011;
+            end
         end
         else if (w_counter > aad_blocks)
         begin
-			// Text block (not the last one) delivering
-			o_phase = 3'b001;
+            // Text block (not the last one) delivering
+            o_phase = 3'b001;
         end
         else if (w_counter == aad_blocks)
         begin
-			// Text block (the first one) delivering
-			o_phase = 3'b000;
+            // Text block (the first one) delivering
+            o_phase = 3'b000;
         end
         else
         begin
-			// AAD delivering
-			o_phase = 3'b010;
+            // AAD delivering
+            o_phase = 3'b010;
         end
-	end
+    end
 
 endmodule
