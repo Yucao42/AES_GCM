@@ -19,8 +19,8 @@ Sun 11 Nov 2018 07:56:09 PM UTC
 
     GHash_multiply  1-pipelined                400MHz (approxi.)
 
-    AES_encryption 10-pipelined  critical path 383MHz 
+    AES_encryption 10-pipelined  critical path 391MHz 
 
-	Theoretical throughput: 128 * 383 / 1000 = 49.0 Gb/s
+	Theoretical throughput: 128 * 391 / 1000 = 50.0 Gb/s
 
-	Initial Latency:        15 * 1000 / 383     = 39 us
+	Initial Latency:        15 * 1000 / 391  = 38.3 us
