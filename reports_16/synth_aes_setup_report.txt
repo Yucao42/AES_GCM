@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date              : Fri Nov 16 16:20:09 2018
+| Date              : Fri Nov 16 16:10:52 2018
 | Host              : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command           : report_timing -setup -file ./reports/synth_aes_setup_report.txt
 | Design            : aes
@@ -12,16 +12,16 @@ Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 Timing Report
 
-Slack (MET) :             0.128ns  (required time - arrival time)
-  Source:                 m2/r_i2_reg[39]/C
+Slack (MET) :             0.940ns  (required time - arrival time)
+  Source:                 A_reg[10]/C
                             (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.250ns period=2.500ns})
-  Destination:            E_reg[11]/D
+  Destination:            E_reg[21]/D
                             (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@1.250ns period=2.500ns})
   Path Group:             w_clk_out_clk_wiz_gen
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            2.500ns  (w_clk_out_clk_wiz_gen rise@2.500ns - w_clk_out_clk_wiz_gen rise@0.000ns)
-  Data Path Delay:        2.237ns  (logic 0.796ns (35.583%)  route 1.441ns (64.417%))
-  Logic Levels:           6  (LUT5=1 LUT6=5)
+  Data Path Delay:        1.425ns  (logic 0.372ns (26.105%)  route 1.053ns (73.895%))
+  Logic Levels:           4  (LUT4=1 LUT5=1 LUT6=2)
   Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    -0.285ns = ( 2.215 - 2.500 ) 
     Source Clock Delay      (SCD):    0.048ns
@@ -46,24 +46,20 @@ Slack (MET) :             0.128ns  (required time - arrival time)
                                                      -4.833    -2.880 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, unplaced)         0.277    -2.603    clk_gen_instance/w_clk_out_clk_wiz_gen
                          BUFGCE (Prop_BUFGCE_I_O)     0.067    -2.536 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=898, unplaced)       2.584     0.048    m2/clk_out
-                         FDRE                                         r  m2/r_i2_reg[39]/C
+                         net (fo=640, unplaced)       2.584     0.048    clk_out
+                         FDRE                                         r  A_reg[10]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_FDRE_C_Q)         0.103     0.151 r  m2/r_i2_reg[39]/Q
-                         net (fo=124, unplaced)       0.312     0.463    m2/r_i2[39]
-                         LUT5 (Prop_LUT5_I1_O)        0.176     0.639 r  m2/E[11]_i_69/O
-                         net (fo=1, unplaced)         0.217     0.856    m2/E[11]_i_69_n_0
-                         LUT6 (Prop_LUT6_I0_O)        0.167     1.023 r  m2/E[11]_i_49/O
-                         net (fo=1, unplaced)         0.217     1.240    m2/E[11]_i_49_n_0
-                         LUT6 (Prop_LUT6_I0_O)        0.167     1.407 r  m2/E[11]_i_29/O
-                         net (fo=1, unplaced)         0.225     1.632    m2/E[11]_i_29_n_0
-                         LUT6 (Prop_LUT6_I2_O)        0.115     1.747 r  m2/E[11]_i_18/O
-                         net (fo=1, unplaced)         0.224     1.971    m2/E[11]_i_18_n_0
-                         LUT6 (Prop_LUT6_I3_O)        0.034     2.005 r  m2/E[11]_i_6/O
-                         net (fo=1, unplaced)         0.224     2.229    m2/E[11]_i_6_n_0
-                         LUT6 (Prop_LUT6_I4_O)        0.034     2.263 r  m2/E[11]_i_1/O
-                         net (fo=1, unplaced)         0.022     2.285    D[11]
-                         FDRE                                         r  E_reg[11]/D
+                         FDRE (Prop_FDRE_C_Q)         0.103     0.151 r  A_reg[10]/Q
+                         net (fo=114, unplaced)       0.346     0.497    A[10]
+                         LUT6 (Prop_LUT6_I0_O)        0.167     0.664 r  E[9]_i_7/O
+                         net (fo=4, unplaced)         0.237     0.901    E[9]_i_7_n_0
+                         LUT5 (Prop_LUT5_I4_O)        0.034     0.935 r  E[17]_i_2/O
+                         net (fo=2, unplaced)         0.224     1.159    E[17]_i_2_n_0
+                         LUT6 (Prop_LUT6_I5_O)        0.034     1.193 r  E[21]_i_3/O
+                         net (fo=1, unplaced)         0.224     1.417    E[21]_i_3_n_0
+                         LUT4 (Prop_LUT4_I2_O)        0.034     1.451 r  E[21]_i_1/O
+                         net (fo=1, unplaced)         0.022     1.473    D[21]
+                         FDRE                                         r  E_reg[21]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock w_clk_out_clk_wiz_gen rise edge)
@@ -79,16 +75,16 @@ Slack (MET) :             0.128ns  (required time - arrival time)
                                                      -4.751    -0.547 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, unplaced)         0.263    -0.284    clk_gen_instance/w_clk_out_clk_wiz_gen
                          BUFGCE (Prop_BUFGCE_I_O)     0.060    -0.224 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=898, unplaced)       2.439     2.215    clk_out
-                         FDRE                                         r  E_reg[11]/C
+                         net (fo=640, unplaced)       2.439     2.215    clk_out
+                         FDRE                                         r  E_reg[21]/C
                          clock pessimism              0.188     2.403    
                          clock uncertainty           -0.037     2.366    
-                         FDRE (Setup_FDRE_C_D)        0.047     2.413    E_reg[11]
+                         FDRE (Setup_FDRE_C_D)        0.047     2.413    E_reg[21]
   -------------------------------------------------------------------
                          required time                          2.413    
-                         arrival time                          -2.285    
+                         arrival time                          -1.473    
   -------------------------------------------------------------------
-                         slack                                  0.128    
+                         slack                                  0.940    
 
 
 

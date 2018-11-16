@@ -11,14 +11,16 @@ module aes(
     input                  clk;
     input  logic [0:511]   sw;
     input  logic [0:1407]  key;
-    output logic [0:127]   tag;
+    output logic [0:1407]   tag;
 
 	logic [0:127] A;
 	logic [0:127] B;
 //    (* keep = "true" *) 
     logic [0:127] C;
 //    (* keep = "true" *) 
-    logic [0:127] D;
+    logic [0:1407] D;
+
+    logic [0:1407]  k1;
     (* keep = "true" *) logic [0:127] E;
 //    (* keep = "true" *) 
     (* keep = "true" *) logic [0:127] F;
@@ -40,14 +42,10 @@ module aes(
  		A <= sw[0+:128];
         B <= sw[128+:128];
         C <= sw[256+:128];	
-        D <= sw[384+:128];	
+		E <= D;
 	end
 
-	always_comb
-	begin
-		tag = F ^ G;
-	end
-
+	/*
 	md_multiply_2 m1(
 	   .clk(clk_out),
 	   .i1(A),
@@ -57,21 +55,19 @@ module aes(
 	   .o1(G),
 	   .o2(F)
 	);
+	*/
 
-	md_multiply m2(
+   aes_key_gen2 k_1(
 	   .clk(clk_out),
-	   .i1(D),
-	   .i2(A),
-	   .i3(B),
-	   .o(E)
-	);	
-  
-	md_multiply m3(
-       .clk(clk_out),
-       .i1(E),
-       .i2(B),
-       .i3(A),
-       .o(tag)
-    );    
+	   .i_key_schedule(key),
+	   .o_key_schedule(k1)
+   );
+
+   aes_key_gen3 k_2(
+	   .clk(clk_out),
+	   .i_key_schedule(k1),
+	   .o_key_schedule(tag)
+   );
+
     //970
 endmodule

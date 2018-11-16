@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date              : Fri Nov 16 16:20:09 2018
+| Date              : Fri Nov 16 15:50:21 2018
 | Host              : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command           : report_timing -setup -file ./reports/synth_aes_setup_report.txt
 | Design            : aes
@@ -46,7 +46,7 @@ Slack (MET) :             0.128ns  (required time - arrival time)
                                                      -4.833    -2.880 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, unplaced)         0.277    -2.603    clk_gen_instance/w_clk_out_clk_wiz_gen
                          BUFGCE (Prop_BUFGCE_I_O)     0.067    -2.536 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=898, unplaced)       2.584     0.048    m2/clk_out
+                         net (fo=1026, unplaced)      2.584     0.048    m2/CLK
                          FDRE                                         r  m2/r_i2_reg[39]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_FDRE_C_Q)         0.103     0.151 r  m2/r_i2_reg[39]/Q
@@ -79,7 +79,7 @@ Slack (MET) :             0.128ns  (required time - arrival time)
                                                      -4.751    -0.547 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, unplaced)         0.263    -0.284    clk_gen_instance/w_clk_out_clk_wiz_gen
                          BUFGCE (Prop_BUFGCE_I_O)     0.060    -0.224 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=898, unplaced)       2.439     2.215    clk_out
+                         net (fo=1026, unplaced)      2.439     2.215    clk_out
                          FDRE                                         r  E_reg[11]/C
                          clock pessimism              0.188     2.403    
                          clock uncertainty           -0.037     2.366    

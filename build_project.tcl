@@ -9,6 +9,7 @@ read_verilog -sv  clk_gen.sv
 read_verilog -sv  fn_aes_ghash_multiplication.sv
 read_verilog -sv  fn_aes_encrypt_stage.sv
 read_verilog -sv  fn_aes_key_expansion.sv
+read_verilog -sv  aes_key_gen.sv
 read_verilog -sv  md_multiply.sv
 read_verilog -sv  aes_pipeline_stage1.sv
 read_verilog -sv  aes_pipeline_stage12.sv
@@ -23,7 +24,7 @@ read_verilog -sv  aes_pipeline_stage7.sv
 read_verilog -sv  aes_pipeline_stage8.sv
 read_verilog -sv  gcm_aes.sv
 read_verilog -sv  display.sv
-read_verilog -sv  aes_encrypt.sv
+read_verilog -sv  aes_ghash.sv
 
 #Read constraints file
 read_xdc constraints_artix_7.xdc

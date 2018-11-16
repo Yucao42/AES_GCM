@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Fri Nov 16 16:20:10 2018
+| Date         : Fri Nov 16 15:50:22 2018
 | Host         : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_utilization -file ./reports/synth_utilization_report.txt
 | Design       : aes
@@ -31,11 +31,11 @@ Table of Contents
 +-------------------------+-------+-------+-----------+-------+
 |        Site Type        |  Used | Fixed | Available | Util% |
 +-------------------------+-------+-------+-----------+-------+
-| CLB LUTs*               | 16791 |     0 |    203128 |  8.27 |
-|   LUT as Logic          | 16791 |     0 |    203128 |  8.27 |
+| CLB LUTs*               | 16918 |     0 |    203128 |  8.33 |
+|   LUT as Logic          | 16918 |     0 |    203128 |  8.33 |
 |   LUT as Memory         |     0 |     0 |    112800 |  0.00 |
-| CLB Registers           |   898 |     0 |    406256 |  0.22 |
-|   Register as Flip Flop |   898 |     0 |    406256 |  0.22 |
+| CLB Registers           |  1026 |     0 |    406256 |  0.25 |
+|   Register as Flip Flop |  1026 |     0 |    406256 |  0.25 |
 |   Register as Latch     |     0 |     0 |    406256 |  0.00 |
 | CARRY8                  |     0 |     0 |     30300 |  0.00 |
 | F7 Muxes                |     0 |     0 |    121200 |  0.00 |
@@ -60,7 +60,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 898   |          Yes |       Reset |            - |
+| 1026  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -90,11 +90,11 @@ Table of Contents
 4. I/O
 ------
 
-+------------+------+-------+-----------+-------+
-|  Site Type | Used | Fixed | Available | Util% |
-+------------+------+-------+-----------+-------+
-| Bonded IOB |  385 |     0 |       468 | 82.26 |
-+------------+------+-------+-----------+-------+
++------------+------+-------+-----------+--------+
+|  Site Type | Used | Fixed | Available |  Util% |
++------------+------+-------+-----------+--------+
+| Bonded IOB |  513 |     0 |       468 | 109.62 |
++------------+------+-------+-----------+--------+
 
 
 5. CLOCK
@@ -154,12 +154,12 @@ Table of Contents
 | LUT6       | 7261 |                 CLB |
 | LUT4       | 7169 |                 CLB |
 | LUT5       | 3067 |                 CLB |
-| FDRE       |  898 |            Register |
+| FDRE       | 1026 |            Register |
+| INBUF      |  385 |                 I/O |
+| IBUFCTRL   |  385 |              Others |
+| LUT2       |  293 |                 CLB |
 | LUT3       |  264 |                 CLB |
-| INBUF      |  257 |                 I/O |
-| IBUFCTRL   |  257 |              Others |
 | LUT1       |  256 |                 CLB |
-| LUT2       |  165 |                 CLB |
 | OBUF       |  128 |                 I/O |
 | BUFGCE     |    2 |               Clock |
 | MMCME3_ADV |    1 |               Clock |

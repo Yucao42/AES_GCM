@@ -126,3 +126,36 @@ module md_encrypt(
     
 endmodule
     
+module md_key(
+    clk,
+    i1,
+    i2,
+    key,
+    o
+    );
+
+
+    input clk;
+    input logic [0:127] i1;
+    input logic [0:3] i2;
+    input logic [0:1407] key;
+    output logic [0:127] o;
+    
+    logic [0:127] r_i1;
+    logic [0:127] r_i2;
+    logic [0:127] r_key;
+    
+    always_ff @(posedge clk)
+    begin
+        r_i1 <= i1;
+        r_i2 <= i2;
+        r_key <= key;
+    end
+
+    always_comb 
+    begin
+		o = fn_key_expansion(r_i1, r_key, r_i2);
+    end
+    
+endmodule
+    
