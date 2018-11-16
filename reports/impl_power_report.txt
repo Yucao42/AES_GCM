@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date             : Mon Oct 15 19:30:53 2018
+| Date             : Fri Nov 16 20:26:58 2018
 | Host             : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command          : report_power -file ./reports/impl_power_report.txt
 | Design           : aes
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.194 |
-| Dynamic (W)              | 0.122 |
-| Device Static (W)        | 0.072 |
+| Total On-Chip Power (W)  | 0.935 |
+| Dynamic (W)              | 0.861 |
+| Device Static (W)        | 0.074 |
 | Effective TJA (C/W)      | 5.0   |
-| Max Ambient (C)          | 84.0  |
-| Junction Temperature (C) | 26.0  |
+| Max Ambient (C)          | 80.3  |
+| Junction Temperature (C) | 29.7  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,18 +49,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |      131 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       59 |     20800 |            0.28 |
-|   Register     |    <0.001 |       43 |     41600 |            0.10 |
-|   CARRY4       |    <0.001 |        5 |      8150 |            0.06 |
-|   F7/F8 Muxes  |    <0.001 |        7 |     32600 |            0.02 |
-|   Others       |     0.000 |        6 |       --- |             --- |
-| Signals        |    <0.001 |       83 |       --- |             --- |
-| MMCM           |     0.105 |        1 |         5 |           20.00 |
-| I/O            |     0.016 |       21 |       106 |           19.81 |
-| Static Power   |     0.072 |          |           |                 |
-| Total          |     0.194 |          |           |                 |
+| Clocks         |     0.016 |        5 |       --- |             --- |
+| Slice Logic    |     0.281 |    19642 |       --- |             --- |
+|   LUT as Logic |     0.280 |    17809 |     20800 |           85.62 |
+|   Register     |    <0.001 |      700 |     41600 |            1.68 |
+|   Others       |     0.000 |       10 |       --- |             --- |
+| Signals        |     0.435 |    19360 |       --- |             --- |
+| MMCM           |     0.110 |        1 |         5 |           20.00 |
+| I/O            |     0.019 |       21 |       106 |           19.81 |
+| Static Power   |     0.074 |          |           |                 |
+| Total          |     0.935 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,9 +68,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.011 |       0.002 |      0.010 |
-| Vccaux    |       1.800 |     0.071 |       0.059 |      0.013 |
-| Vcco33    |       3.300 |     0.005 |       0.004 |      0.001 |
+| Vccint    |       1.000 |     0.743 |       0.732 |      0.011 |
+| Vccaux    |       1.800 |     0.075 |       0.062 |      0.013 |
+| Vcco33    |       3.300 |     0.006 |       0.005 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -127,7 +125,7 @@ Table of Contents
 | Clock                  | Domain                                  | Constraint (ns) |
 +------------------------+-----------------------------------------+-----------------+
 | clk                    | clk                                     |            10.0 |
-| w_clk_out_clk_wiz_gen  | clk_gen_instance/w_clk_out_clk_wiz_gen  |            11.0 |
+| w_clk_out_clk_wiz_gen  | clk_gen_instance/w_clk_out_clk_wiz_gen  |             9.1 |
 | w_clkfbout_clk_wiz_gen | clk_gen_instance/w_clkfbout_clk_wiz_gen |            50.0 |
 +------------------------+-----------------------------------------+-----------------+
 
@@ -141,9 +139,11 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| aes                |     0.122 |
-|   clk_gen_instance |     0.105 |
-|   u                |     0.001 |
+| aes                |     0.861 |
+|   clk_gen_instance |     0.111 |
+|   m2               |     0.149 |
+|   m3               |     0.573 |
+|   u                |     0.002 |
 +--------------------+-----------+
 
 

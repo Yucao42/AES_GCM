@@ -5,26 +5,34 @@ module aes(
     clk,
     sw,
     key,
-    tag
+    an,
+    dp,
+    seg
 );
 
     input                  clk;
-    input  logic [0:511]   sw;
+    input  logic [0:15]   sw;
     input  logic [0:1407]  key;
-    output logic [0:1407]   tag;
+    output [3:0]    an;
+    output          dp;
+    output [6:0]    seg;
 
-	logic [0:127] A;
-	logic [0:127] B;
-//    (* keep = "true" *) 
-    logic [0:127] C;
-//    (* keep = "true" *) 
-    logic [0:1407] D;
 
-    logic [0:1407]  k1;
+    logic [0:127] tag;
+
+    (* keep = "true" *) logic [0:127] D;
     (* keep = "true" *) logic [0:127] E;
-//    (* keep = "true" *) 
-    (* keep = "true" *) logic [0:127] F;
-    (* keep = "true" *) logic [0:127] G;
+
+    (* keep = "true" *) logic [0:127] Aw   = {sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11],
+                                     sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11],
+                                     sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11],
+                                     sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11], sw[8:11]};
+
+    (* keep = "true" *) logic [0:127] Bw   = {sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15],
+                                     sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15],
+                                     sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15],
+                                     sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15], sw[12:15]};
+
     
     logic locked;
     logic clk_out;
@@ -39,35 +47,40 @@ module aes(
     
 	always_ff @(posedge clk_out)
 	begin
- 		A <= sw[0+:128];
-        B <= sw[128+:128];
-        C <= sw[256+:128];	
 		E <= D;
 	end
 
-	/*
-	md_multiply_2 m1(
+	md_multiply m2(
 	   .clk(clk_out),
-	   .i1(A),
-	   .i2(B),
-	   .i3(C),
-	   .i4(D),
-	   .o1(G),
-	   .o2(F)
-	);
-	*/
+	   .i1(Aw),
+	   .i2(128'b0),
+	   .i3(Bw),
+	   .o(D)
+	);	
+  
 
-   aes_key_gen2 k_1(
-	   .clk(clk_out),
-	   .i_key_schedule(key),
-	   .o_key_schedule(k1)
-   );
+	md_multiply m3(
+       .clk(clk_out),
+       .i1(E),
+       .i2(Bw),
+       .i3(Aw),
+       .o(tag)
+    );    
 
-   aes_key_gen3 k_2(
-	   .clk(clk_out),
-	   .i_key_schedule(k1),
-	   .o_key_schedule(tag)
-   );
+    /* Display module (comes from display.sv) */
+    display u (
+        .in_count(1),
+		/* Calculation of tag will exceed the LUT limitation on Basys3 board.
+        .i_x({tag[0+:8], tag[8+:8]}),
+		*/
+        .i_x(tag),
+        //.i_x({cipher_text[8+:8], cipher_text[0+:8]}),
+        .clk(clk_out),
+        .clr(1'b0),
+        .a_to_g(seg),
+        .an(an),
+        .dp(dp)
+    );
 
     //970
 endmodule

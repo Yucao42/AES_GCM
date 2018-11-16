@@ -43,8 +43,8 @@ MMCME2_ADV
   .CLKOUT4_CASCADE      ("FALSE"),
   .COMPENSATION         ("ZHOLD"),
   .STARTUP_WAIT         ("FALSE"),
-  .DIVCLK_DIVIDE        (1),
-  .CLKFBOUT_MULT_F      (40.00),//55.250, 60.000 works as well
+  .DIVCLK_DIVIDE        (5),
+  .CLKFBOUT_MULT_F      (55.00),//55.250, 60.000 works as well
   .CLKFBOUT_PHASE       (0.000),
   .CLKFBOUT_USE_FINE_PS ("FALSE"),
   .CLKOUT0_DIVIDE_F     (10.000),//11 originally. 60 / 55 now most
