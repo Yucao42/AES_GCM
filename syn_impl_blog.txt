@@ -36,7 +36,7 @@ Using part: xc7a35tcpg236-1
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 19738 
+INFO: Helper process launched with PID 23260 
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/single_module/AES_GCM/aes_key_gen.sv:4]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/single_module/AES_GCM/aes_key_gen.sv:28]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/single_module/AES_GCM/aes_key_gen.sv:52]
@@ -50,9 +50,13 @@ WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/sing
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/single_module/AES_GCM/aes_pipeline_stage13.sv:4]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/projects/single_module/AES_GCM/aes_pipeline_stage14.sv:4]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1101.684 ; gain = 169.305 ; free physical = 21270 ; free virtual = 68827
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1101.688 ; gain = 169.305 ; free physical = 21274 ; free virtual = 68832
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'aes' [/home/yu/projects/single_module/AES_GCM/aes.sv:4]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "true" *) [/home/yu/projects/single_module/AES_GCM/aes.sv:23]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "true" *) [/home/yu/projects/single_module/AES_GCM/aes.sv:24]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "true" *) [/home/yu/projects/single_module/AES_GCM/aes.sv:26]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "true" *) [/home/yu/projects/single_module/AES_GCM/aes.sv:31]
 INFO: [Synth 8-638] synthesizing module 'clk_gen' [/home/yu/projects/single_module/AES_GCM/clk_gen.sv:1]
 INFO: [Synth 8-638] synthesizing module 'IBUF' [/home/yu/Vivado/Vivado/2016.4/scripts/rt/data/unisim_comp.v:14146]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
@@ -223,7 +227,7 @@ WARNING: [Synth 8-3331] design aes has unconnected port key[90]
 WARNING: [Synth 8-3331] design aes has unconnected port key[91]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1166.934 ; gain = 234.555 ; free physical = 21204 ; free virtual = 68762
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1166.938 ; gain = 234.555 ; free physical = 21207 ; free virtual = 68765
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -233,7 +237,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1166.934 ; gain = 234.555 ; free physical = 21204 ; free virtual = 68761
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1166.938 ; gain = 234.555 ; free physical = 21207 ; free virtual = 68766
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -258,25 +262,25 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1547.574 ; gain = 0.000 ; free physical = 20966 ; free virtual = 68524
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1547.578 ; gain = 0.000 ; free physical = 20969 ; free virtual = 68528
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:16 . Memory (MB): peak = 1547.574 ; gain = 615.195 ; free physical = 20965 ; free virtual = 68523
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1547.578 ; gain = 615.195 ; free physical = 20968 ; free virtual = 68527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:16 . Memory (MB): peak = 1547.574 ; gain = 615.195 ; free physical = 20965 ; free virtual = 68523
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1547.578 ; gain = 615.195 ; free physical = 20968 ; free virtual = 68527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:16 . Memory (MB): peak = 1547.574 ; gain = 615.195 ; free physical = 20965 ; free virtual = 68523
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 1547.578 ; gain = 615.195 ; free physical = 20968 ; free virtual = 68527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 1547.574 ; gain = 615.195 ; free physical = 20952 ; free virtual = 68510
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 1547.578 ; gain = 615.195 ; free physical = 20963 ; free virtual = 68521
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -381,79 +385,8 @@ INFO: [Synth 8-3886] merging instance 'i_5/u/count_reg[19]' (FD) to 'i_5/u/count
 INFO: [Synth 8-3886] merging instance 'i_5/u/count_reg[18]' (FD) to 'i_5/u/count_reg[15]'
 INFO: [Synth 8-3886] merging instance 'i_5/u/count_reg[15]' (FD) to 'i_5/u/count_reg[13]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_5/\u/count_reg[13] )
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[127]' (FD) to 'm2i_2/r_i1_reg[123]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[125]' (FD) to 'm2i_2/r_i1_reg[121]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[124]' (FD) to 'm2i_2/r_i1_reg[120]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[123]' (FD) to 'm2i_2/r_i1_reg[119]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[122]' (FD) to 'm2i_2/r_i1_reg[118]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[121]' (FD) to 'm2i_2/r_i1_reg[117]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[120]' (FD) to 'm2i_2/r_i1_reg[116]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[119]' (FD) to 'm2i_2/r_i1_reg[115]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[118]' (FD) to 'm2i_2/r_i1_reg[114]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[117]' (FD) to 'm2i_2/r_i1_reg[113]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[116]' (FD) to 'm2i_2/r_i1_reg[112]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[115]' (FD) to 'm2i_2/r_i1_reg[111]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[114]' (FD) to 'm2i_2/r_i1_reg[110]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[113]' (FD) to 'm2i_2/r_i1_reg[109]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[112]' (FD) to 'm2i_2/r_i1_reg[108]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[111]' (FD) to 'm2i_2/r_i1_reg[107]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[110]' (FD) to 'm2i_2/r_i1_reg[106]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[109]' (FD) to 'm2i_2/r_i1_reg[105]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[108]' (FD) to 'm2i_2/r_i1_reg[104]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[107]' (FD) to 'm2i_2/r_i1_reg[103]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[106]' (FD) to 'm2i_2/r_i1_reg[102]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[105]' (FD) to 'm2i_2/r_i1_reg[101]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[104]' (FD) to 'm2i_2/r_i1_reg[100]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[103]' (FD) to 'm2i_2/r_i1_reg[99]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[102]' (FD) to 'm2i_2/r_i1_reg[126]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[101]' (FD) to 'm2i_2/r_i1_reg[97]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[126]' (FD) to 'm2i_2/r_i1_reg[98]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[100]' (FD) to 'm2i_2/r_i1_reg[96]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[99]' (FD) to 'm2i_2/r_i1_reg[95]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[98]' (FD) to 'm2i_2/r_i1_reg[94]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[97]' (FD) to 'm2i_2/r_i1_reg[93]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[96]' (FD) to 'm2i_2/r_i1_reg[92]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[95]' (FD) to 'm2i_2/r_i1_reg[91]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[94]' (FD) to 'm2i_2/r_i1_reg[90]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[93]' (FD) to 'm2i_2/r_i1_reg[89]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[92]' (FD) to 'm2i_2/r_i1_reg[88]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[91]' (FD) to 'm2i_2/r_i1_reg[87]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[90]' (FD) to 'm2i_2/r_i1_reg[86]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[89]' (FD) to 'm2i_2/r_i1_reg[85]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[88]' (FD) to 'm2i_2/r_i1_reg[84]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[87]' (FD) to 'm2i_2/r_i1_reg[83]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[86]' (FD) to 'm2i_2/r_i1_reg[82]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[85]' (FD) to 'm2i_2/r_i1_reg[81]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[84]' (FD) to 'm2i_2/r_i1_reg[80]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[83]' (FD) to 'm2i_2/r_i1_reg[79]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[82]' (FD) to 'm2i_2/r_i1_reg[78]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[81]' (FD) to 'm2i_2/r_i1_reg[77]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[80]' (FD) to 'm2i_2/r_i1_reg[76]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[79]' (FD) to 'm2i_2/r_i1_reg[75]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[78]' (FD) to 'm2i_2/r_i1_reg[74]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[77]' (FD) to 'm2i_2/r_i1_reg[73]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[76]' (FD) to 'm2i_2/r_i1_reg[72]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[75]' (FD) to 'm2i_2/r_i1_reg[71]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[74]' (FD) to 'm2i_2/r_i1_reg[70]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[73]' (FD) to 'm2i_2/r_i1_reg[69]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[72]' (FD) to 'm2i_2/r_i1_reg[68]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[71]' (FD) to 'm2i_2/r_i1_reg[67]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[70]' (FD) to 'm2i_2/r_i1_reg[66]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[69]' (FD) to 'm2i_2/r_i1_reg[65]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[68]' (FD) to 'm2i_2/r_i1_reg[64]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[67]' (FD) to 'm2i_2/r_i1_reg[63]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[66]' (FD) to 'm2i_2/r_i1_reg[62]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[65]' (FD) to 'm2i_2/r_i1_reg[61]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[64]' (FD) to 'm2i_2/r_i1_reg[60]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[63]' (FD) to 'm2i_2/r_i1_reg[59]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[62]' (FD) to 'm2i_2/r_i1_reg[58]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[61]' (FD) to 'm2i_2/r_i1_reg[57]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[60]' (FD) to 'm2i_2/r_i1_reg[56]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[59]' (FD) to 'm2i_2/r_i1_reg[55]'
-INFO: [Synth 8-3886] merging instance 'm2i_2/r_i1_reg[58]' (FD) to 'm2i_2/r_i1_reg[54]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:20 ; elapsed = 00:02:20 . Memory (MB): peak = 2419.535 ; gain = 1487.156 ; free physical = 19975 ; free virtual = 67533
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:30 ; elapsed = 00:01:29 . Memory (MB): peak = 2446.867 ; gain = 1514.484 ; free physical = 19959 ; free virtual = 67518
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -461,11 +394,10 @@ Report RTL Partitions:
 |      |RTL Partition        |Replication |Instances |
 +------+---------------------+------------+----------+
 |1     |clk_gen__GC0         |           1|         3|
-|2     |md_multiply__GBM0    |           1|      3432|
-|3     |md_multiply__GBM1    |           1|      1781|
+|2     |md_multiply__GBM0    |           2|     26437|
+|3     |md_multiply__GBM1    |           1|      7294|
 |4     |aes__GC0             |           1|       333|
-|5     |md_multiply__GBM1__1 |           1|       561|
-|6     |md_multiply__GBM0__1 |           1|       273|
+|5     |md_multiply__GBM1__1 |           1|      7166|
 +------+---------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -474,10 +406,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:25 ; elapsed = 00:02:25 . Memory (MB): peak = 2419.535 ; gain = 1487.156 ; free physical = 19974 ; free virtual = 67532
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:35 ; elapsed = 00:01:35 . Memory (MB): peak = 2446.867 ; gain = 1514.484 ; free physical = 19959 ; free virtual = 67518
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:53 ; elapsed = 00:02:53 . Memory (MB): peak = 2581.277 ; gain = 1648.898 ; free physical = 19812 ; free virtual = 67370
+Finished Timing Optimization : Time (s): cpu = 00:03:43 ; elapsed = 00:03:44 . Memory (MB): peak = 2914.867 ; gain = 1982.484 ; free physical = 19529 ; free virtual = 67087
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -485,13 +417,84 @@ Report RTL Partitions:
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
 |1     |clk_gen__GC0  |           1|         3|
-|2     |aes_GT0       |           1|      4736|
+|2     |aes_GT0       |           1|     67669|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[99]' (FD) to 'm3/r_i2_reg[99]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[20]' (FD) to 'm3/r_i2_reg[20]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[88]' (FD) to 'm3/r_i2_reg[88]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[82]' (FD) to 'm3/r_i2_reg[82]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[53]' (FD) to 'm3/r_i2_reg[53]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[92]' (FD) to 'm3/r_i2_reg[92]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[93]' (FD) to 'm3/r_i2_reg[93]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[47]' (FD) to 'm3/r_i2_reg[47]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[100]' (FD) to 'm3/r_i2_reg[100]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[27]' (FD) to 'm3/r_i2_reg[27]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[70]' (FD) to 'm3/r_i2_reg[70]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[66]' (FD) to 'm3/r_i2_reg[66]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[34]' (FD) to 'm3/r_i2_reg[34]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[87]' (FD) to 'm3/r_i2_reg[87]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[72]' (FD) to 'm3/r_i2_reg[72]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[21]' (FD) to 'm3/r_i2_reg[21]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[35]' (FD) to 'm3/r_i2_reg[35]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[13]' (FD) to 'm3/r_i2_reg[13]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[51]' (FD) to 'm3/r_i2_reg[51]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[80]' (FD) to 'm3/r_i2_reg[80]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[8]' (FD) to 'm3/r_i2_reg[8]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[18]' (FD) to 'm3/r_i2_reg[18]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[54]' (FD) to 'm3/r_i2_reg[54]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[57]' (FD) to 'm3/r_i2_reg[57]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[50]' (FD) to 'm3/r_i2_reg[50]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[7]' (FD) to 'm3/r_i2_reg[7]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[0]' (FD) to 'm3/r_i2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[29]' (FD) to 'm3/r_i2_reg[29]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[46]' (FD) to 'm3/r_i2_reg[46]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[75]' (FD) to 'm3/r_i2_reg[75]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[96]' (FD) to 'm3/r_i2_reg[96]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[98]' (FD) to 'm3/r_i2_reg[98]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[3]' (FD) to 'm3/r_i2_reg[3]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[19]' (FD) to 'm3/r_i2_reg[19]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[44]' (FD) to 'm3/r_i2_reg[44]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[61]' (FD) to 'm3/r_i2_reg[61]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[68]' (FD) to 'm3/r_i2_reg[68]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[22]' (FD) to 'm3/r_i2_reg[22]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[23]' (FD) to 'm3/r_i2_reg[23]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[9]' (FD) to 'm3/r_i2_reg[9]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[5]' (FD) to 'm3/r_i2_reg[5]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[63]' (FD) to 'm3/r_i2_reg[63]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[67]' (FD) to 'm3/r_i2_reg[67]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[73]' (FD) to 'm3/r_i2_reg[73]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[74]' (FD) to 'm3/r_i2_reg[74]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[64]' (FD) to 'm3/r_i2_reg[64]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[97]' (FD) to 'm3/r_i2_reg[97]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[94]' (FD) to 'm3/r_i2_reg[94]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[4]' (FD) to 'm3/r_i2_reg[4]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[17]' (FD) to 'm3/r_i2_reg[17]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[16]' (FD) to 'm3/r_i2_reg[16]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[95]' (FD) to 'm3/r_i2_reg[95]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[38]' (FD) to 'm3/r_i2_reg[38]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[39]' (FD) to 'm3/r_i2_reg[39]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[26]' (FD) to 'm3/r_i2_reg[26]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[28]' (FD) to 'm3/r_i2_reg[28]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[37]' (FD) to 'm3/r_i2_reg[37]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[36]' (FD) to 'm3/r_i2_reg[36]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[69]' (FD) to 'm3/r_i2_reg[69]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[86]' (FD) to 'm3/r_i2_reg[86]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[89]' (FD) to 'm3/r_i2_reg[89]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[81]' (FD) to 'm3/r_i2_reg[81]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[31]' (FD) to 'm3/r_i2_reg[31]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[30]' (FD) to 'm3/r_i2_reg[30]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[45]' (FD) to 'm3/r_i2_reg[45]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[48]' (FD) to 'm3/r_i2_reg[48]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[60]' (FD) to 'm3/r_i2_reg[60]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[52]' (FD) to 'm3/r_i2_reg[52]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[78]' (FD) to 'm3/r_i2_reg[78]'
+INFO: [Synth 8-3886] merging instance 'm2/r_i1_reg[65]' (FD) to 'm3/r_i2_reg[65]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:55 ; elapsed = 00:02:55 . Memory (MB): peak = 2581.277 ; gain = 1648.898 ; free physical = 19812 ; free virtual = 67370
+Finished Technology Mapping : Time (s): cpu = 00:03:52 ; elapsed = 00:03:52 . Memory (MB): peak = 2914.867 ; gain = 1982.484 ; free physical = 19529 ; free virtual = 67088
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -515,7 +518,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:55 ; elapsed = 00:02:55 . Memory (MB): peak = 2581.277 ; gain = 1648.898 ; free physical = 19812 ; free virtual = 67370
+Finished IO Insertion : Time (s): cpu = 00:03:54 ; elapsed = 00:03:54 . Memory (MB): peak = 2914.867 ; gain = 1982.484 ; free physical = 19529 ; free virtual = 67088
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -528,7 +531,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:55 ; elapsed = 00:02:55 . Memory (MB): peak = 2581.277 ; gain = 1648.898 ; free physical = 19812 ; free virtual = 67370
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:54 ; elapsed = 00:03:54 . Memory (MB): peak = 2914.867 ; gain = 1982.484 ; free physical = 19529 ; free virtual = 67088
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -540,25 +543,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:55 ; elapsed = 00:02:55 . Memory (MB): peak = 2581.277 ; gain = 1648.898 ; free physical = 19812 ; free virtual = 67370
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:55 ; elapsed = 00:03:55 . Memory (MB): peak = 2914.867 ; gain = 1982.484 ; free physical = 19529 ; free virtual = 67088
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:55 ; elapsed = 00:02:55 . Memory (MB): peak = 2581.277 ; gain = 1648.898 ; free physical = 19812 ; free virtual = 67370
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:55 ; elapsed = 00:03:55 . Memory (MB): peak = 2914.867 ; gain = 1982.484 ; free physical = 19529 ; free virtual = 67088
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:55 ; elapsed = 00:02:55 . Memory (MB): peak = 2581.277 ; gain = 1648.898 ; free physical = 19812 ; free virtual = 67370
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:56 ; elapsed = 00:03:56 . Memory (MB): peak = 2914.867 ; gain = 1982.484 ; free physical = 19530 ; free virtual = 67088
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:55 ; elapsed = 00:02:55 . Memory (MB): peak = 2581.277 ; gain = 1648.898 ; free physical = 19812 ; free virtual = 67370
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:56 ; elapsed = 00:03:57 . Memory (MB): peak = 2914.867 ; gain = 1982.484 ; free physical = 19530 ; free virtual = 67088
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -576,39 +579,36 @@ Report Cell Usage:
 +------+-----------+------+
 |1     |BUFG       |     2|
 |2     |LUT1       |     1|
-|3     |LUT2       |   158|
-|4     |LUT3       |   118|
-|5     |LUT4       |   188|
-|6     |LUT5       |   259|
-|7     |LUT6       |   795|
+|3     |LUT2       |   153|
+|4     |LUT3       |   229|
+|5     |LUT4       |  7987|
+|6     |LUT5       |  3587|
+|7     |LUT6       |  6975|
 |8     |MMCME2_ADV |     1|
-|9     |MUXF7      |    42|
-|10    |MUXF8      |     5|
-|11    |FDRE       |   169|
-|12    |IBUF       |     9|
-|13    |OBUF       |    12|
+|9     |FDRE       |   700|
+|10    |IBUF       |     9|
+|11    |OBUF       |    12|
 +------+-----------+------+
 
 Report Instance Areas: 
 +------+-------------------+--------------+------+
 |      |Instance           |Module        |Cells |
 +------+-------------------+--------------+------+
-|1     |top                |              |  1759|
+|1     |top                |              | 19656|
 |2     |  clk_gen_instance |clk_gen       |     4|
-|3     |  m2               |md_multiply   |   159|
-|4     |  m3               |md_multiply_0 |  1469|
+|3     |  m2               |md_multiply   |  4490|
+|4     |  m3               |md_multiply_0 | 14966|
 |5     |  u                |display       |    48|
 +------+-------------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:55 ; elapsed = 00:02:55 . Memory (MB): peak = 2581.277 ; gain = 1648.898 ; free physical = 19812 ; free virtual = 67370
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:56 ; elapsed = 00:03:57 . Memory (MB): peak = 2914.867 ; gain = 1982.484 ; free physical = 19530 ; free virtual = 67088
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1416 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:45 ; elapsed = 00:02:47 . Memory (MB): peak = 2581.277 ; gain = 1180.172 ; free physical = 19812 ; free virtual = 67370
-Synthesis Optimization Complete : Time (s): cpu = 00:02:55 ; elapsed = 00:02:55 . Memory (MB): peak = 2581.285 ; gain = 1648.906 ; free physical = 19812 ; free virtual = 67370
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:46 ; elapsed = 00:03:48 . Memory (MB): peak = 2914.867 ; gain = 1513.758 ; free physical = 19530 ; free virtual = 67088
+Synthesis Optimization Complete : Time (s): cpu = 00:03:56 ; elapsed = 00:03:57 . Memory (MB): peak = 2914.875 ; gain = 1982.492 ; free physical = 19530 ; free virtual = 67088
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'aes' is not ideal for floorplanning, since the cellview 'md_multiply_0' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 Parsing XDC File [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc]
 WARNING: [Vivado 12-584] No ports matched 'i_reset'. [/home/yu/projects/single_module/AES_GCM/constraints_artix_7.xdc:7]
@@ -622,9 +622,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-153 Infos, 117 Warnings, 4 Critical Warnings and 0 Errors encountered.
+157 Infos, 116 Warnings, 4 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:55 ; elapsed = 00:02:54 . Memory (MB): peak = 2613.293 ; gain = 1609.410 ; free physical = 19814 ; free virtual = 67372
+synth_design: Time (s): cpu = 00:03:56 ; elapsed = 00:03:56 . Memory (MB): peak = 2946.883 ; gain = 1942.996 ; free physical = 19531 ; free virtual = 67090
 # exec mkdir -p -- ./reports
 # report_timing -setup  -file ./reports/synth_aes_setup_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
@@ -640,9 +640,9 @@ INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type min 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 # report_utilization    -file ./reports/synth_utilization_report.txt
-report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2684.352 ; gain = 0.000 ; free physical = 19810 ; free virtual = 67368
+report_utilization: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.21 . Memory (MB): peak = 3017.941 ; gain = 0.000 ; free physical = 19526 ; free virtual = 67085
 # report_utilization -hierarchical  -file ./reports/synth_utilization_report_submodule.txt
-report_utilization: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.18 . Memory (MB): peak = 2684.352 ; gain = 0.000 ; free physical = 19809 ; free virtual = 67367
+report_utilization: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.23 . Memory (MB): peak = 3017.941 ; gain = 0.000 ; free physical = 19528 ; free virtual = 67087
 # write_schematic -format pdf -orientation portrait /home/yu/projects/AES_GCM/schematic_1.pdf
 # place_design
 Command: place_design
@@ -660,87 +660,87 @@ Starting Placer Task
 INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
 
 Phase 1 Placer Initialization
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2748.383 ; gain = 0.000 ; free physical = 19811 ; free virtual = 67369
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3081.973 ; gain = 0.000 ; free physical = 19529 ; free virtual = 67088
 INFO: [Opt 31-325] Skipping Mandatory Logic Optimization as MLO has been turned off
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2748.383 ; gain = 0.000 ; free physical = 19811 ; free virtual = 67369
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3081.973 ; gain = 0.000 ; free physical = 19529 ; free virtual = 67088
 
 Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
-Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 75326490
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 3aab2f2a
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.53 . Memory (MB): peak = 2748.383 ; gain = 0.000 ; free physical = 19811 ; free virtual = 67369
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3081.973 ; gain = 0.000 ; free physical = 19529 ; free virtual = 67088
 
 Phase 1.2 Build Placer Netlist Model
-Phase 1.2 Build Placer Netlist Model | Checksum: 16375c194
+Phase 1.2 Build Placer Netlist Model | Checksum: 3cf9b662
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.86 . Memory (MB): peak = 2748.383 ; gain = 0.000 ; free physical = 19811 ; free virtual = 67369
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 3081.973 ; gain = 0.000 ; free physical = 19529 ; free virtual = 67088
 
 Phase 1.3 Constrain Clocks/Macros
-Phase 1.3 Constrain Clocks/Macros | Checksum: 16375c194
+Phase 1.3 Constrain Clocks/Macros | Checksum: 3cf9b662
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.87 . Memory (MB): peak = 2748.383 ; gain = 0.000 ; free physical = 19811 ; free virtual = 67369
-Phase 1 Placer Initialization | Checksum: 16375c194
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 3081.973 ; gain = 0.000 ; free physical = 19529 ; free virtual = 67088
+Phase 1 Placer Initialization | Checksum: 3cf9b662
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.88 . Memory (MB): peak = 2748.383 ; gain = 0.000 ; free physical = 19811 ; free virtual = 67369
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:04 . Memory (MB): peak = 3081.973 ; gain = 0.000 ; free physical = 19529 ; free virtual = 67088
 
 Phase 2 Global Placement
-Phase 2 Global Placement | Checksum: 1568daba8
+Phase 2 Global Placement | Checksum: 5a11f6c1
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:02 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19799 ; free virtual = 67357
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:15 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19524 ; free virtual = 67083
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 1568daba8
+Phase 3.1 Commit Multi Column Macros | Checksum: 5a11f6c1
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:02 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19799 ; free virtual = 67357
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:15 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19524 ; free virtual = 67083
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 169a76475
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 3c8125e4
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:02 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19800 ; free virtual = 67358
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:18 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19525 ; free virtual = 67084
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: f0f953d3
+Phase 3.3 Area Swap Optimization | Checksum: 7890a066
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:02 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19800 ; free virtual = 67358
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:18 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19525 ; free virtual = 67083
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: f0f953d3
+Phase 3.4 Pipeline Register Optimization | Checksum: 7890a066
 
-Time (s): cpu = 00:00:11 ; elapsed = 00:00:02 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19800 ; free virtual = 67358
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:18 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19525 ; free virtual = 67083
 
 Phase 3.5 Timing Path Optimizer
-Phase 3.5 Timing Path Optimizer | Checksum: bd078b87
+Phase 3.5 Timing Path Optimizer | Checksum: 6a5b8c39
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:02 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19800 ; free virtual = 67358
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:19 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19525 ; free virtual = 67083
 
 Phase 3.6 Fast Optimization
-Phase 3.6 Fast Optimization | Checksum: 10b4978f2
+Phase 3.6 Fast Optimization | Checksum: 50b7ce88
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:02 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19795 ; free virtual = 67353
+Time (s): cpu = 00:01:12 ; elapsed = 00:00:22 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19524 ; free virtual = 67083
 
 Phase 3.7 Small Shape Detail Placement
-Phase 3.7 Small Shape Detail Placement | Checksum: 1e5433f5a
+Phase 3.7 Small Shape Detail Placement | Checksum: 13ef80906
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:03 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19799 ; free virtual = 67357
+Time (s): cpu = 00:01:21 ; elapsed = 00:00:29 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19525 ; free virtual = 67084
 
 Phase 3.8 Re-assign LUT pins
-Phase 3.8 Re-assign LUT pins | Checksum: 1a056a26f
+Phase 3.8 Re-assign LUT pins | Checksum: 1251bffb0
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:03 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19799 ; free virtual = 67357
+Time (s): cpu = 00:01:21 ; elapsed = 00:00:30 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19525 ; free virtual = 67084
 
 Phase 3.9 Pipeline Register Optimization
-Phase 3.9 Pipeline Register Optimization | Checksum: 1a056a26f
+Phase 3.9 Pipeline Register Optimization | Checksum: 1251bffb0
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:03 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19799 ; free virtual = 67357
+Time (s): cpu = 00:01:22 ; elapsed = 00:00:30 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19525 ; free virtual = 67084
 
 Phase 3.10 Fast Optimization
-Phase 3.10 Fast Optimization | Checksum: 19d06d2dc
+Phase 3.10 Fast Optimization | Checksum: 1e3d5d90e
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:03 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19790 ; free virtual = 67348
-Phase 3 Detail Placement | Checksum: 19d06d2dc
+Time (s): cpu = 00:01:31 ; elapsed = 00:00:36 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19524 ; free virtual = 67083
+Phase 3 Detail Placement | Checksum: 1e3d5d90e
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:03 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19794 ; free virtual = 67352
+Time (s): cpu = 00:01:32 ; elapsed = 00:00:36 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19525 ; free virtual = 67083
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -748,37 +748,38 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-INFO: [Place 30-746] Post Placement Timing Summary WNS=0.503. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: 2613de8a4
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.466. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: ebedc605
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:04 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19799 ; free virtual = 67357
-Phase 4.1 Post Commit Optimization | Checksum: 2613de8a4
+Time (s): cpu = 00:02:12 ; elapsed = 00:01:06 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19523 ; free virtual = 67081
+Phase 4.1 Post Commit Optimization | Checksum: ebedc605
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:04 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19799 ; free virtual = 67357
+Time (s): cpu = 00:02:13 ; elapsed = 00:01:06 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19522 ; free virtual = 67081
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 2613de8a4
+Phase 4.2 Post Placement Cleanup | Checksum: ebedc605
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:04 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19799 ; free virtual = 67357
+Time (s): cpu = 00:02:13 ; elapsed = 00:01:06 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19522 ; free virtual = 67081
 
 Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: 2613de8a4
+Phase 4.3 Placer Reporting | Checksum: ebedc605
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:04 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19799 ; free virtual = 67357
+Time (s): cpu = 00:02:13 ; elapsed = 00:01:06 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19522 ; free virtual = 67081
 
 Phase 4.4 Final Placement Cleanup
-Phase 4.4 Final Placement Cleanup | Checksum: 1c4568f7a
+Phase 4.4 Final Placement Cleanup | Checksum: 14a65bab9
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:04 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19799 ; free virtual = 67357
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1c4568f7a
+Time (s): cpu = 00:02:14 ; elapsed = 00:01:06 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19522 ; free virtual = 67081
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 14a65bab9
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:04 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19799 ; free virtual = 67357
-Ending Placer Task | Checksum: f381554c
+Time (s): cpu = 00:02:14 ; elapsed = 00:01:06 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19522 ; free virtual = 67081
+Ending Placer Task | Checksum: 109817bbe
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:04 . Memory (MB): peak = 2804.410 ; gain = 56.027 ; free physical = 19799 ; free virtual = 67357
+Time (s): cpu = 00:02:14 ; elapsed = 00:01:06 . Memory (MB): peak = 3138.000 ; gain = 56.027 ; free physical = 19522 ; free virtual = 67081
 INFO: [Common 17-83] Releasing license: Implementation
 12 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
+place_design: Time (s): cpu = 00:02:17 ; elapsed = 00:01:07 . Memory (MB): peak = 3138.000 ; gain = 120.059 ; free physical = 19522 ; free virtual = 67081
 # route_design
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
@@ -791,113 +792,208 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
-Checksum: PlaceDB: d928f65c ConstDB: 0 ShapeSum: 1a585ef0 RouteDB: 0
+Checksum: PlaceDB: 9d220db1 ConstDB: 0 ShapeSum: 6c5f6e0d RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: 51bf6eee
+Phase 1 Build RT Design | Checksum: 12fb80f91
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19801 ; free virtual = 67359
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19521 ; free virtual = 67080
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: 51bf6eee
+Phase 2.1 Create Timer | Checksum: 12fb80f91
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19801 ; free virtual = 67359
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19521 ; free virtual = 67080
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: 51bf6eee
+Phase 2.2 Fix Topology Constraints | Checksum: 12fb80f91
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19801 ; free virtual = 67359
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19521 ; free virtual = 67080
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: 51bf6eee
+Phase 2.3 Pre Route Cleanup | Checksum: 12fb80f91
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19801 ; free virtual = 67359
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19521 ; free virtual = 67080
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 1f0a3a012
+Phase 2.4 Update Timing | Checksum: 11c3c73be
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19802 ; free virtual = 67360
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.683  | TNS=0.000  | WHS=-0.097 | THS=-0.830 |
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:12 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19521 ; free virtual = 67080
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.518  | TNS=0.000  | WHS=-0.067 | THS=-0.311 |
 
-Phase 2 Router Initialization | Checksum: 154b7bb3c
+Phase 2 Router Initialization | Checksum: 13f6fb91a
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19802 ; free virtual = 67360
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:13 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19521 ; free virtual = 67080
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: 140b327f4
+Phase 3 Initial Routing | Checksum: 225df6b34
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19802 ; free virtual = 67360
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:16 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19521 ; free virtual = 67080
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 678
- Number of Nodes with overlaps = 137
- Number of Nodes with overlaps = 32
- Number of Nodes with overlaps = 13
- Number of Nodes with overlaps = 8
- Number of Nodes with overlaps = 0
+ Number of Nodes with overlaps = 34641
+ Number of Nodes with overlaps = 15641
 
 Phase 4.1.1 Update Timing
-Phase 4.1.1 Update Timing | Checksum: 1ed9ecbcb
+Phase 4.1.1 Update Timing | Checksum: 11cb5cbf6
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19803 ; free virtual = 67361
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.606  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:05:56 ; elapsed = 00:01:34 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19521 ; free virtual = 67079
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.349 | TNS=-0.518 | WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: b6b868fd
+WARNING: [Route 35-447] Congestion is preventing the router from routing all nets. The router will prioritize the successful completion of routing all nets over timing optimizations.
+Phase 4.1 Global Iteration 0 | Checksum: 1823b59e7
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19803 ; free virtual = 67361
-Phase 4 Rip-up And Reroute | Checksum: b6b868fd
+Time (s): cpu = 00:05:59 ; elapsed = 00:01:34 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19521 ; free virtual = 67080
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19803 ; free virtual = 67361
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 14149
+ Number of Nodes with overlaps = 1562
+ Number of Nodes with overlaps = 270
+ Number of Nodes with overlaps = 100
+ Number of Nodes with overlaps = 45
+ Number of Nodes with overlaps = 25
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 0
+
+Phase 4.2.1 Update Timing
+Phase 4.2.1 Update Timing | Checksum: f9e3a5aa
+
+Time (s): cpu = 00:09:17 ; elapsed = 00:02:05 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19524 ; free virtual = 67083
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.688 | TNS=-13.113| WHS=N/A    | THS=N/A    |
+
+
+Phase 4.2.2 GlobIterForTiming
+
+Phase 4.2.2.1 Update Timing
+Phase 4.2.2.1 Update Timing | Checksum: fe5f23ec
+
+Time (s): cpu = 00:09:19 ; elapsed = 00:02:06 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19524 ; free virtual = 67083
+
+Phase 4.2.2.2 Fast Budgeting
+Phase 4.2.2.2 Fast Budgeting | Checksum: 15852e50a
+
+Time (s): cpu = 00:09:19 ; elapsed = 00:02:07 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19524 ; free virtual = 67083
+Phase 4.2.2 GlobIterForTiming | Checksum: 100334cc7
+
+Time (s): cpu = 00:09:21 ; elapsed = 00:02:07 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19524 ; free virtual = 67083
+Phase 4.2 Global Iteration 1 | Checksum: 100334cc7
+
+Time (s): cpu = 00:09:21 ; elapsed = 00:02:07 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19524 ; free virtual = 67083
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 379
+ Number of Nodes with overlaps = 629
+ Number of Nodes with overlaps = 303
+ Number of Nodes with overlaps = 116
+ Number of Nodes with overlaps = 32
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+
+Phase 4.3.1 Update Timing
+Phase 4.3.1 Update Timing | Checksum: 14ca6add4
+
+Time (s): cpu = 00:10:21 ; elapsed = 00:02:18 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19525 ; free virtual = 67084
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.202 | TNS=-1.460 | WHS=N/A    | THS=N/A    |
+
+
+Phase 4.3.2 GlobIterForTiming
+
+Phase 4.3.2.1 Update Timing
+Phase 4.3.2.1 Update Timing | Checksum: eb8b0c48
+
+Time (s): cpu = 00:10:22 ; elapsed = 00:02:19 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19524 ; free virtual = 67083
+
+Phase 4.3.2.2 Fast Budgeting
+Phase 4.3.2.2 Fast Budgeting | Checksum: 13ab217ea
+
+Time (s): cpu = 00:10:23 ; elapsed = 00:02:20 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19524 ; free virtual = 67083
+Phase 4.3.2 GlobIterForTiming | Checksum: 15b2cd0c0
+
+Time (s): cpu = 00:10:25 ; elapsed = 00:02:21 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19524 ; free virtual = 67083
+Phase 4.3 Global Iteration 2 | Checksum: 15b2cd0c0
+
+Time (s): cpu = 00:10:25 ; elapsed = 00:02:21 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19524 ; free virtual = 67083
+
+Phase 4.4 Global Iteration 3
+ Number of Nodes with overlaps = 5501
+ Number of Nodes with overlaps = 2529
+ Number of Nodes with overlaps = 853
+ Number of Nodes with overlaps = 234
+ Number of Nodes with overlaps = 103
+ Number of Nodes with overlaps = 34
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 10
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+
+Phase 4.4.1 Update Timing
+Phase 4.4.1 Update Timing | Checksum: 14c075ff1
+
+Time (s): cpu = 00:13:03 ; elapsed = 00:02:52 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19526 ; free virtual = 67086
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.193 | TNS=-0.588 | WHS=N/A    | THS=N/A    |
+
+Phase 4.4 Global Iteration 3 | Checksum: 135eeef96
+
+Time (s): cpu = 00:13:03 ; elapsed = 00:02:52 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19526 ; free virtual = 67085
+Phase 4 Rip-up And Reroute | Checksum: 135eeef96
+
+Time (s): cpu = 00:13:03 ; elapsed = 00:02:52 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19526 ; free virtual = 67085
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
 
 Phase 5.1.1 Update Timing
-Phase 5.1.1 Update Timing | Checksum: f474bb0e
+Phase 5.1.1 Update Timing | Checksum: 21397c403
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19803 ; free virtual = 67361
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.606  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:13:05 ; elapsed = 00:02:53 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19526 ; free virtual = 67086
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.193 | TNS=-0.444 | WHS=N/A    | THS=N/A    |
 
-Phase 5.1 Delay CleanUp | Checksum: f474bb0e
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 230016dbc
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19803 ; free virtual = 67361
+Time (s): cpu = 00:13:07 ; elapsed = 00:02:53 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19527 ; free virtual = 67086
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: f474bb0e
+Phase 5.2 Clock Skew Optimization | Checksum: 230016dbc
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19803 ; free virtual = 67361
-Phase 5 Delay and Skew Optimization | Checksum: f474bb0e
+Time (s): cpu = 00:13:07 ; elapsed = 00:02:53 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19527 ; free virtual = 67086
+Phase 5 Delay and Skew Optimization | Checksum: 230016dbc
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19803 ; free virtual = 67361
+Time (s): cpu = 00:13:07 ; elapsed = 00:02:53 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19527 ; free virtual = 67086
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: efda41e0
+Phase 6.1.1 Update Timing | Checksum: 1e28614bf
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19803 ; free virtual = 67361
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.606  | TNS=0.000  | WHS=0.135  | THS=0.000  |
+Time (s): cpu = 00:13:09 ; elapsed = 00:02:54 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19527 ; free virtual = 67086
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.136 | TNS=-0.257 | WHS=0.234  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: 101bef51f
+Phase 6.1 Hold Fix Iter | Checksum: 1e28614bf
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19803 ; free virtual = 67361
-Phase 6 Post Hold Fix | Checksum: 101bef51f
+Time (s): cpu = 00:13:09 ; elapsed = 00:02:54 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19527 ; free virtual = 67086
+Phase 6 Post Hold Fix | Checksum: 1e28614bf
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19803 ; free virtual = 67361
+Time (s): cpu = 00:13:09 ; elapsed = 00:02:54 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19527 ; free virtual = 67086
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.664434 %
-  Global Horizontal Routing Utilization  = 0.929854 %
+  Global Vertical Routing Utilization    = 26.8188 %
+  Global Horizontal Routing Utilization  = 25.3252 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -906,38 +1002,59 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 921273d9
+Congestion Report
+North Dir 4x4 Area, Max Cong = 91.723%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X20Y38 -> INT_R_X23Y41
+   INT_L_X20Y34 -> INT_R_X23Y37
+   INT_L_X20Y30 -> INT_R_X23Y33
+South Dir 1x1 Area, Max Cong = 97.2973%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X20Y106 -> INT_L_X20Y106
+   INT_L_X22Y53 -> INT_L_X22Y53
+   INT_R_X23Y50 -> INT_R_X23Y50
+   INT_R_X19Y49 -> INT_R_X19Y49
+   INT_R_X21Y47 -> INT_R_X21Y47
+East Dir 4x4 Area, Max Cong = 88.8787%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X20Y46 -> INT_R_X23Y49
+   INT_L_X24Y42 -> INT_R_X27Y45
+West Dir 1x1 Area, Max Cong = 94.1176%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_R_X21Y105 -> INT_R_X21Y105
+   INT_R_X15Y100 -> INT_R_X15Y100
+   INT_R_X17Y100 -> INT_R_X17Y100
+   INT_R_X11Y99 -> INT_R_X11Y99
+   INT_R_X21Y43 -> INT_R_X21Y43
+Phase 7 Route finalize | Checksum: 195ac714e
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19802 ; free virtual = 67361
+Time (s): cpu = 00:13:10 ; elapsed = 00:02:54 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19527 ; free virtual = 67086
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 921273d9
+Phase 8 Verifying routed nets | Checksum: 195ac714e
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19802 ; free virtual = 67361
+Time (s): cpu = 00:13:10 ; elapsed = 00:02:54 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19527 ; free virtual = 67086
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 92e7d0f7
+Phase 9 Depositing Routes | Checksum: 18153003d
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19803 ; free virtual = 67361
+Time (s): cpu = 00:13:13 ; elapsed = 00:02:57 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19527 ; free virtual = 67086
 
 Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=0.606  | TNS=0.000  | WHS=0.135  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-0.136 | TNS=-0.257 | WHS=0.234  | THS=0.000  |
 
-INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: 92e7d0f7
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 18153003d
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19802 ; free virtual = 67360
+Time (s): cpu = 00:13:13 ; elapsed = 00:02:57 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19527 ; free virtual = 67086
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:00:28 ; elapsed = 00:00:12 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19803 ; free virtual = 67361
+Time (s): cpu = 00:13:15 ; elapsed = 00:02:58 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19527 ; free virtual = 67086
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-13 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+15 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:13 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19802 ; free virtual = 67360
+route_design: Time (s): cpu = 00:13:18 ; elapsed = 00:02:59 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19526 ; free virtual = 67085
 # report_timing -setup  -file ./reports/impl_aes_setup_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
@@ -950,9 +1067,9 @@ INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type min 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 # report_utilization    -file ./reports/impl_utilization_report.txt
-report_utilization: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.29 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19802 ; free virtual = 67360
+report_utilization: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19522 ; free virtual = 67081
 # report_utilization -hierarchical  -file ./reports/impl_utilization_report_submodule.txt
-report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2804.410 ; gain = 0.000 ; free physical = 19803 ; free virtual = 67361
+report_utilization: Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.38 . Memory (MB): peak = 3138.000 ; gain = 0.000 ; free physical = 19522 ; free virtual = 67081
 # report_power -file ./reports/impl_power_report.txt
 Command: report_power -file ./reports/impl_power_report.txt
 Running Vector-less Activity Propagation...
@@ -988,9 +1105,9 @@ Creating bitstream...
 Writing bitstream ./bitstreams/aes.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
-INFO: [Common 17-186] '/home/yu/projects/single_module/AES_GCM/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Fri Nov 16 20:54:50 2018. For additional details about this file, please refer to the WebTalk help file at /home/yu/Vivado/Vivado/2016.4/doc/webtalk_introduction.html.
+INFO: [Common 17-186] '/home/yu/projects/single_module/AES_GCM/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Fri Nov 16 21:07:12 2018. For additional details about this file, please refer to the WebTalk help file at /home/yu/Vivado/Vivado/2016.4/doc/webtalk_introduction.html.
 INFO: [Common 17-83] Releasing license: Implementation
 8 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 2841.543 ; gain = 0.000 ; free physical = 19804 ; free virtual = 67362
-INFO: [Common 17-206] Exiting Vivado at Fri Nov 16 20:54:50 2018...
+write_bitstream: Time (s): cpu = 00:00:26 ; elapsed = 00:00:25 . Memory (MB): peak = 3175.133 ; gain = 0.000 ; free physical = 19517 ; free virtual = 67076
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 16 21:07:12 2018...

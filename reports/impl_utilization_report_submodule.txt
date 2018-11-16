@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Fri Nov 16 20:54:41 2018
+| Date         : Fri Nov 16 21:06:43 2018
 | Host         : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_utilization -hierarchical -file ./reports/impl_utilization_report_submodule.txt
 | Design       : aes
@@ -21,11 +21,11 @@ Table of Contents
 +--------------------+---------------+------------+------------+---------+------+-----+--------+--------+--------------+
 |      Instance      |     Module    | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | DSP48 Blocks |
 +--------------------+---------------+------------+------------+---------+------+-----+--------+--------+--------------+
-| aes                |         (top) |       1250 |       1250 |       0 |    0 | 169 |      0 |      0 |            0 |
-|   (aes)            |         (top) |          0 |          0 |       0 |    0 |  59 |      0 |      0 |            0 |
+| aes                |         (top) |      17809 |      17809 |       0 |    0 | 700 |      0 |      0 |            0 |
+|   (aes)            |         (top) |          0 |          0 |       0 |    0 | 128 |      0 |      0 |            0 |
 |   clk_gen_instance |       clk_gen |          0 |          0 |       0 |    0 |   0 |      0 |      0 |            0 |
-|   m2               |   md_multiply |        120 |        120 |       0 |    0 |   4 |      0 |      0 |            0 |
-|   m3               | md_multiply_0 |       1114 |       1114 |       0 |    0 |  82 |      0 |      0 |            0 |
+|   m2               |   md_multiply |       4013 |       4013 |       0 |    0 | 130 |      0 |      0 |            0 |
+|   m3               | md_multiply_0 |      13780 |      13780 |       0 |    0 | 418 |      0 |      0 |            0 |
 |   u                |       display |         16 |         16 |       0 |    0 |  24 |      0 |      0 |            0 |
 +--------------------+---------------+------------+------------+---------+------+-----+--------+--------+--------------+
 * Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Fri Nov 16 20:54:40 2018
+| Date         : Fri Nov 16 21:06:40 2018
 | Host         : westeros running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_timing -setup -file ./reports/impl_aes_setup_report.txt
 | Design       : aes
@@ -11,20 +11,20 @@ Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 Timing Report
 
-Slack (MET) :             0.611ns  (required time - arrival time)
-  Source:                 m3/r_i1_reg[37]/C
+Slack (VIOLATED) :        -0.130ns  (required time - arrival time)
+  Source:                 m3/r_i2_reg[91]_rep/C
                             (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@4.545ns period=9.091ns})
-  Destination:            u/x_reg[7]/D
+  Destination:            u/x_reg[2]/D
                             (rising edge-triggered cell FDRE clocked by w_clk_out_clk_wiz_gen  {rise@0.000ns fall@4.545ns period=9.091ns})
   Path Group:             w_clk_out_clk_wiz_gen
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            9.091ns  (w_clk_out_clk_wiz_gen rise@9.091ns - w_clk_out_clk_wiz_gen rise@0.000ns)
-  Data Path Delay:        8.338ns  (logic 2.325ns (27.883%)  route 6.013ns (72.117%))
-  Logic Levels:           10  (LUT4=1 LUT5=1 LUT6=7 MUXF7=1)
-  Clock Path Skew:        -0.109ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.544ns = ( 7.547 - 9.091 ) 
-    Source Clock Delay      (SCD):    -0.952ns
-    Clock Pessimism Removal (CPR):    0.484ns
+  Data Path Delay:        9.077ns  (logic 1.324ns (14.586%)  route 7.753ns (85.414%))
+  Logic Levels:           7  (LUT4=1 LUT6=6)
+  Clock Path Skew:        -0.113ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.560ns = ( 7.531 - 9.091 ) 
+    Source Clock Delay      (SCD):    -0.956ns
+    Clock Pessimism Removal (CPR):    0.492ns
   Clock Uncertainty:      0.112ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.212ns
@@ -42,32 +42,26 @@ Slack (MET) :             0.611ns  (required time - arrival time)
                                                      -6.961    -4.269 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.608    clk_gen_instance/w_clk_out_clk_wiz_gen
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=169, routed)         1.560    -0.952    m3/clk_out
-    SLICE_X51Y52         FDRE                                         r  m3/r_i1_reg[37]/C
+                         net (fo=700, routed)         1.556    -0.956    m3/clk_out
+    SLICE_X31Y32         FDRE                                         r  m3/r_i2_reg[91]_rep/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X51Y52         FDRE (Prop_fdre_C_Q)         0.419    -0.533 r  m3/r_i1_reg[37]/Q
-                         net (fo=89, routed)          1.507     0.974    m3/r_i1[37]
-    SLICE_X39Y43         LUT4 (Prop_lut4_I1_O)        0.325     1.299 r  m3/x[13]_i_24/O
-                         net (fo=3, routed)           0.465     1.764    m3/x[13]_i_24_n_0
-    SLICE_X39Y42         LUT5 (Prop_lut5_I4_O)        0.326     2.090 r  m3/x[7]_i_50/O
-                         net (fo=5, routed)           0.275     2.365    m3/x[7]_i_50_n_0
-    SLICE_X39Y42         LUT6 (Prop_lut6_I1_O)        0.124     2.489 r  m3/x[7]_i_29/O
-                         net (fo=4, routed)           0.188     2.678    m3/x[7]_i_29_n_0
-    SLICE_X39Y42         LUT6 (Prop_lut6_I4_O)        0.124     2.802 r  m3/x[3]_i_19/O
-                         net (fo=7, routed)           0.639     3.441    m3/x[3]_i_19_n_0
-    SLICE_X40Y44         LUT6 (Prop_lut6_I2_O)        0.124     3.565 r  m3/x[14]_i_27/O
-                         net (fo=6, routed)           0.693     4.257    m3/x[14]_i_27_n_0
-    SLICE_X45Y48         LUT6 (Prop_lut6_I1_O)        0.124     4.381 r  m3/x[13]_i_38/O
-                         net (fo=8, routed)           0.866     5.248    m3/x[13]_i_38_n_0
-    SLICE_X49Y53         LUT6 (Prop_lut6_I5_O)        0.124     5.372 r  m3/x[7]_i_37/O
-                         net (fo=1, routed)           0.746     6.118    m3/Z298_in[120]
-    SLICE_X53Y46         LUT6 (Prop_lut6_I2_O)        0.124     6.242 r  m3/x[7]_i_14/O
-                         net (fo=1, routed)           0.000     6.242    m3/tag[7]
-    SLICE_X53Y46         MUXF7 (Prop_muxf7_I0_O)      0.212     6.454 r  m3/x_reg[7]_i_5/O
-                         net (fo=1, routed)           0.634     7.087    m3/x_reg[7]_i_5_n_0
-    SLICE_X50Y42         LUT6 (Prop_lut6_I5_O)        0.299     7.386 r  m3/x[7]_i_1/O
-                         net (fo=1, routed)           0.000     7.386    u/D[8]
-    SLICE_X50Y42         FDRE                                         r  u/x_reg[7]/D
+    SLICE_X31Y32         FDRE (Prop_fdre_C_Q)         0.456    -0.500 r  m3/r_i2_reg[91]_rep/Q
+                         net (fo=76, routed)          2.138     1.639    m3/r_i2_reg[91]_rep_n_0
+    SLICE_X11Y47         LUT4 (Prop_lut4_I2_O)        0.124     1.763 r  m3/x[2]_i_597/O
+                         net (fo=1, routed)           0.984     2.746    m3/x[2]_i_597_n_0
+    SLICE_X12Y43         LUT6 (Prop_lut6_I5_O)        0.124     2.870 r  m3/x[2]_i_432/O
+                         net (fo=1, routed)           1.129     4.000    m3/x[2]_i_432_n_0
+    SLICE_X38Y42         LUT6 (Prop_lut6_I2_O)        0.124     4.124 r  m3/x[2]_i_218/O
+                         net (fo=1, routed)           0.977     5.100    m3/x[2]_i_218_n_0
+    SLICE_X42Y42         LUT6 (Prop_lut6_I0_O)        0.124     5.224 r  m3/x[2]_i_103/O
+                         net (fo=1, routed)           1.099     6.323    m3/Z298_in[125]
+    SLICE_X52Y30         LUT6 (Prop_lut6_I1_O)        0.124     6.447 r  m3/x[2]_i_24/O
+                         net (fo=1, routed)           0.804     7.251    m3/x[2]_i_24_n_0
+    SLICE_X53Y23         LUT6 (Prop_lut6_I4_O)        0.124     7.375 r  m3/x[2]_i_5/O
+                         net (fo=1, routed)           0.622     7.998    m3/x[2]_i_5_n_0
+    SLICE_X52Y25         LUT6 (Prop_lut6_I5_O)        0.124     8.122 r  m3/x[2]_i_1/O
+                         net (fo=1, routed)           0.000     8.122    u/D[13]
+    SLICE_X52Y25         FDRE                                         r  u/x_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock w_clk_out_clk_wiz_gen rise edge)
@@ -80,16 +74,16 @@ Slack (MET) :             0.611ns  (required time - arrival time)
                                                      -7.217     4.423 r  clk_gen_instance/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.581     6.004    clk_gen_instance/w_clk_out_clk_wiz_gen
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     6.095 r  clk_gen_instance/clkout1_buf/O
-                         net (fo=169, routed)         1.451     7.547    u/clk_out
-    SLICE_X50Y42         FDRE                                         r  u/x_reg[7]/C
-                         clock pessimism              0.484     8.030    
-                         clock uncertainty           -0.112     7.919    
-    SLICE_X50Y42         FDRE (Setup_fdre_C_D)        0.079     7.998    u/x_reg[7]
+                         net (fo=700, routed)         1.435     7.531    u/clk_out
+    SLICE_X52Y25         FDRE                                         r  u/x_reg[2]/C
+                         clock pessimism              0.492     8.022    
+                         clock uncertainty           -0.112     7.911    
+    SLICE_X52Y25         FDRE (Setup_fdre_C_D)        0.081     7.992    u/x_reg[2]
   -------------------------------------------------------------------
-                         required time                          7.998    
-                         arrival time                          -7.386    
+                         required time                          7.992    
+                         arrival time                          -8.122    
   -------------------------------------------------------------------
-                         slack                                  0.611    
+                         slack                                 -0.130    
 
 
 
