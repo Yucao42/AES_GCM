@@ -46,3 +46,7 @@ ipython3 notebook
 ```
 
 2. In your web browser, open the encrytion\_validation.ipynb to get the right encryption result for 128-bit input.
+
+## TODO:
+1. Further parallelize the data links.
+2. Double the data rate by using data on falling and rising edge.
