@@ -10,7 +10,7 @@ This is a "partially pipelined" version of hardware implementaion in system-veri
 
 1. Vivado 16.4 or higher.
 
-2. Implementaion is on a Basys 3 board.
+2. Implementaion is on a SUME FPGA board.
 
 ### Simulation:
 
