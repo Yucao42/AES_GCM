@@ -2,7 +2,8 @@
 
 #Set part number
 #set_part xc7a35tcpg236-1
-set_part xcku035-fbva900-3-e 
+#set_part xcku035-fbva900-3-e 
+set_part xc7vx690t-3-ffg1761
 
 
 # Read verilog source files
@@ -29,7 +30,7 @@ read_verilog -sv  aes_pipeline_stage9.sv
 read_verilog -sv  aes_key_gen.sv
 read_verilog -sv  gcm_aes.sv
 read_verilog -sv  display.sv
-read_verilog -sv  aes.sv
+read_verilog -sv  aes.v
 
 #Read constraints file
 read_xdc constraints_artix_7.xdc

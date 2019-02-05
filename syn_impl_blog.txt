@@ -5,8 +5,8 @@
     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 source build_project.tcl
-# set_part xcku035-fbva900-3-e 
-INFO: [Coretcl 2-1500] The part has been set to 'xcku035-fbva900-3-e' for the current project only. Run set_part -help for more details. To evaluate different speed grades in the current design, use the set_speed_grade command, or use the open_checkpoint -part command to change the part used by an existing checkpoint design.
+# set_part xc7vx690t-3-ffg1761
+INFO: [Coretcl 2-1500] The part has been set to 'xc7vx690t-3-ffg1761' for the current project only. Run set_part -help for more details. To evaluate different speed grades in the current design, use the set_speed_grade command, or use the open_checkpoint -part command to change the part used by an existing checkpoint design.
 # read_verilog -sv  clk_gen.sv
 # read_verilog -sv  fn_aes_ghash_multiplication.sv
 # read_verilog -sv  fn_aes_encrypt_stage.sv
@@ -30,16 +30,17 @@ INFO: [Coretcl 2-1500] The part has been set to 'xcku035-fbva900-3-e' for the cu
 # read_verilog -sv  aes_key_gen.sv
 # read_verilog -sv  gcm_aes.sv
 # read_verilog -sv  display.sv
-# read_verilog -sv  aes.sv
+# read_verilog -sv  aes.v
 # read_xdc constraints_artix_7.xdc
 # synth_design -top aes
 Command: synth_design -top aes
 Starting synth_design
-Using part: xcku035-fbva900-3-e
-Attempting to get a license for feature 'Synthesis' and/or device 'xcku035'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku035'
+Using part: xc7vx690tffg1761-3
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx690t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx690t'
+INFO: [Common 17-86] Your Synthesis license expires in 11 day(s)
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 53659 
+INFO: Helper process launched with PID 25218 
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:18]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:18]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:4]
@@ -51,11 +52,11 @@ WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/a
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:148]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:172]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:196]
-WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes.sv:11]
+WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes.v:11]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1119.523 ; gain = 190.305 ; free physical = 58960 ; free virtual = 62918
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1163.332 ; gain = 234.113 ; free physical = 58083 ; free virtual = 62901
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'aes' [/home/yu/aes/AES_GCM/aes.sv:4]
+INFO: [Synth 8-638] synthesizing module 'aes' [/home/yu/aes/AES_GCM/aes.v:4]
 INFO: [Synth 8-638] synthesizing module 'clk_gen' [/home/yu/aes/AES_GCM/clk_gen.sv:1]
 INFO: [Synth 8-638] synthesizing module 'IBUF' [/home/yu/Vivado/2016.4/scripts/rt/data/unisim_comp.v:14146]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
@@ -66,7 +67,7 @@ INFO: [Synth 8-638] synthesizing module 'IBUF' [/home/yu/Vivado/2016.4/scripts/r
 INFO: [Synth 8-256] done synthesizing module 'IBUF' (1#1) [/home/yu/Vivado/2016.4/scripts/rt/data/unisim_comp.v:14146]
 INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [/home/yu/Vivado/2016.4/scripts/rt/data/unisim_comp.v:20414]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
-	Parameter CLKFBOUT_MULT_F bound to: 39.100000 - type: float 
+	Parameter CLKFBOUT_MULT_F bound to: 25.000000 - type: float 
 	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
 	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: float 
@@ -251,9 +252,9 @@ INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage9' [/home/yu/aes/AES_
 WARNING: [Synth 8-3936] Found unconnected internal register 'r_phase_reg' and it is trimmed from '3' to '1' bits. [/home/yu/aes/AES_GCM/aes_pipeline_stage9.sv:45]
 INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage9' (27#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage9.sv:1]
 INFO: [Synth 8-256] done synthesizing module 'gcm_aes' (28#1) [/home/yu/aes/AES_GCM/gcm_aes.sv:9]
-WARNING: [Synth 8-350] instance 'gcm_aes_instance' of module 'gcm_aes' requires 13 connections, but only 12 given [/home/yu/aes/AES_GCM/aes.sv:45]
-WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes.sv:12]
-INFO: [Synth 8-256] done synthesizing module 'aes' (29#1) [/home/yu/aes/AES_GCM/aes.sv:4]
+WARNING: [Synth 8-350] instance 'gcm_aes_instance' of module 'gcm_aes' requires 13 connections, but only 12 given [/home/yu/aes/AES_GCM/aes.v:45]
+WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes.v:12]
+INFO: [Synth 8-256] done synthesizing module 'aes' (29#1) [/home/yu/aes/AES_GCM/aes.v:4]
 WARNING: [Synth 8-3331] design aes_pipeline_stage9 has unconnected port i_phase[0]
 WARNING: [Synth 8-3331] design aes_pipeline_stage9 has unconnected port i_phase[1]
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[0]
@@ -356,7 +357,7 @@ WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_sc
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[97]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1883.031 ; gain = 953.812 ; free physical = 58177 ; free virtual = 62155
+Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1925.840 ; gain = 996.621 ; free physical = 57302 ; free virtual = 62140
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -467,16 +468,34 @@ WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[98] to constant 0
 WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[99] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
 INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1883.031 ; gain = 953.812 ; free physical = 58178 ; free virtual = 62156
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1925.840 ; gain = 996.621 ; free physical = 57304 ; free virtual = 62142
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Device 21-403] Loading part xcku035-fbva900-3-e
+INFO: [Device 21-403] Loading part xc7vx690tffg1761-3
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [/home/yu/aes/AES_GCM/constraints_artix_7.xdc]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:3]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:8]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:12]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:14]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:16]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:18]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:20]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:22]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:24]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:26]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:28]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:30]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:32]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:34]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:36]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:38]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:40]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:42]
 WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:45]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:45]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
@@ -556,31 +575,28 @@ INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 4 instances were transformed.
-  BUFG => BUFGCE: 2 instances
-  IBUF => IBUF (INBUF, IBUFCTRL): 1 instances
-  MMCME2_ADV => MMCME3_ADV: 1 instances
+No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2342.992 ; gain = 0.000 ; free physical = 57652 ; free virtual = 61876
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2357.395 ; gain = 0.000 ; free physical = 57018 ; free virtual = 61856
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2342.992 ; gain = 1413.773 ; free physical = 57643 ; free virtual = 61867
+Finished Constraint Validation : Time (s): cpu = 00:00:48 ; elapsed = 00:00:47 . Memory (MB): peak = 2357.395 ; gain = 1428.176 ; free physical = 57015 ; free virtual = 61853
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xcku035-fbva900-3-e
+Loading part: xc7vx690tffg1761-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2342.992 ; gain = 1413.773 ; free physical = 57643 ; free virtual = 61867
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:48 ; elapsed = 00:00:47 . Memory (MB): peak = 2357.395 ; gain = 1428.176 ; free physical = 57015 ; free virtual = 61853
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 2342.992 ; gain = 1413.773 ; free physical = 57643 ; free virtual = 61868
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:47 . Memory (MB): peak = 2357.395 ; gain = 1428.176 ; free physical = 57015 ; free virtual = 61853
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "o_tag_ready" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:32 ; elapsed = 00:01:34 . Memory (MB): peak = 2342.992 ; gain = 1413.773 ; free physical = 57549 ; free virtual = 61773
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:40 ; elapsed = 00:01:40 . Memory (MB): peak = 2357.395 ; gain = 1428.176 ; free physical = 56972 ; free virtual = 61809
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -917,8 +933,8 @@ Finished RTL Hierarchical Component Statistics
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
 Part Resources:
-DSPs: 1700 (col length:120)
-BRAMs: 1080 (col length: RAMB18 120 RAMB36 60)
+DSPs: 3600 (col length:200)
+BRAMs: 2940 (col length: RAMB18 200 RAMB36 100)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
@@ -1194,7 +1210,7 @@ INFO: [Synth 8-3886] merging instance 'B[3]__2' (FD) to 'keygen4/r_key_schedule_
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:28 ; elapsed = 00:03:04 . Memory (MB): peak = 2431.258 ; gain = 1502.039 ; free physical = 51746 ; free virtual = 55982
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:36 ; elapsed = 00:03:14 . Memory (MB): peak = 2396.379 ; gain = 1467.160 ; free physical = 51384 ; free virtual = 56230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2603,7 +2619,7 @@ Report RTL Partitions:
 |3     |aes_pipeline_stage8__GB1 |           1|      7162|
 |4     |aes_pipeline_stage9__GB0 |           1|     27588|
 |5     |aes_pipeline_stage9__GB1 |           1|      6902|
-|6     |gcm_aes__GCB0            |           1|     14384|
+|6     |gcm_aes__GCB0            |           1|     14444|
 |7     |gcm_aes__GCB1            |           1|      5431|
 |8     |gcm_aes__GCB2            |           1|     10893|
 |9     |gcm_aes__GCB3            |           1|     11874|
@@ -2616,7 +2632,7 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:36 ; elapsed = 00:03:12 . Memory (MB): peak = 2732.695 ; gain = 1803.477 ; free physical = 51419 ; free virtual = 55681
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:42 ; elapsed = 00:03:20 . Memory (MB): peak = 2525.668 ; gain = 1596.449 ; free physical = 51253 ; free virtual = 56100
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[127]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
 INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[126]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
@@ -2660,7 +2676,7 @@ INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_siz
 INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[88]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:57 ; elapsed = 00:04:35 . Memory (MB): peak = 3812.609 ; gain = 2883.391 ; free physical = 50345 ; free virtual = 54608
+Finished Timing Optimization : Time (s): cpu = 00:04:04 ; elapsed = 00:04:43 . Memory (MB): peak = 3604.582 ; gain = 2675.363 ; free physical = 50184 ; free virtual = 55033
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2673,7 +2689,7 @@ Report RTL Partitions:
 |4     |gcm_aes__GCB3            |           1|      9442|
 |5     |gcm_aes__GCB4            |           1|     10412|
 |6     |aes_GT0                  |           1|     61699|
-|7     |aes_GT0__1               |           1|     18330|
+|7     |aes_GT0__1               |           1|     18390|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
@@ -2782,7 +2798,7 @@ INFO: [Common 17-14] Message 'Synth 8-4480' appears 100 times and further instan
 INFO: [Common 17-14] Message 'Synth 8-4480' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:07 ; elapsed = 00:04:50 . Memory (MB): peak = 3824.535 ; gain = 2895.316 ; free physical = 50772 ; free virtual = 55043
+Finished Technology Mapping : Time (s): cpu = 00:04:14 ; elapsed = 00:05:02 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50175 ; free virtual = 55031
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2791,7 +2807,7 @@ Report RTL Partitions:
 +------+--------------+------------+----------+
 |1     |gcm_aes__GCB4 |           1|      4268|
 |2     |aes_GT0       |           1|     16740|
-|3     |aes_GT0__1    |           1|      9775|
+|3     |aes_GT0__1    |           1|      9824|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -2809,7 +2825,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:11 ; elapsed = 00:04:54 . Memory (MB): peak = 3824.535 ; gain = 2895.316 ; free physical = 50771 ; free virtual = 55041
+Finished IO Insertion : Time (s): cpu = 00:04:18 ; elapsed = 00:05:06 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50174 ; free virtual = 55030
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2822,7 +2838,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:11 ; elapsed = 00:04:54 . Memory (MB): peak = 3824.535 ; gain = 2895.316 ; free physical = 50771 ; free virtual = 55041
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:18 ; elapsed = 00:05:06 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50174 ; free virtual = 55030
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2834,37 +2850,39 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:14 ; elapsed = 00:04:57 . Memory (MB): peak = 3824.535 ; gain = 2895.316 ; free physical = 50771 ; free virtual = 55042
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:21 ; elapsed = 00:05:09 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50174 ; free virtual = 55030
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:14 ; elapsed = 00:04:57 . Memory (MB): peak = 3824.535 ; gain = 2895.316 ; free physical = 50771 ; free virtual = 55042
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:22 ; elapsed = 00:05:09 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50174 ; free virtual = 55030
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:16 ; elapsed = 00:04:59 . Memory (MB): peak = 3824.535 ; gain = 2895.316 ; free physical = 50771 ; free virtual = 55042
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:23 ; elapsed = 00:05:11 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50173 ; free virtual = 55029
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:16 ; elapsed = 00:04:59 . Memory (MB): peak = 3824.535 ; gain = 2895.316 ; free physical = 50771 ; free virtual = 55042
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:23 ; elapsed = 00:05:11 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50173 ; free virtual = 55029
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Static Shift Register Report:
-+------------+------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name | RTL Name                                       | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+------------+------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|aes         | gcm_aes_instance/stage8/r_phase_reg[0]         | 11     | 3     | NO           | NO                 | YES               | 3      | 0       | 
-|aes         | gcm_aes_instance/stage3p/r_key_schedule_reg[0] | 3      | 128   | NO           | NO                 | YES               | 128    | 0       | 
-+------------+------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
++------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                         | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|aes         | gcm_aes_instance/stage6/r_key_schedule_reg[1280] | 3      | 128   | NO           | NO                 | YES               | 128    | 0       | 
+|aes         | gcm_aes_instance/stage8/r_phase_reg[0]           | 11     | 3     | NO           | NO                 | YES               | 3      | 0       | 
+|aes         | gcm_aes_instance/stage8/r_h_reg[0]               | 3      | 128   | NO           | NO                 | YES               | 128    | 0       | 
+|aes         | gcm_aes_instance/stage3p/r_key_schedule_reg[0]   | 3      | 128   | NO           | NO                 | YES               | 128    | 0       | 
++------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -2884,20 +2902,20 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     2|
-|2     |CARRY8     |    54|
+|2     |CARRY4     |   103|
 |3     |LUT1       |   159|
 |4     |LUT2       |   840|
 |5     |LUT3       |   991|
-|6     |LUT4       |  7788|
+|6     |LUT4       |  7920|
 |7     |LUT5       |  4310|
-|8     |LUT6       | 13143|
+|8     |LUT6       | 13011|
 |9     |MMCME2_ADV |     1|
 |10    |MUXF7      |  1153|
 |11    |MUXF8      |   400|
-|12    |RAMB18E2   |    96|
-|13    |RAMB18E2_1 |   127|
-|14    |SRL16E     |   131|
-|15    |FDRE       | 10654|
+|12    |RAMB18E1   |    96|
+|13    |RAMB18E1_1 |   127|
+|14    |SRL16E     |   387|
+|15    |FDRE       | 10142|
 |16    |IBUF       |   482|
 |17    |OBUF       |   258|
 +------+-----------+------+
@@ -2906,9 +2924,9 @@ Report Instance Areas:
 +------+-------------------+------------------------+------+
 |      |Instance           |Module                  |Cells |
 +------+-------------------+------------------------+------+
-|1     |top                |                        | 40589|
+|1     |top                |                        | 40382|
 |2     |  clk_gen_instance |clk_gen                 |     4|
-|3     |  gcm_aes_instance |gcm_aes                 | 39846|
+|3     |  gcm_aes_instance |gcm_aes                 | 39639|
 |4     |    stage2         |aes_pipeline_stage2     |   637|
 |5     |    keygen1        |aes_key_gen2            |   512|
 |6     |    keygen2        |aes_key_gen3            |   800|
@@ -2918,66 +2936,79 @@ Report Instance Areas:
 |10    |    keygen6        |aes_key_gen7            |   672|
 |11    |    keygen7        |aes_key_gen8            |   736|
 |12    |    pass6          |aes_signal_passing      |   256|
-|13    |    stage1         |aes_pipeline_stage1     |  1808|
-|14    |    stage2p        |aes_pipeline_stage2_pre |   545|
+|13    |    stage1         |aes_pipeline_stage1     |  1850|
+|14    |    stage2p        |aes_pipeline_stage2_pre |   548|
 |15    |    stage3         |aes_pipeline_stage3     |  1063|
-|16    |    stage3p        |aes_pipeline_stage3_pre |  3381|
+|16    |    stage3p        |aes_pipeline_stage3_pre |  3385|
 |17    |    stage4         |aes_pipeline_stage4     |   936|
 |18    |    stage4p        |aes_pipeline_stage4_pre |   936|
-|19    |    stage5         |aes_pipeline_stage5     |  1448|
+|19    |    stage5         |aes_pipeline_stage5     |  1320|
 |20    |    stage5p        |aes_pipeline_stage5_pre |   936|
 |21    |    stage6         |aes_pipeline_stage6     |   888|
 |22    |    stage6p        |aes_pipeline_stage6_pre |  1320|
 |23    |    stage7         |aes_pipeline_stage7     |   787|
-|24    |    stage7p        |aes_pipeline_stage7_pre |  1008|
+|24    |    stage7p        |aes_pipeline_stage7_pre |   880|
 |25    |    stage8         |aes_pipeline_stage8     |  9456|
 |26    |    stage9         |aes_pipeline_stage9     |  9001|
 +------+-------------------+------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:16 ; elapsed = 00:04:59 . Memory (MB): peak = 3824.535 ; gain = 2895.316 ; free physical = 50771 ; free virtual = 55042
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:23 ; elapsed = 00:05:11 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50173 ; free virtual = 55029
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1342 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:04:01 ; elapsed = 00:04:47 . Memory (MB): peak = 3824.535 ; gain = 2325.270 ; free physical = 56029 ; free virtual = 60300
-Synthesis Optimization Complete : Time (s): cpu = 00:04:16 ; elapsed = 00:05:02 . Memory (MB): peak = 3824.535 ; gain = 2895.316 ; free physical = 56047 ; free virtual = 60300
+Synthesis Optimization Runtime : Time (s): cpu = 00:04:00 ; elapsed = 00:04:51 . Memory (MB): peak = 3616.508 ; gain = 2101.840 ; free physical = 55653 ; free virtual = 60509
+Synthesis Optimization Complete : Time (s): cpu = 00:04:23 ; elapsed = 00:05:12 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 55671 ; free virtual = 60509
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 485 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 809 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 Parsing XDC File [/home/yu/aes/AES_GCM/constraints_artix_7.xdc]
-CRITICAL WARNING: [Common 17-69] Command failed: 'W5' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:2]
+CRITICAL WARNING: [Vivado 12-1815] Setting property 'IOSTANDARD' is not allowed for GT terminals. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:3]
 CRITICAL WARNING: [Common 17-69] Command failed: 'U18' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:7]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:8]
 CRITICAL WARNING: [Common 17-69] Command failed: 'V17' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:11]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:12]
 CRITICAL WARNING: [Common 17-69] Command failed: 'V16' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:13]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:14]
 CRITICAL WARNING: [Common 17-69] Command failed: 'W16' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:15]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:16]
 CRITICAL WARNING: [Common 17-69] Command failed: 'W17' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:17]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:18]
 CRITICAL WARNING: [Common 17-69] Command failed: 'W15' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:19]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:20]
 CRITICAL WARNING: [Common 17-69] Command failed: 'V15' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:21]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:22]
 CRITICAL WARNING: [Common 17-69] Command failed: 'W14' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:23]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:24]
 CRITICAL WARNING: [Common 17-69] Command failed: 'W13' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:25]
-CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not find a valid bel for the shape with the following elements: 
-	sw_IBUF[8]_inst/INBUF_INST
-	sw[8]
-	sw_IBUF[8]_inst/IBUFCTRL_INST
- [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:27]
-CRITICAL WARNING: [Common 17-69] Command failed: 'T3' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:29]
-CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not find a valid bel for the shape with the following elements: 
-	sw_IBUF[10]_inst/INBUF_INST
-	sw[10]
-	sw_IBUF[10]_inst/IBUFCTRL_INST
- [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:31]
-CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not find a valid bel for the shape with the following elements: 
-	sw_IBUF[11]_inst/INBUF_INST
-	sw[11]
-	sw_IBUF[11]_inst/IBUFCTRL_INST
- [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:33]
-CRITICAL WARNING: [Common 17-69] Command failed: 'W2' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:35]
-CRITICAL WARNING: [Common 17-69] Command failed: 'U1' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:37]
-CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Could not find a valid bel for the shape with the following elements: 
-	sw_IBUF[14]_inst/INBUF_INST
-	sw[14]
-	sw_IBUF[14]_inst/IBUFCTRL_INST
- [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:39]
-CRITICAL WARNING: [Common 17-69] Command failed: 'R2' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:41]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:26]
+CRITICAL WARNING: [Common 17-69] Command failed: 'V2' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:27]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:28]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Site location (OPAD_X1Y50) is not valid for the shape with the following elements: 
+	sw_IBUF[9]_inst
+	sw[9]
+ [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:29]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:30]
+CRITICAL WARNING: [Common 17-69] Command failed: 'T2' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:31]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:32]
+CRITICAL WARNING: [Common 17-69] Command failed: 'R3' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:33]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:34]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Site location (OPAD_X1Y47) is not valid for the shape with the following elements: 
+	sw_IBUF[12]_inst
+	sw[12]
+ [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:35]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:36]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Site location (OPAD_X1Y48) is not valid for the shape with the following elements: 
+	sw_IBUF[13]_inst
+	sw[13]
+ [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:37]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:38]
+CRITICAL WARNING: [Common 17-69] Command failed: 'T1' is not a valid site or package pin name. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:39]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:40]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Site location (OPAD_X1Y53) is not valid for the shape with the following elements: 
+	sw_IBUF[15]_inst
+	sw[15]
+ [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:41]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:42]
 WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:45]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:45]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
@@ -3053,45 +3084,43 @@ Resolution: If [get_<value>] was used to populate the object, check to make sure
 Finished Parsing XDC File [/home/yu/aes/AES_GCM/constraints_artix_7.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 485 instances were transformed.
-  BUFG => BUFGCE: 2 instances
-  IBUF => IBUF (IBUFCTRL, INBUF): 482 instances
-  MMCME2_ADV => MMCME3_ADV: 1 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-513 Infos, 383 Warnings, 66 Critical Warnings and 0 Errors encountered.
+514 Infos, 383 Warnings, 101 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:20 ; elapsed = 00:05:06 . Memory (MB): peak = 3868.637 ; gain = 2845.914 ; free physical = 56043 ; free virtual = 60300
+synth_design: Time (s): cpu = 00:04:27 ; elapsed = 00:05:16 . Memory (MB): peak = 3660.609 ; gain = 2637.887 ; free physical = 55673 ; free virtual = 60511
 # exec mkdir -p -- ./reports
 # report_timing -setup  -file ./reports/synth_aes_setup_report.txt
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: max.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-2] Deriving generated clocks
 INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
-report_timing: Time (s): cpu = 00:00:40 ; elapsed = 00:00:32 . Memory (MB): peak = 3939.695 ; gain = 71.059 ; free physical = 55805 ; free virtual = 60302
+report_timing: Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 3731.668 ; gain = 71.059 ; free physical = 55671 ; free virtual = 60510
 # report_timing -hold   -file ./reports/synth_aes_hold_report.txt
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type min -sort_by slack.
 # report_timing_summary -file ./reports/synth_timing_report_aes.txt -delay_type min_max -max_path 50
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 # report_utilization    -file ./reports/synth_utilization_report.txt
-report_utilization: Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.33 . Memory (MB): peak = 3939.695 ; gain = 0.000 ; free physical = 55802 ; free virtual = 60300
+report_utilization: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.35 . Memory (MB): peak = 3731.668 ; gain = 0.000 ; free physical = 55668 ; free virtual = 60507
 # report_utilization -hierarchical  -file ./reports/synth_utilization_report_submodule.txt
-report_utilization: Time (s): cpu = 00:00:00.36 ; elapsed = 00:00:00.44 . Memory (MB): peak = 3939.695 ; gain = 0.000 ; free physical = 55802 ; free virtual = 60300
+report_utilization: Time (s): cpu = 00:00:00.44 ; elapsed = 00:00:00.50 . Memory (MB): peak = 3731.668 ; gain = 0.000 ; free physical = 55668 ; free virtual = 60507
 # write_schematic -format pdf -orientation portrait /home/yu/projects/AES_GCM/schematic_1.pdf
 # place_design
 Command: place_design
-Attempting to get a license for feature 'Implementation' and/or device 'xcku035'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku035'
+Attempting to get a license for feature 'Implementation' and/or device 'xc7vx690t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7vx690t'
+INFO: [Common 17-86] Your Implementation license expires in 11 day(s)
 INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 Running DRC as a precondition to command place_design
 INFO: [DRC 23-27] Running DRC with 8 threads
-CRITICAL WARNING: [DRC 23-20] Rule violation (AVAL-46) v7v8_mmcm_fvco_rule1 - The current computed target frequency, FVCO, is out of range for cell clk_gen_instance/mmcm_adv_inst. The computed FVCO is 3910.000 MHz. The valid FVCO range for speed grade -3 is 600MHz to 1600MHz. The cell attribute values used to compute FVCO are CLKFBOUT_MULT_F = 39.100, CLKIN1_PERIOD = 10.00000, and DIVCLK_DIVIDE = 1 (FVCO = 1000 * CLKFBOUT_MULT_F/(CLKIN1_PERIOD * DIVCLK_DIVIDE)).
+CRITICAL WARNING: [DRC 23-20] Rule violation (AVAL-46) v7v8_mmcm_fvco_rule1 - The current computed target frequency, FVCO, is out of range for cell clk_gen_instance/mmcm_adv_inst. The computed FVCO is 2500.000 MHz. The valid FVCO range for speed grade -3 is 600MHz to 1600MHz. The cell attribute values used to compute FVCO are CLKFBOUT_MULT_F = 25.000, CLKIN1_PERIOD = 10.00000, and DIVCLK_DIVIDE = 1 (FVCO = 1000 * CLKFBOUT_MULT_F/(CLKIN1_PERIOD * DIVCLK_DIVIDE)).
 This violation may be corrected by:
   1. The timer uses timing constraints for clock period or clock frequency that affect CLKIN1 to set cell attribute CLKIN1_PERIOD, over-riding any previous value. This may already be in place and, if so this violation will be resolved once Timing is run.  Otherwise, consider modifying timing constraints to adjust the CLKIN1_PERIOD and bring FVCO into the allowed range.
   2. In the absence of timing constraints that affect CLKIN1, consider modifying the cell CLKIN1_PERIOD to bring FVCO into the allowed range.
@@ -3104,132 +3133,51 @@ Starting Placer Task
 INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
 
 Phase 1 Placer Initialization
-Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 4003.727 ; gain = 0.000 ; free physical = 55795 ; free virtual = 60296
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3795.699 ; gain = 0.000 ; free physical = 55666 ; free virtual = 60505
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 4003.727 ; gain = 0.000 ; free physical = 55792 ; free virtual = 60295
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3795.699 ; gain = 0.000 ; free physical = 55665 ; free virtual = 60504
 
 Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
-ERROR: [Place 30-415] IO Placement failed due to overutilization. This design contains 740 I/O ports
- while the target  device: xcku035 package: fbva900, contains only 550 available user I/O. The target device has 550 usable I/O pins of which 0 are already occupied by user-locked I/Os.
- To rectify this issue:
- 1. Ensure you are targeting the correct device and package.  Select a larger device or different package if necessary.
- 2. Check the top-level ports of the design to ensure the correct number of ports are specified.
- 3. Consider design changes to reduce the number of I/Os necessary.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-ERROR: [Place 30-68] Instance cipher_text_OBUF[0]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[100]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[101]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[102]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[103]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[104]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[105]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[106]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[107]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[108]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[109]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[10]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[110]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[111]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[112]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[113]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[114]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[115]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[116]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[117]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[118]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[119]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[11]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[120]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[121]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[122]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[123]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[124]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[125]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[126]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[127]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[12]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[13]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[14]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[15]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[16]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[17]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[18]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[19]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[1]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[20]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[21]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[22]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[23]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[24]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[25]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[26]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[27]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[28]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[29]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[2]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[30]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[31]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[32]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[33]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[34]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[35]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[36]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[37]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[38]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[39]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[3]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[40]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[41]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[42]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[43]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[44]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[45]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[46]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[47]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[48]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[49]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[4]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[50]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[51]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[52]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[53]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[54]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[55]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[56]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[57]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[58]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[59]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[5]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[60]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[61]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[62]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[63]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[64]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[65]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[66]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[67]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[68]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[69]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[6]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[70]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[71]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[72]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[73]_inst (OBUF) is not placed
-ERROR: [Place 30-68] Instance cipher_text_OBUF[74]_inst (OBUF) is not placed
-INFO: [Common 17-14] Message 'Place 30-68' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 425dcda3
+ERROR: [Place 30-575] Sub-optimal placement for a clock-capable IO pin and MMCM pair. If this sub optimal condition is acceptable for this design, you may use the CLOCK_DEDICATED_ROUTE constraint in the .xdc file to demote this message to a WARNING. However, the use of this override is highly discouraged. These examples can be used directly in the .xdc file to override this clock rule.
+	< set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets clk_gen_instance/w_clk_in_clk_wiz_gen] >
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 4003.727 ; gain = 0.000 ; free physical = 55791 ; free virtual = 60295
-Phase 1 Placer Initialization | Checksum: 425dcda3
+	clk_gen_instance/clkin1_ibufg (IBUF.O) is locked to IPAD_X2Y186
+	clk_gen_instance/mmcm_adv_inst (MMCME2_ADV.CLKIN1) is provisionally placed by clockplacer on MMCME2_ADV_X1Y5
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 4003.727 ; gain = 0.000 ; free physical = 55791 ; free virtual = 60295
+	The above error could possibly be related to other connected instances. Following is a list of 
+	all the related clock rules and their respective instances.
+
+	Clock Rule: rule_mmcm_bufg
+	Status: FAIL 
+	Rule Description: An MMCM driving a BUFG must be placed on the same half side (top/bottom) of the device
+	clk_gen_instance/mmcm_adv_inst (MMCME2_ADV.CLKFBOUT) is provisionally placed by clockplacer on MMCME2_ADV_X1Y5
+	clk_gen_instance/clkf_buf (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y1
+	ERROR: The above is also an illegal clock rule
+	Workaround: < set_property CLOCK_DEDICATED_ROUTE BACKBONE [get_nets clk_gen_instance/w_clkfbout_clk_wiz_gen] >
+
+	Clock Rule: rule_mmcm_bufg
+	Status: FAIL 
+	Rule Description: An MMCM driving a BUFG must be placed on the same half side (top/bottom) of the device
+	clk_gen_instance/mmcm_adv_inst (MMCME2_ADV.CLKOUT0) is provisionally placed by clockplacer on MMCME2_ADV_X1Y5
+	clk_gen_instance/clkout1_buf (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y0
+	ERROR: The above is also an illegal clock rule
+	Workaround: < set_property CLOCK_DEDICATED_ROUTE BACKBONE [get_nets clk_gen_instance/w_clk_out_clk_wiz_gen] >
+
+Resolution: A dedicated routing path between the two can be used if: (a) The clock-capable IO (CCIO) is placed on a CCIO capable site (b) The MMCM is placed in the same clock region as the CCIO pin. If the IOB is driving multiple MMCMs, all MMCMs must be placed in the same clock region, one clock region above or one clock region below the IOB. Both the above conditions must be met at the same time, else it may lead to longer and less predictable clock insertion delays.
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: e6d8e83b
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 3795.699 ; gain = 0.000 ; free physical = 55667 ; free virtual = 60505
+Phase 1 Placer Initialization | Checksum: e6d8e83b
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 3795.699 ; gain = 0.000 ; free physical = 55667 ; free virtual = 60505
 ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
 Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
-Ending Placer Task | Checksum: 425dcda3
+Ending Placer Task | Checksum: e6d8e83b
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 4003.727 ; gain = 0.000 ; free physical = 55791 ; free virtual = 60295
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 3795.699 ; gain = 0.000 ; free physical = 55667 ; free virtual = 60506
 INFO: [Common 17-83] Releasing license: Implementation
-12 Infos, 0 Warnings, 1 Critical Warnings and 103 Errors encountered.
+12 Infos, 0 Warnings, 1 Critical Warnings and 3 Errors encountered.
 place_design failed
 ERROR: [Common 17-69] Command failed: Placer could not place all instances
-INFO: [Common 17-206] Exiting Vivado at Mon Feb  4 14:46:04 2019...
+INFO: [Common 17-206] Exiting Vivado at Tue Feb  5 16:19:02 2019...
