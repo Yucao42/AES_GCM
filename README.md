@@ -2,7 +2,7 @@
 
 ## GCM-AES implementation in Verilog
 
-This is a "partially pipelined" version of hardware implementaion in system-verilog. Here I pipeline the key expansion process into 4 steps to address the SLACK problem. This implements encryption in 110MHz. Throughput is 128bits * 235M = 30.8 Gbps. Worst SLACK is 0.04 ns.
+This is a "partially pipelined" version of hardware implementaion in system-verilog. Here I pipeline the key expansion process into 4 steps to address the SLACK problem. This implements encryption in 110MHz. Throughput is 128bits * 250M = 32 Gbps. Worst SLACK is 0.04 ns.
 
 ## Usage
 
