@@ -37,6 +37,21 @@ module gcm_aes(
     output logic [0:127]   o_tag;
     output logic           o_tag_ready;
     output logic           o_cp_ready;
+
+    /* New instance signals */
+    logic             w_s1p_new_instance;
+    logic             w_s2p_new_instance;
+    logic             w_s3p_new_instance;
+    logic             w_s4p_new_instance;
+    logic             w_s5p_new_instance;
+    logic             w_s6p_new_instance;
+    logic             w_s1_new_instance;
+    logic             w_s2_new_instance;
+    logic             w_s3_new_instance;
+    logic             w_s4_new_instance;
+    logic             w_s5_new_instance;
+    logic             w_s6_new_instance;
+    logic             w_s7_new_instance;
     
     /* Wires joining Stage1 and Stage2 */
     (* dont_touch = "true" *) logic [0:127]     w_s1_plain_text;
@@ -186,6 +201,7 @@ module gcm_aes(
         .o_plain_text(w_s1_plain_text),
         .o_aad(w_s1_aad),
         .o_iv(w_s1_iv),
+        .o_new_instance(w_s1_new_instance),
         .o_instance_size(w_s1_instance_size)
     );
 
@@ -203,6 +219,8 @@ module gcm_aes(
         .i_instance_size(w_s1_instance_size),
         .i_key_schedule(w_s1_key_schedule),
         .i_phase(w_s1_phase),
+        .i_new_instance(w_s1_new_instance),
+        .o_new_instance(w_s1p_new_instance),
         .o_phase(w_s1p_phase),
         .o_h(w_s1p_h),
         .o_plain_text(w_s1p_plain_text),
@@ -226,6 +244,8 @@ module gcm_aes(
         .i_key_schedule(w_s1p_key_schedule),
         .i_phase(w_s1p_phase),
         .i_h(w_s1p_h),
+        .i_new_instance(w_s1p_new_instance),
+        .o_new_instance(w_s2_new_instance),
         .o_phase(w_s2_phase),
         .o_h(w_s2_h),
         .o_j0(w_s2_j0),
@@ -252,6 +272,8 @@ module gcm_aes(
         .i_aad(w_s2_aad),
         .i_instance_size(w_s2_instance_size),
         .i_key_schedule(w_s3_key_schedule),
+        .i_new_instance(w_s2_new_instance),
+        .o_new_instance(w_s2p_new_instance),
         .o_phase(w_s2p_phase),
         .o_h(w_s2p_h),
         .o_encrypted_j0(w_s2p_encrypted_j0),
@@ -277,6 +299,8 @@ module gcm_aes(
         .i_instance_size(w_s2p_instance_size),
         .i_key_schedule(w_s2p_key_schedule),
         .i_phase(w_s2p_phase),
+        .i_new_instance(w_s2p_new_instance),
+        .o_new_instance(w_s3_new_instance),
         .o_phase(w_s3_phase),
         .o_h(w_s3_h),
         .o_encrypted_j0(w_s3_encrypted_j0),
@@ -302,6 +326,8 @@ module gcm_aes(
         .i_instance_size(w_s3_instance_size),
         .i_key_schedule(w_s4_key_schedule),
         .i_phase(w_s3_phase),
+        .i_new_instance(w_s3_new_instance),
+        .o_new_instance(w_s3p_new_instance),
         .o_phase(w_s3p_phase),
         .o_h(w_s3p_h),
         .o_encrypted_j0(w_s3p_encrypted_j0),
@@ -327,6 +353,8 @@ module gcm_aes(
         .i_instance_size(w_s3p_instance_size),
         .i_key_schedule(w_s5_key_schedule),
         .i_phase(w_s3p_phase),
+        .i_new_instance(w_s3p_new_instance),
+        .o_new_instance(w_s4_new_instance),
         .o_phase(w_s4_phase),
         .o_h(w_s4_h),
         .o_encrypted_j0(w_s4_encrypted_j0),
@@ -352,6 +380,8 @@ module gcm_aes(
         .i_instance_size(w_s4_instance_size),
         .i_key_schedule(w_s6_key_schedule),
         .i_phase(w_s4_phase),
+        .i_new_instance(w_s4_new_instance),
+        .o_new_instance(w_s4p_new_instance),
         .o_phase(w_s4p_phase),
         .o_h(w_s4p_h),
         .o_encrypted_j0(w_s4p_encrypted_j0),
@@ -377,6 +407,8 @@ module gcm_aes(
         .i_instance_size(w_s4p_instance_size),
         .i_key_schedule(w_s4p_key_schedule),
         .i_phase(w_s4p_phase),
+        .i_new_instance(w_s4p_new_instance),
+        .o_new_instance(w_s5_new_instance),
         .o_phase(w_s5_phase),
         .o_key_schedule(w_s7_key_schedule),
         .o_h(w_s5_h),
@@ -397,6 +429,8 @@ module gcm_aes(
         .i_instance_size(w_s5_instance_size),
         .i_key_schedule(w_s7_key_schedule),
         .i_phase(w_s5_phase),
+        .i_new_instance(w_s5_new_instance),
+        .o_new_instance(w_s5p_new_instance),
         .o_phase(w_s5p_phase),
         .o_key_schedule(w_s5p_key_schedule),
         .o_h(w_s5p_h),
@@ -425,6 +459,8 @@ module gcm_aes(
         .i_encrypted_cb(w_s5p_encrypted_cb),
         .i_key_schedule(w_s5p_key_schedule),
         .i_phase(w_s5p_phase),
+        .i_new_instance(w_s5p_new_instance),
+        .o_new_instance(w_s6_new_instance),
         .o_key_schedule(w_s8_key_schedule),
         .o_phase(w_s6_phase),
         .o_h(w_s6_h),
@@ -442,6 +478,8 @@ module gcm_aes(
         .i_instance_size(w_s6_instance_size),
         .i_key_schedule(w_s8_key_schedule),
         .i_phase(w_s6_phase),
+        .i_new_instance(w_s6_new_instance),
+        .o_new_instance(w_s6p_new_instance),
         .o_key_schedule(w_s6p_key_schedule),
         .o_phase(w_s6p_phase),
         .o_h(w_s6p_h),
@@ -462,6 +500,8 @@ module gcm_aes(
         .i_instance_size(w_s6p_instance_size),
         .i_key_schedule(w_s6p_key_schedule),
         .i_phase(w_s6p_phase),
+        .i_new_instance(w_s6p_new_instance),
+        .o_new_instance(w_s7_new_instance),
         .o_phase(w_s7_phase),
         .o_h(w_s7_h),
         .o_encrypted_j0(w_s7_encrypted_j0),
@@ -478,6 +518,7 @@ module gcm_aes(
         .i_encrypted_j0(w_s7_encrypted_j0),
         .i_instance_size(w_s7_instance_size),
         .i_phase(w_s7_phase),
+        .i_new_instance(w_s7_new_instance),
         .o_phase(w_s8_phase),
         .o_encrypted_j0(w_s8_encrypted_j0),
         .o_instance_size(w_s8_instance_size),

@@ -8,6 +8,8 @@ module aes_pipeline_stage3 (
     i_instance_size,
     i_key_schedule,
     i_phase,
+    i_new_instance,
+    o_new_instance,
     o_phase,
     o_h,
     o_encrypted_j0,
@@ -27,7 +29,9 @@ module aes_pipeline_stage3 (
     input logic [0:127]   i_instance_size;
     input logic [0:1407]  i_key_schedule;
     input logic [0:2]     i_phase;
+    input logic           i_new_instance;
     
+    output logic            o_new_instance;
     output logic [0:2]      o_phase;
     output logic [0:1407]   o_key_schedule;
     output logic [0:127]    o_plain_text;
@@ -37,6 +41,7 @@ module aes_pipeline_stage3 (
     output logic [0:127]    o_encrypted_cb;
     output logic [0:127]    o_instance_size;
     
+    logic           r_new_instance;
     logic [0:127]   r_iv;
     logic [0:1407]  r_key_schedule;
     logic [0:127]   r_plain_text;
@@ -50,6 +55,7 @@ module aes_pipeline_stage3 (
     always_ff @(posedge clk)
     begin
         r_phase         <= i_phase;
+        r_new_instance  <= i_new_instance;
         r_plain_text    <= i_plain_text;
         r_aad           <= i_aad;
         r_h             <= i_h;
@@ -76,5 +82,6 @@ module aes_pipeline_stage3 (
         o_aad = r_aad;
         o_key_schedule = r_key_schedule;
         o_instance_size = r_instance_size;
+        o_new_instance = r_new_instance;
     end
 endmodule
