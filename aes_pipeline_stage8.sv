@@ -62,19 +62,28 @@ module aes_pipeline_stage8(
         r_instance_size <= i_instance_size;
         r_phase         <= i_phase;
 
-        if (r_new_instance == 1)
-        begin
-            r_sblock <= 128'd0;
-        end
-        else
-        begin
-            r_sblock <= w_sblock;
-        end
+        r_sblock        <= w_sblock;
+        //if (r_new_instance == 1)
+        //begin
+        //    r_sblock <= 128'd0;
+        //end
+        //else
+        //begin
+        //    r_sblock <= w_sblock;
+        //end
     end
 
     always_comb
     begin
-        w_sblock = r_sblock;
+        if(r_new_instance == 1)
+        begin 
+             w_sblock = 128'd0;
+        end
+        else
+        begin
+            w_sblock = r_sblock;
+        end
+
         case(r_phase)
             3'b111:   o_tag_ready = 1;
             3'b011:   o_tag_ready = 1;
