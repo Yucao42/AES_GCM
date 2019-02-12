@@ -176,7 +176,6 @@ module gcm_aes(
 
     aes_pipeline_stage1 stage1(
         .clk(clk),
-        .i_cipher_key(i_cipher_key),
         .i_plain_text(i_plain_text),
         .i_aad(i_aad),
         .i_new_instance(i_new_instance),
@@ -184,11 +183,16 @@ module gcm_aes(
         .i_instance_size({i_aad_size, i_plain_text_size}),
         .i_pt_instance(i_pt_instance),
         .o_phase(w_s1_phase),
-        .o_key_schedule(w_s1_key_schedule),
         .o_plain_text(w_s1_plain_text),
         .o_aad(w_s1_aad),
         .o_iv(w_s1_iv),
         .o_instance_size(w_s1_instance_size)
+    );
+
+    aes_key_gen1 keygen0(
+        .clk(clk),
+        .i_key_schedule(i_cipher_key),
+        .o_key_schedule(w_s1_key_schedule)
     );
 
     aes_pipeline_stage2_pre stage2p(

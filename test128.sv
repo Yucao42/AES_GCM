@@ -15,7 +15,8 @@ module testbench(
     logic [0:95]  iv         = 96'd0;
     //logic [0:127] plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
     logic [0:127] plain_text = 128'd0;
-    logic [0:511] aad        = 128'h3AD77BB40D7A3660A89ECAF32466EF97;
+    //logic [0:511] aad        = 128'h3AD77BB40D7A3660A89ECAF32466EF97;
+    logic [0:511] aad        = 128'd0;
     logic [0:511] cipher_text;
 
     logic [0:127] plain_text_block;
@@ -47,9 +48,13 @@ module testbench(
     
     initial
     begin
+        #10 clk = ~clk; // Posedge
+        #10 clk = ~clk;
+        #10 clk = ~clk; // Posedge
         counter = 0;
         aad_block = aad[counter*128+:128];
         new_instance = 1;
+        #10 clk = ~clk; // Posedge
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
         #10 clk = ~clk;
@@ -81,12 +86,8 @@ module testbench(
 		*/
 
         counter = 0;
-        plain_text_block = plain_text[counter*128+:128];
-
-        pt_instance = 1;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
-        pt_instance = 0;
 		/*
         counter = counter + 1;
         plain_text_block = plain_text[counter*128+:128];

@@ -42,9 +42,11 @@ module aes_pipeline_stage1 (
     logic [0:127]   r_instance_size;
     logic           r_new_instance;
     logic           r_pt_instance;
+    logic           r_invalid = 0;
 
     logic [0:127]   r_counter;
-    logic [0:127]   w_counter = 128'd1000;
+    logic [0:127]   w_counter = 128'd100000;
+    logic           w_invalid = 0;
 
     /* Helper variables */
     integer aad_blocks;
@@ -61,11 +63,13 @@ module aes_pipeline_stage1 (
         r_pt_instance   <= i_pt_instance;
 
         r_counter       <= w_counter; // Cycle
+        r_invalid       <= w_invalid; // Cycle
     end
     
     always_comb
     begin
-        o_key_schedule = fn_key_expansion(r_cipher_key, 1407'b0, 1);
+        // Separte key generation with encryption modules
+        //o_key_schedule = fn_key_expansion(r_cipher_key, 1407'b0, 1);
 
         /* Carrying forward register values for subsequent stages */
         o_plain_text    = r_plain_text;
@@ -77,11 +81,16 @@ module aes_pipeline_stage1 (
     end
     
     // Time control logic of state machine
+    // Ethernet frame can be no bigger than 100000 bits
     always_comb
     begin
         if (r_new_instance == 1)
         begin
             w_counter = 0;
+        end
+        else if (r_invalid == 1)
+        begin
+           w_counter = 100000;
         end
         else
         begin
@@ -89,12 +98,13 @@ module aes_pipeline_stage1 (
         end
 
         total_blocks = ((r_instance_size[0:63] + r_instance_size[64:127]) >> 7);
-        aad_blocks = r_instance_size[64:127] >> 7;
+        aad_blocks = r_instance_size[0:63] >> 7;
 
-        if (w_counter > total_blocks - 1)
+        if (w_counter == 100000)
         begin
             // Invalid status
             o_phase = 3'b100;
+            w_invalid = 1;
         end
         else if (w_counter == total_blocks - 1)
         begin
@@ -108,21 +118,25 @@ module aes_pipeline_stage1 (
             begin
                 o_phase = 3'b011;
             end
+            w_invalid = 1;
         end
         else if (w_counter > aad_blocks)
         begin
             // Text block (not the last one) delivering
             o_phase = 3'b001;
+            w_invalid = 0;
         end
         else if (w_counter == aad_blocks)
         begin
             // Text block (the first one) delivering
             o_phase = 3'b000;
+            w_invalid = 0;
         end
         else
         begin
             // AAD delivering
             o_phase = 3'b010;
+            w_invalid = 0;
         end
     end
 

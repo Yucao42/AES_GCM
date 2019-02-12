@@ -1,3 +1,27 @@
+module aes_key_gen1 (
+    clk,
+    i_key_schedule,
+    o_key_schedule,
+);
+
+    input logic           clk;
+    input logic [0:1407]  i_key_schedule;
+
+    output logic [0:1407]  o_key_schedule;
+
+    logic [0:1407]  r_key_schedule;
+
+    always_ff @(posedge clk)
+    begin
+        r_key_schedule <= i_key_schedule;
+    end
+    
+    always_comb
+    begin
+        o_key_schedule = fn_key_expansion(r_key_schedule, 1407'b0, 1);
+    end
+endmodule
+
 module aes_key_gen2 (
     clk,
     i_key_schedule,
