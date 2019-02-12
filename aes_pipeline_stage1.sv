@@ -46,7 +46,7 @@ module aes_pipeline_stage1 (
 
     logic [0:127]   r_counter;
     logic [0:127]   w_counter = 128'd100000;
-    logic           w_invalid = 0;
+    logic           w_invalid = 1;
 
     /* Helper variables */
     integer aad_blocks;
@@ -134,7 +134,7 @@ module aes_pipeline_stage1 (
         end
         else
         begin
-            // AAD delivering
+            // AAD delivering (invalid)
             o_phase = 3'b010;
             w_invalid = 0;
         end
