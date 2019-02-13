@@ -36,7 +36,7 @@ module testbench(
         .i_plain_text(plain_text),
         .i_aad(aad_block),
         .i_plain_text_size(64'd128),
-        .i_aad_size(64'd0),
+        .i_aad_size(64'd128),
         .o_cipher_text(cipher_text_block),
         .o_tag(tag),
         .o_tag_ready(tag_ready),
@@ -183,7 +183,6 @@ module testbench(
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
 		*/
-        pt_instance = 1;
         counter = 0;
         plain_text_block = plain_text[counter*128+:128];
         #10 clk = ~clk; // Posedge

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Tue Feb  5 16:18:43 2019
+| Date         : Wed Feb 13 11:05:56 2019
 | Host         : cyclops running 64-bit Ubuntu 16.04.5 LTS
 | Command      : report_utilization -hierarchical -file ./reports/synth_utilization_report_submodule.txt
 | Design       : aes
@@ -21,11 +21,12 @@ Table of Contents
 +------------------------+-------------------------+------------+------------+---------+------+-------+--------+--------+--------------+
 |        Instance        |          Module         | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs  | RAMB36 | RAMB18 | DSP48 Blocks |
 +------------------------+-------------------------+------------+------------+---------+------+-------+--------+--------+--------------+
-| aes                    |                   (top) |      26786 |      26399 |       0 |  387 | 10142 |      0 |    223 |            0 |
+| aes                    |                   (top) |      26759 |      26371 |       0 |  388 | 10146 |      0 |    223 |            0 |
 |   (aes)                |                   (top) |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
 |   clk_gen_instance     |                 clk_gen |          0 |          0 |       0 |    0 |     0 |      0 |      0 |            0 |
-|   gcm_aes_instance     |                 gcm_aes |      26786 |      26399 |       0 |  387 | 10142 |      0 |    223 |            0 |
-|     (gcm_aes_instance) |                 gcm_aes |        640 |        640 |       0 |    0 |     0 |      0 |      0 |            0 |
+|   gcm_aes_instance     |                 gcm_aes |      26759 |      26371 |       0 |  388 | 10146 |      0 |    223 |            0 |
+|     (gcm_aes_instance) |                 gcm_aes |        641 |        641 |       0 |    0 |     0 |      0 |      0 |            0 |
+|     keygen0            |            aes_key_gen1 |        416 |        416 |       0 |    0 |   128 |      0 |      0 |            0 |
 |     keygen1            |            aes_key_gen2 |        252 |        252 |       0 |    0 |   160 |      0 |      0 |            0 |
 |     keygen2            |            aes_key_gen3 |        412 |        284 |       0 |  128 |   320 |      0 |      0 |            0 |
 |     keygen3            |            aes_key_gen4 |        288 |        288 |       0 |    0 |   352 |      0 |      0 |            0 |
@@ -34,9 +35,9 @@ Table of Contents
 |     keygen6            |            aes_key_gen7 |        132 |        132 |       0 |    0 |   448 |      0 |      0 |            0 |
 |     keygen7            |            aes_key_gen8 |        160 |        160 |       0 |    0 |   480 |      0 |      0 |            0 |
 |     pass6              |      aes_signal_passing |          0 |          0 |       0 |    0 |   256 |      0 |      0 |            0 |
-|     stage1             |     aes_pipeline_stage1 |        898 |        898 |       0 |    0 |   609 |      0 |      0 |            0 |
+|     stage1             |     aes_pipeline_stage1 |        449 |        449 |       0 |    0 |   484 |      0 |      0 |            0 |
 |     stage2             |     aes_pipeline_stage2 |        273 |        273 |       0 |    0 |   355 |      0 |      8 |            0 |
-|     stage2p            | aes_pipeline_stage2_pre |        176 |        176 |       0 |    0 |   355 |      0 |      8 |            0 |
+|     stage2p            | aes_pipeline_stage2_pre |        177 |        177 |       0 |    0 |   355 |      0 |      8 |            0 |
 |     stage3             |     aes_pipeline_stage3 |        590 |        590 |       0 |    0 |   400 |      0 |     23 |            0 |
 |     stage3p            | aes_pipeline_stage3_pre |       1865 |       1865 |       0 |    0 |   736 |      0 |      8 |            0 |
 |     stage4             |     aes_pipeline_stage4 |        528 |        528 |       0 |    0 |   384 |      0 |     24 |            0 |
@@ -45,9 +46,9 @@ Table of Contents
 |     stage5p            | aes_pipeline_stage5_pre |        528 |        528 |       0 |    0 |   384 |      0 |     24 |            0 |
 |     stage6             |     aes_pipeline_stage6 |        480 |        480 |       0 |    0 |   384 |      0 |     24 |            0 |
 |     stage6p            | aes_pipeline_stage6_pre |        656 |        528 |       0 |  128 |   640 |      0 |     24 |            0 |
-|     stage7             |     aes_pipeline_stage7 |        387 |        256 |       0 |  131 |   384 |      0 |     16 |            0 |
+|     stage7             |     aes_pipeline_stage7 |        388 |        256 |       0 |  132 |   384 |      0 |     16 |            0 |
 |     stage7p            | aes_pipeline_stage7_pre |        352 |        352 |       0 |    0 |   512 |      0 |     16 |            0 |
-|     stage8             |     aes_pipeline_stage8 |       8889 |       8889 |       0 |    0 |   517 |      0 |      0 |            0 |
+|     stage8             |     aes_pipeline_stage8 |       8892 |       8892 |       0 |    0 |   518 |      0 |      0 |            0 |
 |     stage9             |     aes_pipeline_stage9 |       7964 |       7964 |       0 |    0 |   514 |      0 |      0 |            0 |
 +------------------------+-------------------------+------------+------------+---------+------+-------+--------+--------+--------------+
 

@@ -38,11 +38,11 @@ Starting synth_design
 Using part: xc7vx690tffg1761-3
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx690t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx690t'
-INFO: [Common 17-86] Your Synthesis license expires in 11 day(s)
+INFO: [Common 17-86] Your Synthesis license expires in 3 day(s)
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 25218 
-WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:18]
-WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:18]
+INFO: Helper process launched with PID 12789 
+WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:20]
+WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:20]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:4]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:28]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:52]
@@ -52,9 +52,10 @@ WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/a
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:148]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:172]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:196]
+WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:220]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes.v:11]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1163.332 ; gain = 234.113 ; free physical = 58083 ; free virtual = 62901
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1163.332 ; gain = 234.113 ; free physical = 57599 ; free virtual = 62855
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'aes' [/home/yu/aes/AES_GCM/aes.v:4]
 INFO: [Synth 8-638] synthesizing module 'clk_gen' [/home/yu/aes/AES_GCM/clk_gen.sv:1]
@@ -119,142 +120,147 @@ INFO: [Synth 8-638] synthesizing module 'BUFG' [/home/yu/Vivado/2016.4/scripts/r
 INFO: [Synth 8-256] done synthesizing module 'BUFG' (3#1) [/home/yu/Vivado/2016.4/scripts/rt/data/unisim_comp.v:607]
 INFO: [Synth 8-256] done synthesizing module 'clk_gen' (4#1) [/home/yu/aes/AES_GCM/clk_gen.sv:1]
 INFO: [Synth 8-638] synthesizing module 'gcm_aes' [/home/yu/aes/AES_GCM/gcm_aes.sv:9]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:42]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:45]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:50]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:53]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:59]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:57]
 INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:60]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:69]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:70]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:79]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:65]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:68]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:74]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:75]
 INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:84]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:89]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:90]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:85]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:94]
 INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:99]
 INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:104]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:109]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:110]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:105]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:114]
 INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:119]
 INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:124]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:129]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:130]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:125]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:134]
 INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:139]
 INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:144]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:149]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:150]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:163]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:145]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:154]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:159]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:164]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:165]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:178]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage1' [/home/yu/aes/AES_GCM/aes_pipeline_stage1.sv:1]
-INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
+WARNING: [Synth 8-3848] Net o_key_schedule in module/entity aes_pipeline_stage1 does not have driver. [/home/yu/aes/AES_GCM/aes_pipeline_stage1.sv:35]
 INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage1' (5#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage1.sv:1]
-WARNING: [Synth 8-350] instance 'stage1' of module 'aes_pipeline_stage1' requires 16 connections, but only 14 given [/home/yu/aes/AES_GCM/gcm_aes.sv:177]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage2_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage2_pre.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage2_pre' (6#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage2_pre.sv:1]
-WARNING: [Synth 8-350] instance 'stage2p' of module 'aes_pipeline_stage2_pre' requires 14 connections, but only 13 given [/home/yu/aes/AES_GCM/gcm_aes.sv:194]
-INFO: [Synth 8-638] synthesizing module 'aes_key_gen2' [/home/yu/aes/AES_GCM/aes_key_gen.sv:1]
+WARNING: [Synth 8-350] instance 'stage1' of module 'aes_pipeline_stage1' requires 16 connections, but only 13 given [/home/yu/aes/AES_GCM/gcm_aes.sv:192]
+INFO: [Synth 8-638] synthesizing module 'aes_key_gen1' [/home/yu/aes/AES_GCM/aes_key_gen.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:5]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen2' (7#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:1]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage2' [/home/yu/aes/AES_GCM/aes_pipeline_stage2.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage2' (8#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage2.sv:1]
-WARNING: [Synth 8-350] instance 'stage2' of module 'aes_pipeline_stage2' requires 16 connections, but only 15 given [/home/yu/aes/AES_GCM/gcm_aes.sv:216]
-INFO: [Synth 8-638] synthesizing module 'aes_key_gen3' [/home/yu/aes/AES_GCM/aes_key_gen.sv:25]
+WARNING: [Synth 8-3936] Found unconnected internal register 'r_key_schedule_reg' and it is trimmed from '1408' to '128' bits. [/home/yu/aes/AES_GCM/aes_key_gen.sv:16]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen1' (6#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:1]
+WARNING: [Synth 8-689] width (128) of port connection 'i_key_schedule' does not match port width (1408) of module 'aes_key_gen1' [/home/yu/aes/AES_GCM/gcm_aes.sv:210]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage2_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage2_pre.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage2_pre' (7#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage2_pre.sv:1]
+WARNING: [Synth 8-350] instance 'stage2p' of module 'aes_pipeline_stage2_pre' requires 16 connections, but only 15 given [/home/yu/aes/AES_GCM/gcm_aes.sv:214]
+INFO: [Synth 8-638] synthesizing module 'aes_key_gen2' [/home/yu/aes/AES_GCM/aes_key_gen.sv:25]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:29]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen3' (9#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:25]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage3_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage3_pre.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage3_pre' (10#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage3_pre.sv:1]
-WARNING: [Synth 8-350] instance 'stage3p' of module 'aes_pipeline_stage3_pre' requires 17 connections, but only 16 given [/home/yu/aes/AES_GCM/gcm_aes.sv:241]
-INFO: [Synth 8-638] synthesizing module 'aes_key_gen4' [/home/yu/aes/AES_GCM/aes_key_gen.sv:49]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen2' (8#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:25]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage2' [/home/yu/aes/AES_GCM/aes_pipeline_stage2.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage2' (9#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage2.sv:1]
+WARNING: [Synth 8-350] instance 'stage2' of module 'aes_pipeline_stage2' requires 18 connections, but only 17 given [/home/yu/aes/AES_GCM/gcm_aes.sv:238]
+INFO: [Synth 8-638] synthesizing module 'aes_key_gen3' [/home/yu/aes/AES_GCM/aes_key_gen.sv:49]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:53]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen4' (11#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:49]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage3' [/home/yu/aes/AES_GCM/aes_pipeline_stage3.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage3' (12#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage3.sv:1]
-WARNING: [Synth 8-350] instance 'stage3' of module 'aes_pipeline_stage3' requires 17 connections, but only 16 given [/home/yu/aes/AES_GCM/gcm_aes.sv:266]
-INFO: [Synth 8-638] synthesizing module 'aes_key_gen5' [/home/yu/aes/AES_GCM/aes_key_gen.sv:73]
-INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
-INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen3' (10#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:49]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage3_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage3_pre.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage3_pre' (11#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage3_pre.sv:1]
+WARNING: [Synth 8-350] instance 'stage3p' of module 'aes_pipeline_stage3_pre' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:265]
+INFO: [Synth 8-638] synthesizing module 'aes_key_gen4' [/home/yu/aes/AES_GCM/aes_key_gen.sv:73]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:77]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen5' (13#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:73]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage4_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage4_pre.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage4_pre' (14#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage4_pre.sv:1]
-WARNING: [Synth 8-350] instance 'stage4p' of module 'aes_pipeline_stage4_pre' requires 17 connections, but only 16 given [/home/yu/aes/AES_GCM/gcm_aes.sv:291]
-INFO: [Synth 8-638] synthesizing module 'aes_key_gen6' [/home/yu/aes/AES_GCM/aes_key_gen.sv:97]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen4' (12#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:73]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage3' [/home/yu/aes/AES_GCM/aes_pipeline_stage3.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage3' (13#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage3.sv:1]
+WARNING: [Synth 8-350] instance 'stage3' of module 'aes_pipeline_stage3' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:292]
+INFO: [Synth 8-638] synthesizing module 'aes_key_gen5' [/home/yu/aes/AES_GCM/aes_key_gen.sv:97]
+INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:101]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen6' (15#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:97]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage4' [/home/yu/aes/AES_GCM/aes_pipeline_stage4.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage4' (16#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage4.sv:1]
-WARNING: [Synth 8-350] instance 'stage4' of module 'aes_pipeline_stage4' requires 17 connections, but only 16 given [/home/yu/aes/AES_GCM/gcm_aes.sv:316]
-INFO: [Synth 8-638] synthesizing module 'aes_key_gen7' [/home/yu/aes/AES_GCM/aes_key_gen.sv:121]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen5' (14#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:97]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage4_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage4_pre.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage4_pre' (15#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage4_pre.sv:1]
+WARNING: [Synth 8-350] instance 'stage4p' of module 'aes_pipeline_stage4_pre' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:319]
+INFO: [Synth 8-638] synthesizing module 'aes_key_gen6' [/home/yu/aes/AES_GCM/aes_key_gen.sv:121]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:125]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen7' (17#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:121]
-INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage5_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:1]
-WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:19]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage5_pre' (18#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:1]
-WARNING: [Synth 8-350] instance 'stage5p' of module 'aes_pipeline_stage5_pre' requires 17 connections, but only 16 given [/home/yu/aes/AES_GCM/gcm_aes.sv:341]
-INFO: [Synth 8-638] synthesizing module 'aes_key_gen8' [/home/yu/aes/AES_GCM/aes_key_gen.sv:145]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen6' (16#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:121]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage4' [/home/yu/aes/AES_GCM/aes_pipeline_stage4.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage4' (17#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage4.sv:1]
+WARNING: [Synth 8-350] instance 'stage4' of module 'aes_pipeline_stage4' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:346]
+INFO: [Synth 8-638] synthesizing module 'aes_key_gen7' [/home/yu/aes/AES_GCM/aes_key_gen.sv:145]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:149]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen8' (19#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:145]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen7' (18#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:145]
+INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage5_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:1]
+WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:21]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage5_pre' (19#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:1]
+WARNING: [Synth 8-350] instance 'stage5p' of module 'aes_pipeline_stage5_pre' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:373]
+INFO: [Synth 8-638] synthesizing module 'aes_key_gen8' [/home/yu/aes/AES_GCM/aes_key_gen.sv:169]
+INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
+INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
+WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:173]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen8' (20#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:169]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage5' [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:1]
-WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:19]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage5' (20#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:1]
+WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:21]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage5' (21#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:1]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage6_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage6_pre.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage6_pre' (21#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage6_pre.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage6_pre' (22#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage6_pre.sv:1]
 INFO: [Synth 8-638] synthesizing module 'aes_signal_passing' [/home/yu/aes/AES_GCM/aes_signal_passing.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_signal_passing' (22#1) [/home/yu/aes/AES_GCM/aes_signal_passing.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_signal_passing' (23#1) [/home/yu/aes/AES_GCM/aes_signal_passing.sv:1]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage6' [/home/yu/aes/AES_GCM/aes_pipeline_stage6.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage6' (23#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage6.sv:1]
-WARNING: [Synth 8-350] instance 'stage6' of module 'aes_pipeline_stage6' requires 17 connections, but only 11 given [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage6' (24#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage6.sv:1]
+WARNING: [Synth 8-350] instance 'stage6' of module 'aes_pipeline_stage6' requires 19 connections, but only 13 given [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage7_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage7_pre.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage7_pre' (24#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage7_pre.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage7_pre' (25#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage7_pre.sv:1]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage7' [/home/yu/aes/AES_GCM/aes_pipeline_stage7.sv:1]
-WARNING: [Synth 8-3936] Found unconnected internal register 'r_key_schedule_reg' and it is trimmed from '1408' to '128' bits. [/home/yu/aes/AES_GCM/aes_pipeline_stage7.sv:56]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage7' (25#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage7.sv:1]
+WARNING: [Synth 8-3936] Found unconnected internal register 'r_key_schedule_reg' and it is trimmed from '1408' to '128' bits. [/home/yu/aes/AES_GCM/aes_pipeline_stage7.sv:61]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage7' (26#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage7.sv:1]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage8' [/home/yu/aes/AES_GCM/aes_pipeline_stage8.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage8' (26#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage8.sv:1]
-WARNING: [Synth 8-350] instance 'stage8' of module 'aes_pipeline_stage8' requires 15 connections, but only 14 given [/home/yu/aes/AES_GCM/gcm_aes.sv:469]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage8' (27#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage8.sv:1]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage9' [/home/yu/aes/AES_GCM/aes_pipeline_stage9.sv:1]
 WARNING: [Synth 8-3936] Found unconnected internal register 'r_phase_reg' and it is trimmed from '3' to '1' bits. [/home/yu/aes/AES_GCM/aes_pipeline_stage9.sv:45]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage9' (27#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage9.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'gcm_aes' (28#1) [/home/yu/aes/AES_GCM/gcm_aes.sv:9]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage9' (28#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage9.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'gcm_aes' (29#1) [/home/yu/aes/AES_GCM/gcm_aes.sv:9]
 WARNING: [Synth 8-350] instance 'gcm_aes_instance' of module 'gcm_aes' requires 13 connections, but only 12 given [/home/yu/aes/AES_GCM/aes.v:45]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes.v:12]
-INFO: [Synth 8-256] done synthesizing module 'aes' (29#1) [/home/yu/aes/AES_GCM/aes.v:4]
+INFO: [Synth 8-256] done synthesizing module 'aes' (30#1) [/home/yu/aes/AES_GCM/aes.v:4]
 WARNING: [Synth 8-3331] design aes_pipeline_stage9 has unconnected port i_phase[0]
 WARNING: [Synth 8-3331] design aes_pipeline_stage9 has unconnected port i_phase[1]
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[0]
@@ -357,7 +363,7 @@ WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_sc
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[97]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1925.840 ; gain = 996.621 ; free physical = 57302 ; free virtual = 62140
+Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1926.840 ; gain = 997.621 ; free physical = 56811 ; free virtual = 62087
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -366,109 +372,109 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[0] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[1] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[2] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[3] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[4] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[5] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[6] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[7] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[8] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[9] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[10] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[11] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[12] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[13] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[14] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[15] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[16] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[17] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[18] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[19] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[20] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[21] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[22] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[23] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[24] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[25] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[26] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[27] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[28] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[29] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[30] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[31] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[32] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[33] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[34] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[35] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[36] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[37] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[38] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[39] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[40] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[41] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[42] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[43] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[44] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[45] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[46] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[47] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[48] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[49] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[50] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[51] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[52] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[53] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[54] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[55] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[56] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[57] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[58] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[59] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[60] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[61] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[62] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[63] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[64] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[65] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[66] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[67] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[68] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[69] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[70] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[71] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[72] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[73] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[74] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[75] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[76] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[77] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[78] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[79] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[80] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[81] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[82] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[83] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[84] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[85] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[86] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[87] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[88] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[89] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[90] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[91] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[92] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[93] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[94] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[95] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[96] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[97] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[98] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[99] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:417]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[0] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[1] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[2] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[3] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[4] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[5] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[6] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[7] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[8] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[9] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[10] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[11] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[12] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[13] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[14] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[15] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[16] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[17] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[18] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[19] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[20] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[21] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[22] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[23] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[24] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[25] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[26] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[27] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[28] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[29] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[30] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[31] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[32] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[33] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[34] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[35] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[36] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[37] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[38] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[39] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[40] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[41] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[42] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[43] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[44] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[45] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[46] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[47] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[48] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[49] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[50] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[51] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[52] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[53] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[54] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[55] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[56] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[57] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[58] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[59] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[60] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[61] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[62] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[63] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[64] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[65] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[66] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[67] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[68] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[69] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[70] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[71] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[72] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[73] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[74] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[75] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[76] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[77] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[78] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[79] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[80] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[81] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[82] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[83] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[84] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[85] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[86] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[87] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[88] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[89] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[90] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[91] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[92] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[93] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[94] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[95] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[96] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[97] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[98] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
+WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[99] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:455]
 INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1925.840 ; gain = 996.621 ; free physical = 57304 ; free virtual = 62142
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1926.840 ; gain = 997.621 ; free physical = 56811 ; free virtual = 62086
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -577,26 +583,26 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2357.395 ; gain = 0.000 ; free physical = 57018 ; free virtual = 61856
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2358.395 ; gain = 0.000 ; free physical = 56525 ; free virtual = 61801
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:48 ; elapsed = 00:00:47 . Memory (MB): peak = 2357.395 ; gain = 1428.176 ; free physical = 57015 ; free virtual = 61853
+Finished Constraint Validation : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 2358.395 ; gain = 1429.176 ; free physical = 56356 ; free virtual = 61632
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7vx690tffg1761-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:48 ; elapsed = 00:00:47 . Memory (MB): peak = 2357.395 ; gain = 1428.176 ; free physical = 57015 ; free virtual = 61853
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 2358.395 ; gain = 1429.176 ; free physical = 56356 ; free virtual = 61632
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:47 . Memory (MB): peak = 2357.395 ; gain = 1428.176 ; free physical = 57015 ; free virtual = 61853
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 2358.395 ; gain = 1429.176 ; free physical = 56356 ; free virtual = 61632
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "o_tag_ready" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:40 ; elapsed = 00:01:40 . Memory (MB): peak = 2357.395 ; gain = 1428.176 ; free physical = 56972 ; free virtual = 61809
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:44 ; elapsed = 00:01:44 . Memory (MB): peak = 2358.395 ; gain = 1429.176 ; free physical = 55370 ; free virtual = 60646
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -604,37 +610,37 @@ Report RTL Partitions:
 |      |RTL Partition            |Replication |Instances |
 +------+-------------------------+------------+----------+
 |1     |clk_gen__GC0             |           1|         3|
-|2     |aes_pipeline_stage8__GB0 |           1|     40141|
+|2     |aes_pipeline_stage8__GB0 |           1|     40270|
 |3     |aes_pipeline_stage8__GB1 |           1|     10422|
 |4     |aes_pipeline_stage9__GB0 |           1|     40268|
 |5     |aes_pipeline_stage9__GB1 |           1|     10036|
-|6     |gcm_aes__GCB0            |           1|     29214|
-|7     |gcm_aes__GCB1            |           1|     11131|
-|8     |gcm_aes__GCB2            |           1|     22425|
-|9     |gcm_aes__GCB3            |           1|     22218|
-|10    |gcm_aes__GCB4            |           1|     24620|
+|6     |gcm_aes__GCB0            |           1|     28901|
+|7     |gcm_aes__GCB1            |           1|     11132|
+|8     |gcm_aes__GCB2            |           1|     22427|
+|9     |gcm_aes__GCB3            |           1|     22220|
+|10    |gcm_aes__GCB4            |           1|     24624|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage2_pre.sv:46]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:16]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage2.sv:53]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage2_pre.sv:51]
 INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:40]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage3_pre.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage3.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage2.sv:58]
 INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:64]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage4.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:112]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage4_pre.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage3_pre.sv:63]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage3.sv:64]
 INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:88]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:160]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage4.sv:63]
 INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:136]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage7_pre.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage6.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage6_pre.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage4_pre.sv:63]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:112]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:63]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:184]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:63]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:160]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage7_pre.sv:63]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage6.sv:63]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage6_pre.sv:63]
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input    128 Bit       Adders := 2     
@@ -652,11 +658,11 @@ Detailed RTL Component Info :
 	               96 Bit    Registers := 3     
 	                8 Bit    Registers := 448   
 	                3 Bit    Registers := 13    
-	                1 Bit    Registers := 5     
+	                1 Bit    Registers := 18    
 +---ROMs : 
 	                              ROMs := 448   
 +---Muxes : 
-	   2 Input    128 Bit        Muxes := 512   
+	   2 Input    128 Bit        Muxes := 514   
 	   3 Input    128 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
 	   3 Input      3 Bit        Muxes := 1     
@@ -668,24 +674,24 @@ Finished RTL Component Statistics
 ---------------------------------------------------------------------------------
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage2_pre.sv:46]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:16]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage2.sv:53]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage2_pre.sv:51]
 INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:40]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage3_pre.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage3.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage2.sv:58]
 INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:64]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage4.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:112]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage4_pre.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage3_pre.sv:63]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage3.sv:64]
 INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:88]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:160]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage4.sv:63]
 INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:136]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage7_pre.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage6.sv:58]
-INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage6_pre.sv:58]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage4_pre.sv:63]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:112]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:63]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:184]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:63]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_key_gen.sv:160]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage7_pre.sv:63]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage6.sv:63]
+INFO: [Synth 8-3538] Detected potentially large (wide) register r_key_schedule_reg [/home/yu/aes/AES_GCM/aes_pipeline_stage6_pre.sv:63]
 Hierarchical RTL Component report 
 Module aes_pipeline_stage8 
 Detailed RTL Component Info : 
@@ -696,7 +702,7 @@ Detailed RTL Component Info :
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input    128 Bit        Muxes := 256   
+	   2 Input    128 Bit        Muxes := 257   
 	   3 Input      1 Bit        Muxes := 1     
 Module aes_pipeline_stage9 
 Detailed RTL Component Info : 
@@ -713,17 +719,22 @@ Detailed RTL Component Info :
 	   2 Input    128 Bit       Adders := 2     
 	   2 Input     64 Bit       Adders := 1     
 	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	              128 Bit    Registers := 4     
+	               96 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+Module aes_key_gen1 
+Detailed RTL Component Info : 
 +---XORs : 
 	   2 Input     32 Bit         XORs := 3     
 	   3 Input     32 Bit         XORs := 2     
 +---Registers : 
-	              128 Bit    Registers := 5     
-	               96 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input      3 Bit        Muxes := 1     
-	   3 Input      3 Bit        Muxes := 1     
-	   3 Input      2 Bit        Muxes := 1     
+	              128 Bit    Registers := 1     
 Module aes_pipeline_stage2_pre 
 Detailed RTL Component Info : 
 +---XORs : 
@@ -735,6 +746,7 @@ Detailed RTL Component Info :
 	               96 Bit    Registers := 1     
 	                8 Bit    Registers := 16    
 	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 16    
 Module aes_key_gen2 
@@ -757,6 +769,7 @@ Detailed RTL Component Info :
 	               96 Bit    Registers := 1     
 	                8 Bit    Registers := 16    
 	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 16    
 +---Muxes : 
@@ -778,6 +791,7 @@ Detailed RTL Component Info :
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 16    
 	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 16    
 Module aes_pipeline_stage3 
@@ -790,6 +804,7 @@ Detailed RTL Component Info :
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 48    
 	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 48    
 Module aes_key_gen4 
@@ -809,6 +824,7 @@ Detailed RTL Component Info :
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 48    
 	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 48    
 Module aes_key_gen6 
@@ -828,6 +844,7 @@ Detailed RTL Component Info :
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 48    
 	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 48    
 Module aes_key_gen5 
@@ -847,6 +864,7 @@ Detailed RTL Component Info :
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 48    
 	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 48    
 Module aes_key_gen8 
@@ -866,6 +884,7 @@ Detailed RTL Component Info :
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 48    
 	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 48    
 Module aes_key_gen7 
@@ -884,6 +903,7 @@ Detailed RTL Component Info :
 	              128 Bit    Registers := 7     
 	                8 Bit    Registers := 32    
 	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 32    
 Module aes_pipeline_stage7_pre 
@@ -896,6 +916,7 @@ Detailed RTL Component Info :
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 32    
 	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 32    
 Module aes_pipeline_stage6 
@@ -908,6 +929,7 @@ Detailed RTL Component Info :
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 48    
 	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 48    
 Module aes_signal_passing 
@@ -924,6 +946,7 @@ Detailed RTL Component Info :
 	              128 Bit    Registers := 6     
 	                8 Bit    Registers := 48    
 	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 48    
 ---------------------------------------------------------------------------------
@@ -942,35 +965,36 @@ INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'r_cipher_key_reg[0:127]' into 'r_cipher_key_reg[0:127]' [/home/yu/aes/AES_GCM/aes_pipeline_stage1.sv:55]
-INFO: [Synth 8-3886] merging instance 'stage1/B[1]__2' (FD) to 'stage1/r_cipher_key_reg[98]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[0]' (FD) to 'stage1/r_cipher_key_reg[99]'
-INFO: [Synth 8-3886] merging instance 'stage1/C[3]' (FD) to 'stage1/r_cipher_key_reg[100]'
-INFO: [Synth 8-3886] merging instance 'stage1/C[2]' (FD) to 'stage1/r_cipher_key_reg[101]'
-INFO: [Synth 8-3886] merging instance 'stage1/C[1]' (FD) to 'stage1/r_cipher_key_reg[102]'
-INFO: [Synth 8-3886] merging instance 'stage1/C[0]' (FD) to 'stage1/r_cipher_key_reg[103]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[1]' (FD) to 'stage1/r_cipher_key_reg[122]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[0]__0' (FD) to 'stage1/r_cipher_key_reg[123]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[1]__0' (FD) to 'stage1/r_cipher_key_reg[114]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[0]__1' (FD) to 'stage1/r_cipher_key_reg[115]'
-INFO: [Synth 8-3886] merging instance 'stage1/C[3]__0' (FD) to 'stage1/r_cipher_key_reg[116]'
-INFO: [Synth 8-3886] merging instance 'stage1/C[2]__0' (FD) to 'stage1/r_cipher_key_reg[117]'
-INFO: [Synth 8-3886] merging instance 'stage1/C[1]__0' (FD) to 'stage1/r_cipher_key_reg[118]'
-INFO: [Synth 8-3886] merging instance 'stage1/C[0]__0' (FD) to 'stage1/r_cipher_key_reg[119]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[1]__1' (FD) to 'stage1/r_cipher_key_reg[106]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[0]__2' (FD) to 'stage1/r_cipher_key_reg[107]'
-INFO: [Synth 8-3886] merging instance 'stage1/C[3]__1' (FD) to 'stage1/r_cipher_key_reg[108]'
-INFO: [Synth 8-3886] merging instance 'stage1/C[2]__1' (FD) to 'stage1/r_cipher_key_reg[109]'
-INFO: [Synth 8-3886] merging instance 'stage1/C[1]__1' (FD) to 'stage1/r_cipher_key_reg[110]'
-INFO: [Synth 8-3886] merging instance 'stage1/C[0]__1' (FD) to 'stage1/r_cipher_key_reg[111]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[2]' (FD) to 'stage1/r_cipher_key_reg[97]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[3]' (FD) to 'stage1/r_cipher_key_reg[96]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[2]__0' (FD) to 'stage1/r_cipher_key_reg[121]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[3]__0' (FD) to 'stage1/r_cipher_key_reg[120]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[2]__1' (FD) to 'stage1/r_cipher_key_reg[113]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[3]__1' (FD) to 'stage1/r_cipher_key_reg[112]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[2]__2' (FD) to 'stage1/r_cipher_key_reg[105]'
-INFO: [Synth 8-3886] merging instance 'stage1/B[3]__2' (FD) to 'stage1/r_cipher_key_reg[104]'
+INFO: [Synth 8-4471] merging register 'r_key_schedule_reg[1280:1407]' into 'r_key_schedule_reg[1280:1407]' [/home/yu/aes/AES_GCM/aes_key_gen.sv:16]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'keygen0/B[1]__2' (FD) to 'keygen0/r_key_schedule_reg[1378]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[0]' (FD) to 'keygen0/r_key_schedule_reg[1379]'
+INFO: [Synth 8-3886] merging instance 'keygen0/C[3]' (FD) to 'keygen0/r_key_schedule_reg[1380]'
+INFO: [Synth 8-3886] merging instance 'keygen0/C[2]' (FD) to 'keygen0/r_key_schedule_reg[1381]'
+INFO: [Synth 8-3886] merging instance 'keygen0/C[1]' (FD) to 'keygen0/r_key_schedule_reg[1382]'
+INFO: [Synth 8-3886] merging instance 'keygen0/C[0]' (FD) to 'keygen0/r_key_schedule_reg[1383]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[1]' (FD) to 'keygen0/r_key_schedule_reg[1402]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[0]__0' (FD) to 'keygen0/r_key_schedule_reg[1403]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[1]__0' (FD) to 'keygen0/r_key_schedule_reg[1394]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[0]__1' (FD) to 'keygen0/r_key_schedule_reg[1395]'
+INFO: [Synth 8-3886] merging instance 'keygen0/C[3]__0' (FD) to 'keygen0/r_key_schedule_reg[1396]'
+INFO: [Synth 8-3886] merging instance 'keygen0/C[2]__0' (FD) to 'keygen0/r_key_schedule_reg[1397]'
+INFO: [Synth 8-3886] merging instance 'keygen0/C[1]__0' (FD) to 'keygen0/r_key_schedule_reg[1398]'
+INFO: [Synth 8-3886] merging instance 'keygen0/C[0]__0' (FD) to 'keygen0/r_key_schedule_reg[1399]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[1]__1' (FD) to 'keygen0/r_key_schedule_reg[1386]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[0]__2' (FD) to 'keygen0/r_key_schedule_reg[1387]'
+INFO: [Synth 8-3886] merging instance 'keygen0/C[3]__1' (FD) to 'keygen0/r_key_schedule_reg[1388]'
+INFO: [Synth 8-3886] merging instance 'keygen0/C[2]__1' (FD) to 'keygen0/r_key_schedule_reg[1389]'
+INFO: [Synth 8-3886] merging instance 'keygen0/C[1]__1' (FD) to 'keygen0/r_key_schedule_reg[1390]'
+INFO: [Synth 8-3886] merging instance 'keygen0/C[0]__1' (FD) to 'keygen0/r_key_schedule_reg[1391]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[2]' (FD) to 'keygen0/r_key_schedule_reg[1377]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[3]' (FD) to 'keygen0/r_key_schedule_reg[1376]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[2]__0' (FD) to 'keygen0/r_key_schedule_reg[1401]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[3]__0' (FD) to 'keygen0/r_key_schedule_reg[1400]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[2]__1' (FD) to 'keygen0/r_key_schedule_reg[1393]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[3]__1' (FD) to 'keygen0/r_key_schedule_reg[1392]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[2]__2' (FD) to 'keygen0/r_key_schedule_reg[1385]'
+INFO: [Synth 8-3886] merging instance 'keygen0/B[3]__2' (FD) to 'keygen0/r_key_schedule_reg[1384]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (stage3p/\r_j0_reg[98] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (stage3p/\r_j0_reg[99] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (stage3p/\r_j0_reg[100] )
@@ -1210,7 +1234,7 @@ INFO: [Synth 8-3886] merging instance 'B[3]__2' (FD) to 'keygen4/r_key_schedule_
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:36 ; elapsed = 00:03:14 . Memory (MB): peak = 2396.379 ; gain = 1467.160 ; free physical = 51384 ; free virtual = 56230
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:32 ; elapsed = 00:03:12 . Memory (MB): peak = 2391.379 ; gain = 1462.160 ; free physical = 49681 ; free virtual = 54966
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1220,14 +1244,14 @@ ROM:
 +------------------------+-----------------------------+---------------+----------------+
 |Module Name             | RTL Object                  | Depth x Width | Implemented As | 
 +------------------------+-----------------------------+---------------+----------------+
-|aes_pipeline_stage1     | sbox                        | 256x8         | LUT            | 
-|aes_pipeline_stage1     | sbox                        | 256x8         | LUT            | 
-|aes_pipeline_stage1     | sbox                        | 256x8         | LUT            | 
-|aes_pipeline_stage1     | sbox                        | 256x8         | LUT            | 
-|aes_pipeline_stage1     | sbox                        | 256x8         | LUT            | 
-|aes_pipeline_stage1     | sbox                        | 256x8         | LUT            | 
-|aes_pipeline_stage1     | sbox                        | 256x8         | LUT            | 
-|aes_pipeline_stage1     | sbox                        | 256x8         | LUT            | 
+|aes_key_gen1            | sbox                        | 256x8         | LUT            | 
+|aes_key_gen1            | sbox                        | 256x8         | LUT            | 
+|aes_key_gen1            | sbox                        | 256x8         | LUT            | 
+|aes_key_gen1            | sbox                        | 256x8         | LUT            | 
+|aes_key_gen1            | sbox                        | 256x8         | LUT            | 
+|aes_key_gen1            | sbox                        | 256x8         | LUT            | 
+|aes_key_gen1            | sbox                        | 256x8         | LUT            | 
+|aes_key_gen1            | sbox                        | 256x8         | LUT            | 
 |aes_pipeline_stage2_pre | SBOX                        | 256x8         | Block RAM      | 
 |aes_pipeline_stage2_pre | SBOX                        | 256x8         | Block RAM      | 
 |aes_pipeline_stage2_pre | SBOX                        | 256x8         | Block RAM      | 
@@ -2615,15 +2639,15 @@ Report RTL Partitions:
 |      |RTL Partition            |Replication |Instances |
 +------+-------------------------+------------+----------+
 |1     |clk_gen__GC0             |           1|         3|
-|2     |aes_pipeline_stage8__GB0 |           1|     27296|
+|2     |aes_pipeline_stage8__GB0 |           1|     27461|
 |3     |aes_pipeline_stage8__GB1 |           1|      7162|
 |4     |aes_pipeline_stage9__GB0 |           1|     27588|
 |5     |aes_pipeline_stage9__GB1 |           1|      6902|
-|6     |gcm_aes__GCB0            |           1|     14444|
-|7     |gcm_aes__GCB1            |           1|      5431|
-|8     |gcm_aes__GCB2            |           1|     10893|
-|9     |gcm_aes__GCB3            |           1|     11874|
-|10    |gcm_aes__GCB4            |           1|     10924|
+|6     |gcm_aes__GCB0            |           1|     14050|
+|7     |gcm_aes__GCB1            |           1|      5432|
+|8     |gcm_aes__GCB2            |           1|     10895|
+|9     |gcm_aes__GCB3            |           1|     11876|
+|10    |gcm_aes__GCB4            |           1|     10928|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -2632,51 +2656,51 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:42 ; elapsed = 00:03:20 . Memory (MB): peak = 2525.668 ; gain = 1596.449 ; free physical = 51253 ; free virtual = 56100
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:38 ; elapsed = 00:03:18 . Memory (MB): peak = 2520.668 ; gain = 1591.449 ; free physical = 49555 ; free virtual = 54840
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[127]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[126]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[125]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[124]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[123]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[122]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[121]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[127]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[126]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[126]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[125]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[125]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[124]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[124]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[123]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[123]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[122]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[122]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[121]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[121]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[119]'
 INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[120]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[56]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[119]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[118]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[117]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[116]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[115]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[114]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[113]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[112]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[111]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[110]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[109]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[108]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[107]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[106]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[105]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[104]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[103]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[102]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[101]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[100]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[99]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[98]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[97]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[96]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[95]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[94]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[93]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[92]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[91]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[90]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[89]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
-INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[88]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[0]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[119]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[118]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[118]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[117]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[117]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[116]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[116]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[115]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[115]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[114]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[114]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[113]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[113]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[112]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[112]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[111]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[111]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[110]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[110]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[109]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[109]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[108]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[108]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[107]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[107]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[106]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[106]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[105]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[105]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[104]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[104]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[103]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[103]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[102]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[102]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[101]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[101]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[100]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[100]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[99]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[99]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[98]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[98]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[97]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[97]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[96]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[96]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[95]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[95]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[94]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[94]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[93]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[93]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[92]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[92]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[91]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[91]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[90]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[90]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[89]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[89]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[88]'
+INFO: [Synth 8-3886] merging instance 'gcm_aes_instancei_5/stage1/r_instance_size_reg[88]' (FD) to 'gcm_aes_instancei_5/stage1/r_instance_size_reg[87]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:04 ; elapsed = 00:04:43 . Memory (MB): peak = 3604.582 ; gain = 2675.363 ; free physical = 50184 ; free virtual = 55033
+Finished Timing Optimization : Time (s): cpu = 00:04:00 ; elapsed = 00:04:41 . Memory (MB): peak = 3614.410 ; gain = 2685.191 ; free physical = 48464 ; free virtual = 53752
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2685,11 +2709,11 @@ Report RTL Partitions:
 +------+-------------------------+------------+----------+
 |1     |clk_gen__GC0             |           1|         3|
 |2     |aes_pipeline_stage9__GB1 |           1|      6902|
-|3     |gcm_aes__GCB2            |           1|      9101|
-|4     |gcm_aes__GCB3            |           1|      9442|
-|5     |gcm_aes__GCB4            |           1|     10412|
-|6     |aes_GT0                  |           1|     61699|
-|7     |aes_GT0__1               |           1|     18390|
+|3     |gcm_aes__GCB2            |           1|      9103|
+|4     |gcm_aes__GCB3            |           1|      9444|
+|5     |gcm_aes__GCB4            |           1|     10416|
+|6     |aes_GT0                  |           1|     61865|
+|7     |aes_GT0__1               |           1|     17997|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
@@ -2797,17 +2821,18 @@ INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage5/sel (im
 INFO: [Common 17-14] Message 'Synth 8-4480' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-4480' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:14 ; elapsed = 00:05:02 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50175 ; free virtual = 55031
+Finished Technology Mapping : Time (s): cpu = 00:04:10 ; elapsed = 00:05:00 . Memory (MB): peak = 3626.336 ; gain = 2697.117 ; free physical = 48457 ; free virtual = 53752
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |gcm_aes__GCB4 |           1|      4268|
-|2     |aes_GT0       |           1|     16740|
-|3     |aes_GT0__1    |           1|      9824|
+|1     |gcm_aes__GCB4 |           1|      4272|
+|2     |aes_GT0       |           1|     16620|
+|3     |aes_GT0__1    |           1|      9730|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -2825,7 +2850,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:18 ; elapsed = 00:05:06 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50174 ; free virtual = 55030
+Finished IO Insertion : Time (s): cpu = 00:04:14 ; elapsed = 00:05:04 . Memory (MB): peak = 3626.336 ; gain = 2697.117 ; free physical = 48457 ; free virtual = 53752
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2838,7 +2863,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:18 ; elapsed = 00:05:06 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50174 ; free virtual = 55030
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:14 ; elapsed = 00:05:04 . Memory (MB): peak = 3626.336 ; gain = 2697.117 ; free physical = 48457 ; free virtual = 53752
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2850,25 +2875,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:21 ; elapsed = 00:05:09 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50174 ; free virtual = 55030
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:18 ; elapsed = 00:05:07 . Memory (MB): peak = 3626.336 ; gain = 2697.117 ; free physical = 48458 ; free virtual = 53753
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:22 ; elapsed = 00:05:09 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50174 ; free virtual = 55030
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:18 ; elapsed = 00:05:07 . Memory (MB): peak = 3626.336 ; gain = 2697.117 ; free physical = 48458 ; free virtual = 53753
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:23 ; elapsed = 00:05:11 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50173 ; free virtual = 55029
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:19 ; elapsed = 00:05:09 . Memory (MB): peak = 3626.336 ; gain = 2697.117 ; free physical = 48458 ; free virtual = 53753
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:23 ; elapsed = 00:05:11 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50173 ; free virtual = 55029
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:19 ; elapsed = 00:05:09 . Memory (MB): peak = 3626.336 ; gain = 2697.117 ; free physical = 48458 ; free virtual = 53753
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2880,6 +2905,7 @@ Static Shift Register Report:
 +------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 |aes         | gcm_aes_instance/stage6/r_key_schedule_reg[1280] | 3      | 128   | NO           | NO                 | YES               | 128    | 0       | 
 |aes         | gcm_aes_instance/stage8/r_phase_reg[0]           | 11     | 3     | NO           | NO                 | YES               | 3      | 0       | 
+|aes         | gcm_aes_instance/stage8/r_new_instance_reg       | 13     | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |aes         | gcm_aes_instance/stage8/r_h_reg[0]               | 3      | 128   | NO           | NO                 | YES               | 128    | 0       | 
 |aes         | gcm_aes_instance/stage3p/r_key_schedule_reg[0]   | 3      | 128   | NO           | NO                 | YES               | 128    | 0       | 
 +------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
@@ -2902,20 +2928,20 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     2|
-|2     |CARRY4     |   103|
+|2     |CARRY4     |    98|
 |3     |LUT1       |   159|
-|4     |LUT2       |   840|
-|5     |LUT3       |   991|
-|6     |LUT4       |  7920|
-|7     |LUT5       |  4310|
-|8     |LUT6       | 13011|
+|4     |LUT2       |   714|
+|5     |LUT3       |   983|
+|6     |LUT4       |  7730|
+|7     |LUT5       |  4493|
+|8     |LUT6       | 13065|
 |9     |MMCME2_ADV |     1|
 |10    |MUXF7      |  1153|
 |11    |MUXF8      |   400|
 |12    |RAMB18E1   |    96|
 |13    |RAMB18E1_1 |   127|
-|14    |SRL16E     |   387|
-|15    |FDRE       | 10142|
+|14    |SRL16E     |   388|
+|15    |FDRE       | 10146|
 |16    |IBUF       |   482|
 |17    |OBUF       |   258|
 +------+-----------+------+
@@ -2924,41 +2950,42 @@ Report Instance Areas:
 +------+-------------------+------------------------+------+
 |      |Instance           |Module                  |Cells |
 +------+-------------------+------------------------+------+
-|1     |top                |                        | 40382|
+|1     |top                |                        | 40295|
 |2     |  clk_gen_instance |clk_gen                 |     4|
-|3     |  gcm_aes_instance |gcm_aes                 | 39639|
+|3     |  gcm_aes_instance |gcm_aes                 | 39552|
 |4     |    stage2         |aes_pipeline_stage2     |   637|
-|5     |    keygen1        |aes_key_gen2            |   512|
-|6     |    keygen2        |aes_key_gen3            |   800|
-|7     |    keygen3        |aes_key_gen4            |   736|
-|8     |    keygen4        |aes_key_gen5            |   704|
-|9     |    keygen5        |aes_key_gen6            |   640|
-|10    |    keygen6        |aes_key_gen7            |   672|
-|11    |    keygen7        |aes_key_gen8            |   736|
-|12    |    pass6          |aes_signal_passing      |   256|
-|13    |    stage1         |aes_pipeline_stage1     |  1850|
-|14    |    stage2p        |aes_pipeline_stage2_pre |   548|
-|15    |    stage3         |aes_pipeline_stage3     |  1063|
-|16    |    stage3p        |aes_pipeline_stage3_pre |  3385|
-|17    |    stage4         |aes_pipeline_stage4     |   936|
-|18    |    stage4p        |aes_pipeline_stage4_pre |   936|
-|19    |    stage5         |aes_pipeline_stage5     |  1320|
-|20    |    stage5p        |aes_pipeline_stage5_pre |   936|
-|21    |    stage6         |aes_pipeline_stage6     |   888|
-|22    |    stage6p        |aes_pipeline_stage6_pre |  1320|
-|23    |    stage7         |aes_pipeline_stage7     |   787|
-|24    |    stage7p        |aes_pipeline_stage7_pre |   880|
-|25    |    stage8         |aes_pipeline_stage8     |  9456|
-|26    |    stage9         |aes_pipeline_stage9     |  9001|
+|5     |    keygen0        |aes_key_gen1            |   673|
+|6     |    keygen1        |aes_key_gen2            |   512|
+|7     |    keygen2        |aes_key_gen3            |   800|
+|8     |    keygen3        |aes_key_gen4            |   736|
+|9     |    keygen4        |aes_key_gen5            |   704|
+|10    |    keygen5        |aes_key_gen6            |   640|
+|11    |    keygen6        |aes_key_gen7            |   672|
+|12    |    keygen7        |aes_key_gen8            |   736|
+|13    |    pass6          |aes_signal_passing      |   256|
+|14    |    stage1         |aes_pipeline_stage1     |  1079|
+|15    |    stage2p        |aes_pipeline_stage2_pre |   541|
+|16    |    stage3         |aes_pipeline_stage3     |  1063|
+|17    |    stage3p        |aes_pipeline_stage3_pre |  3385|
+|18    |    stage4         |aes_pipeline_stage4     |   936|
+|19    |    stage4p        |aes_pipeline_stage4_pre |   936|
+|20    |    stage5         |aes_pipeline_stage5     |  1320|
+|21    |    stage5p        |aes_pipeline_stage5_pre |   936|
+|22    |    stage6         |aes_pipeline_stage6     |   888|
+|23    |    stage6p        |aes_pipeline_stage6_pre |  1320|
+|24    |    stage7         |aes_pipeline_stage7     |   788|
+|25    |    stage7p        |aes_pipeline_stage7_pre |   880|
+|26    |    stage8         |aes_pipeline_stage8     |  9464|
+|27    |    stage9         |aes_pipeline_stage9     |  9001|
 +------+-------------------+------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:23 ; elapsed = 00:05:11 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 50173 ; free virtual = 55029
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:19 ; elapsed = 00:05:09 . Memory (MB): peak = 3626.336 ; gain = 2697.117 ; free physical = 48458 ; free virtual = 53753
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1342 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:04:00 ; elapsed = 00:04:51 . Memory (MB): peak = 3616.508 ; gain = 2101.840 ; free physical = 55653 ; free virtual = 60509
-Synthesis Optimization Complete : Time (s): cpu = 00:04:23 ; elapsed = 00:05:12 . Memory (MB): peak = 3616.508 ; gain = 2687.289 ; free physical = 55671 ; free virtual = 60509
+Synthesis finished with 0 errors, 0 critical warnings and 1442 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:56 ; elapsed = 00:04:50 . Memory (MB): peak = 3626.336 ; gain = 2111.668 ; free physical = 54057 ; free virtual = 59352
+Synthesis Optimization Complete : Time (s): cpu = 00:04:20 ; elapsed = 00:05:12 . Memory (MB): peak = 3626.336 ; gain = 2697.117 ; free physical = 54075 ; free virtual = 59352
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 809 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 804 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 Parsing XDC File [/home/yu/aes/AES_GCM/constraints_artix_7.xdc]
@@ -3087,9 +3114,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-514 Infos, 383 Warnings, 101 Critical Warnings and 0 Errors encountered.
+518 Infos, 387 Warnings, 101 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:27 ; elapsed = 00:05:16 . Memory (MB): peak = 3660.609 ; gain = 2637.887 ; free physical = 55673 ; free virtual = 60511
+synth_design: Time (s): cpu = 00:04:24 ; elapsed = 00:05:16 . Memory (MB): peak = 3670.438 ; gain = 2647.715 ; free physical = 54076 ; free virtual = 59353
 # exec mkdir -p -- ./reports
 # report_timing -setup  -file ./reports/synth_aes_setup_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: max.
@@ -3097,7 +3124,7 @@ INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum o
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-2] Deriving generated clocks
 INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
-report_timing: Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 3731.668 ; gain = 71.059 ; free physical = 55671 ; free virtual = 60510
+report_timing: Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 3741.496 ; gain = 71.059 ; free physical = 54073 ; free virtual = 59350
 # report_timing -hold   -file ./reports/synth_aes_hold_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
@@ -3106,15 +3133,15 @@ INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type min 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 # report_utilization    -file ./reports/synth_utilization_report.txt
-report_utilization: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.35 . Memory (MB): peak = 3731.668 ; gain = 0.000 ; free physical = 55668 ; free virtual = 60507
+report_utilization: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:00.32 . Memory (MB): peak = 3741.496 ; gain = 0.000 ; free physical = 54071 ; free virtual = 59349
 # report_utilization -hierarchical  -file ./reports/synth_utilization_report_submodule.txt
-report_utilization: Time (s): cpu = 00:00:00.44 ; elapsed = 00:00:00.50 . Memory (MB): peak = 3731.668 ; gain = 0.000 ; free physical = 55668 ; free virtual = 60507
+report_utilization: Time (s): cpu = 00:00:00.42 ; elapsed = 00:00:00.50 . Memory (MB): peak = 3741.496 ; gain = 0.000 ; free physical = 54070 ; free virtual = 59347
 # write_schematic -format pdf -orientation portrait /home/yu/projects/AES_GCM/schematic_1.pdf
 # place_design
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7vx690t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7vx690t'
-INFO: [Common 17-86] Your Implementation license expires in 11 day(s)
+INFO: [Common 17-86] Your Implementation license expires in 3 day(s)
 INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
@@ -3133,9 +3160,9 @@ Starting Placer Task
 INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
 
 Phase 1 Placer Initialization
-Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3795.699 ; gain = 0.000 ; free physical = 55666 ; free virtual = 60505
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3805.527 ; gain = 0.000 ; free physical = 54072 ; free virtual = 59349
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3795.699 ; gain = 0.000 ; free physical = 55665 ; free virtual = 60504
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3805.527 ; gain = 0.000 ; free physical = 54071 ; free virtual = 59349
 
 Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
 INFO: [Timing 38-35] Done setting XDC timing constraints.
@@ -3165,19 +3192,19 @@ ERROR: [Place 30-575] Sub-optimal placement for a clock-capable IO pin and MMCM 
 	Workaround: < set_property CLOCK_DEDICATED_ROUTE BACKBONE [get_nets clk_gen_instance/w_clk_out_clk_wiz_gen] >
 
 Resolution: A dedicated routing path between the two can be used if: (a) The clock-capable IO (CCIO) is placed on a CCIO capable site (b) The MMCM is placed in the same clock region as the CCIO pin. If the IOB is driving multiple MMCMs, all MMCMs must be placed in the same clock region, one clock region above or one clock region below the IOB. Both the above conditions must be met at the same time, else it may lead to longer and less predictable clock insertion delays.
-Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: e6d8e83b
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1393a322b
 
-Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 3795.699 ; gain = 0.000 ; free physical = 55667 ; free virtual = 60505
-Phase 1 Placer Initialization | Checksum: e6d8e83b
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 3805.527 ; gain = 0.000 ; free physical = 54066 ; free virtual = 59343
+Phase 1 Placer Initialization | Checksum: 1393a322b
 
-Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 3795.699 ; gain = 0.000 ; free physical = 55667 ; free virtual = 60505
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 3805.527 ; gain = 0.000 ; free physical = 54066 ; free virtual = 59343
 ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
 Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
-Ending Placer Task | Checksum: e6d8e83b
+Ending Placer Task | Checksum: 1393a322b
 
-Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 3795.699 ; gain = 0.000 ; free physical = 55667 ; free virtual = 60506
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 3805.527 ; gain = 0.000 ; free physical = 54066 ; free virtual = 59343
 INFO: [Common 17-83] Releasing license: Implementation
 12 Infos, 0 Warnings, 1 Critical Warnings and 3 Errors encountered.
 place_design failed
 ERROR: [Common 17-69] Command failed: Placer could not place all instances
-INFO: [Common 17-206] Exiting Vivado at Tue Feb  5 16:19:02 2019...
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 13 11:06:14 2019...

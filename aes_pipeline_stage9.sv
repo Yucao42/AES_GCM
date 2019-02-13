@@ -74,7 +74,7 @@ module aes_pipeline_stage9(
 
         o_tag         = w_sblock ^ r_encrypted_j0;
         o_cipher_text = r_cipher_text;
-        o_cp_ready    = r_phase[2];
+        //o_cp_ready    = r_phase[2];
 
     end
 endmodule
