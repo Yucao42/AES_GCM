@@ -35,8 +35,8 @@ module testbench(
         .i_iv(iv),
         .i_plain_text(plain_text),
         .i_aad(aad_block),
-        .i_plain_text_size(64'd2560),
-        .i_aad_size(64'd128),
+        .i_plain_text_size(64'd128),
+        .i_aad_size(64'd0),
         .o_cipher_text(cipher_text_block),
         .o_tag(tag),
         .o_tag_ready(tag_ready),
@@ -54,9 +54,10 @@ module testbench(
         new_instance = 1;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk; // Posedge
+	//new_instance = 0;
+        #10 clk = ~clk;
+        #10 clk = ~clk;
 	new_instance = 0;
-        #10 clk = ~clk;
-        #10 clk = ~clk;
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
