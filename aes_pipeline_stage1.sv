@@ -100,7 +100,7 @@ module aes_pipeline_stage1 (
         end
         else
         begin
-            w_counter = r_counter + 4; // Indicating there are 4 encryption workers
+            w_counter = r_counter + 1; // Indicating there are 4 encryption workers
         end
 
         total_blocks = ((r_instance_size[0:63] + r_instance_size[64:127]) >> 7);
