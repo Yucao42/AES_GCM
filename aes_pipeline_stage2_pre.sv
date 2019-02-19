@@ -7,6 +7,8 @@ module aes_pipeline_stage2_pre(
     i_key_schedule,
     i_phase,
     i_new_instance,
+    i_counter,
+    o_counter,
     o_new_instance,
     o_plain_text,
     o_aad,
@@ -25,7 +27,9 @@ module aes_pipeline_stage2_pre(
     input logic [0:1407]  i_key_schedule;
     input logic [0:2]     i_phase;
     input logic           i_new_instance;
+    input logic [0:127]   i_counter;
     
+    output logic [0:127]   o_counter;
     output logic           o_new_instance;
     output logic [0:127]   o_plain_text;
     output logic [0:127]   o_aad;
@@ -42,10 +46,12 @@ module aes_pipeline_stage2_pre(
     logic [0:127]   r_instance_size;
     logic [0:1407]  r_key_schedule;
     logic [0:2]     r_phase;
+    logic [0:127]   r_counter;
    
     always_ff@ (posedge clk)
     begin
         r_iv            <= i_iv;
+	r_counter       <= i_counter;
         r_plain_text    <= i_plain_text;
         r_aad           <= i_aad;
         r_key_schedule  <= i_key_schedule;
@@ -68,5 +74,6 @@ module aes_pipeline_stage2_pre(
         o_key_schedule  = r_key_schedule;
         o_instance_size = r_instance_size;
         o_phase         = r_phase;
+        o_counter       = r_counter;
     end
 endmodule

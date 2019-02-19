@@ -8,6 +8,8 @@ module aes_pipeline_stage2(
     i_phase,
     i_h,
     i_new_instance,
+    i_counter, 
+    o_counter, 
     o_new_instance,
     o_h,
     o_j0,
@@ -28,7 +30,9 @@ module aes_pipeline_stage2(
     input logic [0:1407]  i_key_schedule;
     input logic [0:2]     i_phase;
     input logic           i_new_instance;
+    input logic [0:127]   i_counter;
     
+    output logic [0:127]    o_counter;
     output logic            o_new_instance;
     output logic [0:1407]   o_key_schedule;
     output logic [0:127]    o_plain_text;
@@ -46,12 +50,14 @@ module aes_pipeline_stage2(
     logic [0:127]   r_aad;
     logic [0:127]   r_h;
     logic [0:127]   r_j0;
+    logic [0:127]   r_counter;
     logic [0:127]   r_instance_size;
     logic           r_new_instance;
  
     logic [0:127]   w_cb;
 
     logic [0:2]     r_phase;
+    integer aad_blocks;
 
     always_ff@ (posedge clk)
     begin
@@ -59,6 +65,7 @@ module aes_pipeline_stage2(
         r_iv            <= i_iv;
         r_plain_text    <= i_plain_text;
         r_aad           <= i_aad;
+        r_counter       <= i_counter;
         r_key_schedule  <= i_key_schedule;
         r_instance_size <= i_instance_size;
         r_cb            <= w_cb; // Cycle
@@ -78,14 +85,21 @@ module aes_pipeline_stage2(
         o_j0 = {r_iv, 32'd1};
         o_phase = r_phase;
 
-        /* Calculate the seed of ciphered cb */
+        /* Calculate the seed of ciphered cb
+        First two cases the aad is delivering
+        */
+        aad_blocks = r_instance_size[0:63] >> 7;
+        w_cb = {r_iv, r_counter[96:127] - aad_blocks + 2'd2};
+        /*
         case(r_phase)
             3'b000:   w_cb = {r_iv, 32'd2};
             3'b111:   w_cb = {r_iv, 32'd2};
-            default: w_cb = {r_cb[0:95], r_cb[96:127] + 1'b1};
+            default: w_cb = {r_iv, r_counter[96:127] - aad_blocks + 2'd3};
         endcase
+        */
 
         /* Carrying forward register values for subsequent stages */
+        o_counter = r_counter;
         o_cb = w_cb;
         o_plain_text    = r_plain_text;
         o_aad           = r_aad;

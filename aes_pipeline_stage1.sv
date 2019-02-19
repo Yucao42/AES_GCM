@@ -7,6 +7,8 @@ module aes_pipeline_stage1 (
     i_iv,
     i_instance_size,
     i_pt_instance,
+    i_id,  // Parallel id 0 1 2 3 for 4 parallel workers
+    o_counter,
     o_key_schedule,
     o_plain_text,
     o_aad,
@@ -22,6 +24,7 @@ module aes_pipeline_stage1 (
     input logic [0:127]   i_plain_text;
     input logic [0:127]   i_aad;
     input logic [0:95]    i_iv;
+    input logic [0:3]     i_id;
     input logic [0:127]   i_instance_size;
     input logic           i_new_instance;
     input logic           i_pt_instance;
@@ -29,6 +32,7 @@ module aes_pipeline_stage1 (
     output logic [0:127]   o_plain_text;
     output logic [0:127]   o_aad;
     output logic [0:95]    o_iv;
+    output logic [0:127]    o_counter;
     output logic [0:127]   o_instance_size;
     output logic           o_new_instance;
     output logic           o_pt_instance;
@@ -47,6 +51,7 @@ module aes_pipeline_stage1 (
     logic [0:127]   r_counter;
     logic [0:127]   w_counter = 128'd100000;
     logic           w_invalid = 1;
+    logic [0:3]     r_id;
 
     /* Helper variables */
     integer aad_blocks;
@@ -58,6 +63,7 @@ module aes_pipeline_stage1 (
         r_plain_text    <= i_plain_text;
         r_aad           <= i_aad;
         r_iv            <= i_iv;
+        r_id            <= i_id;
         r_instance_size <= i_instance_size;
         r_new_instance  <= i_new_instance;
         r_pt_instance   <= i_pt_instance;
@@ -81,12 +87,12 @@ module aes_pipeline_stage1 (
     end
     
     // Time control logic of state machine
-    // Ethernet frame can be no bigger than 100000 bits
+    // Ethernet frame can be no bigger than 100000 * 128 bits
     always_comb
     begin
         if (r_new_instance == 1)
         begin
-            w_counter = 0;
+            w_counter = r_id;
         end
         else if (r_invalid == 1)
         begin
@@ -94,11 +100,12 @@ module aes_pipeline_stage1 (
         end
         else
         begin
-            w_counter = r_counter + 1;
+            w_counter = r_counter + 4; // Indicating there are 4 encryption workers
         end
 
         total_blocks = ((r_instance_size[0:63] + r_instance_size[64:127]) >> 7);
         aad_blocks = r_instance_size[0:63] >> 7;
+        o_counter = w_counter;
 
         if (w_counter == 100000)
         begin

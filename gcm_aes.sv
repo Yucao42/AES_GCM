@@ -59,6 +59,7 @@ module gcm_aes(
     logic [0:1407]    w_s1_key_schedule;
     (* dont_touch = "true" *) logic [0:127]     w_s1_aad;
     logic [0:127]     w_s1_instance_size;
+    logic [0:127]     w_s1_counter;
     logic [0:2]       w_s1_phase;
 
     /* s1p are signals previous to stage 2 postior to stage 1 */
@@ -66,6 +67,7 @@ module gcm_aes(
     logic [0:95]      w_s1p_iv;
     logic [0:1407]    w_s1p_key_schedule;
     (* dont_touch = "true" *) logic [0:127]     w_s1p_aad;
+    logic [0:127]     w_s1p_counter;
     logic [0:127]     w_s1p_instance_size;
     logic [0:127]     w_s1p_h;
     logic [0:2]       w_s1p_phase;
@@ -197,6 +199,8 @@ module gcm_aes(
         .i_iv(i_iv),
         .i_instance_size({i_aad_size, i_plain_text_size}),
         .i_pt_instance(i_pt_instance),
+        .i_id(4'd0),
+        .o_counter(w_s1_counter),
         .o_phase(w_s1_phase),
         .o_plain_text(w_s1_plain_text),
         .o_aad(w_s1_aad),
@@ -220,6 +224,8 @@ module gcm_aes(
         .i_key_schedule(w_s1_key_schedule),
         .i_phase(w_s1_phase),
         .i_new_instance(w_s1_new_instance),
+        .i_counter(w_s1_counter),
+        .o_counter(w_s1p_counter),
         .o_new_instance(w_s1p_new_instance),
         .o_phase(w_s1p_phase),
         .o_h(w_s1p_h),
@@ -245,6 +251,7 @@ module gcm_aes(
         .i_phase(w_s1p_phase),
         .i_h(w_s1p_h),
         .i_new_instance(w_s1p_new_instance),
+        .i_counter(w_s1p_counter),
         .o_new_instance(w_s2_new_instance),
         .o_phase(w_s2_phase),
         .o_h(w_s2_h),
