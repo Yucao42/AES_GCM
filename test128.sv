@@ -13,10 +13,10 @@ module testbench(
 
     logic [0:127] cipher_key = 128'd0;
     logic [0:95]  iv         = 96'd0;
-    //logic [0:127] plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
-    logic [0:127] plain_text = 128'd0;
-    //logic [0:511] aad        = 128'h3AD77BB40D7A3660A89ECAF32466EF97;
-    logic [0:511] aad        = 128'd0;
+    logic [0:127] plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
+    //logic [0:127] plain_text = 128'd0;
+    logic [0:511] aad        = 128'h3AD77BB40D7A3660A89ECAF32466EF97;
+    //logic [0:511] aad        = 128'd0;
     logic [0:511] cipher_text;
 
     logic [0:127] plain_text_block;
@@ -35,7 +35,7 @@ module testbench(
         .i_iv(iv),
         .i_plain_text(plain_text),
         .i_aad(aad_block),
-        .i_plain_text_size(64'd128),
+        .i_plain_text_size(64'd512),
         .i_aad_size(64'd128),
         .o_cipher_text(cipher_text_block),
         .o_tag(tag),
