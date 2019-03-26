@@ -21,7 +21,7 @@ module aes_pipeline_stage1 (
 
     input logic           clk;
     input logic [0:127]   i_cipher_key;
-    input logic [0:127]   i_plain_text;
+    input logic [127:0]   i_plain_text;
     input logic [0:127]   i_aad;
     input logic [0:95]    i_iv;
     input logic [0:3]     i_id;
@@ -78,13 +78,25 @@ module aes_pipeline_stage1 (
         //o_key_schedule = fn_key_expansion(r_cipher_key, 1407'b0, 1);
 
         /* Carrying forward register values for subsequent stages */
-        o_plain_text    = r_plain_text;
+        //o_plain_text    = r_plain_text;
         o_aad           = r_aad;
         o_iv            = r_iv;
         o_instance_size = r_instance_size;
         o_new_instance  = r_new_instance;
         o_pt_instance   = r_pt_instance;
     end
+	
+	// Reverse bit direction
+	genvar n;
+	generate
+	for(n = 0; n < 128; n = n + 1)
+	begin
+	    always_comb
+	    begin
+	    	o_plain_text[n] = r_plain_text[127 - n];
+	    end
+	end
+    endgenerate
     
     // Time control logic of state machine
     // Ethernet frame can be no bigger than 100000 * 128 bits

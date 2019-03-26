@@ -27,7 +27,7 @@ module gcm_aes(
     input   i_pt_instance;
 
     input  [0:95]       i_iv;
-    input  [0:127]      i_plain_text;
+    input  [127:0]      i_plain_text;
     input  [0:127]      i_aad;
     input  [0:127]      i_cipher_key;
     input  [0:63]       i_plain_text_size;

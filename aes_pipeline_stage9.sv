@@ -49,6 +49,18 @@ module aes_pipeline_stage9(
         r_encrypted_j0  <= i_encrypted_j0;
     end
 
+	// Reverse bit direction
+	genvar n;
+	generate
+	for(n = 0; n < 128; n = n + 1)
+	begin
+	    always_comb
+	    begin
+	    	o_cipher_text[n] = r_cipher_text[127 - n];
+	    end
+	end
+    endgenerate
+
     always_comb
     begin
 
@@ -73,7 +85,7 @@ module aes_pipeline_stage9(
         endcase
 
         o_tag         = w_sblock ^ r_encrypted_j0;
-        o_cipher_text = r_cipher_text;
+        //o_cipher_text = r_cipher_text;
         //o_cp_ready    = r_phase[2];
 
     end
