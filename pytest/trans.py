@@ -44,5 +44,5 @@ if __name__ == "__main__":
               #"\x02\x53\x55\x4d\x45\x00",
               "\x88\x00",
               #"\x7A\x05",
-    "hello? I'm fine NO s\x97\x97\x97\x97"))
+    "bbbbbbbbbbbbbbbb"))
     #time.sleep(1)
