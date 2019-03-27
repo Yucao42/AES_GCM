@@ -7,7 +7,7 @@ set_part xc7vx690t-3-ffg1761
 
 
 # Read verilog source files
-read_verilog -sv  aes_api.v
+read_verilog   aes_api.v
 read_verilog -sv  clk_gen.sv
 read_verilog -sv  fn_aes_ghash_multiplication.sv
 read_verilog -sv  fn_aes_encrypt_stage.sv

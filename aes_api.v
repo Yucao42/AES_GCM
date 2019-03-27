@@ -20,15 +20,14 @@ module aes_api(
     output [0:127]  cipher_text;
     output [0:127]  tag;
 
-    logic           clk_out;
-    logic           locked;
+    wire            clk_out;
 
 	// By default using all zeros to test the api 
 	// TODO: Add customized keys
-    logic [0:95]    iv = 96'd0;
-    logic [0:127]   plain_text = 128'd0;
-    logic [0:127]   cipher_key = 128'd0;
-    logic [0:127]   aad = 128'd0;
+    reg [0:95]      iv = 96'd0;
+    reg [0:127]     plain_text = 128'd0;
+    reg [0:127]     cipher_key = 128'd0;
+    reg [0:127]     aad = 128'd0;
 
     /* GCM AES module (comes from gcm_aes.sv) */
     gcm_aes gcm_aes_instance(
