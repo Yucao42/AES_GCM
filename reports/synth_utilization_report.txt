@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Tue Mar 26 12:10:54 2019
+| Date         : Tue Mar 26 15:00:05 2019
 | Host         : cyclops running 64-bit Ubuntu 16.04.5 LTS
 | Command      : report_utilization -file ./reports/synth_utilization_report.txt
 | Design       : aes
@@ -30,8 +30,8 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 26695 |     0 |    433200 |  6.16 |
-|   LUT as Logic             | 26211 |     0 |    433200 |  6.05 |
+| Slice LUTs*                | 26698 |     0 |    433200 |  6.16 |
+|   LUT as Logic             | 26214 |     0 |    433200 |  6.05 |
 |   LUT as Memory            |   484 |     0 |    174200 |  0.28 |
 |     LUT as Distributed RAM |     0 |     0 |           |       |
 |     LUT as Shift Register  |   484 |     0 |           |       |
@@ -153,12 +153,12 @@ Table of Contents
 +------------+-------+---------------------+
 |  Ref Name  |  Used | Functional Category |
 +------------+-------+---------------------+
-| LUT6       | 13065 |                 LUT |
+| LUT6       | 13025 |                 LUT |
 | FDRE       |  9887 |        Flop & Latch |
-| LUT4       |  7729 |                 LUT |
-| LUT5       |  4397 |                 LUT |
+| LUT4       |  7709 |                 LUT |
+| LUT5       |  4481 |                 LUT |
 | MUXF7      |  1153 |               MuxFx |
-| LUT3       |   888 |                 LUT |
+| LUT3       |   882 |                 LUT |
 | LUT2       |   777 |                 LUT |
 | SRL16E     |   484 |  Distributed Memory |
 | IBUF       |   482 |                  IO |

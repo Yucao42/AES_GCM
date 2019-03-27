@@ -7,6 +7,7 @@
 source build_project.tcl
 # set_part xc7vx690t-3-ffg1761
 INFO: [Coretcl 2-1500] The part has been set to 'xc7vx690t-3-ffg1761' for the current project only. Run set_part -help for more details. To evaluate different speed grades in the current design, use the set_speed_grade command, or use the open_checkpoint -part command to change the part used by an existing checkpoint design.
+# read_verilog -sv  aes.v
 # read_verilog -sv  clk_gen.sv
 # read_verilog -sv  fn_aes_ghash_multiplication.sv
 # read_verilog -sv  fn_aes_encrypt_stage.sv
@@ -30,7 +31,6 @@ INFO: [Coretcl 2-1500] The part has been set to 'xc7vx690t-3-ffg1761' for the cu
 # read_verilog -sv  aes_key_gen.sv
 # read_verilog -sv  gcm_aes.sv
 # read_verilog -sv  display.sv
-# read_verilog -sv  aes.v
 # read_xdc constraints_artix_7.xdc
 # synth_design -top aes
 Command: synth_design -top aes
@@ -39,7 +39,8 @@ Using part: xc7vx690tffg1761-3
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx690t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx690t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 26667 
+INFO: Helper process launched with PID 3458 
+WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes.v:11]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:20]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:20]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:4]
@@ -52,9 +53,8 @@ WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/a
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:172]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:196]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:220]
-WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes.v:11]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1142.324 ; gain = 213.113 ; free physical = 52710 ; free virtual = 61326
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1163.328 ; gain = 234.113 ; free physical = 52691 ; free virtual = 61312
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'aes' [/home/yu/aes/AES_GCM/aes.v:4]
 INFO: [Synth 8-638] synthesizing module 'clk_gen' [/home/yu/aes/AES_GCM/clk_gen.sv:1]
@@ -361,7 +361,7 @@ WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_sc
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[99]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1905.832 ; gain = 976.621 ; free physical = 51925 ; free virtual = 60560
+Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1926.836 ; gain = 997.621 ; free physical = 51911 ; free virtual = 60551
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -472,7 +472,7 @@ WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[98] to constant 0
 WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[99] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
 INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1905.832 ; gain = 976.621 ; free physical = 51927 ; free virtual = 60562
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1926.836 ; gain = 997.621 ; free physical = 51912 ; free virtual = 60553
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -581,26 +581,26 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2335.527 ; gain = 0.000 ; free physical = 51647 ; free virtual = 60281
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2357.531 ; gain = 0.000 ; free physical = 51628 ; free virtual = 60269
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 2335.527 ; gain = 1406.316 ; free physical = 51645 ; free virtual = 60280
+Finished Constraint Validation : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 2357.531 ; gain = 1428.316 ; free physical = 51625 ; free virtual = 60266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7vx690tffg1761-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 2335.527 ; gain = 1406.316 ; free physical = 51645 ; free virtual = 60280
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 2357.531 ; gain = 1428.316 ; free physical = 51625 ; free virtual = 60266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 2335.527 ; gain = 1406.316 ; free physical = 51645 ; free virtual = 60280
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 2357.531 ; gain = 1428.316 ; free physical = 51625 ; free virtual = 60266
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "o_tag_ready" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:41 ; elapsed = 00:01:42 . Memory (MB): peak = 2335.527 ; gain = 1406.316 ; free physical = 51574 ; free virtual = 60209
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:42 ; elapsed = 00:01:43 . Memory (MB): peak = 2357.531 ; gain = 1428.316 ; free physical = 51575 ; free virtual = 60216
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -610,8 +610,8 @@ Report RTL Partitions:
 |1     |clk_gen__GC0             |           1|         3|
 |2     |aes_pipeline_stage8__GB0 |           1|     40270|
 |3     |aes_pipeline_stage8__GB1 |           1|     10422|
-|4     |aes_pipeline_stage9__GB0 |           1|     40272|
-|5     |aes_pipeline_stage9__GB1 |           1|     10036|
+|4     |aes_pipeline_stage9__GB0 |           1|     40139|
+|5     |aes_pipeline_stage9__GB1 |           1|     10169|
 |6     |gcm_aes__GCB0            |           1|     28520|
 |7     |gcm_aes__GCB1            |           1|     11132|
 |8     |gcm_aes__GCB2            |           1|     22427|
@@ -653,7 +653,7 @@ Detailed RTL Component Info :
 	   4 Input      8 Bit         XORs := 432   
 +---Registers : 
 	             1408 Bit    Registers := 18    
-	              128 Bit    Registers := 88    
+	              128 Bit    Registers := 87    
 	               96 Bit    Registers := 3     
 	                8 Bit    Registers := 448   
 	                4 Bit    Registers := 1     
@@ -709,7 +709,7 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input    128 Bit         XORs := 256   
 +---Registers : 
-	              128 Bit    Registers := 5     
+	              128 Bit    Registers := 4     
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
@@ -1277,7 +1277,7 @@ INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instan
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:33 ; elapsed = 00:03:12 . Memory (MB): peak = 2369.512 ; gain = 1440.301 ; free physical = 45773 ; free virtual = 54417
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:33 ; elapsed = 00:03:12 . Memory (MB): peak = 2391.516 ; gain = 1462.301 ; free physical = 45841 ; free virtual = 54491
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2684,8 +2684,8 @@ Report RTL Partitions:
 |1     |clk_gen__GC0             |           1|         3|
 |2     |aes_pipeline_stage8__GB0 |           1|     27461|
 |3     |aes_pipeline_stage8__GB1 |           1|      7162|
-|4     |aes_pipeline_stage9__GB0 |           1|     27592|
-|5     |aes_pipeline_stage9__GB1 |           1|      6902|
+|4     |aes_pipeline_stage9__GB0 |           1|     27467|
+|5     |aes_pipeline_stage9__GB1 |           1|      7035|
 |6     |gcm_aes__GCB0            |           1|     13642|
 |7     |gcm_aes__GCB1            |           1|      5432|
 |8     |gcm_aes__GCB2            |           1|     10895|
@@ -2699,10 +2699,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:39 ; elapsed = 00:03:18 . Memory (MB): peak = 2498.801 ; gain = 1569.590 ; free physical = 45312 ; free virtual = 53956
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:39 ; elapsed = 00:03:18 . Memory (MB): peak = 2520.805 ; gain = 1591.590 ; free physical = 45714 ; free virtual = 54364
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:04 ; elapsed = 00:04:44 . Memory (MB): peak = 3594.543 ; gain = 2665.332 ; free physical = 43683 ; free virtual = 52329
+Finished Timing Optimization : Time (s): cpu = 00:04:02 ; elapsed = 00:04:42 . Memory (MB): peak = 3615.625 ; gain = 2686.410 ; free physical = 44627 ; free virtual = 53279
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2710,11 +2710,11 @@ Report RTL Partitions:
 |      |RTL Partition            |Replication |Instances |
 +------+-------------------------+------------+----------+
 |1     |clk_gen__GC0             |           1|         3|
-|2     |aes_pipeline_stage9__GB1 |           1|      6902|
+|2     |aes_pipeline_stage9__GB1 |           1|      6907|
 |3     |gcm_aes__GCB2            |           1|      9103|
 |4     |gcm_aes__GCB3            |           1|      9444|
 |5     |gcm_aes__GCB4            |           1|     10416|
-|6     |aes_GT0                  |           1|     61869|
+|6     |aes_GT0                  |           1|     61873|
 |7     |aes_GT0__1               |           1|     17417|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -2825,7 +2825,7 @@ INFO: [Common 17-14] Message 'Synth 8-4480' appears 100 times and further instan
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:14 ; elapsed = 00:05:03 . Memory (MB): peak = 3606.469 ; gain = 2677.258 ; free physical = 43675 ; free virtual = 52329
+Finished Technology Mapping : Time (s): cpu = 00:04:12 ; elapsed = 00:05:01 . Memory (MB): peak = 3627.551 ; gain = 2698.336 ; free physical = 44612 ; free virtual = 53272
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2833,7 +2833,7 @@ Report RTL Partitions:
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
 |1     |gcm_aes__GCB4 |           1|      4272|
-|2     |aes_GT0       |           1|     16623|
+|2     |aes_GT0       |           1|     16637|
 |3     |aes_GT0__1    |           1|      9506|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -2852,7 +2852,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:18 ; elapsed = 00:05:06 . Memory (MB): peak = 3606.469 ; gain = 2677.258 ; free physical = 43675 ; free virtual = 52328
+Finished IO Insertion : Time (s): cpu = 00:04:16 ; elapsed = 00:05:05 . Memory (MB): peak = 3627.551 ; gain = 2698.336 ; free physical = 44612 ; free virtual = 53271
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2865,7 +2865,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:18 ; elapsed = 00:05:07 . Memory (MB): peak = 3606.469 ; gain = 2677.258 ; free physical = 43675 ; free virtual = 52328
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:16 ; elapsed = 00:05:05 . Memory (MB): peak = 3627.551 ; gain = 2698.336 ; free physical = 44612 ; free virtual = 53271
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2877,25 +2877,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:21 ; elapsed = 00:05:10 . Memory (MB): peak = 3606.469 ; gain = 2677.258 ; free physical = 43675 ; free virtual = 52328
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:19 ; elapsed = 00:05:08 . Memory (MB): peak = 3627.551 ; gain = 2698.336 ; free physical = 44612 ; free virtual = 53271
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:21 ; elapsed = 00:05:10 . Memory (MB): peak = 3606.469 ; gain = 2677.258 ; free physical = 43675 ; free virtual = 52328
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:19 ; elapsed = 00:05:08 . Memory (MB): peak = 3627.551 ; gain = 2698.336 ; free physical = 44612 ; free virtual = 53271
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:23 ; elapsed = 00:05:12 . Memory (MB): peak = 3606.469 ; gain = 2677.258 ; free physical = 43675 ; free virtual = 52328
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:20 ; elapsed = 00:05:10 . Memory (MB): peak = 3627.551 ; gain = 2698.336 ; free physical = 44612 ; free virtual = 53271
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:23 ; elapsed = 00:05:12 . Memory (MB): peak = 3606.469 ; gain = 2677.258 ; free physical = 43675 ; free virtual = 52328
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:21 ; elapsed = 00:05:10 . Memory (MB): peak = 3627.551 ; gain = 2698.336 ; free physical = 44612 ; free virtual = 53271
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2934,10 +2934,10 @@ Report Cell Usage:
 |2     |CARRY4     |    98|
 |3     |LUT1       |   129|
 |4     |LUT2       |   777|
-|5     |LUT3       |   888|
-|6     |LUT4       |  7729|
-|7     |LUT5       |  4397|
-|8     |LUT6       | 13065|
+|5     |LUT3       |   882|
+|6     |LUT4       |  7709|
+|7     |LUT5       |  4481|
+|8     |LUT6       | 13025|
 |9     |MMCME2_ADV |     1|
 |10    |MUXF7      |  1153|
 |11    |MUXF8      |   400|
@@ -2953,9 +2953,9 @@ Report Instance Areas:
 +------+-------------------+------------------------+------+
 |      |Instance           |Module                  |Cells |
 +------+-------------------+------------------------+------+
-|1     |top                |                        | 39973|
+|1     |top                |                        | 39991|
 |2     |  clk_gen_instance |clk_gen                 |     4|
-|3     |  gcm_aes_instance |gcm_aes                 | 39230|
+|3     |  gcm_aes_instance |gcm_aes                 | 39248|
 |4     |    keygen0        |aes_key_gen1            |   673|
 |5     |    keygen1        |aes_key_gen2            |   512|
 |6     |    keygen2        |aes_key_gen3            |   800|
@@ -2979,14 +2979,14 @@ Report Instance Areas:
 |24    |    stage7         |aes_pipeline_stage7     |   788|
 |25    |    stage7p        |aes_pipeline_stage7_pre |   880|
 |26    |    stage8         |aes_pipeline_stage8     |  9464|
-|27    |    stage9         |aes_pipeline_stage9     |  9004|
+|27    |    stage9         |aes_pipeline_stage9     |  9022|
 +------+-------------------+------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:23 ; elapsed = 00:05:12 . Memory (MB): peak = 3606.469 ; gain = 2677.258 ; free physical = 43675 ; free virtual = 52328
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:21 ; elapsed = 00:05:10 . Memory (MB): peak = 3627.551 ; gain = 2698.336 ; free physical = 44612 ; free virtual = 53271
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1316 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:04:00 ; elapsed = 00:04:53 . Memory (MB): peak = 3606.469 ; gain = 2115.668 ; free physical = 49193 ; free virtual = 57847
-Synthesis Optimization Complete : Time (s): cpu = 00:04:23 ; elapsed = 00:05:15 . Memory (MB): peak = 3606.469 ; gain = 2677.258 ; free physical = 49211 ; free virtual = 57847
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:57 ; elapsed = 00:04:49 . Memory (MB): peak = 3627.551 ; gain = 2113.746 ; free physical = 50239 ; free virtual = 58898
+Synthesis Optimization Complete : Time (s): cpu = 00:04:21 ; elapsed = 00:05:11 . Memory (MB): peak = 3627.551 ; gain = 2698.336 ; free physical = 50256 ; free virtual = 58898
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 804 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -3119,7 +3119,7 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 518 Infos, 386 Warnings, 101 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:28 ; elapsed = 00:05:19 . Memory (MB): peak = 3650.570 ; gain = 2649.855 ; free physical = 49211 ; free virtual = 57846
+synth_design: Time (s): cpu = 00:04:25 ; elapsed = 00:05:15 . Memory (MB): peak = 3671.652 ; gain = 2648.934 ; free physical = 50261 ; free virtual = 58903
 # exec mkdir -p -- ./reports
 # report_timing -setup  -file ./reports/synth_aes_setup_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: max.
@@ -3127,7 +3127,7 @@ INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum o
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-2] Deriving generated clocks
 INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
-report_timing: Time (s): cpu = 00:00:20 ; elapsed = 00:00:11 . Memory (MB): peak = 3721.629 ; gain = 71.059 ; free physical = 50277 ; free virtual = 58912
+report_timing: Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 3742.711 ; gain = 71.059 ; free physical = 50260 ; free virtual = 58901
 # report_timing -hold   -file ./reports/synth_aes_hold_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
@@ -3136,5 +3136,77 @@ INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type min 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 # report_utilization    -file ./reports/synth_utilization_report.txt
-report_utilization: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.36 . Memory (MB): peak = 3721.629 ; gain = 0.000 ; free physical = 50275 ; free virtual = 58910
+report_utilization: Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.33 . Memory (MB): peak = 3742.711 ; gain = 0.000 ; free physical = 50258 ; free virtual = 58899
 # report_utilization -hierarchical  -file ./reports/synth_utilization_report_submodule.txt
+report_utilization: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.49 . Memory (MB): peak = 3742.711 ; gain = 0.000 ; free physical = 50258 ; free virtual = 58899
+# write_schematic -format pdf -orientation portrait /home/yu/projects/AES_GCM/schematic_1.pdf
+# place_design
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7vx690t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7vx690t'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+CRITICAL WARNING: [DRC 23-20] Rule violation (AVAL-46) v7v8_mmcm_fvco_rule1 - The current computed target frequency, FVCO, is out of range for cell clk_gen_instance/mmcm_adv_inst. The computed FVCO is 2500.000 MHz. The valid FVCO range for speed grade -3 is 600MHz to 1600MHz. The cell attribute values used to compute FVCO are CLKFBOUT_MULT_F = 25.000, CLKIN1_PERIOD = 10.00000, and DIVCLK_DIVIDE = 1 (FVCO = 1000 * CLKFBOUT_MULT_F/(CLKIN1_PERIOD * DIVCLK_DIVIDE)).
+This violation may be corrected by:
+  1. The timer uses timing constraints for clock period or clock frequency that affect CLKIN1 to set cell attribute CLKIN1_PERIOD, over-riding any previous value. This may already be in place and, if so this violation will be resolved once Timing is run.  Otherwise, consider modifying timing constraints to adjust the CLKIN1_PERIOD and bring FVCO into the allowed range.
+  2. In the absence of timing constraints that affect CLKIN1, consider modifying the cell CLKIN1_PERIOD to bring FVCO into the allowed range.
+  3. If CLKIN1_PERIOD is satisfactory, modify the CLKFBOUT_MULT_F or DIVCLK_DIVIDE cell attributes to bring FVCO into the allowed range.
+  4. The MMCM configuration may be dynamically modified by use of DRP which is recognized by an ACTIVE signal on DCLK pin.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Critical Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3806.742 ; gain = 0.000 ; free physical = 50554 ; free virtual = 59195
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3806.742 ; gain = 0.000 ; free physical = 50554 ; free virtual = 59195
+
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+ERROR: [Place 30-575] Sub-optimal placement for a clock-capable IO pin and MMCM pair. If this sub optimal condition is acceptable for this design, you may use the CLOCK_DEDICATED_ROUTE constraint in the .xdc file to demote this message to a WARNING. However, the use of this override is highly discouraged. These examples can be used directly in the .xdc file to override this clock rule.
+	< set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets clk_gen_instance/w_clk_in_clk_wiz_gen] >
+
+	clk_gen_instance/clkin1_ibufg (IBUF.O) is locked to IPAD_X2Y186
+	clk_gen_instance/mmcm_adv_inst (MMCME2_ADV.CLKIN1) is provisionally placed by clockplacer on MMCME2_ADV_X1Y5
+
+	The above error could possibly be related to other connected instances. Following is a list of 
+	all the related clock rules and their respective instances.
+
+	Clock Rule: rule_mmcm_bufg
+	Status: FAIL 
+	Rule Description: An MMCM driving a BUFG must be placed on the same half side (top/bottom) of the device
+	clk_gen_instance/mmcm_adv_inst (MMCME2_ADV.CLKFBOUT) is provisionally placed by clockplacer on MMCME2_ADV_X1Y5
+	clk_gen_instance/clkf_buf (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y1
+	ERROR: The above is also an illegal clock rule
+	Workaround: < set_property CLOCK_DEDICATED_ROUTE BACKBONE [get_nets clk_gen_instance/w_clkfbout_clk_wiz_gen] >
+
+	Clock Rule: rule_mmcm_bufg
+	Status: FAIL 
+	Rule Description: An MMCM driving a BUFG must be placed on the same half side (top/bottom) of the device
+	clk_gen_instance/mmcm_adv_inst (MMCME2_ADV.CLKOUT0) is provisionally placed by clockplacer on MMCME2_ADV_X1Y5
+	clk_gen_instance/clkout1_buf (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y0
+	ERROR: The above is also an illegal clock rule
+	Workaround: < set_property CLOCK_DEDICATED_ROUTE BACKBONE [get_nets clk_gen_instance/w_clk_out_clk_wiz_gen] >
+
+Resolution: A dedicated routing path between the two can be used if: (a) The clock-capable IO (CCIO) is placed on a CCIO capable site (b) The MMCM is placed in the same clock region as the CCIO pin. If the IOB is driving multiple MMCMs, all MMCMs must be placed in the same clock region, one clock region above or one clock region below the IOB. Both the above conditions must be met at the same time, else it may lead to longer and less predictable clock insertion delays.
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: f4550281
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:16 . Memory (MB): peak = 3806.742 ; gain = 0.000 ; free physical = 50689 ; free virtual = 59030
+Phase 1 Placer Initialization | Checksum: f4550281
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:16 . Memory (MB): peak = 3806.742 ; gain = 0.000 ; free physical = 50689 ; free virtual = 59030
+ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
+Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
+Ending Placer Task | Checksum: f4550281
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:16 . Memory (MB): peak = 3806.742 ; gain = 0.000 ; free physical = 50688 ; free virtual = 59029
+INFO: [Common 17-83] Releasing license: Implementation
+11 Infos, 0 Warnings, 1 Critical Warnings and 3 Errors encountered.
+place_design failed
+ERROR: [Common 17-69] Command failed: Placer could not place all instances
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 26 15:00:24 2019...

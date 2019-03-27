@@ -21,7 +21,7 @@ module aes_pipeline_stage1 (
 
     input logic           clk;
     input logic [0:127]   i_cipher_key;
-    input logic [127:0]   i_plain_text;
+    input logic [0:127]   i_plain_text;
     input logic [0:127]   i_aad;
     input logic [0:95]    i_iv;
     input logic [0:3]     i_id;
@@ -89,11 +89,12 @@ module aes_pipeline_stage1 (
 	// Reverse bit direction
 	genvar n;
 	generate
-	for(n = 0; n < 128; n = n + 1)
+	for(n = 0; n < 16; n = n + 1)
 	begin
 	    always_comb
 	    begin
-	    	o_plain_text[n] = r_plain_text[127 - n];
+	    	//i_plain_text[n*8:(n+1)*8-1] = plain_text[(16 - n) * 8 - 1:(15-n) * 8];
+	    	i_plain_text[n*8:(n+1)*8-1] = plain_text[(1 + n) * 8 - 1:n * 8];
 	    end
 	end
     endgenerate

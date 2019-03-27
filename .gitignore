@@ -20,3 +20,5 @@ shits
 
 xsim.dir
 *bitstream*
+bridge.v
+nf_endianess_manager.v
