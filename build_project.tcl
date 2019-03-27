@@ -37,6 +37,7 @@ read_xdc constraints_artix_7.xdc
 
 # Run Synthesis
 synth_design -top aes
+#create_run -flow {Vivado Synthesis 2016} synth
 
 # Create reports directory
 exec mkdir -p -- ./reports
@@ -47,6 +48,8 @@ report_timing -hold   -file ./reports/synth_aes_hold_report.txt
 report_timing_summary -file ./reports/synth_timing_report_aes.txt -delay_type min_max -max_path 50
 report_utilization    -file ./reports/synth_utilization_report.txt
 report_utilization -hierarchical  -file ./reports/synth_utilization_report_submodule.txt
+
+exit
 
 # show_schematic [get_nets -hier]
 write_schematic -format pdf -orientation portrait /home/yu/projects/AES_GCM/schematic_1.pdf

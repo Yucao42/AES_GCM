@@ -19,7 +19,8 @@ module testbench(
     logic [0:511] aad        = 128'h3AD77BB40D7A3660A89ECAF32466EF97;
     //logic [0:511] aad        = 128'd0;
     logic [0:511] cipher_text;
-    logic [0:127] i_plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
+    //logic [0:127] i_plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
+    logic [127:0] i_plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
 
     logic [0:127] plain_text_block;
     logic [0:127] aad_block;
@@ -38,7 +39,8 @@ module testbench(
 	    always_comb
 	    begin
 	    	//i_plain_text[n*8:(n+1)*8-1] = plain_text[(16 - n) * 8 - 1:(15-n) * 8];
-	    	i_plain_text[n*8:(n+1)*8-1] = plain_text[(1 + n) * 8 - 1:n * 8];
+	    	i_plain_text[(n+1)*8-1: 8 * n] = plain_text[(16 - n) * 8 - 1:(15 - n) * 8];
+	    	//i_plain_text[n*8:(n+1)*8-1] = plain_text[(15 - n) * 8:(16 - n) * 8 - 1];
 	    end
 	end
     endgenerate

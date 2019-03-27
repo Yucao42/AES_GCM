@@ -52,11 +52,12 @@ module aes_pipeline_stage9(
 	// Reverse bit direction
 	genvar n;
 	generate
-	for(n = 0; n < 128; n = n + 1)
+	for(n = 0; n < 16; n = n + 1)
 	begin
 	    always_comb
 	    begin
-	    	o_cipher_text[n] = r_cipher_text[127 - n];
+	    	//i_plain_text[n*8:(n+1)*8-1] = plain_text[(16 - n) * 8 - 1:(15-n) * 8];
+	    	o_cipher_text[n*8:(n+1)*8-1] = r_cipher_text[(15 - n) * 8:(16 - n) * 8 - 1];
 	    end
 	end
     endgenerate

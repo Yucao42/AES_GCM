@@ -94,7 +94,7 @@ module aes_pipeline_stage1 (
 	    always_comb
 	    begin
 	    	//i_plain_text[n*8:(n+1)*8-1] = plain_text[(16 - n) * 8 - 1:(15-n) * 8];
-	    	i_plain_text[n*8:(n+1)*8-1] = plain_text[(1 + n) * 8 - 1:n * 8];
+	    	o_plain_text[n*8:(n+1)*8-1] = r_plain_text[(15 - n) * 8:(16 - n) * 8 - 1];
 	    end
 	end
     endgenerate
