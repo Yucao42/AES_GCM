@@ -1,0 +1,49 @@
+`timescale 1ns / 1ps
+
+/* Top module for AES GCM */
+module aes_api(
+    clk,
+    i_new,  // Signal that says it is a new instance
+    tag,
+    cipher_text,
+    cp_ready,
+    tag_ready,
+);
+
+    input           clk;
+    // Input including 96 bits iv, 128 bits aad block, 128 bits plaintext
+    // block and 128 bits input key block.
+    input           i_new;
+    output          tag_ready;
+    // Cipher_text is ready
+    output          cp_ready;
+    output [0:127]  cipher_text;
+    output [0:127]  tag;
+
+    logic           clk_out;
+    logic           locked;
+
+	// By default using all zeros to test the api 
+	// TODO: Add customized keys
+    logic [0:95]    iv = 96'd0;
+    logic [0:127]   plain_text = 128'd0;
+    logic [0:127]   cipher_key = 128'd0;
+    logic [0:127]   aad = 128'd0;
+
+    /* GCM AES module (comes from gcm_aes.sv) */
+    gcm_aes gcm_aes_instance(
+        .clk(clk),
+        .i_iv(iv),
+        .i_new_instance(i_new),
+        .i_cipher_key(cipher_key),
+        .i_plain_text(plain_text),
+        .i_plain_text_size(64'd128),
+        .i_aad_size(64'd0),
+        .i_aad(aad),
+        .o_cp_ready(cp_ready),
+        .o_cipher_text(cipher_text),
+        .o_tag(tag),
+        .o_tag_ready(tag_ready)
+    );
+    
+endmodule
