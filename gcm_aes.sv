@@ -16,6 +16,8 @@ module gcm_aes(
         i_aad,
         i_plain_text_size,
         i_aad_size,
+        i_bypass_text,
+        o_bypass_text,
         o_cp_ready,
         o_cipher_text,
         o_tag,
@@ -28,6 +30,7 @@ module gcm_aes(
 
     input  [0:95]       i_iv;
     input  [127:0]      i_plain_text;
+    input  [127:0]      i_bypass_text;
     input  [0:127]      i_aad;
     input  [0:127]      i_cipher_key;
     input  [0:63]       i_plain_text_size;
@@ -37,6 +40,7 @@ module gcm_aes(
     output logic [0:127]   o_tag;
     output logic           o_tag_ready;
     output logic           o_cp_ready;
+    output logic [127:0]   o_bypass_text;
 
     /* New instance signals */
     logic             w_s1p_new_instance;
@@ -52,7 +56,7 @@ module gcm_aes(
     logic             w_s5_new_instance;
     logic             w_s6_new_instance;
     logic             w_s7_new_instance;
-    
+
     /* Wires joining Stage1 and Stage2 */
     (* dont_touch = "true" *) logic [0:127]     w_s1_plain_text;
     logic [0:95]      w_s1_iv;
@@ -190,6 +194,13 @@ module gcm_aes(
     logic [0:127]     w_s8_h;
     logic [0:127]     w_s8_instance_size;
     logic [0:2]       w_s8_phase;
+
+	text_bypasser bypasser
+	(
+		.clk(clk),
+		.i_text(i_bypass_text),
+		.o_text(o_bypass_text)
+	);
 
     aes_pipeline_stage1 stage1(
         .clk(clk),
