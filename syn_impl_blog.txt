@@ -13,6 +13,7 @@ INFO: [Coretcl 2-1500] The part has been set to 'xc7vx690t-3-ffg1761' for the cu
 # read_verilog -sv  fn_aes_encrypt_stage.sv
 # read_verilog -sv  fn_aes_key_expansion.sv
 # read_verilog -sv  aes_signal_passing.sv
+# read_verilog -sv  text_bypasser.sv
 # read_verilog -sv  aes_pipeline_stage1.sv
 # read_verilog -sv  aes_pipeline_stage2_pre.sv
 # read_verilog -sv  aes_pipeline_stage3_pre.sv
@@ -30,8 +31,6 @@ INFO: [Coretcl 2-1500] The part has been set to 'xc7vx690t-3-ffg1761' for the cu
 # read_verilog -sv  aes_pipeline_stage9.sv
 # read_verilog -sv  aes_key_gen.sv
 # read_verilog -sv  gcm_aes.sv
-# read_verilog -sv  display.sv
-# read_xdc constraints_artix_7.xdc
 # synth_design -top aes_api
 Command: synth_design -top aes_api
 Starting synth_design
@@ -39,7 +38,7 @@ Using part: xc7vx690tffg1761-3
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx690t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx690t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 45536 
+INFO: Helper process launched with PID 27351 
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:20]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:20]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:4]
@@ -52,41 +51,62 @@ WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/a
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:172]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:196]
 WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_key_gen.sv:220]
-WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_api.v:10]
+WARNING: [Synth 8-1935] empty port in module declaration [/home/yu/aes/AES_GCM/aes_api.v:13]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1163.332 ; gain = 234.113 ; free physical = 52567 ; free virtual = 61515
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1142.324 ; gain = 213.113 ; free physical = 51714 ; free virtual = 61450
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'aes_api' [/home/yu/aes/AES_GCM/aes_api.v:4]
 INFO: [Synth 8-638] synthesizing module 'gcm_aes' [/home/yu/aes/AES_GCM/gcm_aes.sv:9]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:57]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:60]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:66]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:69]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:76]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:77]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:86]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:87]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:96]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:101]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:106]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:107]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:116]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:121]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:126]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:127]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:136]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:141]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:146]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:147]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:156]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:161]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:166]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:167]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:180]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:61]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:64]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:70]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:73]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:80]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:81]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:90]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:91]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:100]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:105]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:110]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:111]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:120]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:125]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:130]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:131]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:140]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:145]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:150]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:151]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:160]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:165]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:170]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:171]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/yu/aes/AES_GCM/gcm_aes.sv:184]
+INFO: [Synth 8-638] synthesizing module 'text_bypasser' [/home/yu/aes/AES_GCM/text_bypasser.sv:2]
+INFO: [Synth 8-638] synthesizing module 'aes_signal_passing' [/home/yu/aes/AES_GCM/aes_signal_passing.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_signal_passing' (1#1) [/home/yu/aes/AES_GCM/aes_signal_passing.sv:1]
+WARNING: [Synth 8-350] instance 'pass' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:30]
+WARNING: [Synth 8-350] instance 'pass0' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:36]
+WARNING: [Synth 8-350] instance 'pass1' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:43]
+WARNING: [Synth 8-350] instance 'pass2' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:50]
+WARNING: [Synth 8-350] instance 'pass3' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:57]
+WARNING: [Synth 8-350] instance 'pass4' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:64]
+WARNING: [Synth 8-350] instance 'pass5' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:71]
+WARNING: [Synth 8-350] instance 'pass6' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:78]
+WARNING: [Synth 8-350] instance 'pass7' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:85]
+WARNING: [Synth 8-350] instance 'pass8' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:92]
+WARNING: [Synth 8-350] instance 'pass9' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:99]
+WARNING: [Synth 8-350] instance 'pass10' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:106]
+WARNING: [Synth 8-350] instance 'pass11' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:113]
+WARNING: [Synth 8-350] instance 'pass12' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:120]
+WARNING: [Synth 8-350] instance 'pass13' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:127]
+WARNING: [Synth 8-350] instance 'pass14' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:134]
+WARNING: [Synth 8-350] instance 'pass15' of module 'aes_signal_passing' requires 7 connections, but only 3 given [/home/yu/aes/AES_GCM/text_bypasser.sv:141]
+INFO: [Synth 8-256] done synthesizing module 'text_bypasser' (2#1) [/home/yu/aes/AES_GCM/text_bypasser.sv:2]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage1' [/home/yu/aes/AES_GCM/aes_pipeline_stage1.sv:1]
 WARNING: [Synth 8-3848] Net o_key_schedule in module/entity aes_pipeline_stage1 does not have driver. [/home/yu/aes/AES_GCM/aes_pipeline_stage1.sv:39]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage1' (1#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage1.sv:1]
-WARNING: [Synth 8-350] instance 'stage1' of module 'aes_pipeline_stage1' requires 18 connections, but only 15 given [/home/yu/aes/AES_GCM/gcm_aes.sv:194]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage1' (3#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage1.sv:1]
+WARNING: [Synth 8-350] instance 'stage1' of module 'aes_pipeline_stage1' requires 18 connections, but only 15 given [/home/yu/aes/AES_GCM/gcm_aes.sv:205]
 INFO: [Synth 8-638] synthesizing module 'aes_key_gen1' [/home/yu/aes/AES_GCM/aes_key_gen.sv:1]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
@@ -98,41 +118,41 @@ INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:5]
 WARNING: [Synth 8-3936] Found unconnected internal register 'r_key_schedule_reg' and it is trimmed from '1408' to '128' bits. [/home/yu/aes/AES_GCM/aes_key_gen.sv:16]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen1' (2#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:1]
-WARNING: [Synth 8-689] width (128) of port connection 'i_key_schedule' does not match port width (1408) of module 'aes_key_gen1' [/home/yu/aes/AES_GCM/gcm_aes.sv:214]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen1' (4#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:1]
+WARNING: [Synth 8-689] width (128) of port connection 'i_key_schedule' does not match port width (1408) of module 'aes_key_gen1' [/home/yu/aes/AES_GCM/gcm_aes.sv:225]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage2_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage2_pre.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage2_pre' (3#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage2_pre.sv:1]
-WARNING: [Synth 8-350] instance 'stage2p' of module 'aes_pipeline_stage2_pre' requires 18 connections, but only 17 given [/home/yu/aes/AES_GCM/gcm_aes.sv:218]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage2_pre' (5#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage2_pre.sv:1]
+WARNING: [Synth 8-350] instance 'stage2p' of module 'aes_pipeline_stage2_pre' requires 18 connections, but only 17 given [/home/yu/aes/AES_GCM/gcm_aes.sv:229]
 INFO: [Synth 8-638] synthesizing module 'aes_key_gen2' [/home/yu/aes/AES_GCM/aes_key_gen.sv:25]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:29]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen2' (4#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:25]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen2' (6#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:25]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage2' [/home/yu/aes/AES_GCM/aes_pipeline_stage2.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage2' (5#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage2.sv:1]
-WARNING: [Synth 8-350] instance 'stage2' of module 'aes_pipeline_stage2' requires 20 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:244]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage2' (7#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage2.sv:1]
+WARNING: [Synth 8-350] instance 'stage2' of module 'aes_pipeline_stage2' requires 20 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:255]
 INFO: [Synth 8-638] synthesizing module 'aes_key_gen3' [/home/yu/aes/AES_GCM/aes_key_gen.sv:49]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:53]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen3' (6#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:49]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen3' (8#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:49]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage3_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage3_pre.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage3_pre' (7#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage3_pre.sv:1]
-WARNING: [Synth 8-350] instance 'stage3p' of module 'aes_pipeline_stage3_pre' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:272]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage3_pre' (9#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage3_pre.sv:1]
+WARNING: [Synth 8-350] instance 'stage3p' of module 'aes_pipeline_stage3_pre' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:283]
 INFO: [Synth 8-638] synthesizing module 'aes_key_gen4' [/home/yu/aes/AES_GCM/aes_key_gen.sv:73]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:77]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen4' (8#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:73]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen4' (10#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:73]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage3' [/home/yu/aes/AES_GCM/aes_pipeline_stage3.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage3' (9#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage3.sv:1]
-WARNING: [Synth 8-350] instance 'stage3' of module 'aes_pipeline_stage3' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:299]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage3' (11#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage3.sv:1]
+WARNING: [Synth 8-350] instance 'stage3' of module 'aes_pipeline_stage3' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:310]
 INFO: [Synth 8-638] synthesizing module 'aes_key_gen5' [/home/yu/aes/AES_GCM/aes_key_gen.sv:97]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
@@ -143,61 +163,59 @@ INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:101]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen5' (10#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:97]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen5' (12#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:97]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage4_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage4_pre.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage4_pre' (11#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage4_pre.sv:1]
-WARNING: [Synth 8-350] instance 'stage4p' of module 'aes_pipeline_stage4_pre' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:326]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage4_pre' (13#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage4_pre.sv:1]
+WARNING: [Synth 8-350] instance 'stage4p' of module 'aes_pipeline_stage4_pre' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:337]
 INFO: [Synth 8-638] synthesizing module 'aes_key_gen6' [/home/yu/aes/AES_GCM/aes_key_gen.sv:121]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:125]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen6' (12#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:121]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen6' (14#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:121]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage4' [/home/yu/aes/AES_GCM/aes_pipeline_stage4.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage4' (13#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage4.sv:1]
-WARNING: [Synth 8-350] instance 'stage4' of module 'aes_pipeline_stage4' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:353]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage4' (15#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage4.sv:1]
+WARNING: [Synth 8-350] instance 'stage4' of module 'aes_pipeline_stage4' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:364]
 INFO: [Synth 8-638] synthesizing module 'aes_key_gen7' [/home/yu/aes/AES_GCM/aes_key_gen.sv:145]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:149]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen7' (14#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:145]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen7' (16#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:145]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage5_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:1]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:21]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage5_pre' (15#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:1]
-WARNING: [Synth 8-350] instance 'stage5p' of module 'aes_pipeline_stage5_pre' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:380]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage5_pre' (17#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage5_pre.sv:1]
+WARNING: [Synth 8-350] instance 'stage5p' of module 'aes_pipeline_stage5_pre' requires 19 connections, but only 18 given [/home/yu/aes/AES_GCM/gcm_aes.sv:391]
 INFO: [Synth 8-638] synthesizing module 'aes_key_gen8' [/home/yu/aes/AES_GCM/aes_key_gen.sv:169]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/yu/aes/AES_GCM/fn_aes_key_expansion.sv:10]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_key_gen.sv:173]
-INFO: [Synth 8-256] done synthesizing module 'aes_key_gen8' (16#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:169]
+INFO: [Synth 8-256] done synthesizing module 'aes_key_gen8' (18#1) [/home/yu/aes/AES_GCM/aes_key_gen.sv:169]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage5' [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:1]
 WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:21]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage5' (17#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage5' (19#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage5.sv:1]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage6_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage6_pre.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage6_pre' (18#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage6_pre.sv:1]
-INFO: [Synth 8-638] synthesizing module 'aes_signal_passing' [/home/yu/aes/AES_GCM/aes_signal_passing.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_signal_passing' (19#1) [/home/yu/aes/AES_GCM/aes_signal_passing.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage6_pre' (20#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage6_pre.sv:1]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage6' [/home/yu/aes/AES_GCM/aes_pipeline_stage6.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage6' (20#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage6.sv:1]
-WARNING: [Synth 8-350] instance 'stage6' of module 'aes_pipeline_stage6' requires 19 connections, but only 13 given [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage6' (21#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage6.sv:1]
+WARNING: [Synth 8-350] instance 'stage6' of module 'aes_pipeline_stage6' requires 19 connections, but only 13 given [/home/yu/aes/AES_GCM/gcm_aes.sv:473]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage7_pre' [/home/yu/aes/AES_GCM/aes_pipeline_stage7_pre.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage7_pre' (21#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage7_pre.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage7_pre' (22#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage7_pre.sv:1]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage7' [/home/yu/aes/AES_GCM/aes_pipeline_stage7.sv:1]
 WARNING: [Synth 8-3936] Found unconnected internal register 'r_key_schedule_reg' and it is trimmed from '1408' to '128' bits. [/home/yu/aes/AES_GCM/aes_pipeline_stage7.sv:61]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage7' (22#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage7.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage7' (23#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage7.sv:1]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage8' [/home/yu/aes/AES_GCM/aes_pipeline_stage8.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage8' (23#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage8.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage8' (24#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage8.sv:1]
 INFO: [Synth 8-638] synthesizing module 'aes_pipeline_stage9' [/home/yu/aes/AES_GCM/aes_pipeline_stage9.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage9' (24#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage9.sv:1]
-INFO: [Synth 8-256] done synthesizing module 'gcm_aes' (25#1) [/home/yu/aes/AES_GCM/gcm_aes.sv:9]
-WARNING: [Synth 8-350] instance 'gcm_aes_instance' of module 'gcm_aes' requires 13 connections, but only 12 given [/home/yu/aes/AES_GCM/aes_api.v:33]
-WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_api.v:11]
-INFO: [Synth 8-256] done synthesizing module 'aes_api' (26#1) [/home/yu/aes/AES_GCM/aes_api.v:4]
+INFO: [Synth 8-256] done synthesizing module 'aes_pipeline_stage9' (25#1) [/home/yu/aes/AES_GCM/aes_pipeline_stage9.sv:1]
+INFO: [Synth 8-256] done synthesizing module 'gcm_aes' (26#1) [/home/yu/aes/AES_GCM/gcm_aes.sv:9]
+WARNING: [Synth 8-350] instance 'gcm_aes_instance' of module 'gcm_aes' requires 15 connections, but only 14 given [/home/yu/aes/AES_GCM/aes_api.v:36]
+WARNING: [Synth 8-308] ignoring empty port [/home/yu/aes/AES_GCM/aes_api.v:14]
+INFO: [Synth 8-256] done synthesizing module 'aes_api' (27#1) [/home/yu/aes/AES_GCM/aes_api.v:4]
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[0]
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[1]
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[2]
@@ -300,328 +318,22 @@ WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_sc
 WARNING: [Synth 8-3331] design aes_pipeline_stage7 has unconnected port i_key_schedule[99]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1926.840 ; gain = 997.621 ; free physical = 51787 ; free virtual = 60754
+Finished Synthesize : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1904.832 ; gain = 975.621 ; free physical = 50940 ; free virtual = 60696
 ---------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[0] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[1] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[2] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[3] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[4] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[5] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[6] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[7] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[8] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[9] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[10] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[11] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[12] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[13] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[14] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[15] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[16] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[17] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[18] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[19] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[20] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[21] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[22] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[23] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[24] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[25] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[26] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[27] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[28] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[29] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[30] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[31] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[32] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[33] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[34] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[35] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[36] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[37] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[38] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[39] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[40] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[41] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[42] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[43] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[44] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[45] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[46] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[47] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[48] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[49] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[50] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[51] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[52] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[53] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[54] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[55] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[56] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[57] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[58] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[59] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[60] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[61] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[62] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[63] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[64] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[65] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[66] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[67] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[68] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[69] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[70] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[71] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[72] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[73] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[74] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[75] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[76] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[77] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[78] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[79] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[80] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[81] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[82] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[83] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[84] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[85] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[86] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[87] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[88] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[89] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[90] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[91] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[92] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[93] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[94] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[95] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[96] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[97] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[98] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-WARNING: [Synth 8-3295] tying undriven pin stage6:i_plain_text[99] to constant 0 [/home/yu/aes/AES_GCM/gcm_aes.sv:462]
-INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1926.840 ; gain = 997.621 ; free physical = 51787 ; free virtual = 60755
----------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7vx690tffg1761-3
-INFO: [Project 1-570] Preparing netlist for logic optimization
-
-Processing XDC Constraints
-Initializing timing engine
-Parsing XDC File [/home/yu/aes/AES_GCM/constraints_artix_7.xdc]
-CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'LVCMOS33' is not supported on 'xc7vx690tffg1761-3' part. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:3]
-WARNING: [Vivado 12-584] No ports matched 'i_reset'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:7]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:7]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'i_reset'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:8]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:8]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:11]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:11]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:12]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:12]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:13]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:13]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:14]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:14]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:15]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:15]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:16]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:16]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:17]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:17]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:18]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:18]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:19]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:19]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:20]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:20]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:21]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:21]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:22]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:22]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:23]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:23]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:24]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:24]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:25]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:25]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:26]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:26]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:27]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:27]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:28]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:28]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:29]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:29]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:30]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:30]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:31]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:31]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:32]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:32]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:33]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:33]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:34]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:34]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:35]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:35]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:36]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:36]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:37]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:37]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:38]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:38]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:39]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:39]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:40]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:40]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:41]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:41]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:42]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:42]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:45]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:45]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:46]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:46]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:47]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:47]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:48]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:48]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:49]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:49]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:50]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:50]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:51]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:51]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:52]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:52]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:53]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:53]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[4]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:54]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:54]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:55]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:55]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[5]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:56]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:56]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:57]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:57]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[6]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:58]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:58]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'dp'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:60]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:60]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'dp'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:61]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:61]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[0]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:63]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:63]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[0]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:64]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:64]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[1]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:65]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:65]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[1]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:66]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:66]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[2]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:67]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:67]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[2]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:68]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:68]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[3]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:69]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:69]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an[3]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:70]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:70]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-Finished Parsing XDC File [/home/yu/aes/AES_GCM/constraints_artix_7.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/yu/aes/AES_GCM/constraints_artix_7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/aes_api_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/aes_api_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Completed Processing XDC Constraints
-
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2371.527 ; gain = 0.000 ; free physical = 51496 ; free virtual = 60463
----------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:49 ; elapsed = 00:00:48 . Memory (MB): peak = 2371.527 ; gain = 1442.309 ; free physical = 51494 ; free virtual = 60462
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1904.832 ; gain = 975.621 ; free physical = 50942 ; free virtual = 60697
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7vx690tffg1761-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:49 ; elapsed = 00:00:48 . Memory (MB): peak = 2371.527 ; gain = 1442.309 ; free physical = 51494 ; free virtual = 60462
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1912.836 ; gain = 983.625 ; free physical = 50942 ; free virtual = 60697
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Applying 'set_property' XDC Constraints
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 2371.527 ; gain = 1442.309 ; free physical = 51494 ; free virtual = 60462
----------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx690tffg1761-3
 INFO: [Synth 8-5544] ROM "o_tag_ready" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:42 ; elapsed = 00:01:43 . Memory (MB): peak = 2371.527 ; gain = 1442.309 ; free physical = 51454 ; free virtual = 60422
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:22 ; elapsed = 00:01:17 . Memory (MB): peak = 2219.305 ; gain = 1290.094 ; free physical = 50644 ; free virtual = 60399
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -636,8 +348,9 @@ Report RTL Partitions:
 |6     |gcm_aes__GCB1            |           1|     11132|
 |7     |gcm_aes__GCB2            |           1|     22427|
 |8     |gcm_aes__GCB3            |           1|     22220|
-|9     |gcm_aes__GCB4            |           1|     24624|
+|9     |gcm_aes__GCB4            |           1|     31152|
 +------+-------------------------+------------+----------+
+No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -673,7 +386,7 @@ Detailed RTL Component Info :
 	   4 Input      8 Bit         XORs := 432   
 +---Registers : 
 	             1408 Bit    Registers := 18    
-	              128 Bit    Registers := 89    
+	              128 Bit    Registers := 140   
 	               96 Bit    Registers := 3     
 	                8 Bit    Registers := 448   
 	                4 Bit    Registers := 1     
@@ -970,6 +683,74 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 1     
 +---ROMs : 
 	                              ROMs := 48    
+Module aes_signal_passing__1 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__2 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__3 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__4 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__5 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__6 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__7 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__8 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__9 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__10 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__11 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__12 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__13 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__14 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__15 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__16 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
+Module aes_signal_passing__17 
+Detailed RTL Component Info : 
++---Registers : 
+	              128 Bit    Registers := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -1297,7 +1078,7 @@ INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instan
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:34 ; elapsed = 00:03:13 . Memory (MB): peak = 2393.512 ; gain = 1464.293 ; free physical = 45742 ; free virtual = 54719
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:14 ; elapsed = 00:02:47 . Memory (MB): peak = 2342.316 ; gain = 1413.105 ; free physical = 45003 ; free virtual = 54767
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2709,149 +2490,152 @@ Report RTL Partitions:
 |6     |gcm_aes__GCB1            |           1|      5432|
 |7     |gcm_aes__GCB2            |           1|     10895|
 |8     |gcm_aes__GCB3            |           1|     11876|
-|9     |gcm_aes__GCB4            |           1|     10928|
+|9     |gcm_aes__GCB4            |           1|     13104|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
+No constraint files found.
 ---------------------------------------------------------------------------------
-Start Applying XDC Timing Constraints
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:40 ; elapsed = 00:03:19 . Memory (MB): peak = 2520.801 ; gain = 1591.582 ; free physical = 45615 ; free virtual = 54592
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:18 ; elapsed = 00:04:58 . Memory (MB): peak = 3614.395 ; gain = 2685.176 ; free physical = 44540 ; free virtual = 53519
+Finished Timing Optimization : Time (s): cpu = 00:02:14 ; elapsed = 00:02:47 . Memory (MB): peak = 2347.316 ; gain = 1418.105 ; free physical = 44997 ; free virtual = 54762
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+-------------------------+------------+----------+
 |      |RTL Partition            |Replication |Instances |
 +------+-------------------------+------------+----------+
-|1     |aes_pipeline_stage9__GB1 |           1|      6902|
-|2     |gcm_aes__GCB0            |           1|      9517|
-|3     |aes_api_GT0              |           1|     61869|
-|4     |aes_api_GT1              |           1|       128|
-|5     |aes_api_GT0__3           |           1|     33243|
+|1     |aes_pipeline_stage8__GB0 |           1|     27461|
+|2     |aes_pipeline_stage8__GB1 |           1|      7162|
+|3     |aes_pipeline_stage9__GB0 |           1|     27592|
+|4     |aes_pipeline_stage9__GB1 |           1|      6902|
+|5     |gcm_aes__GCB0            |           1|     13642|
+|6     |gcm_aes__GCB1            |           1|      5432|
+|7     |gcm_aes__GCB2            |           1|     10895|
+|8     |gcm_aes__GCB3            |           1|     11876|
+|9     |gcm_aes__GCB4            |           1|     13104|
 +------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2p/sel__13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage2/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3p/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/r_j0_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/r_j0_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__7 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__9 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__11 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/r_cb_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/r_cb_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__13 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__14 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__14 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__15 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__15 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__16 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__16 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__17 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__17 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__18 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__18 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__19 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instance/stage3/sel__19 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__8 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__10 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__12 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/r_encrypted_j0_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/r_encrypted_j0_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__15 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__15 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__17 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__17 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__19 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__19 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__21 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__21 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__23 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__23 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__25 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__25 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__27 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__27 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/r_encrypted_cb_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/r_encrypted_cb_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__30 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__30 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__32 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__32 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__34 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__34 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__36 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__36 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__38 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__38 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__40 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__40 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__42 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage5/sel__42 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage6p/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage6p/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage6p/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_1/gcm_aes_instance/stage6p/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2p/sel__6 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage2/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel__0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel__1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel__2 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel__3 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel__4 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_4/gcm_aes_instance/stage3p/sel__5 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/r_h_reg_rep_bsel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance gcm_aes_instancei_7/gcm_aes_instance/stage5/sel (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Common 17-14] Message 'Synth 8-4480' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-4480' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-4480' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:25 ; elapsed = 00:05:18 . Memory (MB): peak = 3626.320 ; gain = 2697.102 ; free physical = 45470 ; free virtual = 54456
+Finished Technology Mapping : Time (s): cpu = 00:02:24 ; elapsed = 00:02:56 . Memory (MB): peak = 2361.242 ; gain = 1432.031 ; free physical = 44984 ; free virtual = 54758
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+---------------+------------+----------+
-|      |RTL Partition  |Replication |Instances |
-+------+---------------+------------+----------+
-|1     |aes_api_GT0    |           1|     16623|
-|2     |aes_api_GT0__3 |           1|     13484|
-+------+---------------+------------+----------+
++------+-------------------------+------------+----------+
+|      |RTL Partition            |Replication |Instances |
++------+-------------------------+------------+----------+
+|1     |aes_pipeline_stage8__GB0 |           1|      7606|
+|2     |aes_pipeline_stage9__GB0 |           1|      7418|
+|3     |gcm_aes__GCB0            |           1|      8346|
+|4     |gcm_aes__GCB2            |           1|      5400|
+|5     |gcm_aes__GCB3            |           1|      6360|
+|6     |gcm_aes__GCB4            |           1|      6960|
++------+-------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -2868,7 +2652,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:29 ; elapsed = 00:05:22 . Memory (MB): peak = 3626.320 ; gain = 2697.102 ; free physical = 45472 ; free virtual = 54457
+Finished IO Insertion : Time (s): cpu = 00:02:30 ; elapsed = 00:03:02 . Memory (MB): peak = 2361.242 ; gain = 1432.031 ; free physical = 44986 ; free virtual = 54759
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2881,7 +2665,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:29 ; elapsed = 00:05:22 . Memory (MB): peak = 3626.320 ; gain = 2697.102 ; free physical = 45471 ; free virtual = 54457
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:30 ; elapsed = 00:03:02 . Memory (MB): peak = 2361.242 ; gain = 1432.031 ; free physical = 44986 ; free virtual = 54759
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2893,39 +2677,41 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:32 ; elapsed = 00:05:25 . Memory (MB): peak = 3626.320 ; gain = 2697.102 ; free physical = 45472 ; free virtual = 54457
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:31 ; elapsed = 00:03:03 . Memory (MB): peak = 2361.242 ; gain = 1432.031 ; free physical = 44985 ; free virtual = 54759
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:32 ; elapsed = 00:05:25 . Memory (MB): peak = 3626.320 ; gain = 2697.102 ; free physical = 45472 ; free virtual = 54457
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:31 ; elapsed = 00:03:03 . Memory (MB): peak = 2361.242 ; gain = 1432.031 ; free physical = 44986 ; free virtual = 54759
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:34 ; elapsed = 00:05:27 . Memory (MB): peak = 3626.320 ; gain = 2697.102 ; free physical = 45472 ; free virtual = 54457
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:33 ; elapsed = 00:03:05 . Memory (MB): peak = 2361.242 ; gain = 1432.031 ; free physical = 44987 ; free virtual = 54760
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:34 ; elapsed = 00:05:27 . Memory (MB): peak = 3626.320 ; gain = 2697.102 ; free physical = 45472 ; free virtual = 54458
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:33 ; elapsed = 00:03:05 . Memory (MB): peak = 2361.242 ; gain = 1432.031 ; free physical = 44987 ; free virtual = 54760
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Static Shift Register Report:
-+------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name | RTL Name                                         | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|aes_api     | gcm_aes_instance/stage8/r_phase_reg[0]           | 13     | 3     | NO           | NO                 | YES               | 3      | 0       | 
-|aes_api     | gcm_aes_instance/stage8/r_new_instance_reg       | 13     | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|aes_api     | gcm_aes_instance/stage8/r_h_reg[0]               | 3      | 128   | NO           | NO                 | YES               | 128    | 0       | 
-|aes_api     | gcm_aes_instance/stage6/r_key_schedule_reg[1280] | 3      | 128   | NO           | NO                 | YES               | 128    | 0       | 
-+------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
++------------+------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                                             | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|aes_api     | gcm_aes_instance/stage8/r_phase_reg[0]               | 13     | 3     | NO           | NO                 | YES               | 3      | 0       | 
+|aes_api     | gcm_aes_instance/stage8/r_new_instance_reg           | 13     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|aes_api     | gcm_aes_instance/stage8/r_h_reg[0]                   | 3      | 128   | NO           | NO                 | YES               | 128    | 0       | 
+|aes_api     | gcm_aes_instance/stage9/r_instance_size_reg[0]       | 11     | 128   | NO           | NO                 | YES               | 128    | 0       | 
+|aes_api     | gcm_aes_instance/stage6/r_key_schedule_reg[1280]     | 3      | 128   | NO           | NO                 | YES               | 128    | 0       | 
+|aes_api     | gcm_aes_instance/bypasser/pass15/r_plain_text_reg[0] | 17     | 128   | NO           | YES                | YES               | 128    | 0       | 
++------------+------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -2941,212 +2727,85 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----------+------+
-|      |Cell       |Count |
-+------+-----------+------+
-|1     |BUFG       |     1|
-|2     |CARRY4     |   101|
-|3     |LUT1       |   417|
-|4     |LUT2       |   623|
-|5     |LUT3       |   770|
-|6     |LUT4       |  7869|
-|7     |LUT5       |  4362|
-|8     |LUT6       | 11030|
-|9     |MUXF7      |   512|
-|10    |MUXF8      |   128|
-|11    |RAMB18E1   |    24|
-|12    |RAMB18E1_2 |   200|
-|13    |SRL16E     |   260|
-|14    |FDRE       |  8332|
-|15    |IBUF       |     2|
-|16    |OBUF       |   258|
-+------+-----------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |   101|
+|3     |LUT1     |   286|
+|4     |LUT2     |   928|
+|5     |LUT3     |   905|
+|6     |LUT4     |  6709|
+|7     |LUT5     |  4686|
+|8     |LUT6     | 13121|
+|9     |MUXF7    |  1024|
+|10    |MUXF8    |   352|
+|11    |RAMB18E1 |   224|
+|12    |SRL16E   |   516|
+|13    |FDRE     |  9419|
+|14    |IBUF     |   258|
+|15    |OBUF     |   386|
++------+---------+------+
 
 Report Instance Areas: 
 +------+-------------------+------------------------+------+
 |      |Instance           |Module                  |Cells |
 +------+-------------------+------------------------+------+
-|1     |top                |                        | 34889|
-|2     |  gcm_aes_instance |gcm_aes                 | 34628|
-|3     |    keygen2        |aes_key_gen3            |   375|
-|4     |    keygen3        |aes_key_gen4            |   595|
-|5     |    keygen4        |aes_key_gen5            |   819|
-|6     |    keygen5        |aes_key_gen6            |   640|
-|7     |    keygen6        |aes_key_gen7            |   696|
-|8     |    keygen7        |aes_key_gen8            |   736|
-|9     |    pass6          |aes_signal_passing      |   256|
-|10    |    stage1         |aes_pipeline_stage1     |   632|
-|11    |    stage2         |aes_pipeline_stage2     |   512|
-|12    |    stage2p        |aes_pipeline_stage2_pre |   566|
-|13    |    stage3         |aes_pipeline_stage3     |   951|
-|14    |    stage3p        |aes_pipeline_stage3_pre |   759|
-|15    |    stage4         |aes_pipeline_stage4     |  1040|
-|16    |    stage4p        |aes_pipeline_stage4_pre |  1051|
-|17    |    stage5         |aes_pipeline_stage5     |  1320|
-|18    |    stage5p        |aes_pipeline_stage5_pre |  1064|
-|19    |    stage6         |aes_pipeline_stage6     |   888|
-|20    |    stage6p        |aes_pipeline_stage6_pre |  1320|
-|21    |    stage7         |aes_pipeline_stage7     |   794|
-|22    |    stage7p        |aes_pipeline_stage7_pre |   880|
-|23    |    stage8         |aes_pipeline_stage8     |  9464|
-|24    |    stage9         |aes_pipeline_stage9     |  9004|
+|1     |top                |                        | 38916|
+|2     |  gcm_aes_instance |gcm_aes                 | 38232|
+|3     |    bypasser       |text_bypasser           |   384|
+|4     |      pass         |aes_signal_passing_0    |   128|
+|5     |      pass14       |aes_signal_passing_1    |   128|
+|6     |      pass15       |aes_signal_passing_2    |   128|
+|7     |    keygen1        |aes_key_gen2            |   256|
+|8     |    keygen2        |aes_key_gen3            |   416|
+|9     |    keygen3        |aes_key_gen4            |   736|
+|10    |    keygen4        |aes_key_gen5            |   704|
+|11    |    keygen5        |aes_key_gen6            |   768|
+|12    |    keygen6        |aes_key_gen7            |   672|
+|13    |    keygen7        |aes_key_gen8            |   864|
+|14    |    pass6          |aes_signal_passing      |   256|
+|15    |    stage1         |aes_pipeline_stage1     |   745|
+|16    |    stage2         |aes_pipeline_stage2     |   543|
+|17    |    stage2p        |aes_pipeline_stage2_pre |   582|
+|18    |    stage3         |aes_pipeline_stage3     |  1053|
+|19    |    stage3p        |aes_pipeline_stage3_pre |  1788|
+|20    |    stage4         |aes_pipeline_stage4     |   936|
+|21    |    stage4p        |aes_pipeline_stage4_pre |   808|
+|22    |    stage5         |aes_pipeline_stage5     |  1320|
+|23    |    stage5p        |aes_pipeline_stage5_pre |   808|
+|24    |    stage6         |aes_pipeline_stage6     |   888|
+|25    |    stage6p        |aes_pipeline_stage6_pre |  1320|
+|26    |    stage7         |aes_pipeline_stage7     |   794|
+|27    |    stage7p        |aes_pipeline_stage7_pre |   880|
+|28    |    stage8         |aes_pipeline_stage8     |  9404|
+|29    |    stage9         |aes_pipeline_stage9     |  9259|
 +------+-------------------+------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:34 ; elapsed = 00:05:27 . Memory (MB): peak = 3626.320 ; gain = 2697.102 ; free physical = 45473 ; free virtual = 54458
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:33 ; elapsed = 00:03:05 . Memory (MB): peak = 2361.242 ; gain = 1432.031 ; free physical = 44987 ; free virtual = 54760
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1569 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:04:11 ; elapsed = 00:05:09 . Memory (MB): peak = 3626.320 ; gain = 2098.520 ; free physical = 50132 ; free virtual = 59117
-Synthesis Optimization Complete : Time (s): cpu = 00:04:34 ; elapsed = 00:05:31 . Memory (MB): peak = 3626.320 ; gain = 2697.102 ; free physical = 50149 ; free virtual = 59118
+Synthesis finished with 0 errors, 0 critical warnings and 10183 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:31 ; elapsed = 00:03:07 . Memory (MB): peak = 2361.242 ; gain = 1300.137 ; free physical = 50502 ; free virtual = 60275
+Synthesis Optimization Complete : Time (s): cpu = 00:02:33 ; elapsed = 00:03:10 . Memory (MB): peak = 2361.242 ; gain = 1432.031 ; free physical = 50519 ; free virtual = 60275
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 327 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 583 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-Parsing XDC File [/home/yu/aes/AES_GCM/constraints_artix_7.xdc]
-CRITICAL WARNING: [Vivado 12-1815] Setting property 'IOSTANDARD' is not allowed for GT terminals. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:3]
-WARNING: [Vivado 12-584] No ports matched 'i_reset'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:7]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:7]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'i_reset'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:8]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:8]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:11]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:11]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:12]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:12]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:13]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:13]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:14]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:14]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:15]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:15]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:16]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:16]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:17]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:17]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:18]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:18]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:19]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:19]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:20]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:20]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:21]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:21]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:22]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:22]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:23]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:23]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:24]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:24]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:25]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:25]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:26]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:26]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:27]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:27]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:28]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:28]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:29]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:29]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:30]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:30]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:31]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:31]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:32]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:32]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:33]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:33]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:34]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:34]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:35]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:35]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:36]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:36]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:37]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:37]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:38]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:38]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:39]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:39]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:40]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:40]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:41]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:41]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:42]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:42]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:45]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:45]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[0]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:46]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:46]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:47]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:47]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[1]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:48]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:48]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:49]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:49]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[2]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:50]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:50]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:51]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:51]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg[3]'. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:52]
-INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:52]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:52]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/yu/aes/AES_GCM/constraints_artix_7.xdc:52]
-Finished Parsing XDC File [/home/yu/aes/AES_GCM/constraints_artix_7.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-509 Infos, 438 Warnings, 102 Critical Warnings and 0 Errors encountered.
+505 Infos, 255 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:37 ; elapsed = 00:05:33 . Memory (MB): peak = 3670.422 ; gain = 2647.699 ; free physical = 50150 ; free virtual = 59118
+synth_design: Time (s): cpu = 00:02:41 ; elapsed = 00:03:17 . Memory (MB): peak = 2405.344 ; gain = 1404.629 ; free physical = 50523 ; free virtual = 60279
 # exec mkdir -p -- ./reports
 # report_timing -setup  -file ./reports/synth_aes_setup_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
-report_timing: Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 3741.480 ; gain = 71.059 ; free physical = 50145 ; free virtual = 59113
+report_timing: Time (s): cpu = 00:00:22 ; elapsed = 00:00:15 . Memory (MB): peak = 2507.402 ; gain = 102.059 ; free physical = 50492 ; free virtual = 60247
 # report_timing -hold   -file ./reports/synth_aes_hold_report.txt
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
@@ -3155,8 +2814,8 @@ INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type min 
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 # report_utilization    -file ./reports/synth_utilization_report.txt
-report_utilization: Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.34 . Memory (MB): peak = 3741.480 ; gain = 0.000 ; free physical = 50142 ; free virtual = 59110
+report_utilization: Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.32 . Memory (MB): peak = 2507.402 ; gain = 0.000 ; free physical = 50492 ; free virtual = 60247
 # report_utilization -hierarchical  -file ./reports/synth_utilization_report_submodule.txt
-report_utilization: Time (s): cpu = 00:00:00.36 ; elapsed = 00:00:00.46 . Memory (MB): peak = 3741.480 ; gain = 0.000 ; free physical = 50143 ; free virtual = 59111
+report_utilization: Time (s): cpu = 00:00:00.38 ; elapsed = 00:00:00.46 . Memory (MB): peak = 2507.402 ; gain = 0.000 ; free physical = 50493 ; free virtual = 60248
 # exit
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 27 17:25:09 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 28 12:00:05 2019...

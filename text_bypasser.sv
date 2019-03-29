@@ -124,24 +124,24 @@ module text_bypasser(
         .o_plain_text(bypass13)
     );
         
-    aes_signal_passing pass13
-    (
-        .clk(clk),
-        .i_plain_text(bypass13),
-        .o_plain_text(bypass14)
-    );
-        
-    aes_signal_passing pass14
-    (
-        .clk(clk),
-        .i_plain_text(bypass14),
-        .o_plain_text(bypass15)
-    );
+    //aes_signal_passing pass13
+    //(
+    //    .clk(clk),
+    //    .i_plain_text(bypass13),
+    //    .o_plain_text(bypass14)
+    //);
+    //    
+    //aes_signal_passing pass14
+    //(
+    //    .clk(clk),
+    //    .i_plain_text(bypass14),
+    //    .o_plain_text(bypass15)
+    //);
         
     aes_signal_passing pass15
     (
         .clk(clk),
-        .i_plain_text(bypass15),
+        .i_plain_text(bypass13),
         .o_plain_text(o_text)
     );
         

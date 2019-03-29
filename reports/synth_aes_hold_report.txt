@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-| Date         : Wed Mar 27 17:25:07 2019
+| Date         : Thu Mar 28 12:00:03 2019
 | Host         : cyclops running 64-bit Ubuntu 16.04.5 LTS
 | Command      : report_timing -hold -file ./reports/synth_aes_hold_report.txt
 | Design       : aes_api
@@ -11,54 +11,22 @@ Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
 Timing Report
 
-Slack (MET) :             0.054ns  (arrival time - required time)
-  Source:                 gcm_aes_instance/stage8/r_phase_reg[2]__0/C
-                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            gcm_aes_instance/stage9/r_ready_reg/D
-                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             clk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
-  Data Path Delay:        0.268ns  (logic 0.157ns (58.615%)  route 0.111ns (41.385%))
-  Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        0.145ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.556ns
-    Source Clock Delay      (SCD):    0.393ns
-    Clock Pessimism Removal (CPR):    0.017ns
+Slack:                    inf
+  Source:                 gcm_aes_instance/stage6/r_key_schedule_reg[1280]__0/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            gcm_aes_instance/stage7p/r_key_schedule_reg[1280]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.199ns  (logic 0.093ns (46.828%)  route 0.106ns (53.172%))
+  Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk rise edge)        0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.000     0.000 r  clk_IBUF_inst/O
-                         net (fo=1, unplaced)         0.253     0.253    clk_IBUF
-                         BUFG (Prop_bufg_I_O)         0.026     0.279 r  clk_IBUF_BUFG_inst/O
-                         net (fo=9040, unplaced)      0.114     0.393    gcm_aes_instance/stage8/clk_IBUF_BUFG
-                         FDRE                                         r  gcm_aes_instance/stage8/r_phase_reg[2]__0/C
+                         FDRE                         0.000     0.000 r  gcm_aes_instance/stage6/r_key_schedule_reg[1280]__0/C
+                         FDRE (Prop_fdre_C_Q)         0.093     0.093 r  gcm_aes_instance/stage6/r_key_schedule_reg[1280]__0/Q
+                         net (fo=2, unplaced)         0.106     0.199    gcm_aes_instance/stage7p/D[127]
+                         FDRE                                         r  gcm_aes_instance/stage7p/r_key_schedule_reg[1280]/D
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.093     0.486 r  gcm_aes_instance/stage8/r_phase_reg[2]__0/Q
-                         net (fo=3, unplaced)         0.111     0.597    gcm_aes_instance/stage8/D[0]
-                         LUT2 (Prop_lut2_I1_O)        0.064     0.661 r  gcm_aes_instance/stage8/r_ready_i_1/O
-                         net (fo=1, unplaced)         0.000     0.661    gcm_aes_instance/stage9/w_s8_sblock_ready
-                         FDRE                                         r  gcm_aes_instance/stage9/r_ready_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk rise edge)        0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    W5                   IBUF (Prop_ibuf_I_O)         0.000     0.000 r  clk_IBUF_inst/O
-                         net (fo=1, unplaced)         0.267     0.267    clk_IBUF
-                         BUFG (Prop_bufg_I_O)         0.030     0.297 r  clk_IBUF_BUFG_inst/O
-                         net (fo=9040, unplaced)      0.259     0.556    gcm_aes_instance/stage9/clk_IBUF_BUFG
-                         FDRE                                         r  gcm_aes_instance/stage9/r_ready_reg/C
-                         clock pessimism             -0.017     0.538    
-                         FDRE (Hold_fdre_C_D)         0.069     0.607    gcm_aes_instance/stage9/r_ready_reg
-  -------------------------------------------------------------------
-                         required time                         -0.607    
-                         arrival time                           0.661    
-  -------------------------------------------------------------------
-                         slack                                  0.054    
 
 
 

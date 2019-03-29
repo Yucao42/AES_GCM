@@ -27,7 +27,7 @@ module testbench(
     logic [0:127] plain_text_block;
     logic [0:127] aad_block;
     logic [0:127] cipher_text_block;
-    logic new_instance = 0;
+    reg new_instance = 0;
     logic pt_instance = 0;
     logic tag_ready;
     logic ct_ready;
@@ -55,8 +55,8 @@ module testbench(
         .i_iv(iv),
         .i_plain_text(i_plain_text),
         .i_aad(aad_block),
-        .i_plain_text_size(64'd512),
-        .i_aad_size(64'd128),
+        .i_plain_text_size(64'd128),
+        .i_aad_size(64'd0),
         .i_bypass_text(bypass_text),
         .o_bypass_text(o_bypass_text),
         .o_cipher_text(cipher_text_block),
@@ -80,12 +80,12 @@ module testbench(
 	//new_instance = 0;
         #10 clk = ~clk;
         #10 clk = ~clk;
-	new_instance = 0;
         bypass_text = 128'h9A;
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
+	new_instance = 0;
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk; // Posedge
