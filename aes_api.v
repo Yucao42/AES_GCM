@@ -18,12 +18,12 @@ module aes_api(
     // block and 128 bits input key block.
     input           i_new;
 	input [0:127]   i_plain_text;
-	input [0:127]   i_bypass_text;
+	input [288:0]   i_bypass_text;
     output          o_tag_ready;
     // Cipher_text is ready
     output          o_cp_ready;
     output [0:127]  o_cipher_text;
-	output [0:127]  o_bypass_text;
+	output [288:0]  o_bypass_text;
     output [0:127]  o_tag;
 
 	// By default using all zeros to test the api 
