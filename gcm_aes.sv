@@ -30,7 +30,9 @@ module gcm_aes(
 
     input  [0:95]       i_iv;
     input  [127:0]      i_plain_text;
-    input  [127:0]      i_bypass_text;
+	// 128 tdata 128 tuser 16 tkeep 1 tlast
+	// in total 273 bits
+    input  [272:0]      i_bypass_text;
     input  [0:127]      i_aad;
     input  [0:127]      i_cipher_key;
     input  [0:63]       i_plain_text_size;
@@ -40,7 +42,7 @@ module gcm_aes(
     output logic [0:127]   o_tag;
     output logic           o_tag_ready;
     output logic           o_cp_ready;
-    output logic [127:0]   o_bypass_text;
+    output logic [272:0]   o_bypass_text;
 
     /* New instance signals */
     logic             w_s1p_new_instance;
@@ -198,8 +200,14 @@ module gcm_aes(
 	text_bypasser bypasser
 	(
 		.clk(clk),
-		.i_text(i_bypass_text),
-		.o_text(o_bypass_text)
+		.i_text(i_bypass_text[272:145]),
+		.o_text(o_bypass_text[272:145]),
+		.i_tuser(i_bypass_text[144:17]),
+		.o_tuser(o_bypass_text[144:17]),
+		.i_tlast(i_bypass_text[0:0]),
+		.o_tlast(o_bypass_text[0:0]),
+		.i_tkeep(i_bypass_text[16:1]),
+		.o_tkeep(o_bypass_text[16:1])
 	);
 
     aes_pipeline_stage1 stage1(

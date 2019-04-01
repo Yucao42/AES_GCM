@@ -15,8 +15,8 @@ module testbench(
     logic [0:95]  iv         = 96'd0;
     //logic [0:127] plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
     logic [127:0] plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
-    logic [127:0] bypass_text = 128'hD9313225F88406E5A55909C5AFF5269A;
-    logic [127:0] o_bypass_text;
+    logic [272:0] bypass_text = 273'hD9313225F88406E5A55909C5AFF5269A9313225F88406E5A55909C5AFF5269A;
+    logic [272:0] o_bypass_text;
     //logic [127:0] plain_text = 128'd0;
     logic [0:511] aad        = 128'h3AD77BB40D7A3660A89ECAF32466EF97;
     //logic [0:511] aad        = 128'd0;
@@ -74,13 +74,13 @@ module testbench(
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
         new_instance = 1;
-        bypass_text = 128'hF5269A;
+        bypass_text = 273'hF5269A;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk; // Posedge
 	//new_instance = 0;
         #10 clk = ~clk;
         #10 clk = ~clk;
-        bypass_text = 128'h9A;
+        bypass_text = 273'h9A;
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
