@@ -14,15 +14,19 @@ module testbench(
     logic [0:127] cipher_key = 128'd0;
     logic [0:95]  iv         = 96'd0;
     //logic [0:127] plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
-    logic [127:0] plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
+    //logic [127:0] plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
+    logic [127:0] plain_text = 128'h62626262626262626262626262626262;
     logic [288:0] bypass_text = 289'hD9313225F88406E5A55909C5AFF5269A9313225F88406E5A55909C5AFF5269A;
     logic [288:0] o_bypass_text;
+    logic [160:0] o_bypass_text_1;
+    logic [127:0] o_bypass_text_2;
     //logic [127:0] plain_text = 128'd0;
     logic [0:511] aad        = 128'h3AD77BB40D7A3660A89ECAF32466EF97;
     //logic [0:511] aad        = 128'd0;
     logic [0:511] cipher_text;
     //logic [0:127] i_plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
-    logic [127:0] i_plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
+    logic [127:0] i_plain_text = 128'h62626262626262626262626262626262;
+    //logic [127:0] i_plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
 
     logic [0:127] plain_text_block;
     logic [0:127] aad_block;
@@ -58,7 +62,8 @@ module testbench(
         .i_plain_text_size(64'd128),
         .i_aad_size(64'd0),
         .i_bypass_text({bypass_text[288:128], i_plain_text}),
-        .o_bypass_text(o_bypass_text),
+        //.o_bypass_text(o_bypass_text),
+        .o_bypass_text({o_bypass_text_1, o_bypass_text_2}),
         .o_cipher_text(cipher_text_block),
         .o_tag(tag),
         .o_tag_ready(tag_ready),

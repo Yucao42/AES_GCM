@@ -27,7 +27,7 @@ def sendeth(src, dst, eth_type, payload, interface = "eth2"):
   # From the docs: "For raw packet
   # sockets the address is a tuple (ifname, proto [,pkttype [,hatype]])"
 #  print('Src: {}\nDst: {}'.format(src.decode('hex'), dst.decode('hex')))
-  s.bind((interface, 1535))
+  s.bind((interface, 0))
   #return s.send(dst + src + eth_type + payload)
 
   #print(src + dst+ eth_type + payload)
@@ -42,7 +42,8 @@ if __name__ == "__main__":
               #"\x02\x53\x55\x4d\x45\x00",
               "\x3c\xfd\xfe\xbd\x01\xa5",
               #"\x02\x53\x55\x4d\x45\x00",
-              "\x88\x00",
+              "\x88\x88",
               #"\x7A\x05",
+    #"0000000000000000"))
     "bbbbbbbbbbbbbbbb"))
     #time.sleep(1)
