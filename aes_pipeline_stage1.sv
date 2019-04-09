@@ -6,7 +6,7 @@ module aes_pipeline_stage1 (
     i_new_instance,
     i_iv,
     i_instance_size,
-    i_pt_instance,
+    i_last_instance,
     i_id,  // Parallel id 0 1 2 3 for 4 parallel workers
     o_counter,
     o_key_schedule,
@@ -16,7 +16,7 @@ module aes_pipeline_stage1 (
     o_instance_size,
     o_new_instance,
     o_phase,
-    o_pt_instance
+    o_last_instance
 );
 
     input logic           clk;
@@ -27,7 +27,7 @@ module aes_pipeline_stage1 (
     input logic [0:3]     i_id;
     input logic [0:127]   i_instance_size;
     input logic           i_new_instance;
-    input logic           i_pt_instance;
+    input logic           i_last_instance;
 
     output logic [0:127]   o_plain_text;
     output logic [0:127]   o_aad;
@@ -35,7 +35,7 @@ module aes_pipeline_stage1 (
     output logic [0:127]    o_counter;
     output logic [0:127]   o_instance_size;
     output logic           o_new_instance;
-    output logic           o_pt_instance;
+    output logic           o_last_instance;
     output logic [0:1407]  o_key_schedule;
     output logic [0:2]     o_phase;
 
@@ -45,7 +45,7 @@ module aes_pipeline_stage1 (
     logic [0:95]    r_iv;
     logic [0:127]   r_instance_size;
     logic           r_new_instance;
-    logic           r_pt_instance;
+    logic           r_last_instance;
     logic           r_invalid = 0;
 
     logic [0:127]   r_counter;
@@ -66,7 +66,7 @@ module aes_pipeline_stage1 (
         r_id            <= i_id;
         r_instance_size <= i_instance_size;
         r_new_instance  <= i_new_instance;
-        r_pt_instance   <= i_pt_instance;
+        r_last_instance   <= i_last_instance;
 
         r_counter       <= w_counter; // Cycle
         r_invalid       <= w_invalid; // Cycle
@@ -83,7 +83,7 @@ module aes_pipeline_stage1 (
         o_iv            = r_iv;
         o_instance_size = r_instance_size;
         o_new_instance  = r_new_instance;
-        o_pt_instance   = r_pt_instance;
+        o_last_instance   = r_last_instance;
     end
 	
 	// Reverse bit direction
@@ -113,14 +113,15 @@ module aes_pipeline_stage1 (
         end
         else
         begin
-            w_counter = r_counter + 1; // Indicating there are 4 encryption workers
+            w_counter = r_counter + 2 ; // Indicating there are 4 encryption workers
         end
 
         total_blocks = ((r_instance_size[0:63] + r_instance_size[64:127]) >> 7);
         aad_blocks = r_instance_size[0:63] >> 7;
         o_counter = w_counter;
 
-        if (w_counter == 100000)
+        //if (w_counter == 100000 | w_counter >= total_blocks)
+        if (w_counter >= total_blocks)
         begin
             // Invalid status
             o_phase = 3'b100;

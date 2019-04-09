@@ -13,6 +13,7 @@ module testbench(
 
     logic [0:127] cipher_key = 128'd0;
     logic [0:95]  iv         = 96'd0;
+    logic [0:3]  id         = 4'd1;
     //logic [0:127] plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
     logic [127:0] plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
     logic [288:0] bypass_text = 289'hD9313225F88406E5A55909C5AFF5269A9313225F88406E5A55909C5AFF5269A;
@@ -50,12 +51,12 @@ module testbench(
     gcm_aes gcm_aes_instance(
         .clk(clk),
         .i_new_instance(new_instance),
-        .i_pt_instance(pt_instance),
         .i_cipher_key(cipher_key),
         .i_iv(iv),
+        .i_id(id),
         .i_plain_text(i_plain_text),
         .i_aad(aad_block),
-        .i_plain_text_size(64'd128),
+        .i_plain_text_size(64'd512),
         .i_aad_size(64'd0),
         .i_bypass_text({bypass_text[288:128], i_plain_text}),
         .o_bypass_text(o_bypass_text),
@@ -77,7 +78,6 @@ module testbench(
         bypass_text = 289'hF5269A;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk; // Posedge
-		i_plain_text[0] = 0;
 	//new_instance = 0;
         #10 clk = ~clk;
         #10 clk = ~clk;

@@ -11,6 +11,7 @@ module gcm_aes(
         i_new_instance,
         i_pt_instance,
         i_iv,
+        i_id,
         i_cipher_key,
         i_plain_text,
         i_aad,
@@ -29,6 +30,7 @@ module gcm_aes(
     input   i_pt_instance;
 
     input  [0:95]       i_iv;
+    input  [0:3]       i_id;
     input  [127:0]      i_plain_text;
 	// 128 tdata 128 tuser 16 tkeep 1 tlast
 	// in total 273 bits
@@ -216,9 +218,8 @@ module gcm_aes(
         .i_aad(i_aad),
         .i_new_instance(i_new_instance),
         .i_iv(i_iv),
+        .i_id(i_id),
         .i_instance_size({i_aad_size, i_plain_text_size}),
-        .i_pt_instance(i_pt_instance),
-        .i_id(4'd0),
         .o_counter(w_s1_counter),
         .o_phase(w_s1_phase),
         .o_plain_text(w_s1_plain_text),
