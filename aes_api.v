@@ -46,7 +46,7 @@ module aes_api(
 
 	reg [3:0]        state, next_state=1, aes_state=1;
 	
-	assign pt_size = i_bypass_text[48:33] << 8 - 112; 
+	assign pt_size = ({112'd0, i_bypass_text[48:33] - 14}) << 3; 
 	
 
     /* GCM AES module (comes from gcm_aes.sv) */
@@ -108,7 +108,8 @@ module aes_api(
         case(state)
 	    	PKT_FIRST_WORD:
 	    	begin
-	    		if(i_new && !i_last)
+	    		//if(i_new && !i_last)
+	    		if(i_new)
 	    		begin
 	    			next_state = PKT_SECOND_WORD;
 	    		end
@@ -139,8 +140,17 @@ module aes_api(
 	    			begin
 	    			    next_state = PKT_FIRST_WORD;
 	    			end
+					else
+					begin
+						next_state = PKT_INNER_WORD;
+					end
 	    		end
 	    	end
+
+			default:
+			begin
+				next_state = PKT_FIRST_WORD;
+			end
 	    endcase
     end
 

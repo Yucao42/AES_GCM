@@ -46,11 +46,11 @@ module aes_pipeline_stage1 (
     logic [0:127]   r_instance_size;
     logic           r_new_instance;
     logic           r_last_instance;
-    logic           r_invalid = 0;
+    logic           r_idle = 0;
 
     logic [0:127]   r_counter;
     logic [0:127]   w_counter = 128'd100000;
-    logic           w_invalid = 1;
+    logic           w_idle = 1;
     logic [0:3]     r_id;
 
     /* Helper variables */
@@ -69,7 +69,7 @@ module aes_pipeline_stage1 (
         r_last_instance   <= i_last_instance;
 
         r_counter       <= w_counter; // Cycle
-        r_invalid       <= w_invalid; // Cycle
+        r_idle          <= w_idle; // Cycle
     end
     
     always_comb
@@ -103,17 +103,21 @@ module aes_pipeline_stage1 (
     // Ethernet frame can be no bigger than 100000 * 128 bits
     always_comb
     begin
-        if (r_new_instance == 1)
+        if (r_new_instance && r_idle)
         begin
             w_counter = r_id;
         end
-        else if (r_invalid == 1)
-        begin
-           w_counter = 100000;
-        end
-        else
+        else if (r_new_instance && !r_idle )
         begin
             w_counter = r_counter + 2 ; // Indicating there are 4 encryption workers
+        end
+        else if (!r_new_instance && !r_idle )
+        begin
+            w_counter = r_counter; // Indicating there are 4 encryption workers
+        end
+        else if (!r_new_instance && r_idle )
+        begin
+           w_counter = 100000;
         end
 
         total_blocks = ((r_instance_size[0:63] + r_instance_size[64:127]) >> 7);
@@ -123,9 +127,9 @@ module aes_pipeline_stage1 (
         //if (w_counter == 100000 | w_counter >= total_blocks)
         if (w_counter >= total_blocks)
         begin
-            // Invalid status
+            // idle status
             o_phase = 3'b100;
-            w_invalid = 1;
+            w_idle = 1;
         end
         else if (w_counter == total_blocks - 1)
         begin
@@ -139,25 +143,31 @@ module aes_pipeline_stage1 (
             begin
                 o_phase = 3'b011;
             end
-            w_invalid = 1;
+            w_idle = 1;
         end
         else if (w_counter > aad_blocks)
         begin
             // Text block (not the last one) delivering
             o_phase = 3'b001;
-            w_invalid = 0;
+			if(r_last_instance)
+			begin
+				w_idle = 1;
+			end
+			else begin
+                w_idle = 0;
+		    end
         end
         else if (w_counter == aad_blocks)
         begin
             // Text block (the first one) delivering
             o_phase = 3'b000;
-            w_invalid = 0;
+            w_idle = 0;
         end
         else
         begin
-            // AAD delivering (invalid)
+            // AAD delivering (idle)
             o_phase = 3'b010;
-            w_invalid = 0;
+            w_idle = 0;
         end
     end
 

@@ -12,13 +12,14 @@ module testbench(
     logic [127:0] plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
 
 	// In total 64 + 14 bytes
-    logic [288:0] bypass_text = 289'hD9313225F88406E5A55909C5AFF5269A9313225F88406E5A00000BCAFF5269A;
+    logic [288:0] bypass_text = 289'hD9313225F88406E5A55909C5AFF5269A9313225F88406E5A00000DCAFF5269A;
     logic [288:0] o_bypass_text;
     logic [0:511] cipher_text;
     logic [127:0] i_plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
 
     logic [0:127] o_cipher_text;
     reg new_instance = 0;
+    logic last_instance = 0;
 	logic ct_ready;
 
     logic [127:0] plain_text_1 = 128'hD9313225F88406E5A55909C5AFF5269A;
@@ -51,8 +52,9 @@ module testbench(
     aes_api gcm_aes_instance(
         .clk(clk),
         .i_new(new_instance),
+        .i_last(last_instance),
         .i_plain_text(i_plain_text),
-        .i_bypass_text(bypass_text),
+        .i_bypass_text({16'h0f0f, 112'h0, bypass_text[160:0]}),
         .o_bypass_text(o_bypass_text),
         .o_cipher_text(o_cipher_text),
         .o_cp_ready(ct_ready)
@@ -71,9 +73,11 @@ module testbench(
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
         #10 clk = ~clk;
+	    last_instance = 1;
         #10 clk = ~clk;
-	    new_instance = 0;
         #10 clk = ~clk; // Posedge
+	    last_instance = 0;
+	    new_instance = 0;
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;

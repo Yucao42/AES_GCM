@@ -217,6 +217,7 @@ module gcm_aes(
         .i_plain_text(i_plain_text),
         .i_aad(i_aad),
         .i_new_instance(i_new_instance),
+        .i_last_instance(i_last_instance),
         .i_iv(i_iv),
         .i_id(i_id),
         .i_instance_size({i_aad_size, i_plain_text_size}),
