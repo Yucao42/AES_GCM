@@ -111,12 +111,21 @@ class AES_GCM_128:
 if __name__ == '__main__':
     key = bytes.fromhex('00' * 16)
     iv = bytes.fromhex('00' * 12)
-    pt = bytes.fromhex('D9313225 F88406E5 A55909C5 AFF5269A ')
+    pt = bytes.fromhex('D9313225 F88406E5 A55909C5 AFF5269A 86A7A953 1534F7DA 2E4C303D 8A318A72 1C3C0C95 95680953 2FCF0E24 49A6B525 B16AEDF5 AA0DE657 BA637B39 1AAFD255')
+    pt = bytes.fromhex('D9313225 F88406E5 A55909C5 AFF5269A' * 4)
+    pt = bytes.fromhex('62626262 62626262 62626262 62626262' )
+    pt = bytes.fromhex('21000000 00000000 00000000 00000000' )
+    pt = bytes.fromhex('21220102 12341234 2298abde 2fee2122'  )
+    pt = bytes.fromhex('D9313225 F88406E5 A55909C5 AFF5269A' * 4)
+    #pt = bytes.fromhex('D9313225 F88406E5 A55909C5 AFF5269A' )
     #aad = bytes.fromhex('3AD77BB4 0D7A3660 A89ECAF3 2466EF97 F5D3D585 03B9699D E785895A 96FDBAAF 43B1CD7F 598ECE23 881B00E3 ED030688 7B0C785E 27E8AD3F 82232071 04725DD4')
 
     #pt = bytes.fromhex('00' * 16)
-    #aad = bytes.fromhex('00' * 16)
-    aad = b''
+    aad = bytes.fromhex('00' * 16)
+    aad = bytes.fromhex('')
+    print('\nPlaintext is\t\t')
+    for i in range(len(pt) // 16):
+        print('\t\t', pt[i * 16:i * 16 +16].hex())
 
     gcm_aes = AES_GCM_128(key)
     gcm_aes.encrypt(iv, aad, pt)
