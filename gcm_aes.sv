@@ -9,7 +9,6 @@
 module gcm_aes(
         clk,
         i_new_instance,
-        i_pt_instance,
         i_iv,
         i_id,
         i_cipher_key,
@@ -17,6 +16,7 @@ module gcm_aes(
         i_aad,
         i_plain_text_size,
         i_aad_size,
+        i_last_instance,
         i_bypass_text,
         o_bypass_text,
         o_cp_ready,
@@ -27,7 +27,7 @@ module gcm_aes(
 
     input   clk;
     input   i_new_instance;
-    input   i_pt_instance;
+    input   i_last_instance;
 
     input  [0:95]       i_iv;
     input  [0:3]       i_id;
