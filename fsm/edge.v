@@ -1,6 +1,7 @@
 // edgeDetector.v
 // Moore and Mealy Implementation
 
+`timescale 1ns / 1ps
 module edgeDetector
 (
     input wire clk, reset, 

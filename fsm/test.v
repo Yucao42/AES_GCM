@@ -1,87 +1,38 @@
+
 `timescale 1ns / 1ps
 
 module testbench(
 );
 
-    logic clk = 1'b1;
-   
-    /*
-   * GCM Example 4 from
-    * https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/examples/AES_GCM.pdf
-    */
-    logic [127:0] plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
-
-	// In total 64 + 14 bytes
-    logic [288:0] bypass_text = 289'hD9313225F88406E5A55909C5AFF5269A9313225F88406E5A00000DCAFF5269A;
-    logic [288:0] o_bypass_text;
-    logic [0:511] cipher_text;
-    logic [127:0] i_plain_text = 128'hD9313225F88406E5A55909C5AFF5269A;
-
-    logic [0:127] o_cipher_text;
+    reg clk = 1'b1;
+    reg reset = 1'b1;
     reg new_instance = 0;
-    logic last_instance = 0;
-	logic ct_ready;
-	logic reset;
+    wire Mealy_tick, Moore_tick;
 
-    logic [127:0] plain_text_1 = 128'hD9313225F88406E5A55909C5AFF5269A;
-    logic [127:0] plain_text_2 = 128'hD9313225F88406E5A55909C5AFF5269A;
-    logic ct_ready_d1;
-    logic ct_ready_d2;
 
-    always_ff @(posedge clk)
-    begin
-        ct_ready_d2   <= ct_ready_d1; // Cycle
-        ct_ready_d1   <= ct_ready; // Cycle
-		plain_text_2  <= plain_text_1;
-		plain_text_1  <= i_plain_text;
-    end
-
-	// Reverse bit direction
-	genvar n;
-	generate
-	for(n = 0; n < 16; n = n + 1)
-	begin
-	    always_comb
-	    begin
-	    	//i_plain_text[n*8:(n+1)*8-1] = plain_text[(16 - n) * 8 - 1:(15-n) * 8];
-	    	i_plain_text[(n+1)*8-1: 8 * n] = plain_text[(16 - n) * 8 - 1:(15 - n) * 8];
-	    	//i_plain_text[n*8:(n+1)*8-1] = plain_text[(15 - n) * 8:(16 - n) * 8 - 1];
-	    end
-	end
-    endgenerate
-
-    aes_api gcm_aes_instance(
+    edgeDetector gcm_aes_instance(
         .clk(clk),
         .reset(reset),
-        .i_new(new_instance),
-        .i_last(last_instance),
-        .i_plain_text(i_plain_text),
-        .i_bypass_text({16'h0, 112'h0, bypass_text[160:0]}),
-        .o_bypass_text(o_bypass_text),
-        .o_cipher_text(o_cipher_text),
-        .o_cp_ready(ct_ready)
+        .level(new_instance),
+        .Mealy_tick(Mealy_tick),
+        .Moore_tick(Moore_tick)
     );
 
-    
-    logic [0:4] counter;
     
     initial
     begin
         #10 clk = ~clk; // Posedge
-        reset = 1;
         #10 clk = ~clk;
+		reset = 0;
         #10 clk = ~clk; // Posedgej
-        reset = 0;
         #10 clk = ~clk; // Posedge
         new_instance = 1;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
         #10 clk = ~clk;
         #10 clk = ~clk;
-	    last_instance = 1;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
-	    last_instance = 0;
 	    new_instance = 0;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;

@@ -3,6 +3,7 @@
 /* Top module for AES GCM */
 module aes_api(
     clk,
+    reset,
     i_new,  // Signal that says it is a new instance
     i_last,  // Signal that says it is a new instance
 	i_plain_text,
@@ -13,6 +14,7 @@ module aes_api(
 );
 
     input           clk;
+    input           reset;
     // Input including 96 bits iv, 128 bits aad block, 128 bits plaintext
     // block and 128 bits input key block.
     input           i_new;
@@ -34,7 +36,6 @@ module aes_api(
     wire [0:127]     pt_size;
     wire [0:127]     aad = 128'd0;
     wire             cp_ready_0;
-    wire             reset=0;
     reg              new_delay;
     reg              last_delay;
     wire [0:127]     cipher_text_0;
@@ -48,7 +49,7 @@ module aes_api(
 	localparam PKT_SECOND_WORD = 2;
 	localparam PKT_INNER_WORD = 4;
 
-	reg [3:0]        state, next_state=1, aes_state=1;
+	reg [3:0]        state, next_state, aes_state;
 	
 	assign pt_size = ({112'd0, i_bypass_text[48:33] - 14}) << 3; 
 	
@@ -129,12 +130,9 @@ module aes_api(
 	    	PKT_FIRST_WORD:
 	    	begin
 	    		//if(i_new && !i_last)
-	    		if(i_new && !i_last)
+	    		if(i_new)
 	    		begin
 	    			next_state = PKT_SECOND_WORD;
-	    		end
-	    		else begin
-	    		    next_state = PKT_FIRST_WORD;
 	    		end
 	    	end
 
@@ -142,36 +140,20 @@ module aes_api(
 	    	begin
 	    		if(i_new)
 	    		begin
-	    			if(i_last)
-	    			begin
-	    			    next_state = PKT_FIRST_WORD;
-	    			end
-	    			else begin
-	    			    next_state = PKT_INNER_WORD;
-	    			end
+	    		    next_state = PKT_INNER_WORD;
+	    		end
+	    		else begin
+	    		    next_state = PKT_FIRST_WORD;
 	    		end
 	    	end
 
 	    	PKT_INNER_WORD:
 	    	begin
 	    		if(i_new)
-	    		begin
-	    		    //if(i_last)
-	    			if(last_delay)
-	    			begin
-	    			    next_state = PKT_FIRST_WORD;
-	    			end
-					else
-					begin
 						next_state = PKT_INNER_WORD;
-					end
-	    		end
+				else
+	    			    next_state = PKT_FIRST_WORD;
 	    	end
-
-			default:
-			begin
-				next_state = PKT_FIRST_WORD;
-			end
 	    endcase
     end
 
