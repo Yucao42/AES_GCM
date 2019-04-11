@@ -2,6 +2,7 @@
 module phase_bypasser( 
 	clk,
 	i_state,
+	i_last,
 	i_text,
 	o_text,
 	i_cipher,
@@ -13,6 +14,7 @@ module phase_bypasser(
     input logic             clk;
     input logic  [288:0]    i_text;
     input logic  [0:3]      i_state;
+    input logic             i_last;
     output logic [288:0]    o_text;
 	//cipher 0 cipher 1
     input logic  [255:0]    i_cipher;
@@ -25,6 +27,9 @@ module phase_bypasser(
     logic  [288:0]    r_1_text;
     logic  [255:0]    r_1_cipher;
     logic             r_1_ready;
+    logic             r_1_last;
+    logic             r_2_last;
+    logic             r_3_last;
 
     //logic             r_2_ready;
     //logic  [0:3]      r_2_state;
@@ -50,6 +55,9 @@ module phase_bypasser(
 		//r_2_cipher        <= r_cipher;
         r_1_text          <= i_text;
         r_1_state         <= i_state;
+        r_1_last         <= i_last;
+        r_2_last         <= r_1_last;
+        r_3_last         <= r_2_last;
         r_1_ready         <= i_ready;
 		r_1_cipher        <= i_cipher;
     end
@@ -57,12 +65,13 @@ module phase_bypasser(
 	always_comb
 	begin
         o_text     = w_text;
-		o_cipher   = w_1_cipher;
+		o_cipher   = w_2_cipher;
 		o_ready    = 0;
 		case(r_1_state)
 			PKT_FIRST_WORD:
 			begin
-				if(r_1_ready)
+				//if(r_1_ready)
+				if(i_ready)
 				begin
 				    begin
                         w_text     = r_1_text;
@@ -79,7 +88,8 @@ module phase_bypasser(
 				end
 				else
 				begin
-					w_state = PKT_FIRST_WORD;
+					//w_state = PKT_FIRST_WORD;
+					w_state = 3;
 			    end
 			end
 					
@@ -99,14 +109,19 @@ module phase_bypasser(
 
 			PKT_INNER_WORD:
 			begin
-				if(r_1_ready)
+				if(!r_2_last)
 				begin
                     o_text     = {r_1_cipher[15:0], w_1_cipher[127:16], w_text[160:0]};
                     o_ready    = 1;
                     o_cipher   = w_2_cipher;
+                    w_state    = PKT_INNER_WORD;
 					w_1_cipher = r_1_cipher[127:0];
 					w_2_cipher = r_1_cipher[255:128];
                     w_text     = r_1_text;
+				end
+				else
+				begin
+					w_state = PKT_FIRST_WORD;
 				end
 			end
 		endcase

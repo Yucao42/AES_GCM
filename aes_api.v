@@ -38,6 +38,7 @@ module aes_api(
     wire             cp_ready_0;
     reg              new_delay;
     reg              last_delay;
+    wire             aes_last;
     wire [0:127]     cipher_text_0;
     wire             cp_ready_1;
     wire [0:127]     cipher_text_1;
@@ -49,7 +50,7 @@ module aes_api(
 	localparam PKT_SECOND_WORD = 2;
 	localparam PKT_INNER_WORD = 4;
 
-	reg [3:0]        state, next_state, aes_state;
+	logic [3:0]        state, next_state, aes_state;
 	
 	assign pt_size = ({112'd0, i_bypass_text[48:33] - 14}) << 3; 
 	
@@ -57,6 +58,7 @@ module aes_api(
 		if(reset)
 		begin
 			state <= PKT_FIRST_WORD;
+			//state <= PKT_ZERO_WORD;
 	        bits_delay <= i_bypass_text[288: 273];
 	        new_delay <= i_new;
 	        last_delay <= i_last;
@@ -108,13 +110,16 @@ module aes_api(
 	text_bypasser aes_state_bypasser(
 		.clk(clk),
 		.i_text(state),
-		.o_text(aes_state)
+		.o_text(aes_state),
+		.i_tlast(i_last),
+		.o_tlast(aes_last)
 	);
    
 	//output module
 	phase_bypasser outputer(
 		.clk(clk),
 		.i_state(aes_state),
+		.i_last(aes_last),
 		.i_text(bypass_text),
 		.i_cipher({cipher_text_0, cipher_text_1}),
 		.i_ready(cp_ready_0),
@@ -127,6 +132,15 @@ module aes_api(
 	begin
 	next_state = state;
         case(state)
+	    	PKT_ZERO_WORD:
+	    	begin
+	    		//if(i_new && !i_last)
+	    		if(i_new)
+	    		begin
+	    			next_state = PKT_FIRST_WORD;
+	    		end
+	    	end
+
 	    	PKT_FIRST_WORD:
 	    	begin
 	    		//if(i_new && !i_last)
