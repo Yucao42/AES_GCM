@@ -72,8 +72,8 @@ module testbench(
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedgej
         reset = 0;
-        #10 clk = ~clk; // Posedge
         new_instance = 1;
+        #10 clk = ~clk; // Posedge
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
         #10 clk = ~clk;
