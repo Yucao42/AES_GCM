@@ -34,12 +34,16 @@ module aes_api(
     wire [0:127]     pt_size;
     wire [0:127]     aad = 128'd0;
     wire             cp_ready_0;
+    wire             reset=0;
+    reg              new_delay;
+    reg              last_delay;
     wire [0:127]     cipher_text_0;
     wire             cp_ready_1;
     wire [0:127]     cipher_text_1;
 	wire [288:0]     bypass_text;
 	
 	// FSM 
+	localparam PKT_ZERO_WORD = 0;
 	localparam PKT_FIRST_WORD = 1;
 	localparam PKT_SECOND_WORD = 2;
 	localparam PKT_INNER_WORD = 4;
@@ -48,6 +52,22 @@ module aes_api(
 	
 	assign pt_size = ({112'd0, i_bypass_text[48:33] - 14}) << 3; 
 	
+    always @(posedge clk) begin
+		if(reset)
+		begin
+			state <= PKT_FIRST_WORD;
+	        bits_delay <= i_bypass_text[288: 273];
+	        new_delay <= i_new;
+	        last_delay <= i_last;
+		end
+		else
+		begin
+	        bits_delay <= i_bypass_text[288: 273];
+	        new_delay <= i_new;
+	        last_delay <= i_last;
+            state <= next_state;
+        end
+    end
 
     /* GCM AES module (comes from gcm_aes.sv) */
     gcm_aes gcm_aes_instance1(
@@ -72,8 +92,8 @@ module aes_api(
         .clk(clk),
         .i_iv(iv),
         .i_id(4'd1),
-        .i_new_instance(i_new),
-        .i_last_instance(i_last),
+        .i_new_instance(new_delay),
+        .i_last_instance(last_delay),
         .i_cipher_key(cipher_key),
         .i_plain_text({i_bypass_text[272:161], bits_delay}),
         .i_plain_text_size(pt_size),
@@ -102,14 +122,14 @@ module aes_api(
 		.o_text(o_bypass_text)
 	);
 
-	always @*
+	always @(state, i_last, i_new, last_delay)
 	begin
 	next_state = state;
         case(state)
 	    	PKT_FIRST_WORD:
 	    	begin
 	    		//if(i_new && !i_last)
-	    		if(i_new)
+	    		if(i_new && !i_last)
 	    		begin
 	    			next_state = PKT_SECOND_WORD;
 	    		end
@@ -136,7 +156,8 @@ module aes_api(
 	    	begin
 	    		if(i_new)
 	    		begin
-	    			if(i_last)
+	    		    //if(i_last)
+	    			if(last_delay)
 	    			begin
 	    			    next_state = PKT_FIRST_WORD;
 	    			end
@@ -154,8 +175,4 @@ module aes_api(
 	    endcase
     end
 
-    always @(posedge clk) begin
-	  bits_delay <= i_bypass_text[288: 273];
-      state <= next_state;
-    end
 endmodule

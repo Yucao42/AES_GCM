@@ -35,7 +35,8 @@ module phase_bypasser(
     logic  [127:0]    w_2_cipher;
     logic  [127:0]    w_3_cipher;
     logic  [288:0]    w_text;
-    logic             w_state;
+    logic  [0:3]      w_state;
+
 	// FSM 
 	localparam PKT_FIRST_WORD = 1;
 	localparam PKT_SECOND_WORD = 2;
@@ -89,7 +90,7 @@ module phase_bypasser(
                     o_text     = {r_1_cipher[15:0], w_text[272:0]};
                     o_ready    = 1;
                     o_cipher   = w_1_cipher;
-                    w_state    = PKT_SECOND_WORD;
+                    w_state    = PKT_INNER_WORD;
 					w_1_cipher = r_1_cipher[127:0];
 					w_2_cipher = r_1_cipher[255:128];
                     w_text     = r_1_text;

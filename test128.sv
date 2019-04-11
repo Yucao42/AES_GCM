@@ -54,7 +54,7 @@ module testbench(
         .i_new(new_instance),
         .i_last(last_instance),
         .i_plain_text(i_plain_text),
-        .i_bypass_text({16'h0f0f, 112'h0, bypass_text[160:0]}),
+        .i_bypass_text({16'h0, 112'h0, bypass_text[160:0]}),
         .o_bypass_text(o_bypass_text),
         .o_cipher_text(o_cipher_text),
         .o_cp_ready(ct_ready)
@@ -67,18 +67,18 @@ module testbench(
     begin
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
+        #10 clk = ~clk; // Posedgej
         #10 clk = ~clk; // Posedge
         new_instance = 1;
         #10 clk = ~clk; // Posedge
-        #10 clk = ~clk; // Posedge
+        #10 clk = ~clk;
         #10 clk = ~clk;
         #10 clk = ~clk;
 	    last_instance = 1;
-        #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
+        #10 clk = ~clk;
 	    last_instance = 0;
 	    new_instance = 0;
-        #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
@@ -167,13 +167,13 @@ module testbench(
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
-        new_instance = 1;
+        //new_instance = 1;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
-		new_instance = 0;
+		//new_instance = 0;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
