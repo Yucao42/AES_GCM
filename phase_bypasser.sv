@@ -67,7 +67,7 @@ module phase_bypasser(
         o_text     = w_text;
 		o_cipher   = w_2_cipher;
 		o_ready    = 0;
-		case(r_1_state)
+		case(i_state)
 			PKT_FIRST_WORD:
 			begin
 				//if(r_1_ready)
@@ -82,7 +82,7 @@ module phase_bypasser(
 				else if(w_state == PKT_INNER_WORD)
 				begin
 					w_state    = PKT_FIRST_WORD;
-                    o_text     = {16'd0, w_1_cipher[127:16], w_text[160:0]};
+                    o_text     = {r_1_cipher[15:0], w_1_cipher[127:16], w_text[160:0]};
                     o_ready    = 1;
                     o_cipher   = w_2_cipher;
 				end
@@ -95,15 +95,15 @@ module phase_bypasser(
 					
 			PKT_SECOND_WORD:
 			begin
-				if(r_1_ready)
+				if(i_ready)
 				begin
-                    o_text     = {r_1_cipher[15:0], w_text[272:0]};
+                    o_text     = {i_cipher[15:0], w_text[272:0]};
                     o_ready    = 1;
                     o_cipher   = w_1_cipher;
                     w_state    = PKT_INNER_WORD;
-					w_1_cipher = r_1_cipher[127:0];
-					w_2_cipher = r_1_cipher[255:128];
-                    w_text     = r_1_text;
+					w_1_cipher = i_cipher[127:0];   //cipher 1 
+					w_2_cipher = i_cipher[255:128]; //cipher 0  
+                    w_text     = i_text;
 				end
 			end
 
@@ -111,13 +111,13 @@ module phase_bypasser(
 			begin
 				if(!r_2_last)
 				begin
-                    o_text     = {r_1_cipher[15:0], w_1_cipher[127:16], w_text[160:0]};
+                    o_text     = {i_cipher[15:0], w_1_cipher[127:16], w_text[160:0]};
                     o_ready    = 1;
                     o_cipher   = w_2_cipher;
                     w_state    = PKT_INNER_WORD;
-					w_1_cipher = r_1_cipher[127:0];
-					w_2_cipher = r_1_cipher[255:128];
-                    w_text     = r_1_text;
+					w_1_cipher = i_cipher[127:0];
+					w_2_cipher = i_cipher[255:128];
+                    w_text     = i_text;
 				end
 				else
 				begin
