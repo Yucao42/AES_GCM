@@ -7,6 +7,7 @@ module aes_pipeline_stage9(
     i_instance_size,
     i_encrypted_j0,
     i_phase,
+    i_new_instance,
     o_cp_ready,
     o_cipher_text,
     o_tag_ready,
@@ -14,6 +15,7 @@ module aes_pipeline_stage9(
 );
 
     input logic           clk;
+    input logic           i_new_instance;
     input logic [0:127]   i_cipher_text;
     input logic           i_ready;
     input logic [0:127]   i_h;
@@ -30,6 +32,7 @@ module aes_pipeline_stage9(
     
     logic [0:127]   r_cipher_text;
     logic           r_ready;
+    logic           r_new_instance;
     logic [0:127]   r_h;
     logic [0:127]   r_sblock;
     logic [0:127]   r_instance_size;
@@ -46,6 +49,7 @@ module aes_pipeline_stage9(
         r_h             <= i_h;
         r_sblock        <= i_sblock;
         r_instance_size <= i_instance_size;
+        r_new_instance  <= i_new_instance;
         r_encrypted_j0  <= i_encrypted_j0;
     end
 
@@ -77,13 +81,14 @@ module aes_pipeline_stage9(
             o_tag_ready = 1'b0;
         end
 
-        case(r_phase)
-            3'b111:  o_cp_ready = 1;
-            3'b011:  o_cp_ready = 1;
-            3'b001:  o_cp_ready = 1;
-            3'b000:  o_cp_ready = 1;
-            default: o_cp_ready = 0;
-        endcase
+        //case(r_phase)
+        //    3'b111:  o_cp_ready = 1;
+        //    3'b011:  o_cp_ready = 1;
+        //    3'b001:  o_cp_ready = 1;
+        //    3'b000:  o_cp_ready = 1;
+        //    default: o_cp_ready = 0;
+        //endcase
+		o_cp_ready    = r_new_instance;
 
         o_tag         = w_sblock ^ r_encrypted_j0;
         //o_cipher_text = r_cipher_text;

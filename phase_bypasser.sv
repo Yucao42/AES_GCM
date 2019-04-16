@@ -79,7 +79,8 @@ module phase_bypasser(
 		                w_1_cipher = r_1_cipher[255:128];
 				    end
 				end
-				else if(w_state == PKT_INNER_WORD)
+				//else if(w_state == PKT_INNER_WORD)
+				else if(r_2_last)
 				begin
 					w_state    = PKT_FIRST_WORD;
                     o_text     = {r_1_cipher[15:0], w_1_cipher[127:16], w_text[160:0]};
@@ -109,7 +110,7 @@ module phase_bypasser(
 
 			PKT_INNER_WORD:
 			begin
-				if(!r_2_last)
+				if(!r_2_last && i_ready)
 				begin
                     o_text     = {i_cipher[15:0], w_1_cipher[127:16], w_text[160:0]};
                     o_ready    = 1;
@@ -119,10 +120,10 @@ module phase_bypasser(
 					w_2_cipher = i_cipher[255:128];
                     w_text     = i_text;
 				end
-				else
-				begin
-					w_state = PKT_FIRST_WORD;
-				end
+				//else
+				//begin
+				//	w_state = PKT_FIRST_WORD;
+				//end
 			end
 		endcase
 	end

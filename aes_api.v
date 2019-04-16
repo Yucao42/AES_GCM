@@ -156,17 +156,18 @@ module aes_api(
 	    		begin
 	    		    next_state = PKT_INNER_WORD;
 	    		end
-	    		else begin
-	    		    next_state = PKT_FIRST_WORD;
-	    		end
+	    		//else begin
+	    		//    next_state = PKT_FIRST_WORD;
+	    		//end
 	    	end
 
 	    	PKT_INNER_WORD:
 	    	begin
-	    		if(i_new)
-						next_state = PKT_INNER_WORD;
-				else
+	    		if(i_last)
 	    			    next_state = PKT_FIRST_WORD;
+			//			next_state = PKT_INNER_WORD;
+			//	else
+	    	//		    next_state = PKT_FIRST_WORD;
 	    	end
 	    endcase
     end

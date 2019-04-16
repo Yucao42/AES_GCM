@@ -60,6 +60,7 @@ module gcm_aes(
     logic             w_s5_new_instance;
     logic             w_s6_new_instance;
     logic             w_s7_new_instance;
+    logic             w_s8_new_instance;
 
     /* Wires joining Stage1 and Stage2 */
     (* dont_touch = "true" *) logic [0:127]     w_s1_plain_text;
@@ -547,6 +548,7 @@ module gcm_aes(
         .i_instance_size(w_s7_instance_size),
         .i_phase(w_s7_phase),
         .i_new_instance(w_s7_new_instance),
+        .o_new_instance(w_s8_new_instance),
         .o_phase(w_s8_phase),
         .o_encrypted_j0(w_s8_encrypted_j0),
         .o_instance_size(w_s8_instance_size),
@@ -565,6 +567,7 @@ module gcm_aes(
         .i_instance_size(w_s8_instance_size),
         .i_encrypted_j0(w_s8_encrypted_j0),
         .i_phase(w_s8_phase),
+        .i_new_instance(w_s8_new_instance),
         .o_cp_ready(o_cp_ready),
         .o_cipher_text(o_cipher_text),
         .o_tag(o_tag),

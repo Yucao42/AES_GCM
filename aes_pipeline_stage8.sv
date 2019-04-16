@@ -7,6 +7,7 @@ module aes_pipeline_stage8(
     i_encrypted_j0,
     i_instance_size,
     i_phase,
+    o_new_instance,
     o_phase,
     o_encrypted_j0,
     o_instance_size,
@@ -25,6 +26,7 @@ module aes_pipeline_stage8(
     input logic           i_new_instance;
     input logic [0:2]     i_phase;
     
+    output logic            o_new_instance;
     output logic [0:2]      o_phase;
     output logic [0:127]    o_encrypted_j0;
     output logic [0:127]    o_cipher_text;
@@ -109,5 +111,6 @@ module aes_pipeline_stage8(
         o_cipher_text   = r_cipher_text;
         o_instance_size = r_instance_size;
         o_encrypted_j0  = r_encrypted_j0;
+		o_new_instance  = r_new_instance;
     end
 endmodule
