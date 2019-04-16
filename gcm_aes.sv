@@ -194,13 +194,14 @@ module gcm_aes(
     logic             w_s8_sblock_ready;
     logic [0:1407]    w_s8_key_schedule;
     logic [0:127]     w_s8_cipher_text;
+    logic [95:0]      w_useless;
     logic [0:127]     w_s8_encrypted_j0;
     logic [0:127]     w_s8_sblock;
     logic [0:127]     w_s8_h;
     logic [0:127]     w_s8_instance_size;
     logic [0:2]       w_s8_phase;
 
-	text_bypasser bypasser
+	signal_bypasser bypasser
 	(
 		.clk(clk),
 		.i_text(i_bypass_text),
@@ -214,8 +215,8 @@ module gcm_aes(
 	//	.o_text(o_bypass_text[288:161]),
 	//	.i_tuser(i_bypass_text[160:33]),
 	//	.o_tuser(o_bypass_text[160:33]),
-	//	.i_tkeep(i_bypass_text[32:1]),
-	//	.o_tkeep(o_bypass_text[32:1]),
+	//	.i_tkeep({96'd0, i_bypass_text[32:1]}),
+	//	.o_tkeep({w_useless, o_bypass_text[32:1]}),
 	//	.i_tlast(i_bypass_text[0:0]),
 	//	.o_tlast(o_bypass_text[0:0])
 	//);

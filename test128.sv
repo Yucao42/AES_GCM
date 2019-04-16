@@ -81,7 +81,8 @@ module testbench(
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk; // Posedge
-	    bypass_text = bypass_text + 1;
+	    //bypass_text = bypass_text + 1;
+	    bypass_text[15:0] = 16'hff00;
         new_instance = 1;
         #10 clk = ~clk;
         #10 clk = ~clk;
@@ -90,6 +91,7 @@ module testbench(
         #10 clk = ~clk; // Posedge
         new_instance = 1;
 	    bypass_text = bypass_text + 1;
+	    bypass_text[15:0] = 16'h0f01;
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
         new_instance = 0;

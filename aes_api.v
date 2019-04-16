@@ -109,12 +109,12 @@ module aes_api(
 	//By pass aes state
 	text_bypasser aes_state_bypasser(
 		.clk(clk),
-		.i_text({statem, i_last}),
-		.o_text({aes_state, aes_last})
-		//.i_text(state),
-		//.o_text(aes_state),
-		//.i_tlast(i_last),
-		//.o_tlast(aes_last)
+		//.i_text({state, i_last}),
+		//.o_text({aes_state, aes_last})
+		.i_text(state),
+		.o_text(aes_state),
+		.i_tlast(i_last),
+		.o_tlast(aes_last)
 	);
    
 	//output module
