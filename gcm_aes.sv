@@ -203,15 +203,22 @@ module gcm_aes(
 	text_bypasser bypasser
 	(
 		.clk(clk),
-		.i_text(i_bypass_text[288:161]),
-		.o_text(o_bypass_text[288:161]),
-		.i_tuser(i_bypass_text[160:33]),
-		.o_tuser(o_bypass_text[160:33]),
-		.i_tkeep(i_bypass_text[32:1]),
-		.o_tkeep(o_bypass_text[32:1]),
-		.i_tlast(i_bypass_text[0:0]),
-		.o_tlast(o_bypass_text[0:0])
+		.i_text(i_bypass_text),
+		.o_text(o_bypass_text)
 	);
+
+	//text_bypasser bypasser
+	//(
+	//	.clk(clk),
+	//	.i_text(i_bypass_text[288:161]),
+	//	.o_text(o_bypass_text[288:161]),
+	//	.i_tuser(i_bypass_text[160:33]),
+	//	.o_tuser(o_bypass_text[160:33]),
+	//	.i_tkeep(i_bypass_text[32:1]),
+	//	.o_tkeep(o_bypass_text[32:1]),
+	//	.i_tlast(i_bypass_text[0:0]),
+	//	.o_tlast(o_bypass_text[0:0])
+	//);
 
     aes_pipeline_stage1 stage1(
         .clk(clk),

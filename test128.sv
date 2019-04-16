@@ -37,10 +37,11 @@ module testbench(
 	//	bypass_text   <= bypass_text + 1;
     end
 
-    always_ff @(negedge clk)
-    begin
-		bypass_text   <= bypass_text + 1;
-    end
+    //always_ff @(negedge clk)
+    //always_ff @(posedge clk)
+    //begin
+	//	bypass_text   <= bypass_text + 1;
+    //end
 	// Reverse bit direction
 	genvar n;
 	generate
@@ -79,6 +80,8 @@ module testbench(
         reset = 0;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk; // Posedge
+        #10 clk = ~clk; // Posedge
+	    bypass_text = bypass_text + 1;
         new_instance = 1;
         #10 clk = ~clk;
         #10 clk = ~clk;
@@ -86,12 +89,14 @@ module testbench(
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk; // Posedge
         new_instance = 1;
+	    bypass_text = bypass_text + 1;
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
         new_instance = 0;
         #10 clk = ~clk; // Posedge
         #10 clk = ~clk; // Posedge
         new_instance = 1;
+	    bypass_text = bypass_text + 1;
 	    last_instance = 1;
         #10 clk = ~clk;
         #10 clk = ~clk; // Posedge
