@@ -52,7 +52,8 @@ module aes_api(
 
 	logic [3:0]        state, next_state, aes_state;
 	
-	assign pt_size = ({112'd0, i_bypass_text[48:33] - 14}) << 3; 
+	//assign pt_size = ({112'd0, i_bypass_text[48:33] - 14}) << 3; 
+	assign pt_size = ({120'd0, i_bypass_text[48:41] - 14}) << 3; 
 	
     always @(posedge clk) begin
 		if(reset)
