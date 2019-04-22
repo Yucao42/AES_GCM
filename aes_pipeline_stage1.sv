@@ -47,12 +47,15 @@ module aes_pipeline_stage1 (
     logic           r_new_instance;
     logic           r_last_instance;
     logic           r_idle = 0;
+    logic           r_first = 0;
 	//bypass the first word and repeat status 1
     logic           r_repeat = 0;
+    logic           r_repeated = 0;
 
     logic [0:127]   r_counter;
     logic [0:127]   w_counter = 128'd100000;
     logic           w_idle = 1;
+    logic           w_first = 0;
     logic [0:3]     r_id;
 
     /* Helper variables */
@@ -72,6 +75,7 @@ module aes_pipeline_stage1 (
 
         r_counter       <= w_counter; // Cycle
         r_idle          <= w_idle; // Cycle
+        r_first          <= w_first; // Cycle
     end
     
     always_comb
@@ -105,36 +109,40 @@ module aes_pipeline_stage1 (
     // Ethernet frame can be no bigger than 100000 * 128 bits
     always_comb
     begin
-        if (r_new_instance && r_idle)
+		// Delay process
+        if (r_new_instance && r_idle && r_id == 1)
+        begin
+			// Intermedia invalid status
+            w_counter = 1;
+			w_first   = 1;
+        end
+		// Delay process
+        else if (r_new_instance && r_first)
+        begin
+			// Intermedia invalid status
+            w_counter = 1;
+			w_first   = 0;
+        end
+        else if (r_new_instance && r_idle)
         begin
             w_counter = r_id;
-        end
-        else if (r_new_instance && r_repeat )
-        begin
-            w_counter = r_counter; // if a repeat signal is on, repeat the counter
+			w_first   = 0;
         end
         else if (r_new_instance && !r_idle )
         begin
-            w_counter = r_counter + 2 ; // Indicating there are 4 encryption workers
+            w_counter = r_counter + 2 ; // Indicating there are 2 encryption workers
+			w_first   = 0;
         end
         else if (!r_new_instance && !r_idle )
         begin
-            w_counter = r_counter; // Indicating there are 4 encryption workers
+            w_counter = r_counter; 
+			w_first   = r_first;
         end
         else if (!r_new_instance && r_idle )
         begin
-           w_counter = 100000;
+            w_counter = 100000;
+			w_first   = 0;
         end
-
-		// Repeat when the first word is counted on the first machine
-		if(w_counter == 1)
-		begin
-			r_repeat = 1;
-		end
-		else
-		begin
-			r_repeat = 0;
-		end
 
         total_blocks = ((r_instance_size[0:63] + r_instance_size[64:127]) >> 7);
         aad_blocks = r_instance_size[0:63] >> 7;
