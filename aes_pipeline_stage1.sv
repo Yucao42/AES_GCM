@@ -47,6 +47,8 @@ module aes_pipeline_stage1 (
     logic           r_new_instance;
     logic           r_last_instance;
     logic           r_idle = 0;
+	//bypass the first word and repeat status 1
+    logic           r_repeat = 0;
 
     logic [0:127]   r_counter;
     logic [0:127]   w_counter = 128'd100000;
@@ -107,6 +109,10 @@ module aes_pipeline_stage1 (
         begin
             w_counter = r_id;
         end
+        else if (r_new_instance && r_repeat )
+        begin
+            w_counter = r_counter; // if a repeat signal is on, repeat the counter
+        end
         else if (r_new_instance && !r_idle )
         begin
             w_counter = r_counter + 2 ; // Indicating there are 4 encryption workers
@@ -119,6 +125,16 @@ module aes_pipeline_stage1 (
         begin
            w_counter = 100000;
         end
+
+		// Repeat when the first word is counted on the first machine
+		if(w_counter == 1)
+		begin
+			r_repeat = 1;
+		end
+		else
+		begin
+			r_repeat = 0;
+		end
 
         total_blocks = ((r_instance_size[0:63] + r_instance_size[64:127]) >> 7);
         aad_blocks = r_instance_size[0:63] >> 7;
