@@ -16,7 +16,6 @@ module phase_bypasser(
     input logic  [0:3]      i_state;
     input logic             i_last;
     output logic [288:0]    o_text;
-	//cipher 0 cipher 1
     input logic  [255:0]    i_cipher;
     output logic [127:0]    o_cipher;
     input logic             i_ready;
@@ -70,62 +69,32 @@ module phase_bypasser(
 		case(i_state)
 			PKT_FIRST_WORD:
 			begin
-				//if(r_1_ready)
 				if(i_ready)
 				begin
-				    begin
-                        w_text     = i_text;
-                        w_state    = PKT_FIRST_WORD;
-		                //w_1_cipher = r_1_cipher[255:128];
-		                w_1_cipher = i_cipher[255:128];
-				    end
+				    o_text   = i_text;
+					o_ready  = 1;
+                    o_cipher = i_cipher[127: 0];
 				end
-				//else if(w_state == PKT_INNER_WORD)
-				else if(r_2_last)
-				begin
-					w_state    = PKT_FIRST_WORD;
-                    //o_text     = {r_1_cipher[15:0], w_1_cipher[127:16], w_text[160:0]};
-                    o_text     = {w_1_cipher[15:0], w_1_cipher[127:16], w_text[160:0]};
-                    o_ready    = 1;
-                    o_cipher   = w_2_cipher;
-				end
-				else
-				begin
-					//w_state = PKT_FIRST_WORD;
-					w_state = 3;
-			    end
 			end
 					
 			PKT_SECOND_WORD:
 			begin
 				if(i_ready)
 				begin
-                    o_text     = {i_cipher[15:0], w_text[272:0]};
-                    o_ready    = 1;
-                    o_cipher   = w_1_cipher;
-                    w_state    = PKT_INNER_WORD;
-					w_1_cipher = i_cipher[127:0];   //cipher 1 
-					w_2_cipher = i_cipher[255:128]; //cipher 0  
-                    w_text     = i_text;
+				    o_text   = {i_cipher[255:128], i_text[160:0]};
+					o_ready  = 1;
+                    o_cipher = i_cipher[127: 0];
 				end
 			end
 
 			PKT_INNER_WORD:
 			begin
-				if(!r_2_last && i_ready)
+				if(i_ready)
 				begin
-                    o_text     = {i_cipher[15:0], w_1_cipher[127:16], w_text[160:0]};
-                    o_ready    = 1;
-                    o_cipher   = w_2_cipher;
-                    w_state    = PKT_INNER_WORD;
-					w_1_cipher = i_cipher[127:0];
-					w_2_cipher = i_cipher[255:128];
-                    w_text     = i_text;
+				    o_text   = {i_cipher[255:128], i_text[160:0]};
+					o_ready  = 1;
+                    o_cipher = i_cipher[127: 0];
 				end
-				//else
-				//begin
-				//	w_state = PKT_FIRST_WORD;
-				//end
 			end
 		endcase
 	end

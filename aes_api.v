@@ -52,8 +52,7 @@ module aes_api(
 
 	logic [3:0]        state, next_state, aes_state;
 	
-	//assign pt_size = ({112'd0, i_bypass_text[48:33] - 14}) << 3; 
-	assign pt_size = ({120'd0, i_bypass_text[48:41] - 14}) << 3; 
+	assign pt_size = ({112'd0, i_bypass_text[48:33] - 14}) << 3; 
 	
     always @(posedge clk) begin
 		if(reset)
@@ -74,14 +73,14 @@ module aes_api(
     end
 
     /* GCM AES module (comes from gcm_aes.sv) */
-    gcm_aes gcm_aes_instance1(
+    gcm_aes gcm_aes_instance0(
         .clk(clk),
         .i_iv(iv),
-        .i_id(4'd0),
+        .i_id(4'd1),
         .i_new_instance(i_new),
         .i_last_instance(i_last),
         .i_cipher_key(cipher_key),
-        .i_plain_text(i_plain_text),
+        .i_plain_text(i_bypass_text[288: 161]),
         .i_bypass_text(i_bypass_text),
         .i_plain_text_size(pt_size),
         .i_aad_size(64'd0),
@@ -92,14 +91,14 @@ module aes_api(
     );
     
     /* GCM AES module (comes from gcm_aes.sv) */
-    gcm_aes gcm_aes_instance2(
+    gcm_aes gcm_aes_instance1(
         .clk(clk),
         .i_iv(iv),
-        .i_id(4'd1),
-        .i_new_instance(new_delay),
-        .i_last_instance(last_delay),
+        .i_id(4'd0),
+        .i_new_instance(i_new),
+        .i_last_instance(i_last),
         .i_cipher_key(cipher_key),
-        .i_plain_text({i_bypass_text[272:161], bits_delay}),
+        .i_plain_text(i_plain_text),
         .i_plain_text_size(pt_size),
         .i_aad_size(64'd0),
         .i_aad(aad),
