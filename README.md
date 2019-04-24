@@ -2,7 +2,7 @@
 
 ## GCM-AES implementation in Verilog
 
-This is a "pipelined" version of hardware implementaion in system-verilog. Here I pipeline the key expansion process into 8 steps to address the SLACK problem. This implements encryption in 110MHz. Throughput is 128bits * 250M = 32 Gbps. Worst SLACK is 0.04 ns. [Reference](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf) [AES](https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf).
+This is a "pipelined" version of hardware implementaion in system-verilog. Here I pipeline the key expansion process into 15 steps to address the SLACK problem. This implements encryption in 110MHz. Throughput is 2 * 128bits * 200M = 51.2 Gbps. Worst SLACK is 0.04 ns. [Reference](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf) [AES](https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf).
 
 ## Usage
 
@@ -48,5 +48,5 @@ ipython3 notebook
 2. Modify and run the pyaes\test.py to get the right encryption result for 128-bit-mulitple input. Or you can migrate to ipython notebook to debug it. And modify the input in test128.sv to check if the SW/HW results coincide.
 
 ## TODO:
-1. Further parallelize the data links.
-2. (FUTURE) Double the data rate by using data on falling and rising edge.
+1. (Now 15 clks) Further parallelize the data links.
+2. (Done encryption part) Double the data rate by using data on falling and rising edge.
