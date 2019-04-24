@@ -1,4 +1,5 @@
 import pyaes
+import os
 import math
 
 class AES_GCM_128:
@@ -15,6 +16,10 @@ class AES_GCM_128:
         self.C = 0
         self.T = 0
             
+    def sendeth(self, payload, interface = "eth2"):
+        cmd = 'python trans.py {}'.format(self.process_payload(payload))
+        return os.system(cmd)
+
     def update_i_key(self, new_key):
         self.i_key = new_key
         
@@ -45,6 +50,15 @@ class AES_GCM_128:
             y.append(self.xor(x[j* 16 : j* 16 + 16], ciphed))
         return y
     
+    @staticmethod
+    def process_payload(p):
+        leng = len(p)
+        payload = p
+        print(leng)
+        if leng % 32 != 0:
+            payload = p + '0' * ( 32 - leng % 32)
+        return payload
+
     @staticmethod
     def shiftright(a):
         leng = len(a)
@@ -111,6 +125,7 @@ class AES_GCM_128:
 if __name__ == '__main__':
     key = bytes.fromhex('00' * 16)
     iv = bytes.fromhex('00' * 12)
+    gcm_aes = AES_GCM_128(key)
     pt = bytes.fromhex('D9313225 F88406E5 A55909C5 AFF5269A 86A7A953 1534F7DA 2E4C303D 8A318A72 1C3C0C95 95680953 2FCF0E24 49A6B525 B16AEDF5 AA0DE657 BA637B39 1AAFD255')
     pt = bytes.fromhex('D9313225 F88406E5 A55909C5 AFF5269A' * 4)
     pt = bytes.fromhex('62626262 62626262 62626262 62626262' )
@@ -118,17 +133,24 @@ if __name__ == '__main__':
     pt = bytes.fromhex('21220102 12341234 2298abde 2fee2122'  )
     pt = bytes.fromhex('D9313225 F88406E5 A55909C5 AFF5269A 00000000 00000000 00000000 00000f0f' * 3)
     pt = bytes.fromhex('D9313225 F88406E5 A55909C5 AFF5269A 00000000 00000000 00000000 00000000' * 3)
+    pt_str = '22220102123412342298abde2fee2122' * 12
+    pt_str = '222201021234123123adf2934283242342ecdeda1238123ad140efacbcba9123123881ade'
+    pt_str = '12345231223411abfcdeabd78111111111111111111111111110000000000000000000000000123dec'
+    pt_str = 'Hey there, it is Yu. Nice to meet you world. The network class is awesome!'.encode().hex()
+    pt_hex = bytes.fromhex(gcm_aes.process_payload(pt_str))
+    pt = pt_hex
+
     #pt = bytes.fromhex('D9313225 F88406E5 A55909C5 AFF5269A' * 4)
     #pt = bytes.fromhex('D9313225 F88406E5 A55909C5 AFF5269A' )
     #aad = bytes.fromhex('3AD77BB4 0D7A3660 A89ECAF3 2466EF97 F5D3D585 03B9699D E785895A 96FDBAAF 43B1CD7F 598ECE23 881B00E3 ED030688 7B0C785E 27E8AD3F 82232071 04725DD4')
 
     #pt = bytes.fromhex('00' * 16)
+    print(pt)
     aad = bytes.fromhex('00' * 16)
     aad = bytes.fromhex('')
     print('\nPlaintext is\t\t')
     for i in range(len(pt) // 16):
         print('\t\t', pt[i * 16:i * 16 +16].hex())
-
-    gcm_aes = AES_GCM_128(key)
     gcm_aes.encrypt(iv, aad, pt)
+    gcm_aes.sendeth(pt_str)
     #print( C.hex(), T.hex())
