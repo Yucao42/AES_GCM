@@ -1,6 +1,7 @@
 import pyaes
 import os
 import math
+from datetime import datetime as dt
 
 class AES_GCM_128:
     
@@ -136,7 +137,7 @@ if __name__ == '__main__':
     pt_str = '22220102123412342298abde2fee2122' * 12
     pt_str = '222201021234123123adf2934283242342ecdeda1238123ad140efacbcba9123123881ade'
     pt_str = '12345231223411abfcdeabd78111111111111111111111111110000000000000000000000000123dec'
-    pt_str = 'Hey there, it is Yu. Nice to meet you world. The network class is awesome!'.encode().hex()
+    pt_str = 'Hey there, it is Yu. Nice to meet you world. The network class is awesome! New York has a great sunny day today.'.encode().hex()
     pt_hex = bytes.fromhex(gcm_aes.process_payload(pt_str))
     pt = pt_hex
 
@@ -152,5 +153,6 @@ if __name__ == '__main__':
     for i in range(len(pt) // 16):
         print('\t\t', pt[i * 16:i * 16 +16].hex())
     gcm_aes.encrypt(iv, aad, pt)
+    print(dt.now())
     gcm_aes.sendeth(pt_str)
     #print( C.hex(), T.hex())
