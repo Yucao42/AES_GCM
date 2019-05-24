@@ -138,6 +138,7 @@ if __name__ == '__main__':
     pt_str = '222201021234123123adf2934283242342ecdeda1238123ad140efacbcba9123123881ade'
     pt_str = '12345231223411abfcdeabd78111111111111111111111111110000000000000000000000000123dec'
     pt_str = 'Hey there, it is Yu. Nice to meet you world. The network class is awesome! New York has a great sunny day today.'.encode().hex()
+    pt_str = 'Do you think we are gonna pass this course? New York has a great sunny day today.'.encode().hex()
     pt_hex = bytes.fromhex(gcm_aes.process_payload(pt_str))
     pt = pt_hex
 
